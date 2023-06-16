@@ -11,7 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        
+       Schema::create('chofer',function(Blueprint $table){
+            $table -> id();
+            $table -> string('');
+            /**Por hacer o modificar */
+            // $table -> id();
+            // $table -> id();
+            // $table -> id();
+            // $table -> id();
+            // $table -> id();
+
+
+       });
     }
 
     /**
@@ -19,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('chofer');
     }
 };
