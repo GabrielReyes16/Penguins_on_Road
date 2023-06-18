@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('rutas', function (Blueprint $table) {
+            $table->id()->unique();
+            $table->string('name');
+            $table->string('turno');
+            $table->string('paraderos');
+        });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('rutas');
     }
 };
