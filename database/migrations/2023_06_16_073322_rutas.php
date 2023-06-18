@@ -11,7 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('rutas', function (Blueprint $table) {
+            $table->id('id_ruta') ->unique();
+            $table->string('id_paraderos');
+            $table->string('nombre');
+            $table->string('turno');
+            $table->string('punto_inicio');
+            $table->string('punto_fin');
+
+        });
     }
 
     /**
