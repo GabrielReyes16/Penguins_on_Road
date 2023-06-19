@@ -11,7 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('viajes', function (Blueprint $table) {
+            $table->id('id_viaje');
+            $table->string('ruta');
+            $table->string('bus');
+            $table->string('posicion');
+            $table->date('fecha_viaje');
+            $table->date('hora_inicio');
+            $table->date('hora_final');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->string('rol');
+            $table->rememberToken();
+            $table->timestamps();
+        });
     }
 
     /**
