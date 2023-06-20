@@ -19,9 +19,9 @@ return new class extends Migration
             $table->date('fecha_viaje');
             $table->date('hora_inicio');
             $table->date('hora_final');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('rol');
+            $table->string('estado');
+            $table->string('aforo');
+            $table->string('chofer');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('viajes');
     }
 };
