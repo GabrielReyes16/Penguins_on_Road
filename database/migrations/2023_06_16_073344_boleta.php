@@ -23,8 +23,6 @@ return new class extends Migration
             $table->date('hora_abordaje');
             $table->date('hora_inicio');
             $table->string('aforo_viaje');
-            $table->rememberToken();
-            $table->timestamps();
         });
     }
 
