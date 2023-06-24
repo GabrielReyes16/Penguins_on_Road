@@ -20,14 +20,14 @@ class UsersSeeder extends Seeder
             $digitos = Str::random(5, '0123456789');
             $ID = $letraInicial . $digitos;
             // Verificar si el nuevo ID está en uso
-            $existingUser = User::where('ID', $ID)->first();
+            $existingUser = User::where('id', $ID)->first();
 
             while ($existingUser) {
             $letraInicial = Str::randomElement(['P', 'C', 'A']);
             $digitos = Str::random(5, '0123456789');
             $ID = $letraInicial . $digitos;
             // Verificar si el nuevo ID está en uso
-            $existingUser = User::where('ID', $ID)->first();
+            $existingUser = User::where('id', $ID)->first();
 }
 
             User::create([
