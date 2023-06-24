@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('auth.login');
+        return view('index');
     }
 
     /**
@@ -44,5 +44,11 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        return redirect()->route('login');
     }
 }
