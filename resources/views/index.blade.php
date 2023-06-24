@@ -13,7 +13,7 @@
 <body>
     <div class="fondo-imagen">
         <header>
-            <a href="index.html"><img class="logo-proyecto" src="img/logo-proyecto-blanco.png" alt=""></a>
+            <a href="index.html"><img class="logo-proyecto" src="../../public/logo-proyecto-blanco.png" alt=""></a>
             <div>
                 <h1>Hola, Bienvenido!</h1>
             </div>
@@ -50,7 +50,7 @@
         </div>
     </div>
     <footer>
-        <img class="logo-tecsup" src="img/logotipo-TECSUP-blanco.png">
+        <img class="logo-tecsup" src="../../public/logotipo-TECSUP-blanco.png">
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

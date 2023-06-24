@@ -27,7 +27,7 @@ footer
 
 .fondo-imagen 
 {
-    background: url(../img/tecsup-lima.jpg);
+    background: url(../../public/tecsup-lima.jpg);
     background-size: cover;
     width: 100%;
     height: 600px;
