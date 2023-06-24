@@ -15,17 +15,18 @@ class UsersSeeder extends Seeder
      */
     public function run(): void
     {
+        $letrasIniciales = ['P', 'C', 'A'];
         for ($i = 0; $i < 50; $i++) {
-            $letraInicial = Str::randomElement(['P', 'C', 'A']);
-            $digitos = Str::random(5, '0123456789');
+            $letraInicial = $letrasIniciales[array_rand($letrasIniciales)];
+            $digitos = mt_rand(10000, 99999);
             $ID = $letraInicial . $digitos;
             // Verificar si el nuevo ID está en uso
             $existingUser = User::where('id', $ID)->first();
 
             while ($existingUser) {
-            $letraInicial = Str::randomElement(['P', 'C', 'A']);
-            $digitos = Str::random(5);
-            $ID = $letraInicial . $digitos;
+                $letraInicial = $letrasIniciales[array_rand($letrasIniciales)];
+                $digitos = mt_rand(10000, 99999);
+                $ID = $letraInicial . $digitos;
             // Verificar si el nuevo ID está en uso
             $existingUser = User::where('id', $ID)->first();
 }
