@@ -27,18 +27,25 @@
                 <div class="instrucciones">
                     <label>Bienvenido a la página de Tecsup Bus! Ingresa tus datos:</label>
                 </div>
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                 <div class="shadowBox">
                     <div class="inputLine1">
                         <label class="textInput">Usuario:</label>
-                        <input type="text">
+                        <x-text-input id="nombres" class="block mt-1 w-full" type="nombres" name="nombres" :value="old('nombres')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('nombres')" class="mt-2" />
                     </div>
                     <div class="inputLine2">
                         <label class="textInput">Contraseña:</label>
-                        <input type="text">
+                        <x-text-input id="password" class="block mt-1 w-full"
+                            type="password"
+                            name="password"
+                            required autocomplete="current-password" />
+
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
                     </div>
                     <div class="btn">
-                        <a href="UserMenu.html">
-                            <button class="btn-in">Ingresar</button>
+                            <x-primary-button class="btn-in">Ingresar </x-primary-button>
                         </a>
                     </div>
                     <div class="forgot">
@@ -47,6 +54,7 @@
                         </a>
                     </div>
                 </div>
+            </form>
             </div>
         </div>
     </div>
