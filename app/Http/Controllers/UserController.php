@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = Usuario::all();
+        $users = User::all();
 
         return view('usuarios.index', compact('users'));
     }
