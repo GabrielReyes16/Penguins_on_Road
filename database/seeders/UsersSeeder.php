@@ -24,7 +24,7 @@ class UsersSeeder extends Seeder
 
             while ($existingUser) {
             $letraInicial = Str::randomElement(['P', 'C', 'A']);
-            $digitos = Str::random(5, '0123456789');
+            $digitos = Str::random(5);
             $ID = $letraInicial . $digitos;
             // Verificar si el nuevo ID está en uso
             $existingUser = User::where('id', $ID)->first();
