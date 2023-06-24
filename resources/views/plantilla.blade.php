@@ -130,6 +130,8 @@
         </div>
     </div>
     
+    @yield('home')
+
     <script src="{{ asset ('js/animaciones.js') }}"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
