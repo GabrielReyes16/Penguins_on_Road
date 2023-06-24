@@ -37,7 +37,7 @@
                         <input type="text">
                     </div>
                     <div class="btn">
-                        <a href="{{asset ('../resources/views/usuario-pasajero/homePasajero.blade.php') }}">
+                        <a href="{{asset ('../resources/views/usuario-pasajero/homePasajero.php') }}">
                             <button class="btn-in">Ingresar</button>
                         </a>
                     </div>
