@@ -1,5 +1,5 @@
 <?php
-
+//Pendiente de corregir el tipo de dato del id
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
