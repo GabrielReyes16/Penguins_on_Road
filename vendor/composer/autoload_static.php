@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3ba1ff867a2f9ab119114b28cee28d46
+class ComposerStaticInit2f2b839770b7932770285b0b894202ec
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -204,8 +204,8 @@ class ComposerStaticInit3ba1ff867a2f9ab119114b28cee28d46
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Whoops\\' => 
         array (
@@ -377,8 +377,8 @@ class ComposerStaticInit3ba1ff867a2f9ab119114b28cee28d46
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -598,7 +598,6 @@ class ComposerStaticInit3ba1ff867a2f9ab119114b28cee28d46
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
-        'App\\Http\\Controllers\\UsuariosController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsuariosController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -6853,9 +6852,9 @@ class ComposerStaticInit3ba1ff867a2f9ab119114b28cee28d46
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3ba1ff867a2f9ab119114b28cee28d46::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3ba1ff867a2f9ab119114b28cee28d46::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3ba1ff867a2f9ab119114b28cee28d46::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit2f2b839770b7932770285b0b894202ec::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit2f2b839770b7932770285b0b894202ec::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit2f2b839770b7932770285b0b894202ec::$classMap;
 
         }, null, ClassLoader::class);
     }
