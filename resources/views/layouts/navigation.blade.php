@@ -26,7 +26,25 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name . ' - ' . Auth::user()->rol }}</div>
+                            <div>
+                                {{ Auth::user()->name }} - 
+                                @php
+                                    $rol = Auth::user()->rol;
+                                    switch ($rol) {
+                                        case 'A':
+                                            echo 'Admin';
+                                            break;
+                                        case 'C':
+                                            echo 'Chofer';
+                                            break;
+                                        case 'P':
+                                            echo 'Pasajero';
+                                            break;
+                                        default:
+                                            echo $rol;
+                                    }
+                                @endphp
+                            </div>
 
 
                             <div class="ml-1">
