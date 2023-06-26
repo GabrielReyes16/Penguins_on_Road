@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <a type="button" href="{{ route('Users.create') }}" class="bg-indigo-600 px-12 py-2 rounded text-gray-200 font-semibold 
+                <a type="button" href="{{ route('users.create') }}" class="bg-indigo-600 px-12 py-2 rounded text-gray-200 font-semibold 
                                                                                     hover:bg-indigo-800 duration-200 each-in-out height:6px">Crear</a>
                 <table class="table-fixed w-full">
                     <thead>
