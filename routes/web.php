@@ -22,7 +22,6 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])->name('login');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
