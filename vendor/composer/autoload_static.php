@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2f2b839770b7932770285b0b894202ec
+class ComposerStaticInite43b59f0f313c8d6ac37287502446711
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -204,8 +204,8 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Whoops\\' => 
         array (
@@ -377,8 +377,8 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -597,7 +597,6 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
-        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -730,7 +729,7 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
-        'Database\\Seeders\\UsersSeeder' => __DIR__ . '/../..' . '/database/seeders/UsersSeeder.php',
+        'Database\\Seeders\\UserSeeder' => __DIR__ . '/../..' . '/database/seeders/UserSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -3432,6 +3431,7 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         'Monolog\\Processor\\GitProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/GitProcessor.php',
         'Monolog\\Processor\\HostnameProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/HostnameProcessor.php',
         'Monolog\\Processor\\IntrospectionProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/IntrospectionProcessor.php',
+        'Monolog\\Processor\\LoadAverageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/LoadAverageProcessor.php',
         'Monolog\\Processor\\MemoryPeakUsageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryPeakUsageProcessor.php',
         'Monolog\\Processor\\MemoryProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryProcessor.php',
         'Monolog\\Processor\\MemoryUsageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php',
@@ -4427,8 +4427,8 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromFilterWhitelistToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveAttributesFromFilterWhitelistToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromRootToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveAttributesFromRootToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveCoverageDirectoriesToSource' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveCoverageDirectoriesToSource.php',
-        'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistDirectoriesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistDirectoriesToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistExcludesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistExcludesToCoverage.php',
+        'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistIncludesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistIncludesToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\PHPUnit' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/PHPUnit.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\RemoveBeStrictAboutResourceUsageDuringSmallTestsAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveBeStrictAboutResourceUsageDuringSmallTestsAttribute.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\RemoveBeStrictAboutTodoAnnotatedTestsAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveBeStrictAboutTodoAnnotatedTestsAttribute.php',
@@ -4492,6 +4492,7 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         'ParaTest\\RunnerInterface' => __DIR__ . '/..' . '/brianium/paratest/src/RunnerInterface.php',
         'ParaTest\\Util\\PhpstormHelper' => __DIR__ . '/..' . '/brianium/paratest/src/Util/PhpstormHelper.php',
         'ParaTest\\WrapperRunner\\ApplicationForWrapperWorker' => __DIR__ . '/..' . '/brianium/paratest/src/WrapperRunner/ApplicationForWrapperWorker.php',
+        'ParaTest\\WrapperRunner\\ProgressPrinterOutput' => __DIR__ . '/..' . '/brianium/paratest/src/WrapperRunner/ProgressPrinterOutput.php',
         'ParaTest\\WrapperRunner\\ResultPrinter' => __DIR__ . '/..' . '/brianium/paratest/src/WrapperRunner/ResultPrinter.php',
         'ParaTest\\WrapperRunner\\SuiteLoader' => __DIR__ . '/..' . '/brianium/paratest/src/WrapperRunner/SuiteLoader.php',
         'ParaTest\\WrapperRunner\\WorkerCrashedException' => __DIR__ . '/..' . '/brianium/paratest/src/WrapperRunner/WorkerCrashedException.php',
@@ -4518,6 +4519,7 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         'Pest\\Arch\\Objects\\VendorObjectDescription' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/Objects/VendorObjectDescription.php',
         'Pest\\Arch\\Options\\LayerOptions' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/Options/LayerOptions.php',
         'Pest\\Arch\\Options\\TestCaseOptions' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/Options/TestCaseOptions.php',
+        'Pest\\Arch\\PendingArchExpectation' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/PendingArchExpectation.php',
         'Pest\\Arch\\Repositories\\ObjectsRepository' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/Repositories/ObjectsRepository.php',
         'Pest\\Arch\\SingleArchExpectation' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/SingleArchExpectation.php',
         'Pest\\Arch\\Support\\Composer' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/Support/Composer.php',
@@ -4527,6 +4529,7 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         'Pest\\Arch\\ValueObjects\\Dependency' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/ValueObjects/Dependency.php',
         'Pest\\Arch\\ValueObjects\\Targets' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/ValueObjects/Targets.php',
         'Pest\\Arch\\ValueObjects\\Violation' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/ValueObjects/Violation.php',
+        'Pest\\Bootstrappers\\BootExcludeList' => __DIR__ . '/..' . '/pestphp/pest/src/Bootstrappers/BootExcludeList.php',
         'Pest\\Bootstrappers\\BootFiles' => __DIR__ . '/..' . '/pestphp/pest/src/Bootstrappers/BootFiles.php',
         'Pest\\Bootstrappers\\BootKernelDump' => __DIR__ . '/..' . '/pestphp/pest/src/Bootstrappers/BootKernelDump.php',
         'Pest\\Bootstrappers\\BootOverrides' => __DIR__ . '/..' . '/pestphp/pest/src/Bootstrappers/BootOverrides.php',
@@ -6701,7 +6704,16 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
         'Termwind\\ValueObjects\\Style' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Style.php',
         'Termwind\\ValueObjects\\Styles' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Styles.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
+        'Tests\\Feature\\Auth\\AuthenticationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/AuthenticationTest.php',
+        'Tests\\Feature\\Auth\\EmailVerificationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/EmailVerificationTest.php',
+        'Tests\\Feature\\Auth\\PasswordConfirmationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/PasswordConfirmationTest.php',
+        'Tests\\Feature\\Auth\\PasswordResetTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/PasswordResetTest.php',
+        'Tests\\Feature\\Auth\\PasswordUpdateTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/PasswordUpdateTest.php',
+        'Tests\\Feature\\Auth\\RegistrationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/RegistrationTest.php',
+        'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
+        'Tests\\Feature\\ProfileTest' => __DIR__ . '/../..' . '/tests/Feature/ProfileTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
+        'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',
@@ -6852,9 +6864,9 @@ class ComposerStaticInit2f2b839770b7932770285b0b894202ec
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2f2b839770b7932770285b0b894202ec::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2f2b839770b7932770285b0b894202ec::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit2f2b839770b7932770285b0b894202ec::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$classMap;
 
         }, null, ClassLoader::class);
     }
