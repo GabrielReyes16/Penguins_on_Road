@@ -22,7 +22,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])->name('login');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
