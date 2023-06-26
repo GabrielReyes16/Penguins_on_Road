@@ -18,16 +18,21 @@
         @method('patch')
 
         <div>
-            <x-input-label for="nombres" :value="__('Nombres')" />
-            <x-text-input id="nombres" name="nombres" type="text" class="mt-1 block w-full" :value="old('nombres', $user->nombres)" required autofocus autocomplete="nombres" />
-            <x-input-error class="mt-2" :messages="$errors->get('nombres')" />
+            <x-input-label for="name" :value="__('Nombres')" />
+            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div>
-            <x-input-label for="apellidos" :value="__('Apellidos')" />
-            <x-text-input id="apellidos" name="apellidos" type="text" class="mt-1 block w-full" :value="old('apellidos', $user->apellidos)" required autofocus autocomplete="apellidos" />
-            <x-input-error class="mt-2" :messages="$errors->get('apellidos')" />
+            <x-input-label for="rol" :value="__('Rol del usuario')" />
+            <x-select-input id="rol" name="rol" class="mt-1 block w-full" required autofocus autocomplete="rol">
+                <option value="A" {{ old('rol', $user->rol) === 'A' ? 'selected' : '' }}>Admin</option>
+                <option value="C" {{ old('rol', $user->rol) === 'C' ? 'selected' : '' }}>Chofer</option>
+                <option value="P" {{ old('rol', $user->rol) === 'P' ? 'selected' : '' }}>Pasajero</option>
+            </x-select-input>
+            <x-input-error class="mt-2" :messages="$errors->get('rol')" />
         </div>
+        
 
         <div>
             <x-input-label for="email" :value="__('Email')" />
