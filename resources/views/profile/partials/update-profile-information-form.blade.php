@@ -25,11 +25,11 @@
 
         <div>
             <x-input-label for="rol" :value="__('Rol del usuario')" />
-            <x-select-input id="rol" name="rol" class="mt-1 block w-full" required autofocus autocomplete="rol">
+            <select id="rol" name="rol" class="mt-1 block w-full" required autofocus autocomplete="rol">
                 <option value="A" {{ old('rol', $user->rol) === 'A' ? 'selected' : '' }}>Admin</option>
                 <option value="C" {{ old('rol', $user->rol) === 'C' ? 'selected' : '' }}>Chofer</option>
                 <option value="P" {{ old('rol', $user->rol) === 'P' ? 'selected' : '' }}>Pasajero</option>
-            </x-select-input>
+            </select>
             <x-input-error class="mt-2" :messages="$errors->get('rol')" />
         </div>
         
