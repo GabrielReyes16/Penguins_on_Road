@@ -13,30 +13,18 @@ class UsersSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run()
     {
-        $letrasIniciales = ['P', 'C', 'A'];
-        for ($i = 0; $i < 50; $i++) {
-            $letraInicial = $letrasIniciales[array_rand($letrasIniciales)];
-            $digitos = mt_rand(10000, 99999);
-            $ID = $letraInicial . $digitos;
-            // Verificar si el nuevo ID está en uso
-            $existingUser = User::where('id', $ID)->first();
+        $roles = ['A', 'C', 'P'];
 
-            while ($existingUser) {
-                $letraInicial = $letrasIniciales[array_rand($letrasIniciales)];
-                $digitos = mt_rand(10000, 99999);
-                $ID = $letraInicial . $digitos;
-            // Verificar si el nuevo ID está en uso
-            $existingUser = User::where('id', $ID)->first();
-}
 
-            User::create([
-                'id' => $ID,
-                'nombres' => "usuario$i",
-                'apellidos' => "apellido$i",
-                'email' => "email$i@test.com",
-                'password' => Hash::make("pass$i")
+        for ($i = 1; $i <= 80; $i++) {
+            $rol = Arr::random($roles);
+             User::create([
+                'name' => 'User '.$i,
+                'email' => 'user'.$i.'@example.com',
+                'password' => Hash::make('password'.$i),
+                'rol' => $rol
             ]);
         }
     }
