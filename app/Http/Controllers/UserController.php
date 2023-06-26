@@ -11,11 +11,11 @@ class UserController extends Controller
     {
         $users = User::paginate(20);
 
-        return view('User.index', compact('users'));
+        return view('Users.index', compact('users'));
     }
     public function create()
     {
-        return view('User.crear');
+        return view('Users.crear');
     }
 
     /**
@@ -29,7 +29,7 @@ class UserController extends Controller
 
         $user = $request->all();
         User::create($user);
-        return redirect()->route('User.index');
+        return redirect()->route('Users.index');
         
     }
 
@@ -46,7 +46,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('User.editar', compact('User'));
+        return view('Users.editar', compact('User'));
     }
 
     /**
@@ -62,7 +62,7 @@ class UserController extends Controller
 
         $user->update($usuario);
 
-        return redirect()->route('User.index');
+        return redirect()->route('Users.index');
 
     }
 
@@ -72,7 +72,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('User.index');
+        return redirect()->route('Users.index');
     }
 }
 
