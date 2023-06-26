@@ -43,12 +43,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('login');
+        return redirect('logout');
     }
     public function logout(Request $request)
     {
         Auth::logout();
 
-        return redirect()->route('login');
+        return redirect()->route('logout');
     }
 }
