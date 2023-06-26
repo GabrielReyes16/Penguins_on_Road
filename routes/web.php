@@ -21,11 +21,11 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/users', function () {
     return view('Users/index');
 })->middleware(['auth', 'verified'])->name('Users/index');
 
-Route::get('/users', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
