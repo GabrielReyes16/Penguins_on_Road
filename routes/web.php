@@ -19,10 +19,10 @@ Route::get('/', function () {
 });
 Route::get('/welcome', function () {
     return view('welcome');
-});
+}); 
 
 Route::get('/users', function () {
-    return view('Users/index');
+    return view('Users.index');
 })->middleware(['auth', 'verified'])->name('Users.index');
 
 Route::get('/dashboard', function () {

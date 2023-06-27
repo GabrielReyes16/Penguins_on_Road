@@ -8,15 +8,14 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <a type="button" href="{{ route('users.create') }}" class="bg-indigo-600 px-12 py-2 rounded text-gray-200 font-semibold 
-                                                                                    hover:bg-indigo-800 duration-200 each-in-out height:6px">Crear</a>
+                {{-- <a type="button" href="{{ route('users.create') }}" class="bg-indigo-600 px-12 py-2 rounded text-gray-200 font-semibold 
+                                                                                    hover:bg-indigo-800 duration-200 each-in-out height:6px">Crear</a> --}}
                 <table class="table-fixed w-full">
                     <thead>
                         <tr clsss="bg-gray-300 text-white">
                             <th class="border px4 py-2" style="display: none">ID</th>
                             <th class="border px4 py-2">NOMBRE</th>
                             <th class="border px4 py-2">ROL</th>
-
                             <th class="border px4 py-2">ACCIONES</th>
                         </tr>
                     </thead>
@@ -29,7 +28,7 @@
                             <td class="border px-4 py2">
                                 <div class="flex justify-center rounded-lg text-lg" role="group">
                                     <!-- boton editar -->
-                                    <a href="{{ route('productos.edit', $user->id) }}" class="bg-gray-900 hover:bg-gray-400 rounded 
+                                    <a href="{{ route('user.edit', $user->id) }}" class="bg-gray-900 hover:bg-gray-400 rounded 
                                                                                                         text-white font-bold py-2 px-4">Editar</a>
                                     <!-- boton borrar -->
                                     <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="formEliminar">
