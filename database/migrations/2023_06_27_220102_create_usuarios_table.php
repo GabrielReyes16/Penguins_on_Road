@@ -12,14 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_usuario');
             $table->string('name');
             $table->string('rol');
+            $table->unsignedInteger('id_perfil')->nullable(); //Es posible? Si lo es mi king
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('id_perfil')->references('id_perfil')->on('perfiles');
         });
     }
 

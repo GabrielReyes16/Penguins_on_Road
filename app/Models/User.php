@@ -18,19 +18,30 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     protected $table = 'users';
+    protected $primaryKey = 'id_usuario';
     protected $fillable = [
         'name',
         'email',
         'password',
-        'rol'
+        'rol',
+        'id_perfil'
     ];
-    
+    public $timestamps = true;
+
+    public function perfil()
+    {
+        return $this->belongsTo(Perfil::class, 'id_perfil');
+    }
+
     static $rules = [
 		'name' => 'required',
 		'rol' => 'required',
         'email' => 'required|string|email|max:255|unique:users',
         'password' => 'required|string|min:8|confirmed',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
