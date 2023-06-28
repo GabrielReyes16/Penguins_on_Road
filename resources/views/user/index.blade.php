@@ -1,10 +1,9 @@
-@extends('layouts.app')
-
-@section('template_title')
-    User
-@endsection
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800  leading-tight">
+            {{ __('Usuarios') }}
+        </h2>
+    </x-slot>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -12,13 +11,9 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
-                                {{ __('User') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                             <div class="d-grid gap-2 col-6 mx-auto">
+                                <a href="{{ route('users.create') }}" class="btn btn-primary" >
+                                  {{ __('Crear un usuario') }}
                                 </a>
                               </div>
                         </div>
@@ -35,7 +30,6 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
 										<th>Name</th>
 										<th>Rol</th>
 										<th>Email</th>
@@ -72,4 +66,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-app-layout>
