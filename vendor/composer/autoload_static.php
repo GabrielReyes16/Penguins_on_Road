@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
+class ComposerStaticInite43b59f0f313c8d6ac37287502446711
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -627,7 +627,18 @@ class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
+        'App\\Models\\BoletaViaje' => __DIR__ . '/../..' . '/app/Models/BoletaViaje.php',
+        'App\\Models\\Bus' => __DIR__ . '/../..' . '/app/Models/Bus.php',
+        'App\\Models\\Chofer' => __DIR__ . '/../..' . '/app/Models/Chofer.php',
+        'App\\Models\\Empresa' => __DIR__ . '/../..' . '/app/Models/Empresa.php',
+        'App\\Models\\Paradero' => __DIR__ . '/../..' . '/app/Models/Paradero.php',
+        'App\\Models\\Perfil' => __DIR__ . '/../..' . '/app/Models/Perfil.php',
+        'App\\Models\\Ruta' => __DIR__ . '/../..' . '/app/Models/Ruta.php',
+        'App\\Models\\Turno' => __DIR__ . '/../..' . '/app/Models/Turno.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Usuario' => __DIR__ . '/../..' . '/app/Models/Usuario.php',
+        'App\\Models\\Viaje' => __DIR__ . '/../..' . '/app/Models/Viaje.php',
+        'App\\Models\\ViajeGps' => __DIR__ . '/../..' . '/app/Models/ViajeGps.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -756,6 +767,7 @@ class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\UserSeeder' => __DIR__ . '/../..' . '/database/seeders/UserSeeder.php',
         'Database\\Seeders\\UsersSeeder' => __DIR__ . '/../..' . '/database/seeders/UsersSeeder.php',
+        'Database\\Seeders\\holaMundo' => __DIR__ . '/../..' . '/database/seeders/holaMundo.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -6919,9 +6931,9 @@ class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$classMap;
 
         }, null, ClassLoader::class);
     }
