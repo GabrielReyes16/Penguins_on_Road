@@ -11,7 +11,7 @@ class CreateChoferesTable extends Migration
         Schema::create('choferes', function (Blueprint $table) {
             $table->increments('id_chofer');
             $table->unsignedInteger('id_usuario');
-            $table->string('licencia_conducir', 20);
+            $table->string('licencia_conducir', 20)->unique();
             $table->timestamps();
 
             $table->foreign('id_usuario')->references('id_usuario')->on('users');
