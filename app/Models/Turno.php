@@ -12,4 +12,9 @@ class Turno extends Model
     protected $primaryKey = 'id_turno';
     protected $fillable = ['nombre', 'hora_inicio'];
     public $timestamps = true;
+
+    static $rules = [
+		'name' => 'required',
+		'hora_inicio' => 'required',
+    ];
 }

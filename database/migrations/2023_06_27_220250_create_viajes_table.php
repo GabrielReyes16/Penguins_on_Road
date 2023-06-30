@@ -19,8 +19,8 @@ class CreateViajesTable extends Migration
             $table->integer('aforo');
             $table->timestamps();
 
-            $table->foreign('id_ruta')->references('id_ruta')->on('rutas');
-            $table->foreign('id_bus')->references('id_bus')->on('buses');
+            $table->foreign('id_ruta')->references('id_ruta')->on('rutas')->onDelete('cascade');
+            $table->foreign('id_bus')->references('id_bus')->on('buses')->onDelete('cascade');
         });
     }
 

@@ -61,9 +61,9 @@ class UserController extends Controller
     //  * @param  int $id
     //  * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_usuario)
     {
-        $user = User::find($id);
+        $user = User::find($id_usuario);
 
         return view('user.show', compact('user'));
     }
@@ -74,9 +74,9 @@ class UserController extends Controller
     //  * @param  int $id
     //  * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_usuario)
     {
-        $user = User::find($id);
+        $user = User::find($id_usuario);
 
         return view('user.edit', compact('user'));
     }
@@ -94,7 +94,7 @@ class UserController extends Controller
 
         $user->update($request->all());
 
-        return redirect()->route('users.index')
+        return redirect()->route('user.index')
             ->with('success', 'User updated successfully');
     }
 
@@ -103,9 +103,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy($id_usuario)
     {
-        $user = User::find($id)->delete();
+        $user = User::find($id_usuario)->delete();
 
         return redirect()->route('users.index')
             ->with('success', 'User deleted successfully');

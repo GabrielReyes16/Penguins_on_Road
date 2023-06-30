@@ -22,7 +22,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('id_perfil')->references('id_perfil')->on('perfiles');
+            $table->foreign('id_perfil')->references('id_perfil')->on('perfiles')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,7 @@ class CreateRutasTable extends Migration
             $table->string('punto_final', 100);
             $table->timestamps();
 
-            $table->foreign('id_turno')->references('id_turno')->on('turnos');
+            $table->foreign('id_turno')->references('id_turno')->on('turnos')->onDelete('cascade');
         });
     }
 

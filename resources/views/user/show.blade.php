@@ -1,24 +1,22 @@
-@extends('layouts.app')
 
-@section('template_title')
-    {{ $user->name ?? "{{ __('Show') User" }}
-@endsection
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
+            Informacion de {{ $user->name }}
+        </h2>
+    </x-slot>
 
-@section('content')
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card" style="color: white; text-align: center">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} User</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('users.index') }}"> {{ __('Back') }}</a>
+                        <div class="">
+                            <a class="btn btn-primary" href="{{ route('users.index') }}" style="color: blue; text-decoration: underline;"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body" style="color: white;>
                         
                         <div class="form-group">
                             <strong>Name:</strong>
@@ -38,4 +36,4 @@
             </div>
         </div>
     </section>
-@endsection
+</x-app-layout>

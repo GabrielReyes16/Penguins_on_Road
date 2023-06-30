@@ -18,9 +18,9 @@ class CreateBoletasViajeTable extends Migration
             $table->integer('aforo_viaje');
             $table->timestamps();
 
-            $table->foreign('id_usuario_pasajero')->references('id_usuario')->on('users');
-            $table->foreign('id_usuario_chofer')->references('id_usuario')->on('users');
-            $table->foreign('id_viaje')->references('id_viaje')->on('viajes');
+            $table->foreign('id_usuario_pasajero')->references('id_usuario')->on('users')->onDelete('cascade');
+            $table->foreign('id_usuario_chofer')->references('id_usuario')->on('users')->onDelete('cascade');
+            $table->foreign('id_viaje')->references('id_viaje')->on('viajes')->onDelete('cascade');
         });
     }
 

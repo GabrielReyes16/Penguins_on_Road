@@ -16,7 +16,7 @@ class CreateViajesGpsTable extends Migration
             $table->time('hora_posicion');
             $table->timestamps();
 
-            $table->foreign('id_viaje')->references('id_viaje')->on('viajes');
+            $table->foreign('id_viaje')->references('id_viaje')->on('viajes')->onDelete('cascade');
         });
     }
 

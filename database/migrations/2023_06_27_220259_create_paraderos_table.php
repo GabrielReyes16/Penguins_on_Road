@@ -15,7 +15,7 @@ class CreateParaderosTable extends Migration
             $table->string('ubicacion', 100);
             $table->timestamps();
 
-            $table->foreign('id_ruta')->references('id_ruta')->on('rutas');
+            $table->foreign('id_ruta')->references('id_ruta')->on('rutas')->onDelete('cascade');
         });
     }
 
