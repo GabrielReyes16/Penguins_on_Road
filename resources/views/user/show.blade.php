@@ -16,7 +16,7 @@
                         </div>
                     </div>
 
-                    <div class="card-body" style="color: white;>
+                    <div class="card-body" style="color: white;">
                         
                         <div class="form-group">
                             <strong>Name:</strong>

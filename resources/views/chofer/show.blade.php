@@ -1,36 +1,33 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
+            Informacion de {{ $user->name }}
+        </h2>
+    </x-slot>
 
-@section('template_title')
-    {{ $chofere->name ?? "{{ __('Show') Chofere" }}
-@endsection
-
-@section('content')
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card" style="color: white; text-align: center">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Chofere</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('choferes.index') }}"> {{ __('Back') }}</a>
+                        <div class="">
+                            <a class="btn btn-primary" href="{{ route('choferes.index') }}" style="color: blue; text-decoration: underline;"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body" style="color: white;">
                         
                         <div class="form-group">
-                            <strong>Id Chofer:</strong>
-                            {{ $chofere->id_chofer }}
+                            <strong>Nombre:</strong>
+                            {{ $user->name }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Usuario:</strong>
-                            {{ $chofere->id_usuario }}
+                            <strong>Rol:</strong>
+                            {{ $user->rol }}
                         </div>
                         <div class="form-group">
-                            <strong>Licencia Conducir:</strong>
-                            {{ $chofere->licencia_conducir }}
+                            <strong>Email:</strong>
+                            {{ $user->email }}
                         </div>
 
                     </div>
@@ -38,4 +35,4 @@
             </div>
         </div>
     </section>
-@endsection
+</x-app-layout>
