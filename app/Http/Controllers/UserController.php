@@ -6,9 +6,6 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
 
 /**
  * Class UserController
@@ -24,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::whereNotIn('rol', ['Chofer'])->paginate();
+        $users = User::whereNotIn('rol', ['Chofer'])->paginate(5);
     
         return view('user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
@@ -45,7 +42,7 @@ class UserController extends Controller
 
         return redirect()->route('users.index')
 
-            ->with('success', 'User created successfully.');
+            ->with('success', 'Usuario creado exitosamente.');
 
     }
 
@@ -85,7 +82,7 @@ class UserController extends Controller
           $user->save();
       
           return redirect()->route('users.index')
-              ->with('success', 'La información actualizada correctamente');
+              ->with('success', 'La información  fue actualizada correctamente');
       }
  
      /**
@@ -96,7 +93,7 @@ class UserController extends Controller
           $user = User::find($id_usuario)->delete();
   
           return redirect()->route('users.index')
-              ->with('success', 'El usuario eliminado con éxito');
+              ->with('success', 'El usuario fue eliminado con éxito');
       }
  }
  

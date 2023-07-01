@@ -1,3 +1,9 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
+            Registrar chofer
+        </h2>
+    </x-slot>
 <x-guest-layout>
     <form method="POST" action="{{ route('choferes.store') }}">
         @csrf
@@ -40,7 +46,7 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-input-label for="password_confirmation" :value="__('Confirmar contraseña')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
@@ -55,4 +61,5 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>    
+</x-guest-layout>
+</x-app-layout>         

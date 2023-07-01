@@ -44,8 +44,8 @@
                       
                                                   <td class="py-2 px-4 border-b">
                                                       <form action="{{ route('users.destroy',$chofer->id_usuario) }}" method="POST">
-                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('users.show',$chofer->id_usuario) }}"> {{ __('Ver') }}</button>
-                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('users.edit',$chofer->id_usuario) }}" > {{ __('Editar') }}</button>
+                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('choferes.show',$chofer->id_usuario) }}"> {{ __('Ver') }}</button>
+                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('choferes.edit',$chofer->id_usuario) }}" > {{ __('Editar') }}</button>
                                                           @csrf
                                                           @method('DELETE')
                                                           <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"> {{ __('Eliminar') }}</button>

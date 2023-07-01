@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bus;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 /**
@@ -18,7 +19,7 @@ class BusController extends Controller
      */
     public function index()
     {
-        $buses = Bus::paginate();
+        $buses = Bus::paginate(5);
 
         return view('bus.index', compact('buses'))
             ->with('i', (request()->input('page', 1) - 1) * $buses->perPage());
@@ -26,84 +27,70 @@ class BusController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $bus = new Bus();
-        return view('bus.create', compact('bus'));
-    }
+    
+     public function create()
+     {
+         $bus = new Bus();
+         return view('bus.create', compact('bus'));
+     }
+ 
+     /**
+      * Store a newly created resource in storage.
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        request()->validate(Bus::$rules);
+      */
+     public function store(Request $request)
+     {
 
-        $bus = Bus::create($request->all());
+ 
+         $bus = Bus::create($request->all());
+ 
+         return redirect()->route('buses.index')
+             ->with('success', 'Bus creado exitosamente.');
+     }
+ 
+     /**
+      * Display the specified resource.
+      */
 
-        return redirect()->route('buses.index')
-            ->with('success', 'Bus created successfully.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $bus = Bus::find($id);
-
-        return view('bus.show', compact('bus'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $bus = Bus::find($id);
-
-        return view('bus.edit', compact('bus'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Bus $bus
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Bus $bus)
-    {
-        request()->validate(Bus::$rules);
-
-        $bus->update($request->all());
-
-        return redirect()->route('buses.index')
-            ->with('success', 'Bus updated successfully');
-    }
-
-    /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
-     */
-    public function destroy($id)
-    {
-        $bus = Bus::find($id)->delete();
-
-        return redirect()->route('buses.index')
-            ->with('success', 'Bus deleted successfully');
-    }
-}
+     public function show($id_bus)
+     {
+         $bus = Bus::find($id_bus);
+ 
+         return view('bus.show', compact('bus'));
+     }
+ 
+     /**
+      * Show the form for editing the specified resource.
+      *
+      */
+     public function edit($id_bus)
+     {
+         $bus = Bus::find($id_bus);
+ 
+         return view('turno.edit', compact('bus'));
+     }
+ 
+     /**
+      * Update the specified resource in storage.
+      *
+      */
+     public function update(Request $request, Bus $bus)
+     {
+     
+         $bus->update($request->all());
+ 
+         return redirect()->route('buses.index')
+             ->with('success', 'Informacion del bus actualizada con exito');
+     }
+ 
+     /**
+      */
+     public function destroy($id_bus)
+     {
+         $turno = Bus::find($id_bus)->delete();
+ 
+         return redirect()->route('buses.index')
+             ->with('success', 'Bus eliminado exitosamente');
+     }
+ }

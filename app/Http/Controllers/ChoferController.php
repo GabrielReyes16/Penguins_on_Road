@@ -20,7 +20,7 @@ class ChoferController extends Controller
      */
     public function index()
     {
-        $choferes = User::where('rol', 'Chofer')->paginate();
+        $choferes = User::where('rol', 'Chofer')->paginate(5);
     
         return view('chofer.index', compact('choferes'))
             ->with('i', (request()->input('page', 1) - 1) * $choferes->perPage());
@@ -41,11 +41,11 @@ class ChoferController extends Controller
      {
          request()->validate(User::$rules);
  
-         $chofer = User::create($request->all());
+         $user = User::create($request->all());
  
          return redirect()->route('choferes.index')
  
-             ->with('success', 'Chofer created successfully.');
+             ->with('success', 'Chofer creado exitosamente.');
  
      }
      
@@ -67,7 +67,7 @@ class ChoferController extends Controller
          $user = User::where('rol', 'Chofer')->find($id_usuario);
      
          if (!$user) {
-             return redirect()->route('users.index')->with('error', 'Usuario no encontrado');
+             return redirect()->route('users.index')->with('error', 'Chofer no encontrado');
          }
      
          return view('chofer.edit', compact('user'));
@@ -84,7 +84,7 @@ class ChoferController extends Controller
      
          $user->save();
      
-         return redirect()->route('choferes.index')->with('success', 'Información actualizada correctamente');
+         return redirect()->route('choferes.index')->with('success', 'La información fue actualizada correctamente');
      }
      
      public function destroy($id_usuario)
@@ -97,7 +97,7 @@ class ChoferController extends Controller
      
          $user->delete();
 
-         return redirect()->route('choferes.index')->with('success', 'Chofer eliminado con éxito');
+         return redirect()->route('choferes.index')->with('success', 'El chofer fue eliminado con éxito');
      }}
      
      
