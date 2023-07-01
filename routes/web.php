@@ -1,12 +1,11 @@
 <?php
-
+use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TurnoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+
 use App\Http\Controllers\ChoferController;
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,5 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 require __DIR__.'/auth.php';
+
+Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
+
