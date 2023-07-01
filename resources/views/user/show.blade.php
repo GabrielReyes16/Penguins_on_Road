@@ -6,34 +6,43 @@
         </h2>
     </x-slot>
 
-    <section class="content container-fluid">
+    <section class="content container-fluid" style="text-align: center">
         <div class="row">
-            <div class="col-md-12">
-                <div class="card" style="color: white; text-align: center">
+
+                <div class="card" style="color: white;">
                     <div class="card-header">
-                        <div class="">
-                            <a class="btn btn-primary" href="{{ route('users.index') }}" style="color: blue; text-decoration: underline;"> {{ __('Back') }}</a>
+                        <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
+                            <a  href="{{ route('users.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
-
-                    <div class="card-body" style="color: white;">
-                        
-                        <div class="form-group">
-                            <strong>Name:</strong>
-                            {{ $user->name }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Rol:</strong>
-                            {{ $user->rol }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Email:</strong>
-                            {{ $user->email }}
-                        </div>
-
-                    </div>
+                    <br><br><br>
+                    <div class="flex justify-center">
+                        <table id="users-table" class="min-w-full border border-gray-200 text-center">
+                          <tbody>
+                            <tr >
+                              <td class="px-4 py-2 border-b font-bold">ID</td>
+                              <td class="px-4 py-2 border-b">{{ $user->id_usuario }}</td>
+                            </tr>
+                            <tr >
+                              <td class="px-4 py-2 border-b font-bold">Nombre</td>
+                              <td class="px-4 py-2 border-b">{{ $user->name }}</td>
+                            </tr>
+                            <tr >
+                              <td class="px-4 py-2 border-b font-bold">Rol</td>
+                              <td class="px-4 py-2 border-b">{{ $user->rol }}</td>
+                            </tr>
+                            <tr >
+                              <td class="px-4 py-2 border-b font-bold">Email</td>
+                              <td class="px-4 py-2 border-b">{{ $user->email }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      
+                      
+                </div>
                 </div>
             </div>
-        </div>
+
     </section>
 </x-app-layout>

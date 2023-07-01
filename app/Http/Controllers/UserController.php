@@ -85,7 +85,7 @@ class UserController extends Controller
           $user->save();
       
           return redirect()->route('users.index')
-              ->with('success', 'Información actualizada correctamente');
+              ->with('success', 'La información actualizada correctamente');
       }
  
      /**
@@ -96,7 +96,7 @@ class UserController extends Controller
           $user = User::find($id_usuario)->delete();
   
           return redirect()->route('users.index')
-              ->with('success', 'Usuario eliminado con éxito');
+              ->with('success', 'El usuario eliminado con éxito');
       }
  }
  
