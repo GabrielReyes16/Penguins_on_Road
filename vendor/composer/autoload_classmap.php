@@ -17,20 +17,14 @@ return array(
     'App\\Http\\Controllers\\Auth\\PasswordResetLinkController' => $baseDir . '/app/Http/Controllers/Auth/PasswordResetLinkController.php',
     'App\\Http\\Controllers\\Auth\\RegisteredUserController' => $baseDir . '/app/Http/Controllers/Auth/RegisteredUserController.php',
     'App\\Http\\Controllers\\Auth\\VerifyEmailController' => $baseDir . '/app/Http/Controllers/Auth/VerifyEmailController.php',
-<<<<<<< HEAD
     'App\\Http\\Controllers\\BoletasViajeController' => $baseDir . '/app/Http/Controllers/BoletasViajeController.php',
     'App\\Http\\Controllers\\BusController' => $baseDir . '/app/Http/Controllers/BusController.php',
     'App\\Http\\Controllers\\ChoferController' => $baseDir . '/app/Http/Controllers/ChoferController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
-    'App\\Http\\Controllers\\RutaController' => $baseDir . '/app/Http/Controllers/RutaController.php',
-=======
-    'App\\Http\\Controllers\\ChoferController' => $baseDir . '/app/Http/Controllers/ChoferController.php',
-    'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
-    'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
     'App\\Http\\Controllers\\QRCodeController' => $baseDir . '/app/Http/Controllers/QRCodeController.php',
     'App\\Http\\Controllers\\ReservaController' => $baseDir . '/app/Http/Controllers/ReservaController.php',
->>>>>>> 41eeafb017b218b6a93691523ae3af7eea7701fd
+    'App\\Http\\Controllers\\RutaController' => $baseDir . '/app/Http/Controllers/RutaController.php',
     'App\\Http\\Controllers\\TurnoController' => $baseDir . '/app/Http/Controllers/TurnoController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

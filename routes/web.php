@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\ChoferController;
+use App\Http\Controllers\BusController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,8 +30,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('users',UserController::class);
+Route::resource('buses',BusController::class);
 Route::resource('choferes',ChoferController::class);
-
 Route::resource('turnos',TurnoController::class);
 
 

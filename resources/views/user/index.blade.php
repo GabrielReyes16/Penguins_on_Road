@@ -6,12 +6,16 @@
     </x-slot>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 ">
+                <form id="search-form" class="mb-4" style=" text-align: center;">
+                    <input id="search-input" type="text" placeholder="Buscar por nombre o email" class="mr-2 text-gray">
+                    <button id="clear-button" type="button" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">Limpiar</button>
+                </form>
                 <div class="card" style="color: white;">
-    
+                    
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                             <div class="d-grid gap-2 col-6 mx-auto" style="color: white; text-decoration: underline; background-color: blue;">
+                             <div class="d-grid gap-2 col-6 mx-auto bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
                                 <a href="{{ route('users.create') }}"  >
                                   {{ __('Crear un usuario') }}
                                 </a>
@@ -24,7 +28,7 @@
                     @endif
                         <div class="flex justify-center" style="color: white;">
                           <div class="p-4">
-                              <table class="min-w-full border border-gray-200">
+                              <table id="users-table" class="min-w-full border border-gray-200">
                                       <thead class="thead">
                                           <tr>
                                               <th class="py-2 px-4 border-b">ID</th>
@@ -38,9 +42,9 @@
                                           @foreach ($users as $user)
                                               <tr>
                                                   <td class="py-2 px-4 border-b">{{ $user->id_usuario }}</td>
-                                                  <td class="py-2 px-4 border-b">{{ $user->name }}</td>
+                                                  <td class="py-2 px-4 border-b user-name">{{ $user->name }}</td>
                                                   <td class="py-2 px-4 border-b">{{ $user->rol }}</td>
-                                                  <td class="py-2 px-4 border-b">{{ $user->email }}</td>
+                                                  <td class="py-2 px-4 border-b user-email">{{ $user->email }}</td>
                       
                                                   <td class="py-2 px-4 border-b">
                                                       <form action="{{ route('users.destroy',$user->id_usuario) }}" method="POST">
@@ -55,6 +59,7 @@
                                           @endforeach
                                       </tbody>
                                   </table>
+                                  
                               </div>
                           </div>
                           {!! $users->links() !!}
@@ -62,5 +67,34 @@
                 </div>
             </div>
         </div>
+        <script>
+            var searchInput = document.getElementById('search-input');
+            var clearButton = document.getElementById('clear-button');
+            var rows = document.querySelectorAll('#users-table tbody tr');
+    
+            searchInput.addEventListener('input', function() {
+                var searchValue = this.value.toLowerCase();
+    
+                rows.forEach(function(row) {
+                    var name = row.querySelector('.user-name').innerText.toLowerCase();
+                    var email = row.querySelector('.user-email').innerText.toLowerCase();
+    
+                    if (name.includes(searchValue) || email.includes(searchValue)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+    
+            clearButton.addEventListener('click', function() {
+                searchInput.value = '';
+    
+                rows.forEach(function(row) {
+                    row.style.display = '';
+                });
+            });
+        </script>
+
 
 </x-app-layout>
