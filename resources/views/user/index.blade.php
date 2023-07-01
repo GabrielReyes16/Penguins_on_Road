@@ -35,7 +35,7 @@
                                               <th class="py-2 px-4 border-b">Nombre</th>
                                               <th class="py-2 px-4 border-b">Rol</th>
                                               <th class="py-2 px-4 border-b">Email</th>
-                                              <th class="py-2 px-4 border-b"></th>
+                                              <th class="py-2 px-4 border-b">Operaciones</th>
                                             </tr>
                                       </thead>
                                       <tbody>
