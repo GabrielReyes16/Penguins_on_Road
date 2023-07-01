@@ -27,25 +27,25 @@
                 <div class="instrucciones">
                     <label>Bienvenido a la página de Tecsup Bus! Ingresa tus datos:</label>
                 </div>
-                <x-auth-session-status class="mb-4" :status="session('status')" />
+                <x-auth-session-status :status="session('status')" />
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                 <div class="shadowBox">
                     <!-- Email Address -->
                     <div class="inputLine1">
                         <x-input-label for="email" :value="__('Usuario')" class="textInput" />
-                        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                        <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
                             <!-- Password -->
                     <div class="inputLine2">
                         <x-input-label for="password" :value="__('Contraseña')" class="textInput" />
-                        <x-text-input id="password" class="block mt-1 w-full"
+                        <x-text-input id="password"
                             type="password"
                             name="password"
                             required autocomplete="current-password" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <x-input-error :messages="$errors->get('password')" />
                     </div>
                     <div class="btn">
                             <x-primary-button class="btn-in">{{ __('Log in') }} </x-primary-button>
