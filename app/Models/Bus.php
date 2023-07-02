@@ -10,16 +10,24 @@ class Bus extends Model
     use HasFactory;
     protected $table = 'buses';
     protected $primaryKey = 'id_bus';
-    protected $fillable = ['placa', 'aforo', 'id_empresa', 'id_chofer'];
-    public $timestamps = true;
+    protected $fillable = [
+        'placa',
+        'aforo',
+        'id_empresa',
+    ];
 
     public function empresa()
     {
-        return $this->belongsTo(Empresa::class, 'id_empresa');
+        return $this->belongsTo(Empresa::class, 'id_empresa', 'id_empresa');
     }
 
-    public function chofer()
+    public function choferes()
     {
-        return $this->belongsTo(Chofer::class, 'id_chofer');
+        return $this->hasMany(Chofer::class, 'id_bus', 'id_bus');
+    }
+
+    public function viajes()
+    {
+        return $this->hasMany(Viaje::class, 'id_bus', 'id_bus');
     }
 }

@@ -45,7 +45,7 @@
                                             <td class="py-2 px-4 border-b">
                                                 <form action="{{ route('turnos.destroy',$turno->id_turno) }}" method="POST">
                                                     <a class="bg-yellow-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" href="{{ route('turnos.show',$turno->id_turno) }}">{{ __('Ver') }}</button>
-                                                    <a class="bg-white-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" href="{{ route('turnos.edit',$turno->id_turno) }}"> {{ __('Editar') }}</button>
+                                                    <a class="bg-white-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" href="{{ route('turnos.update',$turno->id_turno) }}"> {{ __('Editar') }}</button>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded"> {{ __('Eliminar') }}</button>

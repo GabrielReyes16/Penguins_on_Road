@@ -75,7 +75,7 @@ footer .logo-tecsup
 
 .fondo-imagen .cuerpo .loginBox .fondo-titulo 
 {
-    width: 350px;
+    width: 380px;
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -85,9 +85,9 @@ footer .logo-tecsup
 
 .fondo-imagen .cuerpo .loginBox .fondo-titulo .titulo 
 {
-    padding: 10px;
+    padding: 15px;
     padding-right: 0px;
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 600;
     color: #fff;
 }

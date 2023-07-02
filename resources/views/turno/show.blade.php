@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $turno->name ?? "{{ __('Show') Turno" }}
+    {{ $turno->name }} 
 @endsection
 
 @section('content')

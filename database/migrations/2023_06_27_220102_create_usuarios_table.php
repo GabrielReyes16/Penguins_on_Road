@@ -15,13 +15,13 @@ return new class extends Migration
             $table->increments('id_usuario');
             $table->string('name');
             $table->string('rol');
-            $table->unsignedInteger('id_perfil')->nullable(); //Es posible? Si lo es mi king
+            $table->unsignedInteger('id_perfil')->nullable();
+            // $table->string('codigo_estudiante')->nullable();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-
+        
             $table->foreign('id_perfil')->references('id_perfil')->on('perfiles')->onDelete('cascade');
         });
     }

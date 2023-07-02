@@ -13,11 +13,11 @@ class CreateBusesTable extends Migration
             $table->string('placa', 15);
             $table->integer('aforo');
             $table->unsignedInteger('id_empresa');
-            $table->unsignedInteger('id_chofer');
             $table->timestamps();
 
+            
             $table->foreign('id_empresa')->references('id_empresa')->on('empresas')->onDelete('cascade');
-            $table->foreign('id_chofer')->references('id_chofer')->on('choferes')->onDelete('cascade');
+
         });
     }
 

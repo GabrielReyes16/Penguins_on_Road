@@ -22,11 +22,12 @@
         <div class="cuerpo">
             <div class="loginBox">
                 <div class="fondo-titulo">
-                    <h1 class="titulo">Tecsup BUS</h1>
+                    <h1 class="titulo">Penguins on Road</h1>
                 </div>
                 <div class="instrucciones">
-                    <label>Bienvenido a la página de Tecsup Bus! Ingresa tus datos:</label>
+                    <label>Bienvenido al app web Penguins on Road! Ingresa tus datos:</label>
                 </div>
+                <x-auth-session-status :status="session('status')" />
                 <x-auth-session-status :status="session('status')" />
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
