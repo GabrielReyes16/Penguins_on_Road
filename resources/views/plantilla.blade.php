@@ -70,7 +70,7 @@
         </div>
     </header>
 
-    @yield('home')
+    @yield('contenido')
 
     <div class="sidebar">
         <div class="list" id="list">

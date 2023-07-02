@@ -1,6 +1,6 @@
 @extends ('plantilla')
 
-@section ('home')
+@section ('contenido')
     <!--contenido carrusel-->
     <main>
         <div class="carrusel">

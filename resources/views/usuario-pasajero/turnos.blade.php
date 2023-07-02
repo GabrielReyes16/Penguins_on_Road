@@ -4,7 +4,7 @@
     {{ asset ('css/Passenger/style-bus.css') }}
 @stop
 
-@section ('rutas')  
+@section ('contenido')  
   <!--contenido turnos disponibles-->
     <main>
         <div class="turnos">
