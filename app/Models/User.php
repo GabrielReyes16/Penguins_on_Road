@@ -27,6 +27,7 @@ class User extends Authenticatable
         'email',
         'password',
         'rol',
+        'licencia_conducir',
         'id_perfil'
     ];
     public $timestamps = true;
@@ -41,6 +42,7 @@ class User extends Authenticatable
 		'rol' => 'required',
         'email' => 'required|string|email|max:255|unique:users',
         'password' => 'required|string|min:8|confirmed',
+        'licencia_conducir' => 'nullable'
     ];
 
 

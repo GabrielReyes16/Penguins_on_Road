@@ -14,8 +14,10 @@ class CreateBusesTable extends Migration
             $table->integer('aforo');
             $table->unsignedInteger('id_empresa');
             $table->timestamps();
-        
-            $table->foreign('id_empresa')->references('id_empresa')->on('empresas');
+
+            
+            $table->foreign('id_empresa')->references('id_empresa')->on('empresas')->onDelete('cascade');
+
         });
     }
 

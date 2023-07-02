@@ -1,41 +1,48 @@
-@extends('layouts.app')
 
-@section('template_title')
-    {{ $chofere->name ?? "{{ __('Show') Chofere" }}
-@endsection
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
+            Informacion de {{ $user->name }}
+        </h2>
+    </x-slot>
 
-@section('content')
-    <section class="content container-fluid">
+    <section class="content container-fluid" style="text-align: center">
         <div class="row">
-            <div class="col-md-12">
-                <div class="card">
+
+                <div class="card" style="color: white;">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Chofere</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('choferes.index') }}"> {{ __('Back') }}</a>
+                        <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
+                            <a  href="{{ route('choferes.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
-
-                    <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Id Chofer:</strong>
-                            {{ $chofere->id_chofer }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Usuario:</strong>
-                            {{ $chofere->id_usuario }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Licencia Conducir:</strong>
-                            {{ $chofere->licencia_conducir }}
-                        </div>
-
-                    </div>
+                    <br><br><br>
+                    <div class="flex justify-center">
+                        <table id="users-table" class="min-w-full border border-gray-200 text-center">
+                          <tbody>
+                            <tr >
+                              <td class="px-4 py-2 border-b font-bold">ID</td>
+                              <td class="px-4 py-2 border-b">{{ $user->id_usuario }}</td>
+                            </tr>
+                            <tr >
+                              <td class="px-4 py-2 border-b font-bold">Nombre</td>
+                              <td class="px-4 py-2 border-b">{{ $user->name }}</td>
+                            </tr>
+                            <tr >
+                              <td class="px-4 py-2 border-b font-bold">Rol</td>
+                              <td class="px-4 py-2 border-b">{{ $user->rol }}</td>
+                            </tr>
+                            <tr >
+                              <td class="px-4 py-2 border-b font-bold">Email</td>
+                              <td class="px-4 py-2 border-b">{{ $user->email }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      
+                      
+                </div>
                 </div>
             </div>
-        </div>
+
     </section>
-@endsection
+</x-app-layout>

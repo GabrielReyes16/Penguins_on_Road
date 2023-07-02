@@ -1,3 +1,9 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
+            Registrar usuario
+        </h2>
+    </x-slot>
 <x-guest-layout>
     <form method="POST" action="{{ route('users.store') }}">
         @csrf
@@ -12,12 +18,12 @@
        <!-- Email Address -->
        <div class="mt-4">
         <x-input-label for="email" :value="__('Email')" />
-        <x-text-input id="email" class="" type="email" name="email" :value="old('email')" required autocomplete="username" />
+        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
         <x-input-error :messages="$errors->get('email')" class="mt-2" />
     </div>
 
         <!-- Rol -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="rol" :value="__('Rol del usuario')" />
             <select id="rol" name="rol" class="mt-1 block w-full" required autofocus autocomplete="rol">
                 <option value="Administrador">Admin</option>
@@ -40,7 +46,7 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-input-label for="password_confirmation" :value="__('Confirmar contraseña')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
@@ -51,8 +57,9 @@
 
         <div class="flex items-center justify-end mt-4">
             <x-primary-button class="ml-4">
-                {{ __('Register') }}
+                {{ __('Registrar') }}
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>       
+</x-guest-layout>
+</x-app-layout>       
