@@ -4,6 +4,10 @@
     {{ asset ('css/Passenger/style-bus.css') }}
 @stop
 
+@section ('titulo')
+    {{ 'Menu || Turnos y Horarios' }}
+@stop
+
 @section ('contenido')  
   <!--contenido turnos disponibles-->
     <main>

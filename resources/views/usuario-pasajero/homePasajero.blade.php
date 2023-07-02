@@ -1,5 +1,9 @@
 @extends ('plantilla')
 
+@section ('titulo')
+    {{ 'Menu || Home' }}
+@stop
+
 @section ('contenido')
     <!--contenido carrusel-->
     <main>
