@@ -120,7 +120,9 @@
                 </a>
             </li>
             <li>
-                <a href="{{ asset ('../resources/views/index.blade.php') }}">
+                <a :href="route('logout')"
+                onclick="event.preventDefault();
+                            this.closest('form').submit();">
                     <span class="icon">
                         <ion-icon name="power"></ion-icon>
                     </span>
