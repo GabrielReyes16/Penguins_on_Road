@@ -18,8 +18,6 @@ return new class extends Migration
             $table->text('enlaces')->nullable();
             $table->string('foto_perfil')->nullable();
             $table->timestamps();
-
-            
         });
     }
 

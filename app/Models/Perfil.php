@@ -8,6 +8,6 @@ class Perfil extends Model
 {
     protected $table = 'perfiles';
     protected $primaryKey = 'id_perfil';
-    protected $fillable = ['nombre', 'apellidos', 'biografia', 'especialidad', 'enlaces', 'foto_perfil'];
+    protected $fillable = ['biografia', 'especialidad', 'enlaces', 'foto_perfil'];
     public $timestamps = true;
 }

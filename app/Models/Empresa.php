@@ -12,4 +12,14 @@ class Empresa extends Model
     protected $primaryKey = 'id_empresa';
     protected $fillable = ['RUC', 'nombre', 'ubicacion'];
     public $timestamps = true;
+
+    public function buses()
+    {
+        return $this->hasMany(Bus::class, 'id_empresa', 'id_empresa');
+    }
+
+    public function choferes()
+    {
+        return $this->hasMany(Chofer::class, 'id_empresa', 'id_empresa');
+    }
 }
