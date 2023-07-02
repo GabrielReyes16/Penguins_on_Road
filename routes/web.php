@@ -21,6 +21,11 @@ use App\Http\Controllers\BusController;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('usuario-pasajero/home', function () {
+    return view('usuario-pasajero.homePasajero');
+});
+
 Route::get('/welcome', function () {
     return view('welcome');
 }); 
