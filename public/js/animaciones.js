@@ -11,3 +11,19 @@ function activeLink() {
     this.classList.add('active')
 }
 options.forEach((item) => item.addEventListener('click',activeLink));
+
+var carrusel = document.querySelector('.carrusel');
+var slides = document.querySelectorAll('.slide');
+var atras = document.querySelector('.atras');
+var siguiente = document.querySelector('.siguiente');
+let slideIndex = 0;
+
+atras.addEventListener('click', () => {
+  slideIndex = Math.max(slideIndex - 1, 0);
+  carrusel.style.transform = `translateX(-${slideIndex * 100}%)`;
+});
+
+siguiente.addEventListener('click', () => {
+  slideIndex = Math.min(slideIndex + 1, slides.length - 1);
+  carrusel.style.transform = `translateX(-${slideIndex * 100}%)`;
+});
