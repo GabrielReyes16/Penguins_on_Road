@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset ('css/styles-menu.css') }}">
+    <link rel="stylesheet" href="{{ asset ('css/style-menu.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300&display=swap" rel="stylesheet">
@@ -69,6 +69,8 @@
         </div>
     </header>
 
+    @yield('home')
+
     <div class="sidebar">
         <div class="list" id="list">
             <li>
@@ -130,8 +132,6 @@
         </div>
     </div>
     
-    @yield('home')
-
     <script src="{{ asset ('js/animaciones.js') }}"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
