@@ -58,7 +58,7 @@ footer .logo-tecsup
     position: relative;
     justify-content: center;
     display: flex;
-    padding-top: 43px;
+    padding-top: 20px;
 }
 
 .fondo-imagen .cuerpo .loginBox 
@@ -78,7 +78,7 @@ footer .logo-tecsup
     width: 350px;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 30px;
     background: linear-gradient(90deg, rgba(217, 217, 217, 0) -1.53%, rgba(255, 255, 255, 0.24) 101.22%);
     border-radius: 5px
 }
@@ -89,6 +89,7 @@ footer .logo-tecsup
     padding-right: 0px;
     font-size: 3em;
     font-weight: 600;
+    color: #fff;
 }
 
 .fondo-imagen .cuerpo .loginBox .instrucciones 
@@ -101,7 +102,7 @@ footer .logo-tecsup
     font-size: 1.5em;
     font-weight: 300;
     line-height: 29px;
-    padding-top: 50px;
+    margin-top: 20px;
     color: #fff;
 }
 
@@ -109,17 +110,18 @@ footer .logo-tecsup
 {
     width: 670px;
     height: 350px;
-    top: -50px;
+    margin-top: 30px;
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 5px
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .fondo-imagen .cuerpo .loginBox form .shadowBox .inputLine1
 {
     display: flex;
-    position: relative;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 40px;
     margin-right: 90px;
 }
@@ -129,7 +131,7 @@ footer .logo-tecsup
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 40px;
     margin-right: 90px;
 }
@@ -141,9 +143,9 @@ footer .logo-tecsup
     font-weight: 400;
 }
 
-.fondo-imagen .cuerpo .loginBox form .shadowBox div x-text-input 
+.fondo-imagen .cuerpo .loginBox form .shadowBox div .input 
 {
-    width: 350px;
+    width: 500px;
     height: 35px;
     border: 1px solid #000;
     border-radius: 3px;
