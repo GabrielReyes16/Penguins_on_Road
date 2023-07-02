@@ -19,7 +19,7 @@
         </div>
         <div class="menu-bar">
             <li class="options active">
-                <a href="#" class="box-icon-left">
+                <a href="usuario-pasajero/home" class="box-icon-left">
                     <span class="icons">
                         <ion-icon name="home"></ion-icon>
                     </span>
@@ -27,7 +27,7 @@
                 </a>
             </li>
             <li class="options">
-                <a href="#" class="box-icon-center">
+                <a href="usuario-pasajero/turnos" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="trail-sign"></ion-icon>
                     </span>
