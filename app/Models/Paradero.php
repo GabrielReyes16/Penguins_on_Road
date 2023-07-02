@@ -10,11 +10,14 @@ class Paradero extends Model
     use HasFactory;
     protected $table = 'paraderos';
     protected $primaryKey = 'id_paradero';
-    protected $fillable = ['id_ruta', 'nombre', 'ubicacion'];
-    public $timestamps = true;
+    protected $fillable = [
+        'id_ruta',
+        'nombre',
+        'ubicacion',
+    ];
 
     public function ruta()
     {
-        return $this->belongsTo(Ruta::class, 'id_ruta');
+        return $this->belongsTo(Ruta::class, 'id_ruta', 'id_ruta');
     }
 }
