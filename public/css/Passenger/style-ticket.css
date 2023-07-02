@@ -1,0 +1,10 @@
+.contenido-ticket
+{
+    width: 1200px;
+    height: 600px;
+    margin-top: 120px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+}
+
