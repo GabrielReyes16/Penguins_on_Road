@@ -26,8 +26,12 @@ Route::get('usuario-pasajero/home', function () {
     return view('usuario-pasajero.homePasajero');
 });
 
-Route::get('usuario-pasajero/turnos', function () {
-    return view('usuario-pasajero.turnos');
+Route::get('home', function () {
+    return view('homePasajero');
+});
+
+Route::get('turnos', function () {
+    return view('turnos');
 });
 
 Route::get('/welcome', function () {
