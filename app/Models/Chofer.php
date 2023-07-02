@@ -10,11 +10,25 @@ class Chofer extends Model
     use HasFactory;
     protected $table = 'choferes';
     protected $primaryKey = 'id_chofer';
-    protected $fillable = ['id_usuario', 'licencia_conducir'];
-    public $timestamps = true;
+    protected $fillable = [
+        'id_usuario',
+        'id_bus',
+        'id_empresa',
+        'licencia_conducir',
+    ];
 
-    public function usuario()
+    public function user()
     {
-        return $this->belongsTo(User::class, 'id_usuario');
+        return $this->belongsTo(User::class, 'id_usuario', 'id_usuario');
+    }
+
+    public function bus()
+    {
+        return $this->belongsTo(Bus::class, 'id_bus', 'id_bus');
+    }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'id_empresa', 'id_empresa');
     }
 }

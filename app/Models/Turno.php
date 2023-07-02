@@ -17,4 +17,8 @@ class Turno extends Model
 		'name' => 'required',
 		'hora_inicio' => 'required',
     ];
+    public function rutas()
+    {
+        return $this->hasMany(Ruta::class, 'id_turno', 'id_turno');
+    }
 }
