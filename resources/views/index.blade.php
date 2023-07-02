@@ -13,7 +13,7 @@
 <body>
     <div class="fondo-imagen">
         <header>
-            <a href="index.html"><img class="logo-proyecto" src="{{ asset('img/logo-proyecto-blanco.png') }}" alt=""></a>
+            <a href="#"><img class="logo-proyecto" src="{{ asset('img/logo-proyecto-blanco.png') }}" alt=""></a>
             <div>
                 <h1>Hola, Bienvenido!</h1>
             </div>
@@ -30,35 +30,35 @@
                 <x-auth-session-status :status="session('status')" />
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-                <div class="shadowBox">
-                    <!-- Email Address -->
-                    <div class="inputLine1">
-                        <x-input-label for="email" :value="__('Usuario')" class="textInput" />
-                        <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-                        <x-input-error :messages="$errors->get('email')" />
-                    </div>
-                            <!-- Password -->
-                    <div class="inputLine2">
-                        <x-input-label for="password" :value="__('Contraseña')" class="textInput" />
-                        <x-text-input id="password"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+                    <div class="shadowBox">
+                        <!-- Email Address -->
+                        <div class="inputLine1">
+                            <x-input-label for="email" :value="__('Usuario')" class="textInput" />
+                            <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                            <x-input-error :messages="$errors->get('email')" />
+                        </div>
+                                <!-- Password -->
+                        <div class="inputLine2">
+                            <x-input-label for="password" :value="__('Contraseña')" class="textInput" />
+                            <x-text-input id="password"
+                                type="password"
+                                name="password"
+                                required autocomplete="current-password" />
+                            <x-input-error :messages="$errors->get('password')" />
+                        </div>
 
-            <x-input-error :messages="$errors->get('password')" />
+                        <div class="btn">
+                            <a href="usuario-pasajero/home">
+                                <button class="btn-in">Ingresar</button>
+                            </a>
+                        </div>
+                        <div class="forgot">
+                            <a href="#">
+                                <label class="text-forgot">¿Olvidaste tu contraseña?</label>
+                            </a>
+                        </div>
                     </div>
-                    <div class="btn">
-                        <a href="usuario-pasajero/home">
-                            <button class="btn-in">Ingresar</button>
-                        </a>
-                    </div>
-                    <div class="forgot">
-                        <a href="#">
-                            <label class="text-forgot">¿Olvidaste tu contraseña?</label>
-                        </a>
-                    </div>
-                </div>
-            </form>
+                </form>
             </div>
         </div>
     </div>
