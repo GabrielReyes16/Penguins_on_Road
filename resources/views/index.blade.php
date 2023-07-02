@@ -27,14 +27,25 @@
                 <div class="instrucciones">
                     <label>Bienvenido a la página de Tecsup Bus! Ingresa tus datos:</label>
                 </div>
+                <x-auth-session-status :status="session('status')" />
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                 <div class="shadowBox">
+                    <!-- Email Address -->
                     <div class="inputLine1">
-                        <label class="textInput">Usuario:</label>
-                        <input type="text">
+                        <x-input-label for="email" :value="__('Usuario')" class="textInput" />
+                        <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                        <x-input-error :messages="$errors->get('email')" />
                     </div>
+                            <!-- Password -->
                     <div class="inputLine2">
-                        <label class="textInput">Contraseña:</label>
-                        <input type="text">
+                        <x-input-label for="password" :value="__('Contraseña')" class="textInput" />
+                        <x-text-input id="password"
+                            type="password"
+                            name="password"
+                            required autocomplete="current-password" />
+
+            <x-input-error :messages="$errors->get('password')" />
                     </div>
                     <div class="btn">
                         <a href="{{asset ('../resources/views/usuario-pasajero/homePasajero.blade') }}">
@@ -47,6 +58,7 @@
                         </a>
                     </div>
                 </div>
+            </form>
             </div>
         </div>
     </div>
