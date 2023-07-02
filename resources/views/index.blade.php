@@ -48,7 +48,7 @@
             <x-input-error :messages="$errors->get('password')" />
                     </div>
                     <div class="btn">
-                        <a href="{{asset ('../resources/views/usuario-pasajero/homePasajero.blade') }}">
+                        <a href="usuario-pasajero/home">
                             <button class="btn-in">Ingresar</button>
                         </a>
                     </div>

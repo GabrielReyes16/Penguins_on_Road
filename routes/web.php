@@ -19,6 +19,11 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('usuario-pasajero/home', function () {
+    return view('usuario-pasajero.homePasajero');
+});
+
 Route::get('/welcome', function () {
     return view('welcome');
 }); 
