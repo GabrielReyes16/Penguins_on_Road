@@ -27,11 +27,11 @@ Route::get('/usuario-pasajero/home', function () {
 });
 
 Route::get('/home', function () {
-    return view('homePasajero');
+    return view('usuario-pasajero.homePasajero');
 });
 
 Route::get('/turnos', function () {
-    return view('turnos');
+    return view('usuario-pasajero.turnos');
 });
 
 Route::get('/welcome', function () {
