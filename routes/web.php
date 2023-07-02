@@ -22,15 +22,15 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('usuario-pasajero/home', function () {
+Route::get('/usuario-pasajero/home', function () {
     return view('usuario-pasajero.homePasajero');
 });
 
-Route::get('home', function () {
+Route::get('/home', function () {
     return view('homePasajero');
 });
 
-Route::get('turnos', function () {
+Route::get('/turnos', function () {
     return view('turnos');
 });
 
