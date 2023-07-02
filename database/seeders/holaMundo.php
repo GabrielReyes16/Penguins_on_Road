@@ -464,16 +464,12 @@ class holaMundo extends Seeder
         // Crear perfiles
         $perfiles = [
             [
-                'nombre' => 'Harold',
-                'apellidos' => 'Medrano',
                 'biografia' => null,
                 'especialidad' => null,
                 'enlaces' => null,
                 'foto_perfil' => null,
             ],
             [
-                'nombre' => 'Gabriel',
-                'apellidos' => 'Reyes',
                 'biografia' => null,
                 'especialidad' => null,
                 'enlaces' => null,
