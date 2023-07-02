@@ -127,7 +127,6 @@ h1
 {
     width: 670px;
     height: 350px;
-    margin-top: 60px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 5px
 }
@@ -137,7 +136,7 @@ h1
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-left: 40px;
     margin-right: 90px;
 }
