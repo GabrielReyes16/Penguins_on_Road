@@ -1,13 +1,11 @@
 <?php
-use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\UserSearch;
-use Livewire\Livewire;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ChoferController;
 use App\Http\Controllers\BusController;
-use App\Http\Controllers\QRCodeController;
+use App\Http\Controllers\ChoferController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\TurnoController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +16,7 @@ use App\Http\Controllers\TurnoController;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
-
+ */
 
 Route::get('/', function () {
     return view('index');
@@ -43,23 +40,22 @@ Route::get('/boletos', function () {
 
 Route::get('/welcome', function () {
     return view('welcome');
-}); 
+});
 
 Route::get('/dashboard', function () {return view('dashboard');
 })->middleware(['auth', 'verified'])->name('admin.dashboard');
-Route::resource('users',UserController::class)->names('admin.users');
-Route::resource('buses',BusController::class)->names('admin.buses');
-Route::resource('choferes',ChoferController::class)->names('admin.choferes');
-Route::resource('turnos',TurnoController::class)->names('admin.turnos');
+Route::resource('users', UserController::class)->names('admin.users');
+Route::resource('buses', BusController::class)->names('admin.buses');
+Route::resource('choferes', ChoferController::class)->names('admin.choferes');
+Route::resource('turnos', TurnoController::class)->names('admin.turnos');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
 
 Route::patch('/admin/users/{user}/updateRole', [UserController::class, 'updateRole'])->name('admin.users.updateRole');
-
