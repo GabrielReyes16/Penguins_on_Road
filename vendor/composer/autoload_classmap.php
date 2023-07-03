@@ -249,7 +249,6 @@ return array(
     'Database\\Factories\\UserFactory' => $baseDir . '/database/factories/UserFactory.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
     'Database\\Seeders\\UserSeeder' => $baseDir . '/database/seeders/UserSeeder.php',
-    'Database\\Seeders\\UsersSeeder' => $baseDir . '/database/seeders/UsersSeeder.php',
     'Database\\Seeders\\holaMundo' => $baseDir . '/database/seeders/holaMundo.php',
     'DeepCopy\\DeepCopy' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
     'DeepCopy\\Exception\\CloneException' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
