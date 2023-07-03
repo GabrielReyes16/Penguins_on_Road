@@ -268,7 +268,7 @@ header .user-menu-bar .menu span ion-icon:hover
     opacity: 0;
 }
 
-.list.active
+a.active
 {
     transform: translateX(0);
     opacity: 1;

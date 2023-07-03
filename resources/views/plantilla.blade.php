@@ -19,7 +19,7 @@
             <img src="{{ asset ('img/logotipo-TECSUP-blanco.png') }}">
         </div>
         <div class="menu-bar">
-            <li class="options active">
+            <li class="options">
                 <a href="/home" data-page="home" class="box-icon-left">
                     <span class="icons">
                         <ion-icon name="home"></ion-icon>
