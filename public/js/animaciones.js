@@ -4,18 +4,6 @@ menu.onclick = function () {
   list.classList.toggle ("active");
 };
 
-document.addEventListener("DOMContentLoaded", function() {
-  const navbarLinks = document.querySelectorAll('.options');
-  const currentPage = "{{ request()->route()->getName() }}"; // Obtiene el nombre de la ruta actual en Laravel
-
-  navbarLinks.forEach(link => {
-    const page = link.getAttribute('data-page');
-    if (page === currentPage) {
-      link.classList.add('active');
-    }
-  });
-});
-
 var carrusel = document.querySelector('.carrusel');
 var slides = document.querySelectorAll('.slide');
 var atras = document.querySelector('.atras');
