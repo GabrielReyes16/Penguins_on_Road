@@ -4,13 +4,17 @@ menu.onclick = function () {
     list.classList.toggle ("active");
 }
 
-var options = document.querySelectorAll('.options');
-function activeLink() {
-    options.forEach((item) =>
-    item.classList.remove('active'));
-    this.classList.add('active')
-}
-options.forEach((item) => item.addEventListener('click',activeLink));
+document.addEventListener("DOMContentLoaded", function() {
+  const navbarLinks = document.querySelectorAll('.menu-bar a');
+  const currentPage = "{{ request()->route()->getName() }}"; // Obtiene el nombre de la ruta actual en Laravel
+
+  navbarLinks.forEach(link => {
+    const page = link.getAttribute('data-page');
+    if (page === currentPage) {
+      link.classList.add('active');
+    }
+  });
+});
 
 var carrusel = document.querySelector('.carrusel');
 var slides = document.querySelectorAll('.slide');
