@@ -4,8 +4,6 @@ menu.onclick = function () {
   list.classList.toggle ("active");
 };
 
-
-
 var carrusel = document.querySelector('.carrusel');
 var slides = document.querySelectorAll('.slide');
 var atras = document.querySelector('.atras');
