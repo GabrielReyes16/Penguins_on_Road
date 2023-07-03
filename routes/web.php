@@ -58,4 +58,4 @@ require __DIR__ . '/auth.php';
 
 Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
 
-Route::patch('/admin/users/{user}/updateRole', [UserController::class, 'updateRole'])->name('admin.users.updateRole');
+Route::put('/admin/users/{user}/updateRole', [UserController::class, 'updateRole'])->name('admin.users.updateRole');

@@ -97,7 +97,7 @@ class UserController extends Controller
       {
             $user->roles()->sync($request->roles);
           return redirect()->route('admin.users.index')
-              ->with('success', 'La información  fue actualizada correctamente');
+              ->with('success', 'Los roles se actualizaron correctamente');
       }
 
      /**
