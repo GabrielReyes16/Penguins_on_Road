@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserUpdateRequest;
 
+use App\Models\Bus;
+use App\Models\Empresa;
 use App\Models\User;
 use App\Models\Chofer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-
-/**
-
- */
 class ChoferController extends Controller
 {
     /**
@@ -53,39 +51,25 @@ class ChoferController extends Controller
      public function show($id)
      {
         $chofer = Chofer::find($id);
-
-
-     
-         if (!$chofer) {
-             return redirect()->route('choferes.index')->with('error', 'Chofer no encontrado');
-         }
-     
          return view('chofer.show', compact('chofer'));
      }
      
-     public function edit($id_usuario)
+     public function edit($id)
      {
-         // Se busca el usuario solo si tiene rol Chofer
-         $user = User::where('rol', 'Chofer')->find($id_usuario);
+        $chofer = Chofer::find($id);
+        $buses = Bus::all();
+        $empresas = Empresa::all();
      
-         if (!$user) {
-             return redirect()->route('users.index')->with('error', 'Chofer no encontrado');
-         }
-     
-         return view('chofer.edit', compact('user'));
+         return view('chofer.edit', compact('chofer','buses','empresas'));
      }
      
-     public function update(UserUpdateRequest $request, $id)
+     public function update(Request $request, $id)
      {
-         $user = User::where('rol', 'Chofer')->findOrFail($id);
-         $user->fill($request->validated());
-     
-         if ($user->isDirty('email')) {
-             $user->email_verified_at = null;
-         }
-     
-         $user->save();
-     
+        $chofer = Chofer::find($id);
+        $chofer->id_bus = $request->input('id_bus');
+        $chofer->id_empresa = $request->input('id_empresa');
+        $chofer->licencia_conducir = $request->input('licencia_conducir');
+         $chofer->save();
          return redirect()->route('choferes.index')->with('success', 'La información fue actualizada correctamente');
      }
      

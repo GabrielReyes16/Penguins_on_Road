@@ -16,7 +16,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                              <div class="d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
-                                <a href="{{ route('users.create') }}" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" >
+                                <a href="{{ route('admin.users.create') }}" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" >
                                   {{ __('Crear un usuario') }}
                                 </a>
                               </div>
@@ -47,9 +47,9 @@
                                                   <td class="py-2 px-4 border-b user-email">{{ $user->email }}</td>
                       
                                                   <td class="py-2 px-4 border-b">
-                                                      <form action="{{ route('users.destroy',$user->id_usuario) }}" method="POST">
-                                                          <a style="color: white;  background-color: rgb(46, 194, 83);" href="{{ route('users.show',$user->id_usuario) }}"> {{ __('Ver') }}</button>
-                                                          <a style="color: rgb(0, 0, 0);  background-color: rgb(182, 221, 39);" href="{{ route('users.edit',$user->id_usuario) }}" > {{ __('Editar') }}</button>
+                                                      <form action="{{ route('admin.users.destroy',$user->id_usuario) }}" method="POST">
+                                                          <a style="color: white;  background-color: rgb(46, 194, 83);" href="{{ route('admin.users.show',$user->id_usuario) }}"> {{ __('Ver') }}</button>
+                                                          <a style="color: rgb(0, 0, 0);  background-color: rgb(182, 221, 39);" href="{{ route('admin.users.edit',$user->id_usuario) }}" > {{ __('Editar') }}</button>
                                                           @csrf
                                                           @method('DELETE')
                                                           <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"> {{ __('Eliminar') }}</button>
@@ -70,15 +70,15 @@
         <script>
             var searchInput = document.getElementById('search-input');
             var clearButton = document.getElementById('clear-button');
-            var rows = document.querySelectorAll('#users-table tbody tr');
-    
+            var rows = Array.from(document.querySelectorAll('#users-table tbody tr'));
+        
             searchInput.addEventListener('input', function() {
                 var searchValue = this.value.toLowerCase();
-    
+        
                 rows.forEach(function(row) {
                     var name = row.querySelector('.user-name').innerText.toLowerCase();
                     var email = row.querySelector('.user-email').innerText.toLowerCase();
-    
+        
                     if (name.includes(searchValue) || email.includes(searchValue)) {
                         row.style.display = '';
                     } else {
@@ -86,15 +86,14 @@
                     }
                 });
             });
-    
+        
             clearButton.addEventListener('click', function() {
                 searchInput.value = '';
-    
+        
                 rows.forEach(function(row) {
                     row.style.display = '';
                 });
             });
         </script>
-
 
 </x-app-layout>

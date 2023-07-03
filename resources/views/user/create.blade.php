@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 <x-guest-layout>
-    <form method="POST" action="{{ route('users.store') }}">
+    <form method="POST" action="{{ route('admin.users.store') }}">
         @csrf
 
         <!-- Name -->
