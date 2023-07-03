@@ -5,7 +5,7 @@ menu.onclick = function () {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-  const navbarLinks = document.querySelectorAll('.menu-bar .options a');
+  const navbarLinks = document.querySelectorAll('.menu-bar .options');
   const currentPage = "{{ request()->route()->getName() }}"; // Obtiene el nombre de la ruta actual en Laravel
 
   navbarLinks.forEach(link => {
