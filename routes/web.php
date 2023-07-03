@@ -31,7 +31,7 @@ Route::get('/home', function () {
 });
 
 Route::get('/turnos', function () {
-    return view('usuario-pasajero.turnos');
+    return view('admin.turnos');
 });
 
 Route::get('/boletos', function () {
