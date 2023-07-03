@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li class="options">
-                <a href="#" class="box-icon-center">
+                <a href="/boletos" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="receipt"></ion-icon>
                     </span>
