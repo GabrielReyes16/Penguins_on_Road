@@ -1,7 +1,7 @@
 @extends ('plantilla')
 
 @section ('css-personalizado')
-    {{ asset ('css/Passenger/style-bus.css') }}
+    <link rel="stylesheet" href="{{ asset ('css/Passenger/style-bus.css') }}">
 @stop
 
 @section ('titulo')
