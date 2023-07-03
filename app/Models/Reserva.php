@@ -11,6 +11,9 @@ class Reserva extends Model
     protected $fillable = [
         'id_usuario',
         'id_viaje',
+        'codigoDeAcceso',
+        'codigo_qr',
+        'utilizada'
     ];
 
     public function user()

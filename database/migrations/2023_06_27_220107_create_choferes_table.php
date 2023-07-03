@@ -13,7 +13,7 @@ class CreateChoferesTable extends Migration
             $table->unsignedInteger('id_usuario');
             $table->unsignedInteger('id_bus');
             $table->unsignedInteger('id_empresa');
-            $table->string('licencia_conducir', 20);
+            $table->string('licencia_conducir', 20)->unique();
             $table->timestamps();
         
             $table->foreign('id_usuario')->references('id_usuario')->on('users');

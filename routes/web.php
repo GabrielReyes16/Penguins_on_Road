@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TurnoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\ChoferController;
 use App\Http\Controllers\BusController;
 /*
@@ -43,4 +43,13 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
+
+
+Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'])->name('formulario_reserva');
+Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
+Route::get('/reserva/{idReserva}', [ReservaController::class, 'mostrarReserva'])->name('mostrar_reserva');
+
+//Route::get('/escanear-qr/{codigoQR}', [ReservaController::class, 'escanearQR'])->name('escanear_qr');
+
+
 

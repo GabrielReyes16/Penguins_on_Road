@@ -17,7 +17,6 @@ class BoletaViaje extends Model
         'fecha_viaje',
         'hora_abordaje',
         'aforo_viaje',
-        'codigo_qr',
     ];
 
     public function pasajero()

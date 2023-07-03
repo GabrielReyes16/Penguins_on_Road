@@ -578,7 +578,6 @@ class holaMundo extends Seeder
                 'fecha_viaje' => '2023-01-01',
                 'hora_abordaje' => '07:30:00',
                 'aforo_viaje' => 1,
-                'codigo_qr' => 'ABC123',
             ],
             [
                 'id_usuario_pasajero' => 2,
@@ -587,7 +586,6 @@ class holaMundo extends Seeder
                 'fecha_viaje' => '2023-01-02',
                 'hora_abordaje' => '13:30:00',
                 'aforo_viaje' => 1,
-                'codigo_qr' => 'XYZ987',
             ],
         ];
 
@@ -600,10 +598,14 @@ class holaMundo extends Seeder
             [
                 'id_usuario' => 1,
                 'id_viaje' => 1,
+                'codigoDeAcceso' => 'ABCDE12345',
+                'codigo_qr' => 'ABC123',
             ],
             [
                 'id_usuario' => 2,
                 'id_viaje' => 2,
+                'codigoDeAcceso' => 'ABCDE54321',
+                'codigo_qr' => 'XYZ987',
             ],
         ];
 

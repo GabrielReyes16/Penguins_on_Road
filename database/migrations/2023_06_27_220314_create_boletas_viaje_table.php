@@ -16,7 +16,6 @@ class CreateBoletasViajeTable extends Migration
             $table->date('fecha_viaje');
             $table->time('hora_abordaje');
             $table->integer('aforo_viaje');
-            $table->text('codigo_qr')->nullable();
             $table->timestamps();
 
             $table->foreign('id_usuario_pasajero')->references('id_usuario')->on('users')->onDelete('cascade');

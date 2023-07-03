@@ -10,7 +10,7 @@ class CreateBusesTable extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->increments('id_bus');
-            $table->string('placa', 15);
+            $table->string('placa', 15)->unique();
             $table->integer('aforo');
             $table->unsignedInteger('id_empresa');
             $table->timestamps();
