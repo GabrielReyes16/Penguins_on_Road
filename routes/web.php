@@ -25,8 +25,20 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('usuario-pasajero/home', function () {
+Route::get('/usuario-pasajero/home', function () {
     return view('usuario-pasajero.homePasajero');
+});
+
+Route::get('/home', function () {
+    return view('usuario-pasajero.homePasajero');
+});
+
+Route::get('/turnos', function () {
+    return view('usuario-pasajero.turnos');
+});
+
+Route::get('/boletos', function () {
+    return view('usuario-pasajero.boletos');
 });
 
 Route::get('/welcome', function () {

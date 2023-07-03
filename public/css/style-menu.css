@@ -4,7 +4,8 @@ body
 {
     background: #cdcdcd;
     width: 100%;
-    height: auto
+    height: auto;
+    overflow: hidden;
 }
 
 header
@@ -263,7 +264,7 @@ header .user-menu-bar .menu span ion-icon:hover
     align-items: center;
     flex-direction: column;
     transition: .8s;
-    transform: translateX(-100px);
+    transform: translateX(240px);
     opacity: 0;
 }
 
@@ -335,6 +336,8 @@ main
     width: 100%;
     height: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     overflow: hidden;
     display: flex;
