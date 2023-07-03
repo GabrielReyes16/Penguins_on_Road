@@ -10,6 +10,11 @@
         <link rel="stylesheet" href="{{ asset('css/styles-bus.css') }}">
         <link rel="stylesheet" href="{{ asset('css/styles-ticket.css') }}">
         <link rel="stylesheet" href="{{ asset('css/styles-login.css') }}">
+        <link rel="stylesheet" href="{{ asset ('css/style-menu.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300&display=swap" rel="stylesheet">
+        @yield ('css-personalizado')
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -21,7 +26,19 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+            @if (Auth::check())
+                @role('Administrador')
+                    @include('layouts.navigation')
+                @endrole
+
+                @role('Chofer')
+                     @include('layouts.navigation_chofer')
+                @endrole
+
+                @role('Pasajero')
+                      @include('layouts.navigation_pasajero')
+                @endrole
+            @endif
 
             <!-- Page Heading -->
             @if (isset($header))
