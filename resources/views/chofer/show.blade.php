@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-200  leading-tight">
-            Informacion de {{ $user->name }}
+            Informacion de {{ $chofer->name }}
         </h2>
     </x-slot>
 

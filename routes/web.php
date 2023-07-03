@@ -34,9 +34,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/plantilla', function () {
-    return view('plantilla');
-})->middleware(['auth', 'verified'])->name('plantilla');
+
 
 Route::resource('users',UserController::class);
 Route::resource('buses',BusController::class);
