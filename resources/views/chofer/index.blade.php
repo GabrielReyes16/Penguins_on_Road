@@ -4,25 +4,18 @@
             {{ __('Choferes') }}
         </h2>
     </x-slot>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card" style="color: white;">
-    
+    <div >
+        <div>
+            <div>
+                <div style="color: white;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                             <div class="d-grid gap-2 col-6 mx-auto" style="color: white; text-decoration: underline; background-color: blue;">
-                                <a href="{{ route('choferes.create') }}"  >
-                                  {{ __('Crear un chofer') }}
-                                </a>
-                              </div>
                         </div>
                         @if ($message = Session::get('success'))
                         <div class="alert alert-success">
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-                        <div class="flex justify-center" style="color: white;">
+                        <div style="color: white;">
                           <div class="p-4">
                               <table class="min-w-full border border-gray-200">
                                       <thead class="thead">
@@ -42,14 +35,14 @@
                                                   <td class="py-2 px-4 border-b">{{ $chofer->id_usuario }}</td>
                                                   <td class="py-2 px-4 border-b">{{ $chofer->user->name }}</td>
                                                   <td class="py-2 px-4 border-b">{{ $chofer->user->email }}</td>
-                                                  <td class="py-2 px-4 border-b">{{ $chofer->id_bus }}</td>
-                                                  <td class="py-2 px-4 border-b">{{ $chofer->id_empresa }}</td>
+                                                  <td class="py-2 px-4 border-b">{{ $chofer->bus->placa }}</td>
+                                                  <td class="py-2 px-4 border-b">{{ $chofer->empresa->nombre }}</td>
                                                   <td class="py-2 px-4 border-b">{{ $chofer->licencia_conducir }}</td>
                       
                                                   <td class="py-2 px-4 border-b">
                                                       <form action="{{ route('choferes.destroy',$chofer->id_chofer) }}" method="POST">
                                                           <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('choferes.show',$chofer->id_usuario) }}"> {{ __('Ver') }}</button>
-                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('choferes.edit',$chofer->id_usuario) }}" > {{ __('Editar') }}</button>
+                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('choferes.edit',$chofer->id_chofer) }}" > {{ __('Editar') }}</button>
                                                           @csrf
                                                           @method('DELETE')
                                                           <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"> {{ __('Eliminar') }}</button>

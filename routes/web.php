@@ -1,12 +1,14 @@
 <?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\UserSearch;
+use Livewire\Livewire;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ChoferController;
+use App\Http\Controllers\BusController;
 use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TurnoController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 
-use App\Http\Controllers\ChoferController;
-use App\Http\Controllers\BusController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,7 @@ use App\Http\Controllers\BusController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('index');
@@ -30,17 +33,12 @@ Route::get('/welcome', function () {
     return view('welcome');
 }); 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-
-Route::resource('users',UserController::class);
-Route::resource('buses',BusController::class);
-Route::resource('choferes',ChoferController::class);
-Route::resource('turnos',TurnoController::class);
-
+Route::get('/dashboard', function () {return view('dashboard');
+})->middleware(['auth', 'verified'])->name('admin.dashboard');
+Route::resource('users',UserController::class)->names('admin.users');
+Route::resource('buses',BusController::class)->names('admin.buses');
+Route::resource('choferes',ChoferController::class)->names('admin.choferes');
+Route::resource('turnos',TurnoController::class)->names('admin.turnos');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -50,4 +48,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
+
+Route::patch('/admin/users/{user}/updateRole', [UserController::class, 'updateRole'])->name('admin.users.updateRole');
 
