@@ -2,7 +2,7 @@ var list = document.getElementById("list");
 var menu = document.getElementById("menu");
 menu.onclick = function () {
     list.classList.toggle ("active");
-}
+};
 
 document.addEventListener("DOMContentLoaded", function() {
   const navbarLinks = document.querySelectorAll('.menu-bar a');
