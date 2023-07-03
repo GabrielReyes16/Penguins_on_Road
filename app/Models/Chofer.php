@@ -14,7 +14,7 @@ class Chofer extends Model
         'id_usuario',
         'id_bus',
         'id_empresa',
-        'licencia_conducir',
+        'licencia_conducir',    
     ];
 
     public function user()

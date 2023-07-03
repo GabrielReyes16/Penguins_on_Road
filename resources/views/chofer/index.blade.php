@@ -29,27 +29,31 @@
                                           <tr>
                                               <th class="py-2 px-4 border-b">ID</th>
                                               <th class="py-2 px-4 border-b">Nombre</th>
-                                              <th class="py-2 px-4 border-b">Rol</th>
                                               <th class="py-2 px-4 border-b">Email</th>
-                                              <th class="py-2 px-4 border-b"></th>
+                                              <th class="py-2 px-4 border-b">Bus</th>
+                                              <th class="py-2 px-4 border-b">Empresa</th>
+                                              <th class="py-2 px-4 border-b">Licencia</th>
+                                              <th class="py-2 px-4 border-b">Opciones</th>
                                             </tr>
                                       </thead>
                                       <tbody>
                                           @foreach ($choferes as $chofer)
                                               <tr>
                                                   <td class="py-2 px-4 border-b">{{ $chofer->id_usuario }}</td>
-                                                  <td class="py-2 px-4 border-b">{{ $chofer->name }}</td>
-                                                  <td class="py-2 px-4 border-b">{{ $chofer->rol }}</td>
-                                                  <td class="py-2 px-4 border-b">{{ $chofer->email }}</td>
+                                                  <td class="py-2 px-4 border-b">{{ $chofer->user->name }}</td>
+                                                  <td class="py-2 px-4 border-b">{{ $chofer->user->email }}</td>
+                                                  <td class="py-2 px-4 border-b">{{ $chofer->id_bus }}</td>
+                                                  <td class="py-2 px-4 border-b">{{ $chofer->id_empresa }}</td>
+                                                  <td class="py-2 px-4 border-b">{{ $chofer->licencia_conducir }}</td>
                       
                                                   <td class="py-2 px-4 border-b">
-                                                      <form action="{{ route('users.destroy',$chofer->id_usuario) }}" method="POST">
+                                                      <form action="{{ route('choferes.destroy',$chofer->id_chofer) }}" method="POST">
                                                           <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('choferes.show',$chofer->id_usuario) }}"> {{ __('Ver') }}</button>
                                                           <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('choferes.edit',$chofer->id_usuario) }}" > {{ __('Editar') }}</button>
                                                           @csrf
                                                           @method('DELETE')
                                                           <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"> {{ __('Eliminar') }}</button>
-                                                      </form>
+                                                      </form>   
                                                   </td>
                                               </tr>
                                           @endforeach

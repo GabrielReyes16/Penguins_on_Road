@@ -46,6 +46,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+
 Route::resource('users',UserController::class);
 Route::resource('buses',BusController::class);
 Route::resource('choferes',ChoferController::class);

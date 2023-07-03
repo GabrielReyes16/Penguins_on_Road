@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('rol');
             $table->unsignedInteger('id_perfil')->nullable();
-            // $table->string('codigo_estudiante')->nullable();
+            // $table->string('licencia_conducir')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
