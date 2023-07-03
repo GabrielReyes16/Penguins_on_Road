@@ -34,6 +34,10 @@ Route::get('/turnos', function () {
     return view('usuario-pasajero.turnos');
 });
 
+Route::get('/boletos', function () {
+    return view('usuario-pasajero.boletos');
+});
+
 Route::get('/welcome', function () {
     return view('welcome');
 }); 
