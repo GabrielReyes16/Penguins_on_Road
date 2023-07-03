@@ -21,6 +21,11 @@ use App\Http\Controllers\BusController;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('usuario-pasajero/home', function () {
+    return view('usuario-pasajero.homePasajero');
+});
+
 Route::get('/welcome', function () {
     return view('welcome');
 }); 
@@ -28,6 +33,8 @@ Route::get('/welcome', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::resource('users',UserController::class);
 Route::resource('buses',BusController::class);

@@ -1,0 +1,322 @@
+* {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif}
+
+body
+{
+    background: url(../img/tecsup-lima.jpg);
+    background-position-x: center;
+    background-size: cover;
+    width: 100%;
+    height: 1024px;
+}
+
+header
+{
+    background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
+    width: 100%;
+    height: 160px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+header .logos
+{
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+}
+
+header .logos img 
+{
+    width: auto;
+    height: 80px;
+    margin-left: 10px;
+}
+
+header .menu-bar
+{
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+header .menu-bar li
+{
+    width: 100px;
+    height: 100px;
+    list-style: none;
+    position: relative;
+}
+
+header .menu-bar li a 
+{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+header .menu-bar li a span
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .menu-bar li a .icons
+{
+    width: 60px;
+    height: 60px;
+}
+
+header .menu-bar li a .icons ion-icon
+{
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    transition: .5s;
+}
+
+header .menu-bar li .box-icon-left
+{
+    background: #ffffff20;
+    border-radius: 10px 0px 0px 10px;
+    transition: .8s;
+}
+
+header .menu-bar li .box-icon-center
+{
+    background: #ffffff20;
+    border-radius: 0px;
+    transition: .8s;
+}
+
+header .menu-bar li .box-icon-right
+{
+    background: #ffffff20;
+    border-radius: 0px 10px 10px 0px;
+    transition: .8s;
+}
+
+header .menu-bar li a .text
+{
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    transition: .5s;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+header .menu-bar li.active a .text
+{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+header .menu-bar li a:hover .text
+{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+header .menu-bar li.active a .icons ion-icon
+{
+    width: 60px;
+    height: 60px;
+    color: #000;
+}
+
+header .menu-bar li a:hover .icons ion-icon
+{
+    width: 60px;
+    height: 60px;
+    color: #000;
+}
+
+header .menu-bar li.active a
+{
+    background: #ffffff50;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+header .menu-bar li a:hover
+{
+    background: #ffffff50;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+header .user-menu-bar
+{
+    width: 30%;
+    height: auto;
+    display: flex;
+}
+
+header .user-menu-bar .user-icon
+{
+    width: 80%;
+    height: auto;
+    display: flex;
+    text-decoration: none;
+}
+
+header .user-menu-bar .user-icon label
+{
+    width: 75%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+header .user-menu-bar .user-icon span
+{
+    width: 25%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+header .user-menu-bar .user-icon span ion-icon
+{
+    width: 80px;
+    height: 80px;
+    transition: .5s;
+}
+
+header .user-menu-bar .user-icon span ion-icon:hover
+{
+    width: 85px;
+    height: 85px;
+    color: #000;
+}
+
+header .user-menu-bar .menu
+{
+    width: 20%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+header .user-menu-bar .menu span
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+header .user-menu-bar .menu span ion-icon
+{
+    width: 50px;
+    height: 50px;
+    color: #ffffffb9;
+}
+
+header .user-menu-bar .menu span:hover
+{
+    width: 80px;
+    height: 80px;
+    background: #ffffff50;
+    border-radius: 50%;
+}
+
+header .user-menu-bar .menu span ion-icon:hover
+{
+    color: #ffffff;
+}
+
+.sidebar
+{ 
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: end;
+}
+
+.sidebar .list
+{
+    width: 250px;
+    height: auto;
+    background: rgba(0, 105, 105, 0.70);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: .8s;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.list.active
+{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sidebar .list li
+{
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar .list li a
+{
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    transition: .5s;
+}
+
+.sidebar .list li a span
+{
+    color: #fff;
+}
+
+.sidebar .list li a .icon
+{
+    width: 30%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .list li a .icon ion-icon
+{
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar .list li a .text
+{
+    width: 70%;
+    height: 80px;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .list li a:hover
+{
+    background: rgba(0, 105, 105, 1);
+    border: 1px solid #000;
+    text-decoration: underline #fff;
+    transition: .8s;
+}

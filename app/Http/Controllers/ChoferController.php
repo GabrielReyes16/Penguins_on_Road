@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserUpdateRequest;
 
 use App\Models\User;
+use App\Models\Chofer;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class ChoferController extends Controller
      */
     public function index()
     {
-        $choferes = User::where('rol', 'Chofer')->paginate(5);
+        $choferes = Chofer::paginate(5);
     
         return view('chofer.index', compact('choferes'))
             ->with('i', (request()->input('page', 1) - 1) * $choferes->perPage());
@@ -49,16 +50,17 @@ class ChoferController extends Controller
  
      }
      
-     public function show($id_usuario)
+     public function show($id)
      {
-         // Se busca el usuario solo si tiene rol Chofer
-         $user = User::where('rol', 'Chofer')->find($id_usuario);
+        $chofer = Chofer::find($id);
+
+
      
-         if (!$user) {
+         if (!$chofer) {
              return redirect()->route('choferes.index')->with('error', 'Chofer no encontrado');
          }
      
-         return view('chofer.show', compact('user'));
+         return view('chofer.show', compact('chofer'));
      }
      
      public function edit($id_usuario)
@@ -87,16 +89,10 @@ class ChoferController extends Controller
          return redirect()->route('choferes.index')->with('success', 'La información fue actualizada correctamente');
      }
      
-     public function destroy($id_usuario)
+     public function destroy($id)
      {
-         $user = User::where('rol', 'Chofer')->find($id_usuario);
-     
-         if (!$user) {
-             return redirect()->route('choferes.index')->with('error', 'Chofer no encontrado');
-         }
-     
-         $user->delete();
-
+         $chofer = Chofer::find($id);
+         $chofer->delete();
          return redirect()->route('choferes.index')->with('success', 'El chofer fue eliminado con éxito');
      }}
      
