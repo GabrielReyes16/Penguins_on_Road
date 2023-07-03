@@ -42,7 +42,7 @@ header .menu-bar
     justify-content: center;
 }
 
-header .menu-bar li
+header .menu-bar .options
 {
     width: 100px;
     height: 100px;
@@ -50,7 +50,7 @@ header .menu-bar li
     position: relative;
 }
 
-header .menu-bar li a 
+header .menu-bar .options a 
 {
     width: 100px;
     height: 100px;
@@ -61,20 +61,20 @@ header .menu-bar li a
     text-decoration: none;
 }
 
-header .menu-bar li a span
+header .menu-bar .options a span
 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-header .menu-bar li a .icons
+header .menu-bar .options a .icons
 {
     width: 60px;
     height: 60px;
 }
 
-header .menu-bar li a .icons ion-icon
+header .menu-bar .options a .icons ion-icon
 {
     width: 50px;
     height: 50px;
@@ -82,7 +82,7 @@ header .menu-bar li a .icons ion-icon
     transition: .5s;
 }
 
-header .menu-bar li .box-icon-left
+header .menu-bar .options .box-icon-left
 {
     background: #ffffff20;
     border-radius: 10px 0px 0px 10px;
@@ -90,7 +90,7 @@ header .menu-bar li .box-icon-left
     transition: .8s;
 }
 
-header .menu-bar li .box-icon-center
+header .menu-bar .options .box-icon-center
 {
     background: #ffffff20;
     border-radius: 0px;
@@ -98,7 +98,7 @@ header .menu-bar li .box-icon-center
     transition: .8s;
 }
 
-header .menu-bar li .box-icon-right
+header .menu-bar .options .box-icon-right
 {
     background: #ffffff20;
     border-radius: 0px 10px 10px 0px;
@@ -106,7 +106,7 @@ header .menu-bar li .box-icon-right
     transition: .8s;
 }
 
-header .menu-bar li a .text
+header .menu-bar .options a .text
 {
     font-size: 15px;
     font-weight: 700;
@@ -117,33 +117,33 @@ header .menu-bar li a .text
     opacity: 0;
 }
 
-header .menu-bar li.active a .text
+header .menu-bar .options.active a .text
 {
     transform: translateY(0px);
     opacity: 1;
 }
 
-header .menu-bar li a:hover .text
+header .menu-bar .options a:hover .text
 {
     transform: translateY(0px);
     opacity: 1;
 }
 
-header .menu-bar li.active a .icons ion-icon
+header .menu-bar .options.active a .icons ion-icon
 {
     width: 60px;
     height: 60px;
     color: #000;
 }
 
-header .menu-bar li a:hover .icons ion-icon
+header .menu-bar .options a:hover .icons ion-icon
 {
     width: 60px;
     height: 60px;
     color: #000;
 }
 
-header .menu-bar li.active a
+header .menu-bar .options.active a
 {
     background: #ffffff50;
     border-radius: 50%;
@@ -151,7 +151,7 @@ header .menu-bar li.active a
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
 }
 
-header .menu-bar li a:hover
+header .menu-bar .options a:hover
 {
     background: #ffffff50;
     border-radius: 50%;
@@ -275,13 +275,13 @@ header .user-menu-bar .menu span ion-icon:hover
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
 }
 
-.sidebar .list .options
+.sidebar .list li
 {
     width: 100%;
     list-style: none;
 }
 
-.sidebar .list .options a
+.sidebar .list li a
 {
     width: 100%;
     text-decoration: none;
@@ -289,12 +289,12 @@ header .user-menu-bar .menu span ion-icon:hover
     transition: .5s;
 }
 
-.sidebar .list .options a span
+.sidebar .list li a span
 {
     color: #fff;
 }
 
-.sidebar .list .options a .icon
+.sidebar .list li a .icon
 {
     width: 30%;
     height: 80px;
@@ -303,13 +303,13 @@ header .user-menu-bar .menu span ion-icon:hover
     align-items: center;
 }
 
-.sidebar .list .options a .icon ion-icon
+.sidebar .list li a .icon ion-icon
 {
     width: 30px;
     height: 30px;
 }
 
-.sidebar .list .options a .text
+.sidebar .list li a .text
 {
     width: 70%;
     height: 80px;
@@ -319,14 +319,14 @@ header .user-menu-bar .menu span ion-icon:hover
     align-items: center;
 }
 
-.sidebar .list .options a:hover
+.sidebar .list li a:hover
 {
     background: rgba(0, 105, 105, 1);
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
     transition: .8s;
 }
 
-.sidebar .list .options a:hover span
+.sidebar .list li a:hover span
 {
     color: #75cc23;
 }
