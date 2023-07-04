@@ -33,7 +33,7 @@
 
                 @role('Chofer')
                      @include('layouts.navigation_chofer')
-                @endrole
+                @endrole    
 
                 @role('Pasajero')
                       @include('layouts.navigation_pasajero')
