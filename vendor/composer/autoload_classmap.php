@@ -40,7 +40,6 @@ return array(
     'App\\Http\\Requests\\Auth\\LoginRequest' => $baseDir . '/app/Http/Requests/Auth/LoginRequest.php',
     'App\\Http\\Requests\\UserUpdateRequest' => $baseDir . '/app/Http/Requests/UserUpdateRequest.php',
     'App\\Models\\BoletaViaje' => $baseDir . '/app/Models/BoletaViaje.php',
-    'App\\Models\\BoletasViaje' => $baseDir . '/app/Models/BoletasViaje.php',
     'App\\Models\\Bus' => $baseDir . '/app/Models/Bus.php',
     'App\\Models\\Chofer' => $baseDir . '/app/Models/Chofer.php',
     'App\\Models\\Empresa' => $baseDir . '/app/Models/Empresa.php',
