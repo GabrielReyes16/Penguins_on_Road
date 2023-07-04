@@ -15,6 +15,9 @@ return new class extends Migration
             $table->increments('id_reserva');
             $table->unsignedInteger('id_usuario');
             $table->unsignedInteger('id_viaje');
+            $table->string('codigoDeAcceso',10)->unique();
+            $table->text('codigo_qr');  
+            $table->boolean('utilizada')->default(false);
             $table->timestamps();
         
             $table->foreign('id_usuario')->references('id_usuario')->on('users');

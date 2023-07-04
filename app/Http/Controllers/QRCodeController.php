@@ -11,7 +11,7 @@ class QRCodeController extends Controller
 {
     public function showQRCode()
     {
-        $data = 'QR de abordaje'; 
+        $data = 'ABCDE12345'; 
 
         $renderer = new ImageRenderer(
             new RendererStyle(400),
