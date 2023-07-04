@@ -33,7 +33,6 @@
                                           <tr>
                                               <th class="py-2 px-4 border-b">ID</th>
                                               <th class="py-2 px-4 border-b">Nombre</th>
-                                              <th class="py-2 px-4 border-b">Rol</th>
                                               <th class="py-2 px-4 border-b">Email</th>
                                               <th class="py-2 px-4 border-b">Operaciones</th>
                                             </tr>
@@ -43,9 +42,7 @@
                                               <tr>
                                                   <td class="py-2 px-4 border-b">{{ $user->id_usuario }}</td>
                                                   <td class="py-2 px-4 border-b user-name">{{ $user->name }}</td>
-                                                  <td class="py-2 px-4 border-b">{{ $user->rol }}</td>
                                                   <td class="py-2 px-4 border-b user-email">{{ $user->email }}</td>
-                      
                                                   <td class="py-2 px-4 border-b">
                                                       <form action="{{ route('admin.users.destroy',$user->id_usuario) }}" method="POST">
                                                           <a style="color: white;  background-color: rgb(46, 194, 83);" href="{{ route('admin.users.show',$user->id_usuario) }}"> {{ __('Ver') }}</button>

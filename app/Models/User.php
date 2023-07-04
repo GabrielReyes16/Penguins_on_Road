@@ -25,7 +25,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'rol',
         'licencia_conducir',
         'id_perfil'
     ];
@@ -42,7 +41,6 @@ class User extends Authenticatable
 
     static $rules = [
 		'name' => 'required',
-		'rol' => 'required',
         'email' => 'required|string|email|max:255|unique:users',
         'password' => 'required|string|min:8|confirmed',
         'licencia_conducir' => 'nullable'

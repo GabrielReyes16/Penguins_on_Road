@@ -23,15 +23,7 @@
     </div>
 
         <!-- Rol -->
-        <div class="mt-4">
-            <x-input-label for="rol" :value="__('Rol del usuario')" />
-            <select id="rol" name="rol" class="mt-1 block w-full" required autofocus autocomplete="rol">
-                <option value="Administrador">Admin</option>
-                <option value="Chofer" >Chofer</option>
-                <option value="Pasajero" >Pasajero</option>
-            </select>
-            <x-input-error class="mt-2" :messages="$errors->get('rol')" />
-        </div>
+        
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Contraseña')" />

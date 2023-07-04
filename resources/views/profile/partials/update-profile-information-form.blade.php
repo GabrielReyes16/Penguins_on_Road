@@ -24,18 +24,6 @@
         </div>
 
         <div>
-            <x-input-label for="rol" :value="__('Rol del usuario')" />
-            <select id="rol" name="rol" class="mt-1 block w-full" required autofocus autocomplete="rol">
-                <option value="Administrador" {{ old('rol', $user->rol) === 'Administrador' ? 'selected' : '' }}>Admin</option>
-                <option value="Chofer" {{ old('rol', $user->rol) === 'Chofer' ? 'selected' : '' }}>Chofer</option>
-                <option value="Pasajero" {{ old('rol', $user->rol) === 'Pasajero' ? 'selected' : '' }}>Pasajero</option>
-            </select>
-            <x-input-error class="mt-2" :messages="$errors->get('rol')" />
-        </div>
-        
-
-
-
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Listo') }}</x-primary-button>
 
