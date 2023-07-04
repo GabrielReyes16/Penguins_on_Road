@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset ('css/styles-menu.css') }}">
+    <link rel="stylesheet" href="{{ asset ('css/style-menu.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300&display=swap" rel="stylesheet">
-    <title>Menu Pasajero</title>
+    @yield ('css-personalizado')
+    <title>@yield ('titulo')</title>
+
 </head>
 
 <body>
@@ -18,7 +20,7 @@
         </div>
         <div class="menu-bar">
             <li class="options active">
-                <a href="#" class="box-icon-left">
+                <a href="/home" class="box-icon-left">
                     <span class="icons">
                         <ion-icon name="home"></ion-icon>
                     </span>
@@ -26,7 +28,7 @@
                 </a>
             </li>
             <li class="options">
-                <a href="#" class="box-icon-center">
+                <a href="/turnos" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="trail-sign"></ion-icon>
                     </span>
@@ -34,7 +36,7 @@
                 </a>
             </li>
             <li class="options">
-                <a href="#" class="box-icon-center">
+                <a href="/boletos" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="receipt"></ion-icon>
                     </span>
@@ -68,6 +70,8 @@
             </div>
         </div>
     </header>
+
+    @yield('contenido')
 
     <div class="sidebar">
         <div class="list" id="list">
@@ -132,8 +136,6 @@
         </div>
     </div>
     
-    @yield('home')
-
     <script src="{{ asset ('js/animaciones.js') }}"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

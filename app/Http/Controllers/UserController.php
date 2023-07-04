@@ -6,6 +6,7 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 /**
  * Class UserController
@@ -21,8 +22,11 @@ class UserController extends Controller
      */
     public function index()
     {
+        $searchValue = request('search');
+        $users = User::where('name', 'like', "%$searchValue%")
+                    ->orWhere('email', 'like', "%$searchValue%")
+                    ->get();
         $users = User::paginate(5);
-    
         return view('user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
@@ -40,7 +44,7 @@ class UserController extends Controller
 
         $user = User::create($request->all());
 
-        return redirect()->route('users.index')
+        return redirect()->route('admin.users.index')
 
             ->with('success', 'Usuario creado exitosamente.');
 
@@ -63,8 +67,9 @@ class UserController extends Controller
      public function edit($id_usuario)
      {
          $user = User::find($id_usuario);
+         $roles = Role::all();
  
-         return view('user.edit', compact('user'));
+         return view('user.edit', compact('user', 'roles'));
      }
  
      /**
@@ -85,6 +90,16 @@ class UserController extends Controller
               ->with('success', 'La información  fue actualizada correctamente');
       }
  
+ 
+
+    //   Actualizar el rol del usuario
+    public function updateRole(Request $request, User $user)
+      {
+            $user->roles()->sync($request->roles);
+          return redirect()->route('admin.users.index')
+              ->with('success', 'Los roles se actualizaron correctamente');
+      }
+
      /**
       * Delete the user's account.
       */
@@ -92,7 +107,7 @@ class UserController extends Controller
       {
           $user = User::find($id_usuario)->delete();
   
-          return redirect()->route('users.index')
+          return redirect()->route('admin.users.index')
               ->with('success', 'El usuario fue eliminado con éxito');
       }
  }

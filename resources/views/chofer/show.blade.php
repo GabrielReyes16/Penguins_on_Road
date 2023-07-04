@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-200  leading-tight">
-            Informacion de {{ $chofer->name }}
+            Informacion de {{ $chofer->user->name }}
         </h2>
     </x-slot>
 
@@ -21,19 +21,22 @@
                           <tbody>
                             <tr >
                               <td class="px-4 py-2 border-b font-bold">ID</td>
-                              <td class="px-4 py-2 border-b">{{ $user->id_usuario }}</td>
+                              <td class="px-4 py-2 border-b">{{ $chofer->id_chofer }}</td>
                             </tr>
                             <tr >
                               <td class="px-4 py-2 border-b font-bold">Nombre</td>
-                              <td class="px-4 py-2 border-b">{{ $user->name }}</td>
+                              <td class="px-4 py-2 border-b">{{ $chofer->user->name }}</td>
                             </tr>
                             <tr >
-                              <td class="px-4 py-2 border-b font-bold">Rol</td>
-                              <td class="px-4 py-2 border-b">{{ $user->rol }}</td>
+                              <td class="px-4 py-2 border-b font-bold">Bus actual</td>
+                              <td class="px-4 py-2 border-b">{{ $chofer->bus->placa }}</td>
                             </tr>
+                            <td class="px-4 py-2 border-b font-bold">Empresa</td>
+                            <td class="px-4 py-2 border-b">{{ $chofer->empresa->nombre }}</td>
+                          </tr>
                             <tr >
-                              <td class="px-4 py-2 border-b font-bold">Email</td>
-                              <td class="px-4 py-2 border-b">{{ $user->email }}</td>
+                              <td class="px-4 py-2 border-b font-bold">Licencia de conducir</td>
+                              <td class="px-4 py-2 border-b">{{ $chofer->licencia_conducir }}</td>
                             </tr>
                           </tbody>
                         </table>
