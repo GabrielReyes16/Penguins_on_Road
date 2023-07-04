@@ -68,7 +68,10 @@ Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->n
 Route::get('/reserva/{idReserva}', [ReservaController::class, 'mostrarReserva'])->name('mostrar_reserva');
 
 //Route::get('/escanear-qr/{codigoQR}', [ReservaController::class, 'escanearQR'])->name('escanear_qr');
-
+Route::get('/escaner', function () {
+    return view('escaner');
+});
+Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
 
 
 Route::put('/admin/users/{user}/updateRole', [UserController::class, 'updateRole'])->name('admin.users.updateRole');

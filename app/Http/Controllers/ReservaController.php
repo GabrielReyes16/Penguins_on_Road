@@ -79,26 +79,31 @@ class ReservaController extends Controller
         return $writer->writeString($data);
     }
     
-    public function escanearQR($codigoQR)
+
+    public function utilizarReserva(Request $request)
 {
-    // Aquí puedes implementar la lógica para verificar y procesar el código QR escaneado por el chofer
+    $codigoDeAcceso = $request->input('codigoDeAcceso');
 
-    // Por ejemplo, puedes buscar la reserva correspondiente al código QR escaneado
-    $reserva = Reserva::where('codigo_qr', $codigoQR)->first();
+    // Buscar la reserva correspondiente al código de acceso
+    $reserva = Reserva::where('codigoDeAcceso', $codigoDeAcceso)->first();
 
-    // Verificar si se encontró la reserva
     if ($reserva) {
-        // Realizar las acciones necesarias para la reserva escaneada
+        if ($reserva->utilizada) {
+            // La reserva ya ha sido utilizada, devuelve un mensaje indicando esto
+            return response()->json(['message' => 'Esta reserva ya ha sido utilizada.'], 200);
+        } else {
+            // Actualizar el atributo "utilizada" a true
+            $reserva->utilizada = true;
+            $reserva->save();
 
-        // Por ejemplo, puedes marcar la reserva como utilizada por el chofer
-        $reserva->utilizada = true;
-        $reserva->save();
-
-        // Redirigir a una vista de confirmación o mostrar un mensaje de éxito
-        return redirect()->route('confirmacion_reserva');
+            // Devuelve un mensaje de éxito
+            return response()->json(['message' => 'Reserva utilizada exitosamente.'], 200);
+        }
     } else {
-        // Si el código QR no corresponde a ninguna reserva, redirigir a una vista de error o mostrar un mensaje de error
-        return redirect()->route('error_reserva');
+        // El código de acceso no corresponde a ninguna reserva
+        return response()->json(['message' => 'Código de acceso inválido.'], 404);
     }
 }
+
+    
 }
