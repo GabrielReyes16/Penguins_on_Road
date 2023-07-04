@@ -60,12 +60,13 @@
                     </p>
                     <x-input-label for="name" :value="__('Rol')" />
                     {!! Form::model($user, ['route' => ['admin.users.updateRole', $user], 'method' => 'put']) !!}
-                    @foreach ($roles as $role)
-                        <div>
-                            {!! Form::checkbox('roles[]', $role->id, null, ['class' => 'mr-1']) !!}
-                            {{ $role->name }}
-                        </div>
-                    @endforeach <br>
+                    <div>
+                        {!! Form::label('roles', 'Roles') !!}
+                        {!! Form::select('roles[]', $roles->pluck('name', 'id'), $user->roles->pluck('id')->toArray(), [
+                            'class' => 'form-control',
+                        ]) !!}
+                    </div>
+                    <br>
                     <x-primary-button>{{ __('Asignar rol') }}</x-primary-button>
                     {!! Form::close() !!}
                 </div>
@@ -87,9 +88,8 @@
 
                         <div>
                             <x-input-label for="current_password" :value="__('Current Password')" />
-                            <x-text-input id="current_password" 
-                                name="current_password" type="password" class="mt-1 block w-full"
-                                autocomplete="current-password" />
+                            <x-text-input id="current_password" name="current_password" type="password"
+                                class="mt-1 block w-full" autocomplete="current-password" />
                             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
                         </div>
 
