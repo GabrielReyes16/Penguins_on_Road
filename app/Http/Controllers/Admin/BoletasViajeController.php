@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BoletasViaje;
+use App\Models\BoletaViaje;
 use Illuminate\Http\Request;
 
 /**
@@ -18,7 +18,7 @@ class BoletasViajeController extends Controller
      */
     public function index()
     {
-        $boletasViajes = BoletasViaje::paginate();
+        $boletasViajes = BoletaViaje::paginate();
 
         return view('boletas-viaje.index', compact('boletasViajes'))
             ->with('i', (request()->input('page', 1) - 1) * $boletasViajes->perPage());
@@ -31,21 +31,21 @@ class BoletasViajeController extends Controller
      */
     public function create()
     {
-        $boletasViaje = new BoletasViaje();
+        $boletasViaje = new BoletaViaje();
         return view('boletas-viaje.create', compact('boletasViaje'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+    //  * @param  \Illuminate\Http\Request $request
+    //  * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        request()->validate(BoletasViaje::$rules);
+        request()->validate(BoletaViaje::$rules);
 
-        $boletasViaje = BoletasViaje::create($request->all());
+        $boletasViaje = BoletaViaje::create($request->all());
 
         return redirect()->route('boletas-viajes.index')
             ->with('success', 'BoletasViaje created successfully.');
@@ -59,7 +59,7 @@ class BoletasViajeController extends Controller
      */
     public function show($id)
     {
-        $boletasViaje = BoletasViaje::find($id);
+        $boletasViaje = BoletaViaje::find($id);
 
         return view('boletas-viaje.show', compact('boletasViaje'));
     }
@@ -72,7 +72,7 @@ class BoletasViajeController extends Controller
      */
     public function edit($id)
     {
-        $boletasViaje = BoletasViaje::find($id);
+        $boletasViaje = BoletaViaje::find($id);
 
         return view('boletas-viaje.edit', compact('boletasViaje'));
     }
@@ -84,9 +84,9 @@ class BoletasViajeController extends Controller
      * @param  BoletasViaje $boletasViaje
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BoletasViaje $boletasViaje)
+    public function update(Request $request, BoletaViaje $boletasViaje)
     {
-        request()->validate(BoletasViaje::$rules);
+        request()->validate(BoletaViaje::$rules);
 
         $boletasViaje->update($request->all());
 
@@ -101,7 +101,7 @@ class BoletasViajeController extends Controller
      */
     public function destroy($id)
     {
-        $boletasViaje = BoletasViaje::find($id)->delete();
+        $boletasViaje = BoletaViaje::find($id)->delete();
 
         return redirect()->route('boletas-viajes.index')
             ->with('success', 'BoletasViaje deleted successfully');

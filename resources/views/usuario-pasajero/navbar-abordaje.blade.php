@@ -22,7 +22,7 @@
             <img src="{{ asset('img/logotipo-TECSUP-blanco.png') }}">
         </div>
         <div class="menu-bar">
-            <li class="options active">
+            <li class="options">
                 <a href="/home" class="box-icon-left">
                     <span class="icons">
                         <ion-icon name="home"></ion-icon>
@@ -38,16 +38,16 @@
                     <span class="text">Rutas y Horarios</span>
                 </a>
             </li>
-            <li class="options">
-                <a href="/abordaje" class="box-icon-center">
+            <li class="options active">
+                <a href="/abordaje" class="box-icon-center" >
                     <span class="icons">
-                        <ion-icon name="receipt"></ion-icon>
+                        <ion-icon name="bus"></ion-icon>
                     </span>
                     <span class="text">Abordaje</span>
                 </a>
             </li>
             <li class="options">
-                <a href="/boletos" class="box-icon-center">
+                <a href="/boletas" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="receipt"></ion-icon>
                     </span>
@@ -58,7 +58,7 @@
         </div>
         <div class="user-menu-bar">
             <a class="user-icon" href="#">
-                <label>{{ Auth::user()->name }} - {{ Auth::user()->rol }}</label>
+                <label>{{ Auth::user()->name }} - {{ Auth::user()->roles()->first()->name }}</label>
                 <span>
                     <ion-icon name="person-circle"></ion-icon>
                 </span>

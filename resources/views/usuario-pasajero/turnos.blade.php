@@ -1,4 +1,4 @@
-@extends ('plantilla')
+@extends ('usuario-pasajero.navbar-rutas')
 
 @section ('css-personalizado')
     <link rel="stylesheet" href="{{ asset ('css/Passenger/style-bus.css') }}">

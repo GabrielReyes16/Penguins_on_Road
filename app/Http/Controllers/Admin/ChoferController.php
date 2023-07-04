@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\UserUpdateRequest;
+use App\Http\Controllers\Controller;
 
 use App\Models\Bus;
 use App\Models\Empresa;
 use App\Models\User;
 use App\Models\Chofer;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 class ChoferController extends Controller
 {

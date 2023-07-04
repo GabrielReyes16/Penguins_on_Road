@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ReservaController;
-use App\Http\Controllers\ChoferController;
-use App\Http\Controllers\BusController;
+use App\Http\Controllers\Admin\ChoferController;
+use App\Http\Controllers\Admin\BusController;
 use App\Http\Controllers\DashboardController;
 
 
@@ -37,7 +37,7 @@ Route::get('/turnos', function () {
     return view('usuario-pasajero.turnos');
 });
 
-Route::get('/boletos', function () {
+Route::get('/boletas', function () {
     return view('usuario-pasajero.boletos');
 });
 
