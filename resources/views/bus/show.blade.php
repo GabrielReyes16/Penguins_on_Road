@@ -1,49 +1,51 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
+            Informacion del Bus de placa {{ $bus->placa }}
+        </h2>
+    </x-slot>
 
-@section('template_title')
-    {{ $bus->name ?? "{{ __('Show') Bus" }}
-@endsection
-
-@section('content')
-    <section class="content container-fluid">
+    <section class="content container-fluid" style="text-align: center">
         <div class="row">
-            <div class="col-md-12">
-                <div class="card">
+
+                <div class="card" style="color: white;">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Bus</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('buses.index') }}"> {{ __('Back') }}</a>
+                        <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
+                            <a  href="{{ route('admin.buses.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
+                    <br><br><br>
+                    <div class="flex justify-center">
+                        <table id="users-table" class="min-w-full border border-gray-200 text-center">
+                          <tbody>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-bold">Id Bus</td>
+                                <td class="px-4 py-2 border-b"> {{ $bus->id_bus }}</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-bold">Placa</td>
+                                <td class="px-4 py-2 border-b">{{ $bus->placa }}</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-bold">Aforo</td>
+                                <td class="px-4 py-2 border-b">{{ $bus->aforo }}</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-bold">Empresa</td>
+                                <td class="px-4 py-2 border-b">{{ $bus->empresa->nombre }}</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-bold"> Chofer</td>
+                                <td class="px-4 py-2 border-b"> {{ $bus->chofer->user->name }}</td>
+                            </tr>
 
-                    <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Id Bus:</strong>
-                            {{ $bus->id_bus }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Placa:</strong>
-                            {{ $bus->placa }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Aforo:</strong>
-                            {{ $bus->aforo }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Empresa:</strong>
-                            {{ $bus->id_empresa }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Id Chofer:</strong>
-                            {{ $bus->id_chofer }}
-                        </div>
-
+                        </table>
                     </div>
-                </div>
-            </div>
-        </div>
+                    
+                    
+              </div>
+              </div>
+          </div>
+
     </section>
-@endsection
+</x-app-layout>

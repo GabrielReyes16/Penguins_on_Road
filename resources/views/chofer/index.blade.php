@@ -40,9 +40,9 @@
                                                   <td class="py-2 px-4 border-b">{{ $chofer->licencia_conducir }}</td>
                       
                                                   <td class="py-2 px-4 border-b">
-                                                      <form action="{{ route('choferes.destroy',$chofer->id_chofer) }}" method="POST">
-                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('choferes.show',$chofer->id_usuario) }}"> {{ __('Ver') }}</button>
-                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('choferes.edit',$chofer->id_chofer) }}" > {{ __('Editar') }}</button>
+                                                      <form action="{{ route('admin.choferes.destroy',$chofer->id_chofer) }}" method="POST">
+                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('admin.choferes.show',$chofer->id_usuario) }}"> {{ __('Ver') }}</button>
+                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('admin.choferes.edit',$chofer->id_chofer) }}" > {{ __('Editar') }}</button>
                                                           @csrf
                                                           @method('DELETE')
                                                           <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"> {{ __('Eliminar') }}</button>

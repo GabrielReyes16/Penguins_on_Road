@@ -53,9 +53,9 @@ class BusController extends Controller
       * Display the specified resource.
       */
 
-     public function show($id_bus)
+     public function show($id)
      {
-         $bus = Bus::find($id_bus);
+         $bus = Bus::find($id);
  
          return view('bus.show', compact('bus'));
      }
@@ -68,7 +68,7 @@ class BusController extends Controller
      {
          $bus = Bus::find($id_bus);
  
-         return view('turno.edit', compact('bus'));
+         return view('bus.edit', compact('bus'));
      }
  
      /**

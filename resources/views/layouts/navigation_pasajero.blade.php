@@ -28,22 +28,6 @@
                 <span class="text">Boletas</span>
             </a>
         </li>
-        <li class="options">
-            <a href="#" class="box-icon-center">
-                <span class="icons">
-                    <ion-icon name="location"></ion-icon>
-                </span>
-                <span class="text">GPS</span>
-            </a>   
-        </li>
-        <li class="options">
-            <a href="#" class="box-icon-right">
-                <span class="icons">
-                    <ion-icon name="chatbubble-ellipses"></ion-icon>
-                </span>
-                <span class="text">Foro</span>
-            </a>
-        </li>
     </div>
     <div class="user-menu-bar">
         <a class="user-icon" href="#">
@@ -55,11 +39,8 @@
         </div>
     </div>
 </header>
-
-@yield('contenido')
-
 <div class="sidebar">
-    <div class="list" id="list">
+    <div class="list hidden" id="list" >
         <li>
             <a href="#">
                 <span class="icon">
@@ -111,18 +92,19 @@
         <li>
             <form method="POST" action="{{ route('logout') }}">
                             @csrf
-            <a :href="route('logout')"
+            <x-dropdown-link :href="route('logout')"
             onclick="event.preventDefault();
                         this.closest('form').submit();">
                 <span class="icon">
                     <ion-icon name="power"></ion-icon>
                 </span>
                 <span class="text">Cerrar Sesión</span>
-            </a>
+            </x-dropdown-link>
         </form>
         </li>
     </div>
 </div>
+
 
 <script src="{{ asset ('js/animaciones.js') }}"></script>
 
