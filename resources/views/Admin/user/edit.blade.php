@@ -37,7 +37,6 @@
                             <x-input-error class="mt-2" :messages="$errors->get('name')" />
                         </div>
                 </div>
-                </form>
                 <br>
                 <div class="flex items-center gap-4">
                     <x-primary-button>{{ __('Listo') }}</x-primary-button>
@@ -88,7 +87,7 @@
 
                         <div>
                             <x-input-label for="current_password" :value="__('Current Password')" />
-                            <x-text-input id="current_password" value="old('name', $user->password)"
+                            <x-text-input id="current_password" 
                                 name="current_password" type="password" class="mt-1 block w-full"
                                 autocomplete="current-password" />
                             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />

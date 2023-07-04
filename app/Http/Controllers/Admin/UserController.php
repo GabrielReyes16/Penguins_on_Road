@@ -28,7 +28,7 @@ class UserController extends Controller
                     ->orWhere('email', 'like', "%$searchValue%")
                     ->get();
         $users = User::paginate(5);
-        return view('user.index', compact('users'))
+        return view('admin.user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
     
@@ -36,7 +36,7 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('user.create');
+        return view('admin.user.create');
     }
     public function store(Request $request)
 
@@ -58,7 +58,7 @@ class UserController extends Controller
     {
         $user = User::find($id_usuario);
 
-        return view('user.show', compact('user'));
+        return view('admin.user.show', compact('user'));
     }
 
     /**
@@ -70,15 +70,15 @@ class UserController extends Controller
          $user = User::find($id_usuario);
          $roles = Role::all();
  
-         return view('user.edit', compact('user', 'roles'));
+         return view('admin.user.edit', compact('user', 'roles'));
      }
  
      /**
       * Update the user's profile information.
       */
-      public function update(UserUpdateRequest $request, $id): RedirectResponse
+      public function update(UserUpdateRequest $request, $id_usuario): RedirectResponse
       {
-          $user = User::findOrFail($id);
+          $user = User::find($id_usuario);
           $user->fill($request->validated());
       
           if ($user->isDirty('email')) {
@@ -87,7 +87,7 @@ class UserController extends Controller
       
           $user->save();
       
-          return redirect()->route('users.index')
+          return redirect()->route('admin.users.index')
               ->with('success', 'La información  fue actualizada correctamente');
       }
  

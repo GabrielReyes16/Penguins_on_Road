@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id_usuario');
             $table->string('name');
-            $table->string('rol');
             $table->unsignedInteger('id_perfil')->nullable();
-            // $table->string('licencia_conducir')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
