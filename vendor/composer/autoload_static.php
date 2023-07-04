@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite43b59f0f313c8d6ac37287502446711
+class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -661,7 +661,6 @@ class ComposerStaticInite43b59f0f313c8d6ac37287502446711
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\UserUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserUpdateRequest.php',
         'App\\Models\\BoletaViaje' => __DIR__ . '/../..' . '/app/Models/BoletaViaje.php',
-        'App\\Models\\BoletasViaje' => __DIR__ . '/../..' . '/app/Models/BoletasViaje.php',
         'App\\Models\\Bus' => __DIR__ . '/../..' . '/app/Models/Bus.php',
         'App\\Models\\Chofer' => __DIR__ . '/../..' . '/app/Models/Chofer.php',
         'App\\Models\\Empresa' => __DIR__ . '/../..' . '/app/Models/Empresa.php',
@@ -7217,9 +7216,9 @@ class ComposerStaticInite43b59f0f313c8d6ac37287502446711
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$classMap;
 
         }, null, ClassLoader::class);
     }
