@@ -509,14 +509,12 @@ class holaMundo extends Seeder
         //Admins
         User::Create([
             'name' => 'Gabriel Reyes',
-            'rol' => 'Administrador',
             'id_perfil' => 1,
             'email' => 'gabriel@example.com',
             'password' => bcrypt('gabrielreyes'),
         ])->assignRole('Administrador');
         User::Create([
             'name' => 'Harold Medrano',
-            'rol' => 'Administrador',
             'id_perfil' => 2,
             'email' => 'harold@example.com',
             'password' => bcrypt('haroldmedrano'),
@@ -525,14 +523,12 @@ class holaMundo extends Seeder
         //Choferes
         User::Create([
                 'name' => 'Adriana Hervias',
-                'rol' => 'Chofer',
                 'id_perfil' => 3,
                 'email' => 'adri@example.com',
                 'password' => bcrypt('adrihervias'),
             ])->assignRole('Chofer');
         User::Create([
                 'name' => 'Adriana Palomino',
-                'rol' => 'Chofer',
                 'id_perfil' => 4,
                 'email' => 'adriana@example.com',
                 'password' => bcrypt('adripalomino'),
@@ -541,14 +537,12 @@ class holaMundo extends Seeder
          //Pasajeros
         User::Create([
                 'name' => 'Rael Rivero',
-                'rol' => 'Pasajero',
                 'id_perfil' => 5,
                 'email' => 'rael@example.com',
                 'password' => bcrypt('raelrivero'),
             ])->assignRole('Pasajero');
         User::Create([
                 'name' => 'Marcelo Sanabria',
-                'rol' => 'Pasajero',
                 'id_perfil' => 6,
                 'email' => 'marcelo@example.com',
                 'password' => bcrypt('marcelosanabria'),

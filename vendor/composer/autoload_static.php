@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite43b59f0f313c8d6ac37287502446711
+class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -629,6 +629,11 @@ class ComposerStaticInite43b59f0f313c8d6ac37287502446711
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\BusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BusController.php',
+        'App\\Http\\Controllers\\Admin\\ChoferController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ChoferController.php',
+        'App\\Http\\Controllers\\Admin\\RutaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RutaController.php',
+        'App\\Http\\Controllers\\Admin\\TurnoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TurnoController.php',
+        'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
         'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',
@@ -638,16 +643,11 @@ class ComposerStaticInite43b59f0f313c8d6ac37287502446711
         'App\\Http\\Controllers\\Auth\\PasswordResetLinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordResetLinkController.php',
         'App\\Http\\Controllers\\Auth\\RegisteredUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisteredUserController.php',
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
-        'App\\Http\\Controllers\\BoletasViajeController' => __DIR__ . '/../..' . '/app/Http/Controllers/BoletasViajeController.php',
-        'App\\Http\\Controllers\\BusController' => __DIR__ . '/../..' . '/app/Http/Controllers/BusController.php',
-        'App\\Http\\Controllers\\ChoferController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChoferController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\QRCodeController' => __DIR__ . '/../..' . '/app/Http/Controllers/QRCodeController.php',
         'App\\Http\\Controllers\\ReservaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReservaController.php',
-        'App\\Http\\Controllers\\RutaController' => __DIR__ . '/../..' . '/app/Http/Controllers/RutaController.php',
-        'App\\Http\\Controllers\\TurnoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TurnoController.php',
-        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -7216,9 +7216,9 @@ class ComposerStaticInite43b59f0f313c8d6ac37287502446711
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$classMap;
 
         }, null, ClassLoader::class);
     }
