@@ -621,31 +621,6 @@ class holaMundo extends Seeder
             ViajeGPS::create($viajeGPSData);
         }
 
-        // Crear boletas_viaje
-        $boletasViaje = [
-            [
-                'id_usuario_pasajero' => 1,
-                'id_usuario_chofer' => 2,
-                'id_viaje' => 1,
-                'fecha_viaje' => '2023-01-01',
-                'hora_abordaje' => '07:30:00',
-                'aforo_viaje' => 1,
-            ],
-            [
-                'id_usuario_pasajero' => 2,
-                'id_usuario_chofer' => 1,
-                'id_viaje' => 2,
-                'fecha_viaje' => '2023-01-02',
-                'hora_abordaje' => '13:30:00',
-                'aforo_viaje' => 1,
-            ],
-        ];
-
-        foreach ($boletasViaje as $boletaViajeData) {
-            BoletaViaje::create($boletaViajeData);
-        }
-
-        // Crear reservas
         $reservas = [
             [
                 'id_usuario' => 1,
@@ -664,5 +639,34 @@ class holaMundo extends Seeder
         foreach ($reservas as $reservaData) {
             Reserva::create($reservaData);
         }
+
+        // Crear boletas_viaje
+        $boletasViaje = [
+            [
+                'id_usuario_pasajero' => 1,
+                'id_usuario_chofer' => 2,
+                'id_viaje' => 1,
+                'id_reserva' => 1,
+                'fecha_viaje' => '2023-01-01',
+                'hora_abordaje' => '07:30:00',
+                'aforo_viaje' => 1,
+            ],
+            [
+                'id_usuario_pasajero' => 2,
+                'id_usuario_chofer' => 1,
+                'id_viaje' => 2,
+                'id_reserva' => 2,
+                'fecha_viaje' => '2023-01-02',
+                'hora_abordaje' => '13:30:00',
+                'aforo_viaje' => 1,
+            ],
+        ];
+
+        foreach ($boletasViaje as $boletaViajeData) {
+            BoletaViaje::create($boletaViajeData);
+        }
+
+        // Crear reservas
+        
     }
 }
