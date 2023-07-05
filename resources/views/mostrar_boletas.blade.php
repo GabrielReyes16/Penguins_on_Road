@@ -32,14 +32,20 @@
                                 <a href=""><ion-icon name="eye"></ion-icon></a>
                             </td>
                         </tr>
+                        
+                        @foreach ($boletas as $boleta)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $boleta->fecha_viaje }}</td>
+                            <td>{{ $boleta->viaje->ruta->turno->nombre }}</td>
+                            <td>{{ $boleta->viaje->ruta->punto_inicial }} ➡️ {{ $boleta->viaje->ruta->punto_final }}</td>
                             <td>
-                                <a href=""><ion-icon name="eye"></ion-icon></a>
+                                <a href="{{ route('ver_boleta', ['idBoleta' => $boleta->id_boleta]) }}">
+                                    <ion-icon name="eye"></ion-icon>
+                                </a>
                             </td>
                         </tr>
+                        @endforeach
+
                         <tr>
                             <td></td>
                             <td></td>

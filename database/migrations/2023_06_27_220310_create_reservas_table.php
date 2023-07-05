@@ -15,6 +15,7 @@ return new class extends Migration
             $table->increments('id_reserva');
             $table->unsignedInteger('id_usuario');
             $table->unsignedInteger('id_viaje');
+            $table->date('fecha_reserva');
             $table->string('codigoDeAcceso',10)->unique();
             $table->text('codigo_qr');  
             $table->boolean('utilizada')->default(false);
