@@ -37,7 +37,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Chofer::class, 'id_usuario');
     }
-
+    public function reserva()
+    {
+        return $this->belongsTo(User::class, 'id_usuario', 'id_usuario');
+    }
     static $rules = [
 		'name' => 'required',
         'email' => 'required|string|email|max:255|unique:users',

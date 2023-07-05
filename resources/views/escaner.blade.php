@@ -5,8 +5,8 @@
         </h2>
     </x-slot>
     <div class="bg-white p-6">
-        <div class="flex flex-row sm:flex-col">
-            <div class="w-full  p-6">
+        <div class="flex flex-row ">
+            <div class="w-full p-6">
                 <div id="reader" class="w-full h-96"></div>
             </div>
 

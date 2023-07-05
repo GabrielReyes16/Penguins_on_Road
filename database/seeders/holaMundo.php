@@ -2,6 +2,7 @@
 namespace Database\Seeders;
 
 use App\Models\Perfil;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use App\Models\Empresa;
 use App\Models\Turno;
@@ -619,12 +620,14 @@ class holaMundo extends Seeder
             [
                 'id_usuario' => 1,
                 'id_viaje' => 1,
+                'fecha_reserva' => '2023-07-03',
                 'codigoDeAcceso' => 'ABCDE12345',
                 'codigo_qr' => 'ABC123',
             ],
             [
                 'id_usuario' => 2,
                 'id_viaje' => 2,
+                'fecha_reserva' => '2023-07-03',
                 'codigoDeAcceso' => 'ABCDE54321',
                 'codigo_qr' => 'XYZ987',
             ],

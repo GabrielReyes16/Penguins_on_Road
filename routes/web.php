@@ -6,6 +6,7 @@ use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\BoletaViajeController;
 use App\Http\Controllers\Admin\ChoferController;
 use App\Http\Controllers\Admin\BusController;
 use App\Http\Controllers\DashboardController;
@@ -68,12 +69,15 @@ Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
 Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'])->name('formulario_reserva');
 Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
 Route::get('/reserva/{idReserva}', [ReservaController::class, 'mostrarReserva'])->name('mostrar_reserva');
+Route::get('/reserva/{idReserva}/editar', [ReservaController::class, 'editarReserva'])->name('editar_reserva');
+Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva'])->name('actualizar_reserva');
 
-//Route::get('/escanear-qr/{codigoQR}', [ReservaController::class, 'escanearQR'])->name('escanear_qr');
 Route::get('/escaner', function () {
     return view('escaner');
 });
 Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
+Route::get('/boletas', [BoletaViajeController::class, 'mostrarBoletas'])->name('mostrar_boletas');
+Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->name('ver_boleta');
 
 
 Route::put('/admin/users/{user}/updateRole', [UserController::class, 'updateRole'])->name('admin.users.updateRole');
