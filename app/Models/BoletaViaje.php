@@ -14,10 +14,10 @@ class BoletaViaje extends Model
         'id_usuario_pasajero',
         'id_usuario_chofer',
         'id_viaje',
+        'id_reserva',
         'fecha_viaje',
         'hora_abordaje',
         'aforo_viaje',
-        'codigo_qr',
     ];
 
     public function pasajero()
@@ -33,5 +33,9 @@ class BoletaViaje extends Model
     public function viaje()
     {
         return $this->belongsTo(Viaje::class, 'id_viaje', 'id_viaje');
+    }
+    public function reserva()
+    {
+        return $this->belongsTo(Reserva::class, 'id_reserva', 'id_reserva');
     }
 }

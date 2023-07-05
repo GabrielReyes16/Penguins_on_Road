@@ -1,4 +1,4 @@
-@extends ('plantilla')
+@extends ('usuario-pasajero.navbar-home')
 
 @section ('titulo')
     {{ 'Menu || Home' }}

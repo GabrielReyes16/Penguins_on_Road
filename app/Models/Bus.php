@@ -21,13 +21,13 @@ class Bus extends Model
         return $this->belongsTo(Empresa::class, 'id_empresa', 'id_empresa');
     }
 
-    public function choferes()
+    public function chofer()
     {
-        return $this->hasMany(Chofer::class, 'id_bus', 'id_bus');
+        return $this->hasOne(Chofer::class, 'id_bus', 'id_bus');
     }
 
     public function viajes()
     {
-        return $this->hasMany(Viaje::class, 'id_bus', 'id_bus');
+        return $this->hasOne(Viaje::class, 'id_bus', 'id_bus');
     }
 }

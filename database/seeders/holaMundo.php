@@ -2,6 +2,7 @@
 namespace Database\Seeders;
 
 use App\Models\Perfil;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use App\Models\Empresa;
 use App\Models\Turno;
@@ -509,14 +510,12 @@ class holaMundo extends Seeder
         //Admins
         User::Create([
             'name' => 'Gabriel Reyes',
-            'rol' => 'Administrador',
             'id_perfil' => 1,
             'email' => 'gabriel@example.com',
             'password' => bcrypt('gabrielreyes'),
         ])->assignRole('Administrador');
         User::Create([
             'name' => 'Harold Medrano',
-            'rol' => 'Administrador',
             'id_perfil' => 2,
             'email' => 'harold@example.com',
             'password' => bcrypt('haroldmedrano'),
@@ -525,14 +524,12 @@ class holaMundo extends Seeder
         //Choferes
         User::Create([
                 'name' => 'Adriana Hervias',
-                'rol' => 'Chofer',
                 'id_perfil' => 3,
                 'email' => 'adri@example.com',
                 'password' => bcrypt('adrihervias'),
             ])->assignRole('Chofer');
         User::Create([
                 'name' => 'Adriana Palomino',
-                'rol' => 'Chofer',
                 'id_perfil' => 4,
                 'email' => 'adriana@example.com',
                 'password' => bcrypt('adripalomino'),
@@ -541,14 +538,12 @@ class holaMundo extends Seeder
          //Pasajeros
         User::Create([
                 'name' => 'Rael Rivero',
-                'rol' => 'Pasajero',
                 'id_perfil' => 5,
                 'email' => 'rael@example.com',
                 'password' => bcrypt('raelrivero'),
             ])->assignRole('Pasajero');
         User::Create([
                 'name' => 'Marcelo Sanabria',
-                'rol' => 'Pasajero',
                 'id_perfil' => 6,
                 'email' => 'marcelo@example.com',
                 'password' => bcrypt('marcelosanabria'),
@@ -621,25 +616,46 @@ class holaMundo extends Seeder
             ViajeGPS::create($viajeGPSData);
         }
 
+        $reservas = [
+            [
+                'id_usuario' => 1,
+                'id_viaje' => 1,
+                'fecha_reserva' => '2023-07-03',
+                'codigoDeAcceso' => 'ABCDE12345',
+                'codigo_qr' => 'ABC123',
+            ],
+            [
+                'id_usuario' => 2,
+                'id_viaje' => 2,
+                'fecha_reserva' => '2023-07-03',
+                'codigoDeAcceso' => 'ABCDE54321',
+                'codigo_qr' => 'XYZ987',
+            ],
+        ];
+
+        foreach ($reservas as $reservaData) {
+            Reserva::create($reservaData);
+        }
+
         // Crear boletas_viaje
         $boletasViaje = [
             [
                 'id_usuario_pasajero' => 1,
                 'id_usuario_chofer' => 2,
                 'id_viaje' => 1,
+                'id_reserva' => 1,
                 'fecha_viaje' => '2023-01-01',
                 'hora_abordaje' => '07:30:00',
                 'aforo_viaje' => 1,
-                'codigo_qr' => 'ABC123',
             ],
             [
                 'id_usuario_pasajero' => 2,
                 'id_usuario_chofer' => 1,
                 'id_viaje' => 2,
+                'id_reserva' => 2,
                 'fecha_viaje' => '2023-01-02',
                 'hora_abordaje' => '13:30:00',
                 'aforo_viaje' => 1,
-                'codigo_qr' => 'XYZ987',
             ],
         ];
 
@@ -648,19 +664,6 @@ class holaMundo extends Seeder
         }
 
         // Crear reservas
-        $reservas = [
-            [
-                'id_usuario' => 1,
-                'id_viaje' => 1,
-            ],
-            [
-                'id_usuario' => 2,
-                'id_viaje' => 2,
-            ],
-        ];
-
-        foreach ($reservas as $reservaData) {
-            Reserva::create($reservaData);
-        }
+        
     }
 }

@@ -25,8 +25,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'rol',
-        'licencia_conducir',
         'id_perfil'
     ];
     public $timestamps = true;
@@ -39,13 +37,15 @@ class User extends Authenticatable
     {
         return $this->hasOne(Chofer::class, 'id_usuario');
     }
-
+    public function reserva()
+    {
+        return $this->belongsTo(User::class, 'id_usuario', 'id_usuario');
+    }
     static $rules = [
 		'name' => 'required',
-		'rol' => 'required',
         'email' => 'required|string|email|max:255|unique:users',
         'password' => 'required|string|min:8|confirmed',
-        'licencia_conducir' => 'nullable'
+
     ];
 
 
