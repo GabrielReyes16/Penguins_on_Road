@@ -21,7 +21,7 @@
                         <p class="mt-1 text-sm text-gray-400">
                             {{ __('Estos son los datos del chofer. Se cauteloso con los cambios a realizar.') }}
                         </p>
-        <form method="post" action="{{ route('choferes.update', $chofer->id_chofer) }}" class="mt-6 space-y-6">
+        <form method="post" action="{{ route('admin.choferes.update', $chofer->id_chofer) }}" class="mt-6 space-y-6">
             @csrf
             @method('patch')
             {{-- Nombre --}}

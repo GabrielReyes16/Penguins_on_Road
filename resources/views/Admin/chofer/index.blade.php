@@ -4,9 +4,9 @@
             {{ __('Choferes') }}
         </h2>
     </x-slot>
-    <div >
-        <div>
-            <div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 ">
                 <div style="color: white;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                         </div>
@@ -15,9 +15,9 @@
                             <p>{{ $message }}</p>
                         </div>
                     @endif
-                        <div style="color: white;">
-                          <div class="p-4">
-                              <table class="min-w-full border border-gray-200">
+                    <div class="flex justify-center" style="color: white;">
+                        <div class="p-4">
+                            <table id="users-table" class="min-w-full border border-gray-200">
                                       <thead class="thead">
                                           <tr>
                                               <th class="py-2 px-4 border-b">ID</th>

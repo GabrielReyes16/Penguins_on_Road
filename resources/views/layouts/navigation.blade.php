@@ -22,25 +22,25 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin.buses.index')" :active="request()->routeIs('buses.index')">
+                    <x-nav-link :href="route('admin.buses.index')" :active="request()->routeIs('admin.buses.index')">
                         {{ __('Buses') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin.choferes.index')" :active="request()->routeIs('choferes.index')">
+                    <x-nav-link :href="route('admin.choferes.index')" :active="request()->routeIs('admin.choferes.index')">
                         {{ __('Choferes') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin.choferes.index')" :active="request()->routeIs('boletas_viaje.index')">
+                    <x-nav-link :href="route('admin.choferes.index')" :active="request()->routeIs('admin.boletas_viaje.index')">
                         {{ __('Boletas de viaje') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin.choferes.index')" :active="request()->routeIs('rutas.index')">
+                    <x-nav-link :href="route('admin.rutas.index')" :active="request()->routeIs('admin.rutas.index')">
                         {{ __('Rutas') }}
                     </x-nav-link>
                 </div>

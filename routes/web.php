@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\RutaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ProfileController;
@@ -51,6 +52,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 Route::resource('users', UserController::class)->names('admin.users');
 Route::resource('buses', BusController::class)->names('admin.buses');
 Route::resource('choferes', ChoferController::class)->names('admin.choferes');
+Route::resource('rutas', RutaController::class)->names('admin.rutas');
 
 
 Route::middleware('auth')->group(function () {

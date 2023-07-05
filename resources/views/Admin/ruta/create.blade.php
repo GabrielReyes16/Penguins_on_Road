@@ -1,10 +1,12 @@
-@extends('layouts.app')
-
-@section('template_title')
-    {{ __('Create') }} Ruta
-@endsection
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
+            Crear una ruta
+        </h2>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            {{ __("\n Edita la informacion de este usuario.") }}
+        </p>
+    </x-slot>
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -27,4 +29,4 @@
             </div>
         </div>
     </section>
-@endsection
+</x-app-layout>

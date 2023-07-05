@@ -19,9 +19,9 @@ class BusController extends Controller
      */
     public function index()
     {
-        $buses = Bus::paginate(5);
+        $buses = Bus::paginate();
 
-        return view('bus.index', compact('buses'))
+        return view('admin.bus.index', compact('buses'))
             ->with('i', (request()->input('page', 1) - 1) * $buses->perPage());
     }
 
@@ -32,7 +32,7 @@ class BusController extends Controller
      public function create()
      {
          $bus = new Bus();
-         return view('bus.create', compact('bus'));
+         return view('admin.bus.create', compact('bus'));
      }
  
      /**
@@ -45,8 +45,8 @@ class BusController extends Controller
  
          $bus = Bus::create($request->all());
  
-         return redirect()->route('buses.index')
-             ->with('success', 'Bus creado exitosamente.');
+         return redirect()->route('admin.buses.index')
+             ->with('success', 'Registro de bus creado exitosamente.');
      }
  
      /**
@@ -57,7 +57,7 @@ class BusController extends Controller
      {
          $bus = Bus::find($id);
  
-         return view('bus.show', compact('bus'));
+         return view('admin.bus.show', compact('bus'));
      }
  
      /**
@@ -68,7 +68,7 @@ class BusController extends Controller
      {
          $bus = Bus::find($id_bus);
  
-         return view('bus.edit', compact('bus'));
+         return view('admin.bus.edit', compact('bus'));
      }
  
      /**
@@ -80,7 +80,7 @@ class BusController extends Controller
      
          $bus->update($request->all());
  
-         return redirect()->route('buses.index')
+         return redirect()->route('admin.buses.index')
              ->with('success', 'Informacion del bus actualizada con exito');
      }
  
@@ -90,7 +90,7 @@ class BusController extends Controller
      {
          $turno = Bus::find($id_bus)->delete();
  
-         return redirect()->route('buses.index')
+         return redirect()->route('admin.buses.index')
              ->with('success', 'Bus eliminado exitosamente');
      }
  }

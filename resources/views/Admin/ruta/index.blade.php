@@ -1,10 +1,12 @@
-@extends('layouts.app')
-
-@section('template_title')
-    Ruta
-@endsection
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
+            Rutas
+        </h2>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            {{ __("\n Edita la informacion de este usuario.") }}
+        </p>
+    </x-slot>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -17,8 +19,8 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('rutas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                <a href="{{ route('admin.rutas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Crear Ruta') }}
                                 </a>
                               </div>
                         </div>
@@ -55,9 +57,9 @@
 											<td>{{ $ruta->punto_final }}</td>
 
                                             <td>
-                                                <form action="{{ route('rutas.destroy',$ruta->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('rutas.show',$ruta->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('rutas.edit',$ruta->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('admin.rutas.destroy',$ruta->id_ruta) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.rutas.show',$ruta->id_ruta) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.rutas.edit',$ruta->id_ruta) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -74,4 +76,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-app-layout>

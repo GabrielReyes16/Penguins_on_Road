@@ -12,7 +12,7 @@
                 <div class="card" style="color: white;">
                     <div class="card-header">
                         <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
-                            <a  href="{{ route('choferes.index') }}"> {{ __('Back') }}</a>
+                            <a  href="{{ route('admin.choferes.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
                     <br><br><br>

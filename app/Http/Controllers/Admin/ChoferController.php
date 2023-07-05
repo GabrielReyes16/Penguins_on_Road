@@ -20,18 +20,15 @@ class ChoferController extends Controller
     {
         $choferes = Chofer::paginate(5);
     
-        return view('chofer.index', compact('choferes'))
+        return view('admin.chofer.index', compact('choferes'))
             ->with('i', (request()->input('page', 1) - 1) * $choferes->perPage());
     }
-    
-
     /**
      * Show the form for creating a new resource.
      */
-    
      public function create()
      {
-        return view('chofer.create');
+        return view('admin.chofer.create');
      }
      
      public function store(Request $request)
@@ -41,7 +38,7 @@ class ChoferController extends Controller
  
          $user = User::create($request->all());
  
-         return redirect()->route('choferes.index')
+         return redirect()->route('admin.choferes.index')
  
              ->with('success', 'Chofer creado exitosamente.');
  
@@ -50,7 +47,7 @@ class ChoferController extends Controller
      public function show($id)
      {
         $chofer = Chofer::find($id);
-         return view('chofer.show', compact('chofer'));
+         return view('admin.chofer.show', compact('chofer'));
      }
      
      public function edit($id)
@@ -59,7 +56,7 @@ class ChoferController extends Controller
         $buses = Bus::all();
         $empresas = Empresa::all();
      
-         return view('chofer.edit', compact('chofer','buses','empresas'));
+         return view('admin.chofer.edit', compact('chofer','buses','empresas'));
      }
      
      public function update(Request $request, $id)
@@ -69,14 +66,14 @@ class ChoferController extends Controller
         $chofer->id_empresa = $request->input('id_empresa');
         $chofer->licencia_conducir = $request->input('licencia_conducir');
          $chofer->save();
-         return redirect()->route('choferes.index')->with('success', 'La información fue actualizada correctamente');
+         return redirect()->route('admin.choferes.index')->with('success', 'La información fue actualizada correctamente');
      }
      
      public function destroy($id)
      {
          $chofer = Chofer::find($id);
          $chofer->delete();
-         return redirect()->route('choferes.index')->with('success', 'El chofer fue eliminado con éxito');
+         return redirect()->route('admin.choferes.index')->with('success', 'El chofer fue eliminado con éxito');
      }}
      
      
