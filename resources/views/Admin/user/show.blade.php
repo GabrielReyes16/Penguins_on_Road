@@ -32,6 +32,10 @@
                                 <td class="px-4 py-2 border-b font-bold">Email</td>
                                 <td class="px-4 py-2 border-b">{{ $user->email }}</td>
                             </tr>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-bold">Rol</td>
+                                <td class="px-4 py-2 border-b">{{$user->roles()->first()->name }}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

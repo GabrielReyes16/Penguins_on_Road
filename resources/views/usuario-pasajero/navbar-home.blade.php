@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li class="options">
-                <a href="/abordaje" class="box-icon-center">
+                <a href="formulario-reserva" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="bus"></ion-icon>
                     </span>
