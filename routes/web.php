@@ -35,6 +35,8 @@ Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva
 Route::get('/boletas', [BoletaViajeController::class, 'mostrarBoletas'])->name('mostrar_boletas');
 Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->name('ver_boleta');
 
+// Rutas de chofer
+
 // Rutas de admin
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::resource('users', UserController::class)->names('admin.users');

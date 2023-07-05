@@ -35,7 +35,7 @@
                     <span class="icons">
                         <ion-icon name="trail-sign"></ion-icon>
                     </span>
-                    <span class="text">Rutas y Horarios</span>
+                    <span class="text">Iniciar viaje</span>
                 </a>
             </li>
             <li class="options">
@@ -43,7 +43,7 @@
                     <span class="icons">
                         <ion-icon name="bus"></ion-icon>
                     </span>
-                    <span class="text">Abordaje</span>
+                    <span class="text">Viajes realizados</span>
                 </a>
             </li>
             <li class="options">
@@ -51,7 +51,7 @@
                     <span class="icons">
                         <ion-icon name="receipt"></ion-icon>
                     </span>
-                    <span class="text">Boletas</span>
+                    <span class="text">Rutas</span>
                 </a>
             </li>
 
