@@ -1,8 +1,16 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QRCodeController;  
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\UserController; 
+use App\Http\Controllers\ReservaController;  //Meter en carpeta correspondiente en controllers
+use App\Http\Controllers\BoletaViajeController;  //Meter en carpeta correspondiente en controllers
+use App\Http\Controllers\Admin\ChoferController;
+use App\Http\Controllers\Admin\BusController;
+use App\Http\Controllers\Admin\RutaController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,22 +20,49 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
+// Ruta del formulario de login
+Route::get('/', function () {return view('index');});
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Rutas de usuario pasajero
+Route::get('/usuario-pasajero/home', function () {return view('usuario-pasajero.homePasajero');});
+Route::get('/home', function () {return view('usuario-pasajero.homePasajero');});
+Route::get('/turnos', function () {return view('usuario-pasajero.turnos');});
+Route::get('/boletas', function () {return view('usuario-pasajero.mostrar_boletas');});
+Route::get('/reserva/{idReserva}', [ReservaController::class, 'mostrarReserva'])->name('mostrar_reserva');
+Route::get('/reserva/{idReserva}/editar', [ReservaController::class, 'editarReserva'])->name('editar_reserva');
+Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva'])->name('actualizar_reserva');
+Route::get('/boletas', [BoletaViajeController::class, 'mostrarBoletas'])->name('mostrar_boletas');
+Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->name('ver_boleta');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Rutas de chofer
 
+// Rutas de admin
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::resource('users', UserController::class)->names('admin.users');
+Route::resource('buses', BusController::class)->names('admin.buses');
+Route::resource('choferes', ChoferController::class)->names('admin.choferes');
+Route::resource('rutas', RutaController::class)->names('admin.rutas');
+
+// Ruta de acciones directas en perfil
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-Route::get('/usuarios', [UserController::class, 'index'])->name('usuarios.index');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');});
+     
+// Rutas de abordaje
+Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
+Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'])->name('formulario_reserva');
+Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
+Route::get('/escaner', function () {return view('escaner');});
+Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
+
+// Ruta para cambiar rol de usuario
 
 
-require __DIR__.'/auth.php';
+
+
+//Ruta de edicion de roles de usuario
+Route::put('/admin/users/{user}/updateRole', [UserController::class, 'updateRole'])->name('admin.users.updateRole');
+
+require __DIR__ . '/auth.php';

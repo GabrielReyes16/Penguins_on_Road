@@ -1,0 +1,209 @@
+* {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif}
+
+body 
+{
+    background: linear-gradient(85.02deg, #00894F 0%, #2EA8EC 50.31%, #0053B5 100%);
+}
+
+.fondo-imagen header 
+{
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.5) 100%);
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer 
+{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    height: 425px;
+}
+
+.fondo-imagen 
+{
+    background: url(../img/tecsup-lima.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+}
+
+.fondo-imagen header div h1 
+{
+    color: #fff;
+    font-size: 3.5em;
+    font-weight: 700;
+    padding-right: 50px;
+}
+
+.fondo-imagen header a .logo-proyecto 
+{
+    width: 350px;
+    height: auto;
+}
+
+footer .logo-tecsup
+{
+    width: auto;
+    height: 160px;
+}
+
+.fondo-imagen .cuerpo 
+{
+    position: relative;
+    justify-content: center;
+    display: flex;
+    padding-top: 20px;
+}
+
+.fondo-imagen .cuerpo .loginBox 
+{
+    width: 820px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(2, 58, 255, 0.71) 0%, rgba(39, 74, 197, 0) 100%);
+    border-radius: 15px;
+}
+
+.fondo-imagen .cuerpo .loginBox .fondo-titulo 
+{
+    width: 380px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    background: linear-gradient(90deg, rgba(217, 217, 217, 0) -1.53%, rgba(255, 255, 255, 0.24) 101.22%);
+    border-radius: 5px
+}
+
+.fondo-imagen .cuerpo .loginBox .fondo-titulo .titulo 
+{
+    padding: 15px;
+    padding-right: 0px;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #fff;
+}
+
+.fondo-imagen .cuerpo .loginBox .instrucciones 
+{
+    width: 670px;
+    height: auto;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 29px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox 
+{
+    width: 670px;
+    height: 350px;
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox .inputLine1
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 90px;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox .inputLine2
+{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 90px;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox div .textInput
+{
+    color: #D9D9D9;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox div .input 
+{
+    width: 350px;
+    height: 35px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-size: 1.3em;
+    padding-left: 10px;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox .btn 
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    text-decoration: none;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox .btn a .btn-in
+{
+    width: 200px;
+    height: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    color: #fff;
+    background: rgba(38, 85, 255, 0.8);
+    font-size: 1.5em;
+    font-weight: 700;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox .btn a .btn-in:hover
+{
+    background: #1E3FB5;
+    border: 2px solid #FFFFFF;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox .forgot
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox .forgot a
+{
+    text-decoration: none;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox .forgot a .text-forgot
+{
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.fondo-imagen .cuerpo .loginBox form .shadowBox .forgot a .text-forgot:hover
+{
+    color: #D9D9D9;
+}
