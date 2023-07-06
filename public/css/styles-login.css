@@ -64,8 +64,8 @@ footer .logo-tecsup
 
 .fondo-imagen .cuerpo .loginBox
 {
-    width: 650px;
-    height: 400px;
+    width: 550px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -76,7 +76,7 @@ footer .logo-tecsup
 
 .fondo-imagen .cuerpo .loginBox .fondo-titulo  
 {
-    width: 250px;
+    width: 300px;
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -87,31 +87,37 @@ footer .logo-tecsup
 .fondo-imagen .cuerpo .loginBox .fondo-titulo .titulo
 {
     padding: 8px;
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 600;
+    color: #fff;
 }
 
 .fondo-imagen .cuerpo .loginBox .instrucciones 
 {
-    width: 580px;
+    width: 500px;
     height: auto;
     display: flex;
-    position: relative;
     justify-content: start;
-    font-size: 1.5em;
+    font-size: 23px;
     font-weight: 300;
-    line-height: 0px;
-    margin-top: 35px;
+    margin-top: 20px;
     color: #fff;
+}
+
+.fondo-imagen .cuerpo .loginBox form
+{
+    width: 500px;
+    height: auto;
+    display: flex;
+    margin-top: 10px;
 }
 
 .fondo-imagen .cuerpo .loginBox form .shadowBox  
 {
-    width: 580px;
-    height: 250px;
-    margin-top: 30px;
+    width: 100%;
+    height: 210px;
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 3px
+    border-radius: 5px;
 }
 
 .fondo-imagen .cuerpo .loginBox form .shadowBox .inputLine1
@@ -119,9 +125,9 @@ footer .logo-tecsup
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin-top: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-top: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
     line-height: 40px;
 }
 
@@ -130,9 +136,9 @@ footer .logo-tecsup
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin-top: 10px;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-top: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
     line-height: 40px;
 }
 
@@ -145,12 +151,12 @@ footer .logo-tecsup
 
 .fondo-imagen .cuerpo .loginBox form .shadowBox div .input
 {
-    width: 300px;
+    width: 260px;
     height: 30px;
     border: none;
-    border-radius: 2px;
+    border-radius: 15px;
     font-size: 15px;
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 .fondo-imagen .cuerpo .loginBox form .shadowBox .btn 
@@ -188,7 +194,7 @@ footer .logo-tecsup
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .fondo-imagen .cuerpo .loginBox form .shadowBox .forgot a
