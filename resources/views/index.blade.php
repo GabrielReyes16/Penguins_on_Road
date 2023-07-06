@@ -54,8 +54,11 @@
                             </a>
                         </div>
                         <div class="forgot">
-                            <a href="#">
-                                <label class="text-forgot">¿Olvidaste tu contraseña?</label>
+                            @if (Route::has('password.request'))
+                            <a href="{{ route('password.request') }}">
+                               <label class="text-forgot"> {{ __('Olvidaste tu contraseña?') }} </label>
+                            </a>
+                        @endif
                             </a>
                         </div>
                     </div>
