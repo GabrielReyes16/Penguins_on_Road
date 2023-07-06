@@ -1,4 +1,4 @@
-@extends ('usuario-pasajero.navbar-boletas')
+@extends ('usuario-chofer.navbar-boletas')
 
 @section ('css-personalizado')
     <link rel="stylesheet" href="{{ asset ('css/Passenger/style-ticket.css') }}">
