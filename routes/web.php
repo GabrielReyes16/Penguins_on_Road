@@ -49,7 +49,7 @@ Route::get('/view_turnos', function () {
     return view('usuario-chofer.Rutas');
 });
 Route::get('/view_boletas', function () {
-    return view('usuario-chofer.mostrar_boletas');
+    return view('usuario-chofer.mostrarBoletas');
 });
 
 

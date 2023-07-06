@@ -1,9 +1,14 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-200 leading-tight">
-            {{ __('Reserva de Viaje') }}
-        </h2>
-    </x-slot>
+@extends ('usuario-chofer.navbar-abordaje')
+
+@section ('css-personalizado')
+    <link rel="stylesheet" href="{{ asset ('css/Passenger/style-ticket.css') }}">
+@stop
+
+@section ('titulo')
+    {{ 'Menu || Boletas de viaje' }}
+@stop
+
+@section ('contenido')
     <div class="bg-white p-6">
         <div class="flex flex-row ">
             <div class="w-full p-6">
@@ -33,4 +38,6 @@
     <script src="{{ asset('js/escaneo-chofer.js') }}"></script>
     <script src="{{ asset('js/html5_qrcode.js') }}"></script>        
     <script src="{{ asset('js/escaner.js') }}"></script>
-</x-app-layout>
+    </main>
+
+@stop   
