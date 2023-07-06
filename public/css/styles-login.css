@@ -100,9 +100,9 @@ footer .logo-tecsup
     height: auto;
     display: flex;
     justify-content: start;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 300;
-    margin-top: 20px;
+    margin-top: 10px;
     color: #fff;
 }
 
@@ -120,6 +120,7 @@ footer .logo-tecsup
     height: 210px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
+    padding: 20px;
 }
 
 .fondo-imagen .cuerpo .loginBox form .shadowBox .inputLine1
@@ -127,9 +128,9 @@ footer .logo-tecsup
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin-top: 15px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-top: 8px;
+    margin-left: 40px;
+    margin-right: 40px;
     line-height: 40px;
 }
 
@@ -138,9 +139,8 @@ footer .logo-tecsup
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin-top: 15px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
     line-height: 40px;
 }
 
@@ -166,7 +166,7 @@ footer .logo-tecsup
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 5px;
     text-decoration: none;
 }
 
@@ -196,7 +196,7 @@ footer .logo-tecsup
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .fondo-imagen .cuerpo .loginBox form .shadowBox .forgot a
