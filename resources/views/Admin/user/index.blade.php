@@ -15,8 +15,8 @@
                     
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                             <div class="d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
-                                <a href="{{ route('admin.users.create') }}" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" >
+                             <div class="d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  ;">
+                                <a href="{{ route('admin.users.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" >
                                   {{ __('Crear un usuario') }}
                                 </a>
                               </div>
@@ -45,8 +45,8 @@
                                                   <td class="py-2 px-4 border-b user-email">{{ $user->email }}</td>
                                                   <td class="py-2 px-4 border-b">
                                                       <form action="{{ route('admin.users.destroy',$user->id_usuario) }}" method="POST">
-                                                          <a style="color: white;  background-color: rgb(46, 194, 83);" href="{{ route('admin.users.show',$user->id_usuario) }}"> {{ __('Ver') }}</button>
-                                                          <a style="color: rgb(0, 0, 0);  background-color: rgb(182, 221, 39);" href="{{ route('admin.users.edit',$user->id_usuario) }}" > {{ __('Editar') }}</button>
+                                                          <a class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-3 rounded" href="{{ route('admin.users.show',$user->id_usuario) }}"> {{ __('Ver') }}</a>
+                                                          <a  class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" href="{{ route('admin.users.edit',$user->id_usuario) }}" > {{ __('Editar') }}</a>
                                                           @csrf
                                                           @method('DELETE')
                                                           <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"> {{ __('Eliminar') }}</button>

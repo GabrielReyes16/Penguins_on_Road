@@ -28,7 +28,6 @@ Route::get('/', function () {return view('index');});
 Route::get('/usuario-pasajero/home', function () {return view('usuario-pasajero.homePasajero');});
 Route::get('/home', function () {return view('usuario-pasajero.homePasajero');});
 Route::get('/turnos', function () {return view('usuario-pasajero.turnos');});
-Route::get('/boletas', function () {return view('usuario-pasajero.mostrar_boletas');});
 Route::get('/reserva/{idReserva}', [ReservaController::class, 'mostrarReserva'])->name('mostrar_reserva');
 Route::get('/reserva/{idReserva}/editar', [ReservaController::class, 'editarReserva'])->name('editar_reserva');
 Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva'])->name('actualizar_reserva');
@@ -42,13 +41,19 @@ Route::get('/turnos', function () {
     return view('usuario-pasajero.turnos');
 });
 
-Route::get('/boletas', function () {
-    return view('usuario-pasajero.boletos');
+// Chofer
+Route::get('/welcome', function () {
+    return view('usuario-chofer.homeChofer');
+});
+Route::get('/view_turnos', function () {
+    return view('usuario-chofer.Rutas');
+});
+Route::get('/view_boletas', function () {
+    return view('usuario-chofer.mostrar_boletas');
 });
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+
+
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
@@ -72,9 +77,6 @@ Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'
 Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
 Route::get('/escaner', function () {return view('escaner');});
 Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
-
-// Ruta para cambiar rol de usuario
-
 
 
 
