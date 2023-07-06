@@ -34,10 +34,6 @@ Route::get('/reserva/{idReserva}/editar', [ReservaController::class, 'editarRese
 Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva'])->name('actualizar_reserva');
 Route::get('/boletas', [BoletaViajeController::class, 'mostrarBoletas'])->name('mostrar_boletas');
 Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->name('ver_boleta');
-
-// Rutas de chofer
-
-<<<<<<< HEAD
 Route::get('/home', function () {
     return view('usuario-pasajero.homePasajero');
 });
@@ -57,10 +53,8 @@ Route::get('/welcome', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
-=======
 // Rutas de admin
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
->>>>>>> a6ea4d0bbe297eee13067955484b362ca102ea80
 Route::resource('users', UserController::class)->names('admin.users');
 Route::resource('buses', BusController::class)->names('admin.buses');
 Route::resource('choferes', ChoferController::class)->names('admin.choferes');

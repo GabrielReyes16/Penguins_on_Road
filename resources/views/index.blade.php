@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300&display=swap" rel="stylesheet">
-    <title>LOG IN</title>
+    <title>Inicia sesión</title>
 </head>
 <body>
     <div class="fondo-imagen">
@@ -25,18 +25,19 @@
                     <h1 class="titulo">Penguins on Road</h1>
                 </div>
                 <div class="instrucciones">
-                    <label>Bienvenido al app web Penguins on Road! Ingresa tus datos:</label>
+                    <label>Bienvenido al app web de gestión de buses de Tecsup Penguins on Road! Ingresa tus datos:</label>
                 </div>
                 <x-auth-session-status :status="session('status')" />
                 <x-auth-session-status :status="session('status')" />
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="shadowBox">
+                        <x-input-error :messages="$errors->get('email')" class="textInput"  />
+                        <x-input-error :messages="$errors->get('password')" />
                         <!-- Email Address -->
                         <div class="inputLine1">
                             <x-input-label for="email" :value="__('Usuario')" class="textInput" />
                             <x-text-input class="input" id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-                            <x-input-error :messages="$errors->get('email')" />
                         </div>
                                 <!-- Password -->
                         <div class="inputLine2">
@@ -45,7 +46,6 @@
                                 type="password"
                                 name="password"
                                 required autocomplete="current-password" />
-                            <x-input-error :messages="$errors->get('password')" />
                         </div>
 
                         <div class="btn">
