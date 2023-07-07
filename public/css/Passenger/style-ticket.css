@@ -109,7 +109,7 @@ main .contenido-ticket table tbody tr td a ion-icon:hover
 
     main .contenido-ticket
     {
-        width: 1200px;
+        width: 90%;
         height: 500px;
         margin-top: 30px;
         margin-bottom: 30px;
@@ -131,7 +131,7 @@ main .contenido-ticket table tbody tr td a ion-icon:hover
     
     main .contenido-ticket .contenido-tabla
     {
-        width: 1000px;
+        width: 90%;
         max-height: 400px;
         overflow: auto;
         border-radius: 30px;
