@@ -21,6 +21,8 @@
             <img src="{{ asset('img/logo-proyecto-blanco.png') }}">
             <img src="{{ asset('img/logotipo-TECSUP-blanco.png') }}">
         </div>
+        <span class="flecha active"><ion-icon class="down" name="chevron-down"></ion-icon></span>
+        <span class="flecha"><ion-icon class="up" name="chevron-up"></ion-icon></span>
         <div class="menu-bar">
             <li class="options active">
                 <a href="/home" class="box-icon-left">

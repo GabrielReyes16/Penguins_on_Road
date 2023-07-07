@@ -1,8 +1,4 @@
-var list = document.getElementById("list");
-var menu = document.getElementById("menu");
-menu.onclick = function () {
-  list.classList.toggle ("active");
-};
+
 
 var carrusel = document.querySelector('.carrusel');
 var slides = document.querySelectorAll('.slide');
@@ -19,3 +15,9 @@ siguiente.addEventListener('click', () => {
   slideIndex = Math.min(slideIndex + 1, slides.length - 1);
   carrusel.style.transform = `translateX(-${slideIndex * 100}%)`;
 });
+
+var list = document.getElementById("list");
+var menu = document.getElementById("menu");
+menu.onclick = function () {
+  list.classList.toggle ("active");
+};
