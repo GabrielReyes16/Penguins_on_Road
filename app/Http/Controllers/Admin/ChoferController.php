@@ -32,16 +32,11 @@ class ChoferController extends Controller
      }
      
      public function store(Request $request)
-
      {
-         request()->validate(User::$rules);
- 
-         $user = User::create($request->all());
- 
+        $chofer = Chofer::create($request->all());
+     
          return redirect()->route('admin.choferes.index')
- 
              ->with('success', 'Chofer creado exitosamente.');
- 
      }
      
      public function show($id)
@@ -50,9 +45,9 @@ class ChoferController extends Controller
          return view('admin.chofer.show', compact('chofer'));
      }
      
-     public function edit($id)
+     public function edit($id_chofer)
      {
-        $chofer = Chofer::find($id);
+        $chofer = Chofer::find($id_chofer);
         $buses = Bus::all();
         $empresas = Empresa::all();
      

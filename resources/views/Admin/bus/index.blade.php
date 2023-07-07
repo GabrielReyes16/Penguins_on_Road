@@ -30,7 +30,6 @@
 										<th class="py-2 px-4 border-b">Placa</th>
 										<th class="py-2 px-4 border-b">Aforo</th>
 										<th class="py-2 px-4 border-b">Empresa</th>
-										<th class="py-2 px-4 border-b">Chofer</th>
 
                                         <th class="py-2 px-4 border-b">Operaciones</th>
                                     </tr>
@@ -42,7 +41,7 @@
 											<td class="py-2 px-4 border-b">{{ $bus->placa }}</td>
 											<td class="py-2 px-4 border-b">{{ $bus->aforo }}</td>
 											<td class="py-2 px-4 border-b">{{ $bus->empresa->nombre }}</td>
-											<td class="py-2 px-4 border-b">{{ $bus->chofer->user->name }}</td>
+
 
                                             <td class="py-2 px-4 border-b">
                                                 <form action="{{ route('admin.buses.destroy',$bus->id_bus) }}" method="POST">

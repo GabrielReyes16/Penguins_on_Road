@@ -68,6 +68,10 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 // Rutas de admin
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::resource('users', UserController::class)->names('admin.users');
+Route::POST('/admin/users/{user}/storeChofer', [UserController::class, 'storeChofer'])
+    ->name('admin.users.storeChofer');
+    Route::get('/admin/users/{user}/createChofer', [UserController::class, 'createChofer'])
+    ->name('admin.users.createChofer');
 Route::resource('buses', BusController::class)->names('admin.buses');
 Route::resource('choferes', ChoferController::class)->names('admin.choferes');
 Route::resource('rutas', RutaController::class)->names('admin.rutas');
