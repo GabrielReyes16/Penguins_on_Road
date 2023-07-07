@@ -18,8 +18,8 @@
 
 @section('contenido')
     <div class="container mx-auto">
-        <h2 class="text-2xl font-bold text-center mt-8">Turno tarde | 6:10pm</h2>
-        <p class="text-4xl  font-bold text-black text-center py-2">Campus-Ov. de la Perla</p>
+        <h2 class="text-2xl font-bold text-center mt-8">{{'Turno '}}{{ $ruta->turno->nombre }} | {{ $ruta->turno->hora_inicio }}</h2>
+        <p class="text-4xl  font-bold text-black text-center py-2">{{ $ruta->punto_inicial }} ➡️ {{ $ruta->punto_final }}</p>
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row">
                 <!-- Mapa -->
@@ -27,7 +27,9 @@
                     <div id="map" class="h-64 md:h-full">
                     </div>
                 </div>
-        
+
+                
+
                 <!-- Información de la ruta -->
                 <div class="w-full md:w-1/3 px-4 py-8 md:px-8 md:py-0">
                     <h2 class="text-2xl font-bold mb-4">Información de la ruta</h2>
@@ -37,17 +39,16 @@
                         <h4 class="font-bold">Chofer actual</h4>
                         <p>Nombre del chofer</p>
                     </div>
-                    
                     <!-- Punto de partida -->
                     <div class="mb-4">
                         <h4 class="font-bold">Punto de partida</h4>
-                        <p>Dirección de partida</p>
+                        <p>{{ $ruta->punto_inicial }}</p>
                     </div>
                     
                     <!-- Hora de partida -->
                     <div class="mb-4">
                         <h4 class="font-bold">Hora de partida</h4>
-                        <p>12:00 PM</p>
+                        <p>{{$horaInicio->format('h:i A') }}</p>
                     </div>
                     
                     <!-- Paraderos -->
@@ -58,7 +59,20 @@
                                 <li></li>
                                 <li>{{ $paradero->nombre }} </li>
                                 <li>{{ $paradero->ubicacion }}</li>
-                                <li></li>
+                                <li>
+                                    <script>
+                                    // Agregar marcador para cada paradero en el mapa
+                                    L.marker([{{ $paradero->latitud }}, {{ $paradero->longitud }}]).addTo(map)
+                                        .bindPopup('{{ $paradero->nombre }}')
+                                        .openPopup();
+                                    </script>
+                                </li>
+                                <script>
+                    // Agregar marcador para cada paradero en el mapa
+                    L.marker([{{ $paradero->latitud }}, {{ $paradero->longitud }}]).addTo(map)
+                        .bindPopup('{{ $paradero->nombre }}')
+                        .openPopup();
+                </script>
                             @endforeach
                         </ul>
                     </div>
@@ -66,13 +80,13 @@
                     <!-- Hora estimada de fin -->
                     <div class="mb-4">
                         <h4 class="font-bold">Hora estimada de fin</h4>
-                        <p>01:00 PM</p>
+                        <p>{{ $horaFinEstimada->format('h:i A') }}</p>
                     </div>
                     
                     <!-- Punto de fin -->
                     <div>
                         <h4 class="font-bold">Punto de fin</h4>
-                        <p>Dirección de fin</p>
+                        <p>{{ $ruta->punto_final }}</p>
                     </div>
                 </div>
             </div>

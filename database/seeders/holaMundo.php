@@ -67,26 +67,31 @@ class holaMundo extends Seeder
         $rutas = [
             [
                 'id_turno' => 1,
+		        // 'id_chofer' => 1,
                 'punto_inicial' => 'AV. AVIACION - J. PRADO',
                 'punto_final' => 'CAMPUS',
             ],
             [
                 'id_turno' => 1,
+
                 'punto_inicial' => 'PUENTE NUEVO - J. PRADO',
                 'punto_final' => 'CAMPUS',
             ],
             [
                 'id_turno' => 2,
+
                 'punto_inicial' => 'CAMPUS',
                 'punto_final' => 'AV. J. PRADO - OVALO LA PERLA',
             ],
             [
                 'id_turno' => 2,
+
                 'punto_inicial' => 'CAMPUS',
                 'punto_final' => 'PUENTE NUEVO - MEGA PLAZA',
             ],
             [
                 'id_turno' => 2,
+
                 'punto_inicial' => 'CAMPUS',
                 'punto_final' => 'CHACLACAYO',
             ],
@@ -115,239 +120,239 @@ class holaMundo extends Seeder
             [
                 'id_ruta' => 1,
                 'nombre' => 'PARADERO INICIAL: ALTURA CINE STAR AVIACIÓN (A UNA CUADRA DE AV. J. PRADO)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 1,
                 'nombre' => 'PARADERO: Av. Javier Prado con la Ca. Velasquez (a 1 cdra. de San Luis)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 1,
                 'nombre' => 'CAMPUS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
 
             [
                 'id_ruta' => 2,
                 'nombre' => 'PARADERO INICIAL: PUENTE NUEVO (ALTURA GRIFO REPSOL)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 2,
                 'nombre' => 'CAMPUS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
 
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. FRUTALES CON AV. JAVIER PRADO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO U. DE LIMA (J. PRADO) POR LA VIA AUXILIAR',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. AGUSTIN DE LA ROSA TORO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. SAN LUIS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. AVIACION',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO RICARDO PALMA (J. PRADO)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON CALLE LAS ORQUIDEAS (ANTES DE LA CLINICA J. PRADO)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. PETIT THOUARS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. LAS PALMERAS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. LOS ALAMOS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. LAS FLORES',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON CALLE ROMA (ANTES DE SALAVERRY)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO SAN FELIPE (AV. GREGORIO ESCOBEDO CON AV. SANCHEZ CARRION)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. LA MARINA CON AV. SUCRE',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. LA MARINA CON AV. UNIVERSITARIA',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. LA MARINA CON AV. RAFAEL ESCARDO (HIRAOKA)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. LA MARINA CON AV. FAUCETT',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO OV. LA PERLA',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
 
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO LOS FICUS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO PUENTE NUEVO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO PUENTE TRUJILLO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO CAQUETA',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO HABICH',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO 2DA. DE PALAO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO JARDINES',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO PLAZA NORTE',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO MEGA PLAZA',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
 
 
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO HUACHIPA',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO SANTA CLARA (COSTADO REAL PLAZA)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO HORACIO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO HUAYCAN',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO ÑAÑA',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO EL CUADRO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO LOS ALAMOS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO PLAZA CHACLACAYO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
 
 
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO EVITAMIENTO (TREBOL)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PTE. PRIMAVERA',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PROSEGUR',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PTE. BENAVIDES (ABAJO)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO TOTTUS (MALL ATOCONGO)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PTE. ATOCONGO (ABAJO)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
 
 
@@ -355,42 +360,42 @@ class holaMundo extends Seeder
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. FRUTALES CON AV. JAVIER PRADO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO U. DE LIMA (J. PRADO) POR LA VIA AUXILIAR',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. AGUSTIN DE LA ROSA TORO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. SAN LUIS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. AVIACION',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO RICARDO PALMA (J. PRADO)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. J. PRADO CON CALLE LAS ORQUIDEAS (ANTES DE LA CLINICA J. PRADO)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. PETIT THOUARS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
 
 
@@ -400,42 +405,42 @@ class holaMundo extends Seeder
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO HUACHIPA',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO SANTA CLARA (COSTADO REAL PLAZA)',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO HORACIO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO HUAYCAN',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO ÑAÑA',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO EL CUADRO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO LOS ALAMOS',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO PLAZA CHACLACAYO',
-                'ubicacion' => 'Lima, Perú',
+                 'latitud'=> 0,  'longitud' => 0
             ],
 
         ];

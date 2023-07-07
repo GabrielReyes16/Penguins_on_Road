@@ -649,7 +649,7 @@ class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\QRCodeController' => __DIR__ . '/../..' . '/app/Http/Controllers/QRCodeController.php',
         'App\\Http\\Controllers\\ReservaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReservaController.php',
-        'App\\Http\\Controllers\\RutaController' => __DIR__ . '/../..' . '/app/Http/Controllers/RutaController.php',
+        'App\\Http\\Controllers\\RutasController' => __DIR__ . '/../..' . '/app/Http/Controllers/RutasController.php',
         'App\\Http\\Controllers\\ViajeController' => __DIR__ . '/../..' . '/app/Http/Controllers/ViajeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
