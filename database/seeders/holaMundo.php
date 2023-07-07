@@ -324,32 +324,32 @@ class holaMundo extends Seeder
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO EVITAMIENTO (TREBOL)',
-                'latitud' => 0, 'longitud' => 0,
+                'latitud' => -12.08216, 'longitud' => -76.97951,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PTE. PRIMAVERA',
-                'latitud' => 0, 'longitud' => 0,
+                'latitud' =>-12.11151, 'longitud' => -76.97795,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PROSEGUR',
-                'latitud' => 0, 'longitud' => 0,
+                'latitud' => -12.12686, 'longitud' => -76.97716,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PTE. BENAVIDES (ABAJO)',
-                'latitud' => 0, 'longitud' => 0,
+                'latitud' => -12.13354, 'longitud' => -76.97917,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO TOTTUS (MALL ATOCONGO)',
-                'latitud' => 0, 'longitud' => 0,
+                'latitud' => -12.14694, 'longitud' => -76.98238,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PTE. ATOCONGO (ABAJO)',
-                'latitud' => 0, 'longitud' => 0,
+                'latitud' => -12.14956, 'longitud' => -76.98334,
             ],
 
             [
