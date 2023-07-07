@@ -20,7 +20,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('admin.rutas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Crear Ruta') }}
+                                    <i class="fa-sharp fa-light fa-plus"></i>   {{ __('Crear Ruta') }}
                                 </a>
                               </div>
                         </div>
