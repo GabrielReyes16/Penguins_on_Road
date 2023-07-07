@@ -27,5 +27,5 @@
             </div>
 
         </div>
-    <main>
+    </main>
 @stop
