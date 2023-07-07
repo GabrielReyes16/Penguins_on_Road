@@ -104,7 +104,7 @@ main .contenido-ticket table tbody tr td a ion-icon:hover
 
 
 
-@media only screen and (max-width: 650px) {
+@media (max-width: 650px) {
 
     main .contenido-ticket
     {
@@ -215,7 +215,7 @@ main .contenido-ticket table tbody tr td a ion-icon:hover
 
 
 
-@media only screen and (max-width: 1250px) {
+@media (max-width: 1250px) {
 
     main .contenido-ticket
     {
