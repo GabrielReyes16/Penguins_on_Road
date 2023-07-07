@@ -5,7 +5,7 @@ body
     width: 100%;
     height: auto;
     background: linear-gradient(85.02deg, #00894F 0%, #2EA8EC 50.31%, #0053B5 100%);
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .fondo-imagen header

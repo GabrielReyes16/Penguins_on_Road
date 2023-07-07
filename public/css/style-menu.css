@@ -350,7 +350,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        overflow: hidden;
+        /* overflow: hidden; */
         display: flex;
         position: absolute;
     }
@@ -465,6 +465,7 @@
         background: #cdcdcd;
         width: 100%;
         height: auto;
+        /* overflow: hidden; */
     }
     
     header
@@ -800,7 +801,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        overflow: hidden;
+        /* overflow: hidden; */
         display: flex;
         position: absolute;
     }
@@ -913,6 +914,7 @@
         background: #cdcdcd;
         width: 100%;
         height: auto;
+        /* overflow: hidden; */
     }
 
     header
@@ -1248,7 +1250,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        overflow: hidden;
+        /* overflow: hidden; */
         display: flex;
         position: absolute;
     }

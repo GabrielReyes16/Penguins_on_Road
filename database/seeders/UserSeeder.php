@@ -17,8 +17,6 @@ class UserSeeder extends Seeder
     public function run()
     {
         $roles = ['A', 'C', 'P'];
-
-
         for ($i = 1; $i <= 80; $i++) {
             $rol = Arr::random($roles);
              User::create([

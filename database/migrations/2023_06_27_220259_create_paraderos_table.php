@@ -12,7 +12,8 @@ class CreateParaderosTable extends Migration
             $table->increments('id_paradero');
             $table->unsignedInteger('id_ruta');
             $table->string('nombre', 100);
-            $table->string('ubicacion', 100);
+            $table->decimal('latitud', 10, 8)->nullable();
+            $table->decimal('longitud', 11, 8)->nullable();
             $table->timestamps();
         
             $table->foreign('id_ruta')->references('id_ruta')->on('rutas');
