@@ -13,6 +13,7 @@ class Viaje extends Model
     protected $fillable = [
         'id_ruta',
         'id_bus',
+        'id_chofer',
         'fecha_viaje',
         'hora_inicio',
         'hora_final',
@@ -29,7 +30,10 @@ class Viaje extends Model
     {
         return $this->belongsTo(Bus::class, 'id_bus', 'id_bus');
     }
-
+    public function chofer()
+    {
+        return $this->hasMany(Chofer::class, 'id_chofer', 'id_chofer');
+    }
     public function boletas()
     {
         return $this->hasMany(BoletaViaje::class, 'id_viaje', 'id_viaje');
