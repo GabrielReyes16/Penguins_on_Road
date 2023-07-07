@@ -253,6 +253,9 @@ footer
     align-items: center;
     width: 100%;
     height: 110px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(85.02deg, #00894F 0%, #2EA8EC 50.31%, #0053B5 100%); ;
 }
 
 .fondo-imagen 
@@ -260,7 +263,9 @@ footer
     background: url(../img/tecsup-lima.jpg);
     background-size: cover;
     width: 100%;
-    height: 570px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .fondo-imagen header div h1 
@@ -292,7 +297,9 @@ footer .logo-tecsup
     position: relative;
     justify-content: center;
     display: flex;
-    padding-top: 35px;
+    margin-top: -325px;
+    top:50%;
+    bottom: 50%;
 }
 
 .fondo-imagen .cuerpo .loginBox
@@ -301,7 +308,7 @@ footer .logo-tecsup
     height: auto;
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: fixed;
     align-items: center;
     background: linear-gradient(180deg, rgba(2, 58, 255, 0.95) 0%, rgba(39, 74, 197, 0) 100%);
     border-radius: 10px;
