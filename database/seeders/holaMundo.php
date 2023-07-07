@@ -1,20 +1,19 @@
 <?php
 namespace Database\Seeders;
 
-use App\Models\Perfil;
-use Carbon\Carbon;
-use Illuminate\Database\Seeder;
-use App\Models\Empresa;
-use App\Models\Turno;
-use App\Models\Ruta;
+use App\Models\BoletaViaje;
 use App\Models\Bus;
 use App\Models\Chofer;
+use App\Models\Empresa;
+use App\Models\Paradero;
+use App\Models\Perfil;
+use App\Models\Reserva;
+use App\Models\Ruta;
+use App\Models\Turno;
 use App\Models\User;
 use App\Models\Viaje;
-use App\Models\Paradero;
 use App\Models\ViajeGPS;
-use App\Models\BoletaViaje;
-use App\Models\Reserva;
+use Illuminate\Database\Seeder;
 
 class holaMundo extends Seeder
 {
@@ -67,7 +66,7 @@ class holaMundo extends Seeder
         $rutas = [
             [
                 'id_turno' => 1,
-		        // 'id_chofer' => 1,
+                // 'id_chofer' => 1,
                 'punto_inicial' => 'AV. AVIACION - J. PRADO',
                 'punto_final' => 'CAMPUS',
             ],
@@ -114,325 +113,324 @@ class holaMundo extends Seeder
         foreach ($rutas as $rutaData) {
             Ruta::create($rutaData);
         }
-        
+
         // Crear paraderos
         $paraderos = [
             [
                 'id_ruta' => 1,
                 'nombre' => 'PARADERO INICIAL: ALTURA CINE STAR AVIACIÓN (A UNA CUADRA DE AV. J. PRADO)',
-                 'latitud'=> -12.08903,  'longitud' => -77.00312
+                'latitud' => -12.08903, 'longitud' => -77.00312,
             ],
             [
                 'id_ruta' => 1,
                 'nombre' => 'PARADERO: Av. Javier Prado con la Ca. Velasquez (a 1 cdra. de San Luis)',
-                 'latitud'=> -12.08748,  'longitud' => -76.99789
+                'latitud' => -12.08748, 'longitud' => -76.99789,
             ],
             [
                 'id_ruta' => 1,
                 'nombre' => 'CAMPUS',
-                 'latitud'=> -12.04543,  'longitud' => -76.95219
+                'latitud' => -12.04543, 'longitud' => -76.95219,
             ],
 
             [
                 'id_ruta' => 2,
                 'nombre' => 'PARADERO INICIAL: PUENTE NUEVO (ALTURA GRIFO REPSOL)',
-                 'latitud'=> -12.02999,  'longitud' => -76.99905
+                'latitud' => -12.02999, 'longitud' => -76.99905,
             ],
             [
                 'id_ruta' => 2,
                 'nombre' => 'CAMPUS',
-                'latitud'=> -12.04543,  'longitud' => -76.95219
+                'latitud' => -12.04543, 'longitud' => -76.95219,
             ],
 
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. FRUTALES CON AV. JAVIER PRADO',
-                 'latitud'=> -12.07543,  'longitud' => -76.96378
+                'latitud' => -12.07543, 'longitud' => -76.96378,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO U. DE LIMA (J. PRADO) POR LA VIA AUXILIAR',
-                 'latitud'=> -12.08336,  'longitud' => -76.97123
+                'latitud' => -12.08336, 'longitud' => -76.97123,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. AGUSTIN DE LA ROSA TORO',
-                 'latitud'=> -12.08636,  'longitud' => -76.99252
+                'latitud' => -12.08636, 'longitud' => -76.99252,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. SAN LUIS',
-                 'latitud'=> -12.08651,  'longitud' => -76.99645
+                'latitud' => -12.08651, 'longitud' => -76.99645,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. AVIACION',
-                 'latitud'=> -12.08742,  'longitud' => -77.00322
+                'latitud' => -12.08742, 'longitud' => -77.00322,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO RICARDO PALMA (J. PRADO)',
-                 'latitud'=> -12.09002,  'longitud' => -77.01789
+                'latitud' => -12.09002, 'longitud' => -77.01789,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON CALLE LAS ORQUIDEAS (ANTES DE LA CLINICA J. PRADO)',
-                 'latitud'=> -12.09142,  'longitud' => -77.02803
+                'latitud' => -12.09142, 'longitud' => -77.02803,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. PETIT THOUARS',
-                 'latitud'=> -12.09204,  'longitud' => -77.03210
+                'latitud' => -12.09204, 'longitud' => -77.03210,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. LAS PALMERAS',
-                 'latitud'=>-12.09292,  'longitud' => -77.03855
+                'latitud' => -12.09292, 'longitud' => -77.03855,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. LOS ALAMOS',
-                'latitud'=> -12.09338,  'longitud' => -77.04188
+                'latitud' => -12.09338, 'longitud' => -77.04188,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. LAS FLORES',
-                 'latitud'=> -12.09414,  'longitud' => -77.04722
+                'latitud' => -12.09414, 'longitud' => -77.04722,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. J. PRADO CON CALLE ROMA (ANTES DE SALAVERRY)',
-                 'latitud'=> -12.09345,  'longitud' => -77.05245
+                'latitud' => -12.09345, 'longitud' => -77.05245,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO SAN FELIPE (AV. GREGORIO ESCOBEDO CON AV. SANCHEZ CARRION)',
-                 'latitud'=> -12.09017,  'longitud' => -77.05740
+                'latitud' => -12.09017, 'longitud' => -77.05740,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. LA MARINA CON AV. SUCRE',
-                 'latitud'=> -12.08309,  'longitud' => -77.06695
+                'latitud' => -12.08309, 'longitud' => -77.06695,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. LA MARINA CON AV. UNIVERSITARIA',
-                 'latitud'=> -12.07822,  'longitud' => -77.08081
+                'latitud' => -12.07822, 'longitud' => -77.08081,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. LA MARINA CON AV. RAFAEL ESCARDO (HIRAOKA)',
-                 'latitud'=> -12.07748,  'longitud' => -77.09292
+                'latitud' => -12.07748, 'longitud' => -77.09292,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO AV. LA MARINA CON AV. FAUCETT',
-                 'latitud'=> -12.07457,  'longitud' => -77.09907
+                'latitud' => -12.07457, 'longitud' => -77.09907,
             ],
             [
                 'id_ruta' => 3,
                 'nombre' => 'PARADERO OV. LA PERLA',
-                 'latitud'=> -12.06564,  'longitud' => -77.11861
+                'latitud' => -12.06564, 'longitud' => -77.11861,
             ],
 
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO LOS FICUS',
-                 'latitud'=> -12.05395,  'longitud' => -76.97521
+                'latitud' => -12.05395, 'longitud' => -76.97521,
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO PUENTE NUEVO',
-                 'latitud'=> -12.02948,  'longitud' => -76.99909
+                'latitud' => -12.02948, 'longitud' => -76.99909,
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO PUENTE TRUJILLO',
-                 'latitud'=> -12.04148,  'longitud' => -77.03238
+                'latitud' => -12.04148, 'longitud' => -77.03238,
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO CAQUETA',
-                 'latitud'=> -12.03634,  'longitud' => -77.04366
+                'latitud' => -12.03634, 'longitud' => -77.04366,
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO HABICH',
-                 'latitud'=> -12.03007,  'longitud' => -77.05693
+                'latitud' => -12.03007, 'longitud' => -77.05693,
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO 2DA. DE PALAO',
-                 'latitud'=> -12.01858,  'longitud' => -77.05945
+                'latitud' => -12.01858, 'longitud' => -77.05945,
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO JARDINES',
-                 'latitud'=> -12.01464,  'longitud' => -77.05974
+                'latitud' => -12.01464, 'longitud' => -77.05974,
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO PLAZA NORTE',
-                 'latitud'=> -12.00695,  'longitud' => -77.06140
+                'latitud' => -12.00695, 'longitud' => -77.06140,
             ],
             [
                 'id_ruta' => 4,
                 'nombre' => 'PARADERO MEGA PLAZA',
-                 'latitud'=> -11.99441,  'longitud' => -77.06315
+                'latitud' => -11.99441, 'longitud' => -77.06315,
             ],
-
 
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO HUACHIPA',
-                 'latitud'=> -12.01820,  'longitud' => -76.89581
+                'latitud' => -12.01820, 'longitud' => -76.89581,
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO SANTA CLARA (COSTADO REAL PLAZA)',
-                 'latitud'=> -12.01476,  'longitud' => -76.88549
+                'latitud' => -12.01476, 'longitud' => -76.88549,
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO HORACIO',
-                 'latitud'=> -12.00484,  'longitud' => -76.84466
+                'latitud' => -12.00484, 'longitud' => -76.84466,
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO HUAYCAN',
-                 'latitud'=> -11.99718,  'longitud' => -76.83543
+                'latitud' => -11.99718, 'longitud' => -76.83543,
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO ÑAÑA',
-                 'latitud'=> -11.98948,  'longitud' => -76.81870
+                'latitud' => -11.98948, 'longitud' => -76.81870,
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO EL CUADRO',
-                 'latitud'=> -11.98210,  'longitud' => -76.79724
+                'latitud' => -11.98210, 'longitud' => -76.79724,
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO LOS ALAMOS',
-                 'latitud'=> -11.97727,  'longitud' => -76.77585
+                'latitud' => -11.97727, 'longitud' => -76.77585,
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO PLAZA CHACLACAYO',
-                 'latitud'=> -11.97574,  'longitud' => -76.77040
+                'latitud' => -11.97574, 'longitud' => -76.77040,
             ],
-
 
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO EVITAMIENTO (TREBOL)',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => 0, 'longitud' => 0,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PTE. PRIMAVERA',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => 0, 'longitud' => 0,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PROSEGUR',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => 0, 'longitud' => 0,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PTE. BENAVIDES (ABAJO)',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => 0, 'longitud' => 0,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO TOTTUS (MALL ATOCONGO)',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => 0, 'longitud' => 0,
             ],
             [
                 'id_ruta' => 6,
                 'nombre' => 'PARADERO PTE. ATOCONGO (ABAJO)',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => 0, 'longitud' => 0,
             ],
+
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. FRUTALES CON AV. JAVIER PRADO',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.07543, 'longitud' => -76.96378,
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO U. DE LIMA (J. PRADO) POR LA VIA AUXILIAR',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.08336, 'longitud' => -76.97123,
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. AGUSTIN DE LA ROSA TORO',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.08636, 'longitud' => -76.99252,
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. SAN LUIS',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.08651, 'longitud' => -76.99645,
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. JAVIER PRADO CON AV. AVIACION',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.08742, 'longitud' => -77.00322,
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO RICARDO PALMA (J. PRADO)',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.09002, 'longitud' => -77.01789,
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. J. PRADO CON CALLE LAS ORQUIDEAS (ANTES DE LA CLINICA J. PRADO)',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.09142, 'longitud' => -77.02803,
             ],
             [
                 'id_ruta' => 7,
                 'nombre' => 'PARADERO AV. J. PRADO CON AV. PETIT THOUARS',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.09204, 'longitud' => -77.03210,
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO HUACHIPA',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.01820, 'longitud' => -76.89581,
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO SANTA CLARA (COSTADO REAL PLAZA)',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.01476, 'longitud' => -76.88549,
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO HORACIO',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -12.00484, 'longitud' => -76.84466,
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO HUAYCAN',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -11.99718, 'longitud' => -76.83543,
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO ÑAÑA',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -11.98948, 'longitud' => -76.81870,
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO EL CUADRO',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -11.98210, 'longitud' => -76.79724,
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO LOS ALAMOS',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -11.97727, 'longitud' => -76.77585,
             ],
             [
                 'id_ruta' => 8,
                 'nombre' => 'PARADERO PLAZA CHACLACAYO',
-                 'latitud'=> 0,  'longitud' => 0
+                'latitud' => -11.97574, 'longitud' => -76.77040,
             ],
 
         ];
@@ -440,7 +438,6 @@ class holaMundo extends Seeder
         foreach ($paraderos as $paraderoData) {
             Paradero::create($paraderoData);
         }
-
 
         // Crear buses
         $buses = [
@@ -520,31 +517,31 @@ class holaMundo extends Seeder
 
         //Choferes
         User::Create([
-                'name' => 'Adriana Hervias',
-                'id_perfil' => 3,
-                'email' => 'adri@example.com',
-                'password' => bcrypt('adrihervias'),
-            ])->assignRole('Chofer');
+            'name' => 'Adriana Hervias',
+            'id_perfil' => 3,
+            'email' => 'adri@example.com',
+            'password' => bcrypt('adrihervias'),
+        ])->assignRole('Chofer');
         User::Create([
-                'name' => 'Adriana Palomino',
-                'id_perfil' => 4,
-                'email' => 'adriana@example.com',
-                'password' => bcrypt('adripalomino'),
-            ])->assignRole('Chofer');
+            'name' => 'Adriana Palomino',
+            'id_perfil' => 4,
+            'email' => 'adriana@example.com',
+            'password' => bcrypt('adripalomino'),
+        ])->assignRole('Chofer');
 
-         //Pasajeros
+        //Pasajeros
         User::Create([
-                'name' => 'Rael Rivero',
-                'id_perfil' => 5,
-                'email' => 'rael@example.com',
-                'password' => bcrypt('raelrivero'),
-            ])->assignRole('Pasajero');
+            'name' => 'Rael Rivero',
+            'id_perfil' => 5,
+            'email' => 'rael@example.com',
+            'password' => bcrypt('raelrivero'),
+        ])->assignRole('Pasajero');
         User::Create([
-                'name' => 'Marcelo Sanabria',
-                'id_perfil' => 6,
-                'email' => 'marcelo@example.com',
-                'password' => bcrypt('marcelosanabria'),
-            ])->assignRole('Pasajero');
+            'name' => 'Marcelo Sanabria',
+            'id_perfil' => 6,
+            'email' => 'marcelo@example.com',
+            'password' => bcrypt('marcelosanabria'),
+        ])->assignRole('Pasajero');
 
         // Crear choferes
         $choferes = [
@@ -565,7 +562,6 @@ class holaMundo extends Seeder
         foreach ($choferes as $choferData) {
             Chofer::create($choferData);
         }
-
 
         // Crear viajes
         $viajes = [
@@ -661,6 +657,6 @@ class holaMundo extends Seeder
         }
 
         // Crear reservas
-        
+
     }
 }
