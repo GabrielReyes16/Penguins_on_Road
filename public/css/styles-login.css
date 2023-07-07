@@ -223,6 +223,7 @@ footer .logo-tecsup
 
 
 
+
 @media screen and (max-width: 768px) {
     * {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif}
 
@@ -347,7 +348,7 @@ footer .logo-tecsup
 .fondo-imagen .cuerpo .loginBox form .shadowBox  
 {
     width: 100%;
-    height: 230px;
+    height: 250px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     padding-left: 20px;
@@ -400,7 +401,7 @@ footer .logo-tecsup
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: -3px;
+    margin-top: 3px;
     text-decoration: none;
 }
 
@@ -430,7 +431,7 @@ footer .logo-tecsup
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 17px;
 }
 
 .fondo-imagen .cuerpo .loginBox form .shadowBox .forgot a
@@ -442,7 +443,7 @@ footer .logo-tecsup
 {
     cursor: pointer;
     color: #cacaca;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
 }
 
