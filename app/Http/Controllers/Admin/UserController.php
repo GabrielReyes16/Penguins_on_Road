@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserUpdateRequest;
+use App\Models\Bus;
+use App\Models\Chofer;
+use App\Models\Empresa;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -40,6 +43,22 @@ class UserController extends Controller
 
         return view('admin.user.create', compact('roles'));
     }
+
+
+    public function createChofer(User $user)
+    {
+        
+        $buses = Bus::all();
+        $empresas = Empresa::all();
+        return view('admin.chofer.create', [
+            'user' => $user,
+            'buses' => $buses,
+            'empresas' => $empresas,
+            'id_usuario' => $user->id_usuario, // Pasa el id_usuario al formulario
+        ]);
+    }
+
+
     public function store(Request $request)
     {
         $request->validate(User::$rules);
@@ -47,12 +66,28 @@ class UserController extends Controller
         $user = User::create($request->all());
         $user->assignRole($request->input('roles'));
     
-        session()->flash('alert-color', 'green');
+        if ($user->hasRole('Chofer')) {
+            return redirect()->route('admin.users.createChofer', $user);
+        }
     
         return redirect()->route('admin.users.index')
             ->with('success', 'Usuario creado exitosamente.');
     }
 
+    public function storeChofer(Request $request)
+    {
+        $chofer = new Chofer([
+            'id_usuario' => $request->input('id_usuario'),
+            'id_bus' => $request->input('id_bus'),
+            'id_empresa' => $request->input('id_empresa'),
+            'licencia_conducir' => $request->input('licencia_conducir'),
+        ]);
+    
+        $chofer->save();
+    
+        return redirect()->route('admin.choferes.index')
+            ->with('success', 'Chofer creado exitosamente.');
+    }
     /**
      * Display the specified resource.
      */

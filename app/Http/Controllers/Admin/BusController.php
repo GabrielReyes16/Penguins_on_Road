@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bus;
+use App\Models\Chofer;
+use App\Models\Empresa;
 use Illuminate\Http\Request;
 
 /**
@@ -31,8 +33,10 @@ class BusController extends Controller
     
      public function create()
      {
+        $empresas = Empresa::all();
+        $choferes  = Chofer::all();
          $bus = new Bus();
-         return view('admin.bus.create', compact('bus'));
+         return view('admin.bus.create', compact('bus', 'empresas','choferes'));
      }
  
      /**
@@ -66,9 +70,11 @@ class BusController extends Controller
       */
      public function edit($id_bus)
      {
+        $empresas = Empresa::all();
+        $choferes  = Chofer::all();
          $bus = Bus::find($id_bus);
  
-         return view('admin.bus.edit', compact('bus'));
+         return view('admin.bus.edit', compact('bus', 'empresas', 'choferes'));
      }
  
      /**

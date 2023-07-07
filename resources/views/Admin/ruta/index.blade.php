@@ -4,70 +4,63 @@
             Rutas
         </h2>
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __("\n Edita la informacion de este usuario.") }}
+            {{ __("\n Estas son las rutas disponibles .") }}
         </p>
     </x-slot>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
+            <div class="col-sm-12 ">
+                <div class="card" style="color: white;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
-                                {{ __('Ruta') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('admin.rutas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Crear Ruta') }}
+                             <div class="d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;">
+                                <a href="{{ route('admin.rutas.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" >
+                                    <i class="fa-sharp fa-light fa-plus"></i>   {{ __('Crear una ruta') }}
                                 </a>
                               </div>
                         </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
+                        @if ($message = Session::get('success'))
+                        <div class="w-2/3 mx-auto">
+                            <div class="bg-white text-black text-sm py-2 px-4 rounded">
+                                <p>{{ $message }}</p>
+                            </div>
                         </div>
                     @endif
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
+                    <div class="flex justify-center" style="color: white;">
+                        <div class="p-4">
+                            <table id="users-table" class="min-w-full border border-gray-200">
+                                <thead>
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Id Ruta</th>
-										<th>Id Turno</th>
-										<th>Punto Inicial</th>
-										<th>Punto Final</th>
-
-                                        <th></th>
+                                        <th class="py-2 px-4 border-b">Id ruta</th>
+                                        <th class="py-2 px-4 border-b">Turno</th>
+                                        <th class="w-1/2 border-b">Punto inicial</th>
+                                        <th class="w-1/2 border-b">Punto final</th>
+                                        <th class="w-1/2  border-b">Operaciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($rutas as $ruta)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $ruta->id_ruta }}</td>
-											<td>{{ $ruta->id_turno }}</td>
-											<td>{{ $ruta->punto_inicial }}</td>
-											<td>{{ $ruta->punto_final }}</td>
-
+                                            <td>{{ $ruta->id_ruta }}</td>
+                                            <td>{{ $ruta->turno->nombre }}</td>
+                                            <td class="w-1/4">{{ $ruta->punto_inicial }}</td>
+                                            <td class="w-1/4">{{ $ruta->punto_final }}</td>
                                             <td>
                                                 <form action="{{ route('admin.rutas.destroy',$ruta->id_ruta) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('admin.rutas.show',$ruta->id_ruta) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('admin.rutas.edit',$ruta->id_ruta) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <div class="flex gap-2">
+                                                        <a class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-3 rounded" href="{{ route('admin.rutas.show',$ruta->id_ruta) }}"><i class="fa fa-fw fa-eye"></i></a>
+                                                        <a class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" href="{{ route('admin.rutas.edit',$ruta->id_ruta) }}"><i class="fa fa-fw fa-edit"></i> </a>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"><i class="fa fa-fw fa-trash"></i></button>
+                                                    </div>
                                                 </form>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
+                                
                             </table>
                         </div>
                     </div>
