@@ -13,7 +13,7 @@
   <main>
         <div class="turnos">
             <div class="title-box2">
-                <a href="#"><ion-icon name="arrow-back-circle"></ion-icon></a>
+                <a href="/turnos"><ion-icon name="arrow-back-circle"></ion-icon></a>
                 <h3>Turno mañana de Lunes a Viernes camino al campus:</h3>
             </div>
               
