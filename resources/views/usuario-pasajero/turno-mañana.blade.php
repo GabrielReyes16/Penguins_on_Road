@@ -18,11 +18,11 @@
             </div>
               
             <div class="btn-ruta">
-                <a href="/op1">Av. Aviación - Av. Javier Prado - Campus || 7:15 AM</a>
+                <a href="/tm-op1">Av. Aviación - Av. Javier Prado - Campus || 7:15 AM</a>
             </div>
 
             <div class="btn-ruta">
-                <a href="#">Puente Nuevo - Campus || 7:20 AM</a>
+                <a href="/tm-op2">Puente Nuevo - Campus || 7:20 AM</a>
             </div>
         </div>
     </main>
