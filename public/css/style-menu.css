@@ -15,8 +15,8 @@
         height: 100px;
         display: flex;
         position: relative;
-        justify-content: center;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
     }
 
     header.active
@@ -30,7 +30,7 @@
         height: auto;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        margin-top: 10px;
     }
 
     header .logos img 
@@ -47,12 +47,6 @@
         position: absolute;
         justify-content: center;
         margin-top: 100px;
-        opacity: 0;
-    }
-
-    header .menu-bar.active
-    {
-        opacity: 1;
     }
 
     header .flecha
@@ -64,14 +58,14 @@
         justify-content: center;
         top: 75px;
         cursor: pointer;
-        opacity: 0;
     }
 
     header .flecha ion-icon
     {
-        color: #cacaca;
         width: 30px;
         height: 30px;
+        color: #cacaca;
+        opacity: 0;
     }
 
     header .flecha.active .down
@@ -80,6 +74,16 @@
     }
 
     header .flecha.active:hover .down
+    {
+        color: #fff;
+    }
+
+    header .flecha.active .up
+    {
+        opacity: 1;
+    }
+
+    header .flecha.active:hover .up
     {
         color: #fff;
     }
@@ -205,7 +209,6 @@
         width: 50%;
         height: auto;
         display: flex;
-        align-items: center;
     }
 
     header .user-menu-bar .user-icon
@@ -213,7 +216,7 @@
         width: 80%;
         height: auto;
         display: flex;
-        justify-content: end;
+        margin-top: 20px;
         text-decoration: none;
     }
 
@@ -226,7 +229,7 @@
         font-style: italic;
         display: flex;
         justify-content: end;
-        align-items: center;
+        margin-top: 15px;
         margin-right: 10px;
     }
 
@@ -235,7 +238,7 @@
         width: 20%;
         color: #fff;
         display: flex;
-        justify-content: center;
+        align-items: start;
     }
 
     header .user-menu-bar .user-icon span ion-icon
@@ -258,6 +261,7 @@
         height: auto;
         display: flex;
         justify-content: center;
+        margin-top: 20px;
         cursor: pointer;
     }
 
@@ -267,7 +271,7 @@
         height: auto;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center ;
         transition: .5s;
     }
 
