@@ -29,7 +29,7 @@
                     <li>Hora de partida</li>
                     <p>7:15 AM</p>
                     <li>Hora de destino aproximado</li>
-                    <p>7:40 PM</p>
+                    <p>7:40 AM</p>
                     <li>Paraderos permitidos</li>
                     <ul class="paraderos">
                         <li>Inicio de ruta: Altura Cine STAR Aviación (a una cuadra de Av. Javier Prado)</li>

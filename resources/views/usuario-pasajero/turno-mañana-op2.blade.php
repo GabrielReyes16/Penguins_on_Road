@@ -29,7 +29,7 @@
                     <li>Hora de partida</li>
                     <p>7:20 AM</p>
                     <li>Hora de destino aproximado</li>
-                    <p>7:40 PM</p>
+                    <p>7:40 AM</p>
                     <li>Paraderos permitidos</li>
                     <ul class="paraderos">
                         <li>Inicio de ruta: Puente Nuevo (altura grifo REPSOL)</li>
