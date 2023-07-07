@@ -12,6 +12,7 @@ class Ruta extends Model
     protected $primaryKey = 'id_ruta';
     protected $fillable = [
         'id_turno',
+        'id_chofer',
         'punto_inicial',
         'punto_final',
     ];
@@ -19,6 +20,11 @@ class Ruta extends Model
     public function turno()
     {
         return $this->belongsTo(Turno::class, 'id_turno', 'id_turno');
+    }
+
+    public function chofer()
+    {
+        return $this->hasOne(Chofer::class, 'id_chofer', 'id_chofer');
     }
 
     public function paraderos()
