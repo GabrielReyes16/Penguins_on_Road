@@ -17,13 +17,13 @@
             </div>
             
             <div class="btn-turno">
-                <a href="EarlyTurn.html">TURNO MAÑANA</a>
+                <a href="/mañana">TURNO MAÑANA</a>
             </div>
             <div class="btn-turno">
-                <a href="LateTurn.html">TURNO TARDE</a>
+                <a href="#">TURNO TARDE</a>
             </div>
             <div class="btn-turno">
-                <a href="NightTurn.html">TURNO NOCHE</a>
+                <a href="#">TURNO NOCHE</a>
             </div>
 
         </div>
