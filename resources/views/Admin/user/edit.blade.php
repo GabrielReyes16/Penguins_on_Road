@@ -53,15 +53,15 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     <h2 class="text-lg font-medium text-gray-200">
-                        {{ __('Gestionar roles (luego sera solo un rol)') }}
+                        {{ __('Gestionar rol del usuario') }}
                     </h2>
                     <p class="mt-1 text-sm text-gray-400">
-                        {{ __('Este es el rol del usaurio. De acuerdo a ese rol, el usuario tiene ciertos permisos y denegaciones.') }}
+                        {{ __('Este es el rol del usuario. De acuerdo a ese rol, el usuario tiene ciertos permisos y denegaciones.') }}
                     </p>
-                    <x-input-label for="name" :value="__('Rol')" />
+                    <h3 class="text-lg font-medium text-gray-200" for="rol" :value="__('Roles')" >Roles</h3>
                     {!! Form::model($user, ['route' => ['admin.users.updateRole', $user], 'method' => 'put']) !!}
                     <div>
-                        {!! Form::label('roles', 'Roles') !!}
+
                         {!! Form::select('roles[]', $roles->pluck('name', 'id'), $user->roles->pluck('id')->toArray(), [
                             'class' => 'form-control',
                         ]) !!}
@@ -76,7 +76,7 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     <h2 class="text-lg font-medium text-gray-200">
-                        {{ __('Actuaizar contraseña') }}
+                        {{ __('Actualizar contraseña') }}
                     </h2>
 
                     <p class="mt-1 text-sm text-gray-400">
@@ -87,21 +87,21 @@
                         @method('put')
 
                         <div>
-                            <x-input-label for="current_password" :value="__('Current Password')" />
+                            <h3 class="text-lg font-medium text-gray-200" for="name" :value="__('Contraseña actual')" >Contraseña actual</h3>
                             <x-text-input id="current_password" name="current_password" type="password"
                                 class="mt-1 block w-full" autocomplete="current-password" />
                             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
                         </div>
 
                         <div>
-                            <x-input-label for="password" :value="__('New Password')" />
+                            <h3 class="text-lg font-medium text-gray-200" for="name" :value="__('Nueva contraseña')" >Nueva contraseña</h3>
                             <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"
                                 autocomplete="new-password" />
                             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
                         </div>
 
                         <div>
-                            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                            <h3 class="text-lg font-medium text-gray-200" for="name" :value="__('Confirmar contraseña')" >Confirmar contraseña</h3>
                             <x-text-input id="password_confirmation" name="password_confirmation" type="password"
                                 class="mt-1 block w-full" autocomplete="new-password" />
                             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />

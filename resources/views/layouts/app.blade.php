@@ -24,9 +24,16 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
                     @include('layouts.navigation')
             <!-- Page Content -->
-            <body>
+            <main>
                 {{$slot}}
-            </body>
+            </main>
         </div>
+        <script>
+            setTimeout(function() {
+                const successMessage = document.querySelector('.animate-slide-in-right');
+                successMessage.classList.add('animate-slide-out-left');
+            }, 4000);
+        </script>
+        
     </body>
 </html>

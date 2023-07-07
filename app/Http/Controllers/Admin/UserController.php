@@ -27,7 +27,7 @@ class UserController extends Controller
         $users = User::where('name', 'like', "%$searchValue%")
                     ->orWhere('email', 'like', "%$searchValue%")
                     ->get();
-        $users = User::paginate(5);
+        $users = User::paginate(100);
         return view('admin.user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
@@ -36,19 +36,21 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('admin.user.create');
+        $roles = Role::pluck('name', 'id');
+
+        return view('admin.user.create', compact('roles'));
     }
     public function store(Request $request)
-
     {
-        request()->validate(User::$rules);
-
+        $request->validate(User::$rules);
+    
         $user = User::create($request->all());
-
+        $user->assignRole($request->input('roles'));
+    
+        session()->flash('alert-color', 'green');
+    
         return redirect()->route('admin.users.index')
-
             ->with('success', 'Usuario creado exitosamente.');
-
     }
 
     /**
@@ -76,7 +78,7 @@ class UserController extends Controller
      /**
       * Update the user's profile information.
       */
-      public function update(UserUpdateRequest $request, $id_usuario): RedirectResponse
+      public function update(UserUpdateRequest $request, $id_usuario)
       {
           $user = User::find($id_usuario);
           $user->fill($request->validated());
@@ -88,8 +90,9 @@ class UserController extends Controller
           $user->save();
       
           return redirect()->route('admin.users.index')
-              ->with('success', 'La información  fue actualizada correctamente');
+              ->with('success', 'La información fue actualizada correctamente');
       }
+      
  
  
 
@@ -97,7 +100,7 @@ class UserController extends Controller
     public function updateRole(Request $request, User $user)
       {
             $user->roles()->sync($request->roles);
-          return redirect()->route('admin.users.index')
+          return redirect()->route('admin.users.index', ['color' => 'blue'])
               ->with('success', 'Los roles se actualizaron correctamente');
       }
 
@@ -107,7 +110,7 @@ class UserController extends Controller
       public function destroy($id_usuario)
       {
           $user = User::find($id_usuario)->delete();
-  
+      
           return redirect()->route('admin.users.index')
               ->with('success', 'El usuario fue eliminado con éxito');
       }
