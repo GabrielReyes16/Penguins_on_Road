@@ -74,12 +74,12 @@
         height: 30px;
     }
 
-    header .flecha.active
+    header .flecha.active .down
     {
         opacity: 1;
     }
 
-    header .flecha:hover ion-icon
+    header .flecha.active:hover .down
     {
         color: #fff;
     }
