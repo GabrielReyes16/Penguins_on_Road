@@ -19,11 +19,14 @@
                                 </a>
                               </div>
                         </div>
-                        @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
+                    @if ($message = Session::get('success'))
+                        <div class="w-2/3 mx-auto">
+                            <div class="bg-white text-black text-sm py-2 px-4 rounded">
+                                <p>{{ $message }}</p>
+                            </div>
                         </div>
                     @endif
+
                     <div class="flex justify-center" style="color: white;">
                         <div class="p-4">
                             <table id="users-table" class="min-w-full border border-gray-200">

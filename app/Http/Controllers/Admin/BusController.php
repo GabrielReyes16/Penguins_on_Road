@@ -70,9 +70,11 @@ class BusController extends Controller
       */
      public function edit($id_bus)
      {
+        $empresas = Empresa::all();
+        $choferes  = Chofer::all();
          $bus = Bus::find($id_bus);
  
-         return view('admin.bus.edit', compact('bus'));
+         return view('admin.bus.edit', compact('bus', 'empresas', 'choferes'));
      }
  
      /**
