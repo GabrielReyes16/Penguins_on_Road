@@ -321,7 +321,7 @@ main .info .info-text .info-detalle .paraderos li
     
     main .turnos .btn-ruta
     {
-        width: 520px;
+        width: 115%;
         height: 60px;
         margin-top: 50px;
         background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
@@ -355,6 +355,7 @@ main .info .info-text .info-detalle .paraderos li
         width: 40px;
         height: 40px;
         color: #fff;
+        margin-left: 7px;
     }
     
     main .turnos .title-box2 a ion-icon:hover
@@ -364,7 +365,7 @@ main .info .info-text .info-detalle .paraderos li
     
     main .turnos .title-box2
     {
-        width: 590px;
+        width: 130%;
         height: 60px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
@@ -376,8 +377,10 @@ main .info .info-text .info-detalle .paraderos li
     main .turnos .title-box2 h3
     {
         color: #fff;
-        font-size: 20px;
+        font-size: 19px;
         font-weight: 500;
+        padding-right: 12px;
+        margin-left: 15px;
     }
     
     main .info
