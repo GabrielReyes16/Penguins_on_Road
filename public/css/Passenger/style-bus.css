@@ -344,10 +344,13 @@ main .info .info-text .info-detalle .paraderos li
     
     main .turnos .btn-ruta a
     {
-        font-weight: 500;
-        font-size: 20px;
+        font-weight: 550;
+        font-size: 18px;
         color: #181818;
         text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
     }
     
     main .turnos .title-box2 a ion-icon
