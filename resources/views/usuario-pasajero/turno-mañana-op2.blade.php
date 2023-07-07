@@ -14,7 +14,7 @@
         <div class="info">
             <div class="title-box2">
                 <a href="/mañana"><ion-icon name="arrow-back-circle"></ion-icon></a>
-                <h3>Puente Nuevo - Campus || 7:15 AM</h3>
+                <h3>Puente Nuevo - Campus || 7:20 AM</h3>
             </div>
             <img src="img/mapa.png">
             <div class="info-text">
