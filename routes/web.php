@@ -30,6 +30,7 @@ Route::get('/usuario-pasajero/home', function () {return view('usuario-pasajero.
 Route::get('/home', function () {return view('usuario-pasajero.homePasajero');});
 Route::get('/turnos', function () {return view('usuario-pasajero.turnos');});
 Route::get('/mañana', function () {return view('usuario-pasajero.turno-mañana');});
+Route::get('/tarde', function () {return view('usuario-pasajero.turno-tarde');});
 Route::get('/reserva/{idReserva}', [ReservaController::class, 'mostrarReserva'])->name('mostrar_reserva');
 Route::get('/reserva/{idReserva}/editar', [ReservaController::class, 'editarReserva'])->name('editar_reserva');
 Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva'])->name('actualizar_reserva');

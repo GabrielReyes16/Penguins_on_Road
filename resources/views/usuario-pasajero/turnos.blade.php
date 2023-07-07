@@ -20,7 +20,7 @@
                 <a href="/mañana">TURNO MAÑANA</a>
             </div>
             <div class="btn-turno">
-                <a href="#">TURNO TARDE</a>
+                <a href="/tarde">TURNO TARDE</a>
             </div>
             <div class="btn-turno">
                 <a href="#">TURNO NOCHE</a>
