@@ -18,7 +18,7 @@
             </div>
               
             <div class="btn-ruta">
-                <a href="#">Av. Aviación - Av. Javier Prado - Campus || 7:15 AM</a>
+                <a href="/op1">Av. Aviación - Av. Javier Prado - Campus || 7:15 AM</a>
             </div>
 
             <div class="btn-ruta">
