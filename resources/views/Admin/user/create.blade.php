@@ -12,14 +12,14 @@
         <div>
             <h3 class="text-lg font-medium text-gray-200" for="name" :value="__('Nombres')" >Nombres</h3>
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            <x-input-error-create :messages="$errors->get('name')" class="mt-2" />
         </div>
 
        <!-- Email Address -->
        <div class="mt-4">
         <h3 class="text-lg font-medium text-gray-200" for="email" :value="__('Email')" >Email</h3>
         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <x-input-error-create :messages="$errors->get('email')" class="mt-2" />
     </div>
 
         <!-- Rol -->
@@ -38,7 +38,7 @@
                             name="password"
                             required autocomplete="new-password" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <x-input-error-passwd :messages="$errors->get('password')" class="mt-2" />
         </div>
 
         <!-- Confirm Password -->
@@ -49,7 +49,7 @@
                             type="password"
                             name="password_confirmation" required autocomplete="new-password" />
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            <x-input-error-passwd :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
