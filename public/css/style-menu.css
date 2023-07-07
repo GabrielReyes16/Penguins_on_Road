@@ -5,7 +5,7 @@
     {
         background: #cdcdcd;
         width: 100%;
-        height: auto;
+        height: 100%;
         overflow: hidden;
     }
 
@@ -365,6 +365,7 @@
         display: flex;
         justify-content: center;
         margin-top: 10px;
+        margin-bottom: 60px;
     }
 
     main .carrusel h3
@@ -466,7 +467,7 @@
     {
         background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
         width: 100%;
-        height: 120px;
+        height: 100px;
         display: flex;
         position: relative;
         align-items: center;
@@ -484,7 +485,7 @@
     header .logos img 
     {
         width: auto;
-        height: 50px;
+        height: 35px;
         margin-left: 10px;
     }
     
@@ -498,16 +499,16 @@
     
     header .menu-bar .options
     {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         list-style: none;
         position: relative;
     }
     
     header .menu-bar .options a 
     {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -648,15 +649,15 @@
     
     header .user-menu-bar .user-icon span ion-icon
     {
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
         transition: .5s;
     }
     
     header .user-menu-bar .user-icon span ion-icon:hover
     {
-        width: 65px;
-        height: 65px;
+        width: 45px;
+        height: 45px;
         color: #000;
     }
     
