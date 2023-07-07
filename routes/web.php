@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\ViajeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QRCodeController;  
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,9 @@ Route::get('/reserva/{idReserva}/editar', [ReservaController::class, 'editarRese
 Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva'])->name('actualizar_reserva');
 Route::get('/boletas', [BoletaViajeController::class, 'mostrarBoletas'])->name('mostrar_boletas');
 Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->name('ver_boleta');
+
+// Rutas de chofer
+
 Route::get('/home', function () {
     return view('usuario-pasajero.homePasajero');
 });
@@ -41,6 +45,9 @@ Route::get('/turnos', function () {
     return view('usuario-pasajero.turnos');
 });
 
+//Route::get('/boletas', function () {
+    //return view('usuario-pasajero.boletos');
+//});
 // Chofer
 Route::get('/welcome', function () {
     return view('usuario-chofer.homeChofer');
@@ -77,6 +84,13 @@ Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'
 Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
 Route::get('/escaner', function () {return view('escaner');});
 Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
+
+// Rutas para crud de viajes , chofer
+Route::get('/viajes', [ViajeController::class, 'mostrarViajes'])->name('mostrar_viajes');
+Route::get('/viajes/crear', [ViajeController::class, 'crearViaje'])->name('crear_viaje');
+
+// Ruta para cambiar rol de usuario
+
 
 
 

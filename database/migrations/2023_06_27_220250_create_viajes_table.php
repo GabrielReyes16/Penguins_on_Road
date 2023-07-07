@@ -12,6 +12,7 @@ class CreateViajesTable extends Migration
             $table->increments('id_viaje');
             $table->unsignedInteger('id_ruta');
             $table->unsignedInteger('id_bus');
+            $table->unsignedInteger('id_chofer');
             $table->date('fecha_viaje');
             $table->time('hora_inicio');
             $table->time('hora_final');
@@ -21,6 +22,7 @@ class CreateViajesTable extends Migration
         
             $table->foreign('id_ruta')->references('id_ruta')->on('rutas')->onDelete('cascade');
             $table->foreign('id_bus')->references('id_bus')->on('buses')->onDelete('cascade');
+            $table->foreign('id_chofer')->references('id_chofer')->on('choferes')->onDelete('cascade');
         });
     }
 
