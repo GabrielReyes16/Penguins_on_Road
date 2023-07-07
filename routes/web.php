@@ -30,6 +30,12 @@ Route::get('/', function () {return view('index');});
 Route::get('/usuario-pasajero/home', function () {return view('usuario-pasajero.homePasajero');});
 Route::get('/home', function () {return view('usuario-pasajero.homePasajero');});
 Route::get('/turnos', function () {return view('usuario-pasajero.turnos');});
+Route::get('/mañana', function () {return view('usuario-pasajero.turno-mañana');});
+Route::get('/tarde', function () {return view('usuario-pasajero.turno-tarde');});
+Route::get('/noche', function () {return view('usuario-pasajero.turno-noche');});
+Route::get('/tm-op1', function () {return view('usuario-pasajero.turno-mañana-op1');});
+Route::get('/tm-op2', function () {return view('usuario-pasajero.turno-mañana-op2');});
+Route::get('/tt-op1', function () {return view('usuario-pasajero.turno-tarde-op1');});
 Route::get('/reserva/{idReserva}', [ReservaController::class, 'mostrarReserva'])->name('mostrar_reserva');
 Route::get('/reserva/{idReserva}/editar', [ReservaController::class, 'editarReserva'])->name('editar_reserva');
 Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva'])->name('actualizar_reserva');
@@ -68,6 +74,10 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 // Rutas de admin
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::resource('users', UserController::class)->names('admin.users');
+Route::POST('/admin/users/{user}/storeChofer', [UserController::class, 'storeChofer'])
+    ->name('admin.users.storeChofer');
+    Route::get('/admin/users/{user}/createChofer', [UserController::class, 'createChofer'])
+    ->name('admin.users.createChofer');
 Route::resource('buses', BusController::class)->names('admin.buses');
 Route::resource('choferes', ChoferController::class)->names('admin.choferes');
 Route::resource('rutas', RutaController::class)->names('admin.rutas');

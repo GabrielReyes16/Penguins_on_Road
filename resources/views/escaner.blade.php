@@ -1,23 +1,12 @@
-<<<<<<< HEAD
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-200 leading-tight">
-            {{ __('Escaner') }}
-        </h2>
-    </x-slot>
-=======
 @extends ('usuario-chofer.navbar-abordaje')
 
-@section ('css-personalizado')
-    <link rel="stylesheet" href="{{ asset ('css/Passenger/style-ticket.css') }}">
-@stop
-
 @section ('titulo')
-    {{ 'Menu || Boletas de viaje' }}
+    {{ 'Menu || Scaner' }}
 @stop
 
 @section ('contenido')
->>>>>>> 4b22e0ef6296c1e933cf1818856e33cb3ce71eee
+    <!--contenido carrusel-->
+    <main>
     <div class="bg-white p-6">
         <div class="flex flex-row">
             <div class="w-full p-6">

@@ -11,11 +11,18 @@ export default {
 
     theme: {
         extend: {
+            
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            
         },
     },
+    variants: {
+        extend: {
+          animation: ['responsive', 'motion-safe', 'motion-reduce']
+        }
+      },
 
     plugins: [forms],
 };

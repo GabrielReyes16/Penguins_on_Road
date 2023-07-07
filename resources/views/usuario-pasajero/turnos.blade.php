@@ -23,5 +23,5 @@
                 @endforeach
 
         </div>
-    <main>
+    </main>
 @stop

@@ -6,7 +6,6 @@
         background: #cdcdcd;
         width: 100%;
         height: 100%;
-        /* overflow: hidden; */
     }
 
     header
@@ -258,16 +257,18 @@
         height: auto;
         display: flex;
         justify-content: end;
+        overflow: hidden;
     }
 
     .sidebar .list
     {
-        width: 100px;
+        width: 150px;
         height: auto;
         background: rgba(0, 105, 105, 0.70);
         border-radius: 0px 0px 0px 5px;
         display: flex;
         align-items: center;
+        margin-bottom: 30px;
         flex-direction: column;
         transition: .8s;
         transform: translateX(100px);
@@ -303,7 +304,7 @@
     .sidebar .list li a .icon
     {
         width: 30%;
-        height: 40px;
+        height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -318,7 +319,7 @@
     .sidebar .list li a .text
     {
         width: 70%;
-        height: 40px;
+        height: 60px;
         font-size: 10px;
         font-weight: 400;
         display: flex;
@@ -708,6 +709,7 @@
         height: auto;
         display: flex;
         justify-content: end;
+        overflow: hidden;
     }
     
     .sidebar .list
@@ -716,6 +718,7 @@
         height: auto;
         background: rgba(0, 105, 105, 0.70);
         display: flex;
+        margin-bottom: 30px;
         align-items: center;
         flex-direction: column;
         transition: .8s;
@@ -752,7 +755,7 @@
     .sidebar .list li a .icon
     {
         width: 30%;
-        height: 70px;
+        height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -767,7 +770,7 @@
     .sidebar .list li a .text
     {
         width: 70%;
-        height: 70px;
+        height: 60px;
         font-size: 15px;
         font-weight: 400;
         display: flex;
@@ -1155,6 +1158,7 @@
         height: auto;
         display: flex;
         justify-content: end;
+        overflow: hidden;
     }
 
     .sidebar .list
@@ -1165,6 +1169,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        margin-bottom: 30px;
         transition: .8s;
         transform: translateX(240px);
         opacity: 0;
@@ -1199,7 +1204,7 @@
     .sidebar .list li a .icon
     {
         width: 30%;
-        height: 80px;
+        height: 70px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1214,7 +1219,7 @@
     .sidebar .list li a .text
     {
         width: 70%;
-        height: 80px;
+        height: 70px;
         font-size: 20px;
         font-weight: 400;
         display: flex;

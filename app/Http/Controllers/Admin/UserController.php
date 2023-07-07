@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserUpdateRequest;
+use App\Models\Bus;
+use App\Models\Chofer;
+use App\Models\Empresa;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -27,7 +30,7 @@ class UserController extends Controller
         $users = User::where('name', 'like', "%$searchValue%")
                     ->orWhere('email', 'like', "%$searchValue%")
                     ->get();
-        $users = User::paginate(5);
+        $users = User::paginate(100);
         return view('admin.user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
@@ -36,21 +39,55 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('admin.user.create');
-    }
-    public function store(Request $request)
+        $roles = Role::pluck('name', 'id');
 
+        return view('admin.user.create', compact('roles'));
+    }
+
+
+    public function createChofer(User $user)
     {
-        request()->validate(User::$rules);
-
-        $user = User::create($request->all());
-
-        return redirect()->route('admin.users.index')
-
-            ->with('success', 'Usuario creado exitosamente.');
-
+        
+        $buses = Bus::all();
+        $empresas = Empresa::all();
+        return view('admin.chofer.create', [
+            'user' => $user,
+            'buses' => $buses,
+            'empresas' => $empresas,
+            'id_usuario' => $user->id_usuario, // Pasa el id_usuario al formulario
+        ]);
     }
 
+
+    public function store(Request $request)
+    {
+        $request->validate(User::$rules);
+    
+        $user = User::create($request->all());
+        $user->assignRole($request->input('roles'));
+    
+        if ($user->hasRole('Chofer')) {
+            return redirect()->route('admin.users.createChofer', $user);
+        }
+    
+        return redirect()->route('admin.users.index')
+            ->with('success', 'Usuario creado exitosamente.');
+    }
+
+    public function storeChofer(Request $request)
+    {
+        $chofer = new Chofer([
+            'id_usuario' => $request->input('id_usuario'),
+            'id_bus' => $request->input('id_bus'),
+            'id_empresa' => $request->input('id_empresa'),
+            'licencia_conducir' => $request->input('licencia_conducir'),
+        ]);
+    
+        $chofer->save();
+    
+        return redirect()->route('admin.choferes.index')
+            ->with('success', 'Chofer creado exitosamente.');
+    }
     /**
      * Display the specified resource.
      */
@@ -76,7 +113,7 @@ class UserController extends Controller
      /**
       * Update the user's profile information.
       */
-      public function update(UserUpdateRequest $request, $id_usuario): RedirectResponse
+      public function update(UserUpdateRequest $request, $id_usuario)
       {
           $user = User::find($id_usuario);
           $user->fill($request->validated());
@@ -88,8 +125,9 @@ class UserController extends Controller
           $user->save();
       
           return redirect()->route('admin.users.index')
-              ->with('success', 'La información  fue actualizada correctamente');
+              ->with('success', 'La información fue actualizada correctamente');
       }
+      
  
  
 
@@ -97,7 +135,7 @@ class UserController extends Controller
     public function updateRole(Request $request, User $user)
       {
             $user->roles()->sync($request->roles);
-          return redirect()->route('admin.users.index')
+          return redirect()->route('admin.users.index', ['color' => 'blue'])
               ->with('success', 'Los roles se actualizaron correctamente');
       }
 
@@ -107,7 +145,7 @@ class UserController extends Controller
       public function destroy($id_usuario)
       {
           $user = User::find($id_usuario)->delete();
-  
+      
           return redirect()->route('admin.users.index')
               ->with('success', 'El usuario fue eliminado con éxito');
       }

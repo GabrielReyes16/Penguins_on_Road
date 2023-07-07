@@ -10,6 +10,7 @@
                 <div style="color: white;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                         </div>
+
                         @if ($message = Session::get('success'))
                         <div class="alert alert-success">
                             <p>{{ $message }}</p>
@@ -32,7 +33,7 @@
                                       <tbody>
                                           @foreach ($choferes as $chofer)
                                               <tr>
-                                                  <td class="py-2 px-4 border-b">{{ $chofer->id_usuario }}</td>
+                                                  <td class="py-2 px-4 border-b">{{ $chofer->id_chofer }}</td>
                                                   <td class="py-2 px-4 border-b">{{ $chofer->user->name }}</td>
                                                   <td class="py-2 px-4 border-b">{{ $chofer->user->email }}</td>
                                                   <td class="py-2 px-4 border-b">{{ $chofer->bus->placa }}</td>
@@ -41,11 +42,14 @@
                       
                                                   <td class="py-2 px-4 border-b">
                                                       <form action="{{ route('admin.choferes.destroy',$chofer->id_chofer) }}" method="POST">
-                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('admin.choferes.show',$chofer->id_usuario) }}"> {{ __('Ver') }}</button>
-                                                          <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" href="{{ route('admin.choferes.edit',$chofer->id_chofer) }}" > {{ __('Editar') }}</button>
+                                                        <a class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" href="{{ route('admin.choferes.edit',$chofer->id_chofer) }}" ><i
+                                                            class="fa fa-fw fa-edit"></i></a>
+                                                    @csrf
                                                           @csrf
                                                           @method('DELETE')
-                                                          <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"> {{ __('Eliminar') }}</button>
+                                                          <button
+                                                          class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"><i
+                                                              class="fa fa-fw fa-trash"></i></button>
                                                       </form>   
                                                   </td>
                                               </tr>
