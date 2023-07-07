@@ -16,15 +16,11 @@
                 <h3>Los turnos disponibles son:</h3>
             </div>
             
-            <div class="btn-turno">
-                <a href="EarlyTurn.html">TURNO MAÑANA</a>
-            </div>
-            <div class="btn-turno">
-                <a href="LateTurn.html">TURNO TARDE</a>
-            </div>
-            <div class="btn-turno">
-                <a href="NightTurn.html">TURNO NOCHE</a>
-            </div>
+                @foreach ($turnos as $turno)
+                <div> 
+                    <a href="{{ route('seleccion-turno', ['id' => $turno->id_turno]) }}" class="btn-turno">{{'Turno'}} {{ $turno->nombre }}</a>
+                </div>
+                @endforeach
 
         </div>
     <main>
