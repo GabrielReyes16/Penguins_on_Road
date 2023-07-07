@@ -25,13 +25,16 @@
         width: 100%;
         height: auto;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     header .logos img 
     {
         width: auto;
-        height: 60px;
+        height: 65px;
+        flex: 0 0 auto;
+        margin-left: 15px;
+        margin-right: 10px;
     }
 
     header .menu-bar
@@ -40,22 +43,22 @@
         height: auto;
         display: flex;
         justify-content: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     header .menu-bar .options
     {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         list-style: none;
         position: relative;
     }
 
     header .menu-bar .options a 
     {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -110,7 +113,7 @@
 
     header .menu-bar .options a .text
     {
-        font-size: 8px;
+        font-size: 10px;
         font-weight: 700;
         color: #000;
         text-align: center;
@@ -173,19 +176,20 @@
         width: 80%;
         height: auto;
         display: flex;
-        justify-content: end;
+        justify-content: start;
         text-decoration: none;
     }
 
     header .user-menu-bar .user-icon label
     {
-        width: 40%;
+        width: 175px;
         color: #fff;
-        font-size: 8px;
+        font-size: 14px;
         font-weight: 300;
         font-style: italic;
         display: flex;
-        justify-content: end;
+        justify-content: start;
+        margin-left: 10px;
         align-items: center;
     }
 
@@ -194,7 +198,7 @@
         width: 20%;
         color: #fff;
         display: flex;
-        justify-content: center;
+        justify-content: start;
     }
 
     header .user-menu-bar .user-icon span ion-icon
