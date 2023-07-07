@@ -13,7 +13,8 @@ class Paradero extends Model
     protected $fillable = [
         'id_ruta',
         'nombre',
-        'ubicacion',
+        'latitud',
+        'longitud',
     ];
 
     public function ruta()
