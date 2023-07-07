@@ -259,7 +259,7 @@ main .info .info-text .info-detalle .paraderos li
     {   
         width: 70%;
         height: auto;
-        margin-top: 20px;
+        margin-top: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -280,7 +280,7 @@ main .info .info-text .info-detalle .paraderos li
     main .turnos .title-box1 h3
     {
         color: #fff;
-        font-size: 22px;
+        font-size: 21px;
         font-weight: 500;
         text-align: center;
         width: 90%;
@@ -288,9 +288,9 @@ main .info .info-text .info-detalle .paraderos li
     
     main .turnos .btn-turno
     {
-        width: 75%;
+        width: 50%;
         height: 50px;
-        margin-top: 40px;
+        margin-top: 35px;
         background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
         display: flex;
         align-items: center;
@@ -301,9 +301,11 @@ main .info .info-text .info-detalle .paraderos li
     main .turnos .btn-turno a
     {
         font-weight: 700;
-        font-size: 18px;
+        font-size: 15px;
         color: #181818;
         text-decoration: none;
+        text-align: center;
+        width: 87%;
     }
     
     main .turnos .btn-turno:hover
