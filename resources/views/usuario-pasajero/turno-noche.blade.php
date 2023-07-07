@@ -18,7 +18,7 @@
             </div>
               
             <div class="btn-ruta">
-                <a href="#">Campus - Mega Plaza || 10:20 PM</a>
+                <a href="#">Campus - Petit Thouars || 10:20 PM</a>
             </div>
             <div class="btn-ruta">
                 <a href="#">Campus - Chaclacayo || 10:20 PM</a>
