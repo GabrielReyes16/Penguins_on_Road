@@ -322,8 +322,8 @@ main .info .info-text .info-detalle .paraderos li
     main .turnos .btn-ruta
     {
         width: 115%;
-        height: 60px;
-        margin-top: 50px;
+        height: 55px;
+        margin-top: 40px;
         background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
         display: flex;
         align-items: center;
