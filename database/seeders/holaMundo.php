@@ -285,42 +285,42 @@ class holaMundo extends Seeder
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO HUACHIPA',
-                 'latitud'=> 0,  'longitud' => 0
+                 'latitud'=> -12.01820,  'longitud' => -76.89581
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO SANTA CLARA (COSTADO REAL PLAZA)',
-                 'latitud'=> 0,  'longitud' => 0
+                 'latitud'=> -12.01476,  'longitud' => -76.88549
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO HORACIO',
-                 'latitud'=> 0,  'longitud' => 0
+                 'latitud'=> -12.00484,  'longitud' => -76.84466
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO HUAYCAN',
-                 'latitud'=> 0,  'longitud' => 0
+                 'latitud'=> -11.99718,  'longitud' => -76.83543
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO ÑAÑA',
-                 'latitud'=> 0,  'longitud' => 0
+                 'latitud'=> -11.98948,  'longitud' => -76.81870
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO EL CUADRO',
-                 'latitud'=> 0,  'longitud' => 0
+                 'latitud'=> -11.98210,  'longitud' => -76.79724
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO LOS ALAMOS',
-                 'latitud'=> 0,  'longitud' => 0
+                 'latitud'=> -11.97727,  'longitud' => -76.77585
             ],
             [
                 'id_ruta' => 5,
                 'nombre' => 'PARADERO PLAZA CHACLACAYO',
-                 'latitud'=> 0,  'longitud' => 0
+                 'latitud'=> -11.97574,  'longitud' => -76.77040
             ],
 
 
