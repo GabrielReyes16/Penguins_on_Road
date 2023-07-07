@@ -288,9 +288,9 @@ main .info .info-text .info-detalle .paraderos li
     
     main .turnos .btn-turno
     {
-        width: 250px;
-        height: 60px;
-        margin-top: 50px;
+        width: 75%;
+        height: 50px;
+        margin-top: 40px;
         background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
         display: flex;
         align-items: center;
@@ -301,7 +301,7 @@ main .info .info-text .info-detalle .paraderos li
     main .turnos .btn-turno a
     {
         font-weight: 700;
-        font-size: 20px;
+        font-size: 18px;
         color: #181818;
         text-decoration: none;
     }
