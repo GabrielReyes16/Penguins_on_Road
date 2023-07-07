@@ -26,6 +26,11 @@ class Chofer extends Model
         return $this->hasMany(Viaje::class, 'id_chofer', 'id_chofer');
     }
 
+    public function ruta()
+    {
+        return $this->hasOne(Ruta::class, 'id_chofer', 'id_chofer');
+    }
+
     public function bus()
     {
         return $this->belongsTo(Bus::class, 'id_bus', 'id_bus');

@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ChoferController;
 use App\Http\Controllers\Admin\BusController;
 use App\Http\Controllers\Admin\RutaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RutasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,13 +48,12 @@ Route::get('/home', function () {
     return view('usuario-pasajero.homePasajero');
 });
 
-Route::get('/turnos', function () {
-    return view('usuario-pasajero.turnos');
-});
+Route::get('/turnos', [RutasController::class, 'mostrarTurnos'])->name('usuario-pasajero.turnos');
+Route::get('/turnos/{id}', [RutasController::class, 'mostrarRutas'])->name('usuario-pasajero.seleccion-turno');
+Route::get('/turnos/{id_turno}/ruta/{id_ruta}', [RutasController::class, 'verRuta'])->name('usuario-pasajero.ver-ruta');
 
-//Route::get('/boletas', function () {
-    //return view('usuario-pasajero.boletos');
-//});
+
+
 // Chofer
 Route::get('/welcome', function () {
     return view('usuario-chofer.homeChofer');
@@ -93,7 +93,7 @@ Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
 Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'])->name('formulario_reserva');
 Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
 Route::get('/escaner', function () {return view('escaner');});
-Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
+// Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
 
 // Rutas para crud de viajes , chofer
 Route::get('/viajes', [ViajeController::class, 'mostrarViajes'])->name('mostrar_viajes');
