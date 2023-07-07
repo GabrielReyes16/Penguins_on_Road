@@ -17,7 +17,7 @@ class BoletaViajeController extends Controller
     $boletas = BoletaViaje::where('id_usuario_pasajero', $idUsuarioPasajero)->get();
 
     // Retornar la vista con los datos de los boletos
-    return view('mostrar_boletas', compact('boletas'));
+    return view('usuario-pasajero.mostrar_boletas', compact('boletas'));
 }
 
 public function verBoleta($idBoleta)

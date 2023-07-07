@@ -24,7 +24,7 @@
         </div>
         <div class="menu-bar">
             <li class="options">
-                <a href="/home" class="box-icon-left">
+                <a href="/welcome" class="box-icon-left">
                     <span class="icons">
                         <ion-icon name="home"></ion-icon>
                     </span>
@@ -32,30 +32,29 @@
                 </a>
             </li>
             <li class="options">
-                <a href="/turnos" class="box-icon-center">
+                <a href="/view_turnos" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="trail-sign"></ion-icon>
                     </span>
-                    <span class="text">Rutas y Horarios</span>
+                    <span class="text">Rutas</span>
                 </a>
             </li>
             <li class="options active">
-                <a href="formulario-reserva" class="box-icon-center" >
+                <a href="/escaner" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="bus"></ion-icon>
                     </span>
-                    <span class="text">Abordaje</span>
+                    <span class="text">Iniciar viaje</span>
                 </a>
             </li>
             <li class="options">
-                <a href="/boletas" class="box-icon-center">
+                <a href="/view_boletas" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="receipt"></ion-icon>
                     </span>
-                    <span class="text">Boletas</span>
+                    <span class="text">Boletas de viaje</span>
                 </a>
             </li>
-
         </div>
         <div class="user-menu-bar">
             <a class="user-icon" href="#">

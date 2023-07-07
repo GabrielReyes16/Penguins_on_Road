@@ -1,4 +1,4 @@
-@extends ('usuario-pasajero.navbar-rutas')
+@extends ('usuario-chofer.navbar-rutas')
 
 @section ('css-personalizado')
     <link rel="stylesheet" href="{{ asset ('css/Passenger/style-bus.css') }}">
@@ -13,7 +13,7 @@
     <main>
         <div class="turnos">
             <div class="title-box1">
-                <h3>Los turnos disponibles son:</h3>
+                <h3>Los turnos disponibles n:</h3>
             </div>
             
             <div class="btn-turno">

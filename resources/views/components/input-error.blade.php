@@ -1,9 +1,8 @@
+
 @props(['messages'])
 
 @if ($messages)
-    <ul {{ $attributes->merge(['class' => 'textInput']) }}>
-        @foreach ((array) $messages as $message)
-            <li>{{ $message }}</li>
-        @endforeach
-    </ul>
+    <label style="color: red; justify-content: center;align-items: center">
+        {{ __('Lo sentimos pero tu usuario o contraseña no son correctas. Vuelva a intentarlo!') }}
+    </label>
 @endif

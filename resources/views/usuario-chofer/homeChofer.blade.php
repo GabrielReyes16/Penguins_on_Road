@@ -1,7 +1,7 @@
-@extends ('usuario-pasajero.navbar-home')
+@extends ('usuario-chofer.navbar-home')
 
 @section ('titulo')
-    {{ 'Menu || Home' }}
+    {{ 'Menu || Inicio' }}
 @stop
 
 @section ('contenido')
@@ -11,7 +11,7 @@
             
             <div class="slide">
                 <div class="historial">
-                    <h3>HISTORIAL DE BOLETAS</h3>
+                    <h3>HISTORIAL DE BOLES</h3>
                 </div>
             </div>
 
