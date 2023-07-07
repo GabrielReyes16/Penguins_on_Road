@@ -18,7 +18,7 @@
             </div>
               
             <div class="btn-ruta">
-                <a href="#">Campus - Ov. de la Perla || 6:10 PM</a>
+                <a href="/tt-op1">Campus - Ov. de la Perla || 6:10 PM</a>
             </div>
 
             <div class="btn-ruta">

@@ -34,6 +34,7 @@ Route::get('/tarde', function () {return view('usuario-pasajero.turno-tarde');})
 Route::get('/noche', function () {return view('usuario-pasajero.turno-noche');});
 Route::get('/tm-op1', function () {return view('usuario-pasajero.turno-mañana-op1');});
 Route::get('/tm-op2', function () {return view('usuario-pasajero.turno-mañana-op2');});
+Route::get('/tt-op1', function () {return view('usuario-pasajero.turno-tarde-op1');});
 Route::get('/reserva/{idReserva}', [ReservaController::class, 'mostrarReserva'])->name('mostrar_reserva');
 Route::get('/reserva/{idReserva}/editar', [ReservaController::class, 'editarReserva'])->name('editar_reserva');
 Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva'])->name('actualizar_reserva');
