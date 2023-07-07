@@ -12,7 +12,6 @@ class BoletaViaje extends Model
     protected $primaryKey = 'id_boleta';
     protected $fillable = [
         'id_usuario_pasajero',
-        'id_usuario_chofer',
         'id_viaje',
         'id_reserva',
         'fecha_viaje',
@@ -23,11 +22,6 @@ class BoletaViaje extends Model
     public function pasajero()
     {
         return $this->belongsTo(User::class, 'id_usuario_pasajero', 'id_usuario');
-    }
-
-    public function chofer()
-    {
-        return $this->belongsTo(User::class, 'id_usuario_chofer', 'id_usuario');
     }
 
     public function viaje()

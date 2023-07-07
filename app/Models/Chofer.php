@@ -21,6 +21,10 @@ class Chofer extends Model
     {
         return $this->belongsTo(User::class, 'id_usuario', 'id_usuario');
     }
+    public function viaje()
+    {
+        return $this->hasMany(Viaje::class, 'id_chofer', 'id_chofer');
+    }
 
     public function bus()
     {

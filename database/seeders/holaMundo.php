@@ -575,6 +575,7 @@ class holaMundo extends Seeder
             [
                 'id_ruta' => 1,
                 'id_bus' => 1,
+                'id_chofer' => 2,
                 'fecha_viaje' => '2023-01-01',
                 'hora_inicio' => '08:00:00',
                 'hora_final' => '10:00:00',
@@ -584,6 +585,7 @@ class holaMundo extends Seeder
             [
                 'id_ruta' => 2,
                 'id_bus' => 2,
+                'id_chofer' => 2,
                 'fecha_viaje' => '2023-01-02',
                 'hora_inicio' => '14:00:00',
                 'hora_final' => '16:00:00',
@@ -641,7 +643,6 @@ class holaMundo extends Seeder
         $boletasViaje = [
             [
                 'id_usuario_pasajero' => 1,
-                'id_usuario_chofer' => 2,
                 'id_viaje' => 1,
                 'id_reserva' => 1,
                 'fecha_viaje' => '2023-01-01',
@@ -650,7 +651,6 @@ class holaMundo extends Seeder
             ],
             [
                 'id_usuario_pasajero' => 2,
-                'id_usuario_chofer' => 1,
                 'id_viaje' => 2,
                 'id_reserva' => 2,
                 'fecha_viaje' => '2023-01-02',
