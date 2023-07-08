@@ -32,27 +32,28 @@ class ReservaController extends Controller
 
     if ($reservaExistente) {
         // Redirigir al código QR generado para la reserva existente
-        return redirect()->route('mostrar_reserva', ['idReserva' => $reservaExistente->id_reserva]);
+        return redirect()->route('usuario-pasajero.mostrar_reserva', ['codigo' => $reservaExistente->codigoDeAcceso]);
     } else {
         // Obtener los viajes disponibles con estado "Activo"
         $viajes = Viaje::where('estado', 'Activo')->get();
 
-        return view('formulario_reserva', ['id_usuario' => $idUsuario, 'viajes' => $viajes]);
+        return view('usuario-pasajero.formulario_reserva', ['id_usuario' => $idUsuario, 'viajes' => $viajes]);
     }
 }
 
-public function editarReserva($idReserva)
+public function editarReserva($codigo)
 {
     // Obtener la reserva existente
-    $reserva = Reserva::findOrFail($idReserva);
+    $reserva = Reserva::where('codigoDeAcceso', $codigo)->firstOrFail();
 
     // Obtener los viajes disponibles con estado "Activo"
     $viajes = Viaje::where('estado', 'Activo')->get();
 
-    return view('editar_reserva', ['reserva' => $reserva, 'viajes' => $viajes]);
+    return view('usuario-pasajero.editar_reserva', ['reserva' => $reserva, 'viajes' => $viajes]);
 }
 
-public function actualizarReserva(Request $request, $idReserva)
+
+public function actualizarReserva(Request $request, $codigo)
 {
     // Validar los datos del formulario
     $request->validate([
@@ -60,13 +61,13 @@ public function actualizarReserva(Request $request, $idReserva)
     ]);
 
     // Obtener la reserva existente
-    $reserva = Reserva::findOrFail($idReserva);
+    $reserva = Reserva::where('codigoDeAcceso', $codigo)->firstOrFail();
 
     // Actualizar la reserva con los nuevos datos
     $reserva->id_viaje = $request->input('id_viaje');
     $reserva->save();
 
-    return redirect()->route('mostrar_reserva', ['idReserva' => $reserva->id_reserva]);
+    return redirect()->route('usuario-pasajero.mostrar_reserva', ['codigo' => $reserva->codigoDeAcceso]);
 }
 
 
@@ -97,18 +98,25 @@ public function actualizarReserva(Request $request, $idReserva)
         
         //dd($reserva->id_reserva);
 
-        return redirect()->route('mostrar_reserva', ['idReserva' => $reserva->id_reserva]);
+        return redirect()->route('usuario-pasajero.mostrar_reserva', ['codigo' => $reserva->codigoDeAcceso]);
     }
 
     //
-    public function mostrarReserva($idReserva)
-    {
-        // Obtener la reserva y el código QR correspondiente
-        $reserva = Reserva::find($idReserva);
+    public function mostrarReserva($codigo)
+{
+    // Obtener la reserva y el código QR correspondiente
+    $reserva = Reserva::where('codigoDeAcceso', $codigo)->first();
+    
+    if ($reserva) {
         $codigoQR = $reserva->codigo_qr;
-
-        return view('mostrar_reserva', ['reserva' => $reserva, 'codigoQR' => $codigoQR]);
+        return view('usuario-pasajero.mostrar_reserva', ['reserva' => $reserva, 'codigoQR' => $codigoQR]);
+    } else {
+        // Manejar el caso en el que la reserva no existe
+        // Por ejemplo, puedes redirigir a una página de error o mostrar un mensaje de error
+        return redirect()->route('pagina_de_error');
     }
+}
+
 
     private function generarCodigoQR($codigo)
     {

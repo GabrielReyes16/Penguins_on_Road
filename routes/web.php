@@ -37,11 +37,13 @@ Route::get('/noche', function () {return view('usuario-pasajero.turno-noche');})
 Route::get('/tm-op1', function () {return view('usuario-pasajero.turno-mañana-op1');});
 Route::get('/tm-op2', function () {return view('usuario-pasajero.turno-mañana-op2');});
 Route::get('/tt-op1', function () {return view('usuario-pasajero.turno-tarde-op1');});
-Route::get('/reserva/{idReserva}', [ReservaController::class, 'mostrarReserva'])->name('mostrar_reserva');
-Route::get('/reserva/{idReserva}/editar', [ReservaController::class, 'editarReserva'])->name('editar_reserva');
-Route::put('/reserva/{idReserva}', [ReservaController::class, 'actualizarReserva'])->name('actualizar_reserva');
-Route::get('/boletas', [BoletaViajeController::class, 'mostrarBoletas'])->name('mostrar_boletas');
-Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->name('ver_boleta');
+Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'])->name('usuario-pasajero.formulario_reserva');
+Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
+Route::get('/reserva/{codigo}', [ReservaController::class, 'mostrarReserva'])->name('usuario-pasajero.mostrar_reserva');
+Route::get('/reserva/{codigo}/editar', [ReservaController::class, 'editarReserva'])->name('usuario-pasajero.editar_reserva');
+Route::put('/reserva/{codigo}', [ReservaController::class, 'actualizarReserva'])->name('usuario-pasajero.actualizar_reserva');
+Route::get('/boletas', [BoletaViajeController::class, 'mostrarBoletas'])->name('usuario-pasajero.mostrar_boletas');
+Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->name('usuario-pasajero.ver_boleta');
 
 // Rutas de chofer
 
@@ -92,8 +94,6 @@ Route::middleware('auth')->group(function () {
      
 // Rutas de abordaje
 Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
-Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'])->name('formulario_reserva');
-Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
 Route::get('/escaner', function () {return view('escaner');});
 // Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
 

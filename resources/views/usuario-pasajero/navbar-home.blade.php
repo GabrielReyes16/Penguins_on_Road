@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li class="options">
-                <a href="formulario-reserva" class="box-icon-center">
+                <a href="/formulario-reserva" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="bus"></ion-icon>
                     </span>
@@ -139,7 +139,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/animaciones.js') }}"></script>
+
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
