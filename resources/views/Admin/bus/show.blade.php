@@ -1,51 +1,56 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
-            Informacion del Bus de placa {{ $bus->placa }}
-        </h2>
-    </x-slot>
-
-    <section class="content container-fluid" style="text-align: center">
-        <div class="row">
-
-                <div class="card" style="color: white;">
-                    <div class="card-header">
-                        <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
-                            <a  href="{{ route('admin.buses.index') }}"> {{ __('Volver') }}</a>
+    <br>
+    <div class="rectangulo"> Informacion del bus # {{ $bus->id_bus }}</div>
+    <br>
+    <section style="text-align: center">
+        <div>
+            <div>
+                <div>
+                    <div class="bg-gray-200 rounded-md p-4">
+                        <div class="space-y-4">
+                            {{-- <div>
+                                    <label for="id_bus" class="text-lg font-medium text-gray-700">Id del bus</label>
+                                    <x-text-input id="id_bus" class="block mt-1 w-full" type="text" name="id_bus" :value="$bus->id_bus"
+                                        disabled autofocus autocomplete="id_bus" />
+                                    <x-input-error-create :messages="$errors->get('id_bus')" class="mt-2" />
+                                </div> --}}
+                            <div>
+                                <label for="placa" class="text-lg font-medium text-gray-700">Placa</label>
+                                <x-text-input id="placa" class="block mt-1 w-full" type="text" name="placa"
+                                    :value="$bus->placa" disabled autocomplete="placa" />
+                                <x-input-error-create :messages="$errors->get('placa')" class="mt-2" />
+                            </div>
+                            <div>
+                                <label for="aforo" class="text-lg font-medium text-gray-700">Aforo</label>
+                                <x-text-input id="aforo" class="block mt-1 w-full" type="text" name="aforo"
+                                    :value="$bus->aforo" disabled autocomplete="aforo" />
+                                <x-input-error-create :messages="$errors->get('aforo')" class="mt-2" />
+                            </div>
+                            <div>
+                                <label for="empresa" class="text-lg font-medium text-gray-700">Empresa
+                                    Proveedora</label>
+                                <x-text-input id="empresa" class="block mt-1 w-full" type="text" name="empresa"
+                                    :value="$bus->empresa->nombre" disabled autocomplete="empresa" />
+                                <x-input-error-create :messages="$errors->get('empresa')" class="mt-2" />
+                            </div>
+                            {{-- <div>
+                                    <label for="chofer" class="text-lg font-medium text-gray-700">Chofer</label>
+                                    <x-text-input id="chofer" class="block mt-1 w-full" type="text" name="chofer"
+                                        :value="$bus->chofer->user->name" disabled autocomplete="chofer" />
+                                    <x-input-error-create :messages="$errors->get('chofer')" class="mt-2" />
+                                </div> --}}
                         </div>
                     </div>
-                    <br><br><br>
-                    <div class="flex justify-center">
-                        <table id="users-table" class="min-w-full border border-gray-200 text-center">
-                          <tbody>
-                            <tr>
-                                <td class="px-4 py-2 border-b font-bold">Id Bus</td>
-                                <td class="px-4 py-2 border-b"> {{ $bus->id_bus }}</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2 border-b font-bold">Placa</td>
-                                <td class="px-4 py-2 border-b">{{ $bus->placa }}</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2 border-b font-bold">Aforo</td>
-                                <td class="px-4 py-2 border-b">{{ $bus->aforo }}</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2 border-b font-bold">Empresa</td>
-                                <td class="px-4 py-2 border-b">{{ $bus->empresa->nombre }}</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2 border-b font-bold"> Chofer</td>
-                                <td class="px-4 py-2 border-b"> {{ $bus->chofer->user->name }}</td>
-                            </tr>
+                    </form>
+                </div>
+            </div> <br>
 
-                        </table>
+            <div>
+                <div style="color: white;">
+                    <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded">
+                        <button class="create "><a href="{{ route('admin.buses.index') }}"> Volver</a></button>
+
                     </div>
-                    
-                    
-              </div>
-              </div>
-          </div>
-
-    </section>
+                </div>
+            </div>
 </x-app-layout>

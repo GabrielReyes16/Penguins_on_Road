@@ -1,0 +1,1426 @@
+* {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif}
+
+@media (max-width: 600px){
+    body
+    {
+        background: #cdcdcd;
+        width: 100%;
+        height: 100%;
+    }
+
+    header
+    {
+        background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
+        width: 100%;
+        height: 100px;
+        display: flex;
+        position: relative;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+    }
+
+    header.active
+    {
+        height: 130px;
+    }
+
+    header .logos
+    {
+        width: 50%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    header .logos img 
+    {
+        width: auto;
+        height: 60px;
+    }
+
+    header .menu-bar
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    header .flecha
+    {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        top: 20px;
+        cursor: pointer;
+    }
+
+    header .flecha ion-icon
+    {
+        width: 30px;
+        height: 30px;
+        color: #cacaca;
+        opacity: 0;
+    }
+
+    header .flecha.active .down
+    {
+        opacity: 1;
+    }
+
+    header .flecha.active:hover .down
+    {
+        color: #fff;
+    }
+
+    header .flecha.active .up
+    {
+        opacity: 1;
+    }
+
+    header .flecha.active:hover .up
+    {
+        color: #fff;
+    }
+
+    header .menu-bar .options
+    {
+        width: 50px;
+        height: 50px;
+        list-style: none;
+        position: relative;
+    }
+
+    header .menu-bar .options a 
+    {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    header .menu-bar .options a span
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .menu-bar .options a .icons
+    {
+        width: 40px;
+        height: 40px;
+    }
+
+    header .menu-bar .options a .icons ion-icon
+    {
+        width: 20px;
+        height: 20px;
+        color: #fff;
+        transition: .5s;
+    }
+
+    header .menu-bar .options .box-icon-left
+    {
+        background: #ffffff20;
+        border-radius: 5px 0px 0px 5px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+        transition: .8s;
+    }
+
+    header .menu-bar .options .box-icon-center
+    {
+        background: #ffffff20;
+        border-radius: 0px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+        transition: .8s;
+    }
+
+    header .menu-bar .options .box-icon-right
+    {
+        background: #ffffff20;
+        border-radius: 0px 5px 5px 0px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+        transition: .8s;
+    }
+
+    header .menu-bar .options a .text
+    {
+        font-size: 8px;
+        font-weight: 700;
+        color: #000;
+        text-align: center;
+        transition: .5s;
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    header .menu-bar .options.active a .text
+    {
+        transform: translateY(-3px);
+        opacity: 1;
+    }
+
+    header .menu-bar .options a:hover .text
+    {
+        transform: translateY(-3px);
+        opacity: 1;
+    }
+
+    header .menu-bar .options.active a .icons ion-icon
+    {
+        width: 30px;
+        height: 30px;
+        color: #000;
+    }
+
+    header .menu-bar .options a:hover .icons ion-icon
+    {
+        width: 30px;
+        height: 30px;
+        color: #000;
+    }
+
+    header .menu-bar .options.active a
+    {
+        background: #ffffff50;
+        border-radius: 50%;
+        transition: .5s;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    header .menu-bar .options a:hover
+    {
+        background: #ffffff50;
+        border-radius: 50%;
+        transition: .5s;
+    }
+
+    header .user-menu-bar
+    {
+        width: 50%;
+        height: auto;
+        display: flex;
+    }
+
+    header .user-menu-bar .user-icon
+    {
+        width: 80%;
+        height: auto;
+        display: flex;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+
+    header .user-menu-bar .user-icon label
+    {
+        width: 80%;
+        color: #fff;
+        font-size: 8px;
+        font-weight: 300;
+        font-style: italic;
+        display: flex;
+        justify-content: end;
+        margin-top: 15px;
+        margin-right: 10px;
+    }
+
+    header .user-menu-bar .user-icon span
+    {
+        width: 20%;
+        color: #fff;
+        display: flex;
+        align-items: start;
+    }
+
+    header .user-menu-bar .user-icon span ion-icon
+    {
+        width: 40px;
+        height: 40px;
+        transition: .5s;
+    }
+
+    header .user-menu-bar .user-icon span ion-icon:hover
+    {
+        width: 45px;
+        height: 45px;
+        color: #000;
+    }
+
+    header .user-menu-bar .menu
+    {
+        width: 20%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    header .user-menu-bar .menu span
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+        transition: .5s;
+    }
+
+    header .user-menu-bar .menu span ion-icon
+    {
+        width: 30px;
+        height: 30px;
+        color: #ffffffb9;
+    }
+
+    header .user-menu-bar .menu span:hover
+    {
+        width: 40px;
+        height: 40px;
+        background: #ffffff50;
+        border-radius: 50%;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    header .user-menu-bar .menu span ion-icon:hover
+    {
+        color: #ffffff;
+    }
+
+    .sidebar
+    { 
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: end;
+        overflow: hidden;
+    }
+
+    .sidebar .list
+    {
+        width: 150px;
+        height: auto;
+        background: rgba(0, 105, 105, 0.70);
+        border-radius: 0px 0px 0px 5px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-direction: column;
+        transition: .8s;
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    .list.active
+    {
+        transform: translateX(0);
+        opacity: 1;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .sidebar .list li
+    {
+        width: 100%;
+        list-style: none;
+    }
+
+    .sidebar .list li a
+    {
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        transition: .5s;
+    }
+
+    .sidebar .list li a span
+    {
+        color: #fff;
+    }
+
+    .sidebar .list li a .icon
+    {
+        width: 30%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar .list li a .icon ion-icon
+    {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sidebar .list li a .text
+    {
+        width: 70%;
+        height: 60px;
+        font-size: 10px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+    }
+
+    .sidebar .list li a:hover
+    {
+        background: rgba(0, 105, 105, 1);
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
+        transition: .8s;
+    }
+
+    .sidebar .list li a:hover span
+    {
+        color: #75cc23;
+    }
+
+    main
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* overflow: hidden; */
+        display: flex;
+        position: absolute;
+    }
+
+    main .carrusel
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    main .carrusel .slide
+    {
+        flex: 0 0 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 60px;
+    }
+
+    main .carrusel h3
+    {
+        color: #fff;
+        margin-top: 10px;
+        font-weight: 300;
+        font-size: 10px;
+    }
+
+    main .carrusel .slide .historial
+    {
+        width: 250px;
+        height: 200px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 3px 15px #000;
+    }
+
+    main .carrusel .slide .novedades
+    {
+        width: 250px;
+        height: 200px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 3px 15px #000;
+    }
+
+    main .carrusel .slide .foro
+    {
+        width: 250px;
+        height: 200px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 3px 15px #000;
+    }
+
+    main .seleccion
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 20px;
+    }
+
+    main .seleccion .box .line
+    {
+        content: '';
+        width: 2px;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.65);
+        border-radius: 1px;
+    }
+
+    main .seleccion .box
+    {
+        width: 100px;
+        height: 40px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background: #a8a8a8;
+        border-radius: 20px;
+        box-shadow: 0px 3px 5px #000;
+    }
+
+    main .seleccion .boton ion-icon
+    {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    main .seleccion .boton:hover ion-icon
+    {
+        color: #ffffff;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px){
+    body
+    {
+        background: #cdcdcd;
+        width: 100%;
+        height: auto;
+        /* overflow: hidden; */
+    }
+    
+    header
+    {
+        background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
+        width: 100%;
+        height: 100px;
+        display: flex;
+        position: relative;
+        align-items: center;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+    }
+    
+    
+
+    header .logos
+    {
+        width: 30%;
+        height: auto;
+        display: flex;
+        justify-content: start;
+    }
+    
+    header .logos img 
+    {
+        width: auto;
+        height: 35px;
+        margin-left: 10px;
+    }
+    
+    header .menu-bar
+    {
+        width: 40%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+    
+    header .menu-bar .options
+    {
+        width: 70px;
+        height: 70px;
+        list-style: none;
+        position: relative;
+    }
+    
+    header .menu-bar .options a 
+    {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+    
+    header .menu-bar .options a span
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    header .menu-bar .options a .icons
+    {
+        width: 40px;
+        height: 40px;
+    }
+    
+    header .menu-bar .options a .icons ion-icon
+    {
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        transition: .5s;
+    }
+    
+    header .menu-bar .options .box-icon-left
+    {
+        background: #ffffff20;
+        border-radius: 8px 0px 0px 8px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+        transition: .8s;
+    }
+    
+    header .menu-bar .options .box-icon-center
+    {
+        background: #ffffff20;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+        transition: .8s;
+    }
+    
+    header .menu-bar .options .box-icon-right
+    {
+        background: #ffffff20;
+        border-radius: 0px 8px 8px 0px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+        transition: .8s;
+    }
+    
+    header .menu-bar .options a .text
+    {
+        font-size: 10px;
+        font-weight: 700;
+        color: #000;
+        text-align: center;
+        transition: .5s;
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    
+    header .menu-bar .options.active a .text
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    
+    header .menu-bar .options a:hover .text
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    
+    header .menu-bar .options.active a .icons ion-icon
+    {
+        width: 40px;
+        height: 40px;
+        color: #000;
+    }
+    
+    header .menu-bar .options a:hover .icons ion-icon
+    {
+        width: 40px;
+        height: 40px;
+        color: #000;
+    }
+    
+    header .menu-bar .options.active a
+    {
+        background: #ffffff50;
+        border-radius: 50%;
+        transition: .5s;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+    }
+    
+    header .menu-bar .options a:hover
+    {
+        background: #ffffff50;
+        border-radius: 50%;
+        transition: .5s;
+    }
+    
+    header .user-menu-bar
+    {
+        width: 30%;
+        height: auto;
+        display: flex;
+    }
+    
+    header .user-menu-bar .user-icon
+    {
+        width: 80%;
+        height: auto;
+        display: flex;
+        text-decoration: none;
+    }
+    
+    header .user-menu-bar .user-icon label
+    {
+        width: 75%;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 300;
+        font-style: italic;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    
+    header .user-menu-bar .user-icon span
+    {
+        width: 25%;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+    }
+    
+    header .user-menu-bar .user-icon span ion-icon
+    {
+        width: 40px;
+        height: 40px;
+        transition: .5s;
+    }
+    
+    header .user-menu-bar .user-icon span ion-icon:hover
+    {
+        width: 45px;
+        height: 45px;
+        color: #000;
+    }
+    
+    header .user-menu-bar .menu
+    {
+        width: 20%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    header .user-menu-bar .menu span
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .5s;
+    }
+    
+    header .user-menu-bar .menu span ion-icon
+    {
+        width: 30px;
+        height: 30px;
+        color: #ffffffb9;
+    }
+    
+    header .user-menu-bar .menu span:hover
+    {
+        width: 40px;
+        height: 40px;
+        background: #ffffff50;
+        border-radius: 50%;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+    }
+    
+    header .user-menu-bar .menu span ion-icon:hover
+    {
+        color: #ffffff;
+    }
+    
+    .sidebar
+    { 
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: end;
+        overflow: hidden;
+    }
+    
+    .sidebar .list
+    {
+        width: 200px;
+        height: auto;
+        background: rgba(0, 105, 105, 0.70);
+        display: flex;
+        margin-bottom: 30px;
+        align-items: center;
+        flex-direction: column;
+        transition: .8s;
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    
+    .list.active
+    {
+        transform: translateX(0);
+        opacity: 1;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
+    }
+    
+    .sidebar .list li
+    {
+        width: 100%;
+        list-style: none;
+    }
+    
+    .sidebar .list li a
+    {
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        transition: .5s;
+    }
+    
+    .sidebar .list li a span
+    {
+        color: #fff;
+    }
+    
+    .sidebar .list li a .icon
+    {
+        width: 30%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .sidebar .list li a .icon ion-icon
+    {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .sidebar .list li a .text
+    {
+        width: 70%;
+        height: 60px;
+        font-size: 15px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+    }
+    
+    .sidebar .list li a:hover
+    {
+        background: rgba(0, 105, 105, 1);
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
+        transition: .8s;
+    }
+    
+    .sidebar .list li a:hover span
+    {
+        color: #75cc23;
+    }
+    
+    main
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        display: flex;
+        position: absolute;
+    }
+    
+    main .carrusel
+    {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    
+    main .carrusel .slide
+    {
+        flex: 0 0 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    main .carrusel h3
+    {
+        color: #fff;
+        margin-top: 10px;
+        font-weight: 300;
+        font-size: 15px;
+    }
+    
+    main .carrusel .slide .historial
+    {
+        width: 400px;
+        height: 300px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 3px 15px #000;
+    }
+    
+    main .carrusel .slide .novedades
+    {
+        width: 590px;
+        height: 300px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 3px 15px #000;
+    }
+    
+    main .carrusel .slide .foro
+    {
+        width: 400px;
+        height: 300px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 3px 15px #000;
+    }
+    
+    main .seleccion
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 120px;
+    }
+    
+    main .seleccion .box .line
+    {
+        content: '';
+        width: 2px;
+        height: 25px;
+        background: rgba(0, 0, 0, 0.65);
+        border-radius: 1px;
+    }
+    
+    main .seleccion .box
+    {
+        width: 150px;
+        height: 40px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background: #a8a8a8;
+        border-radius: 20px;
+        box-shadow: 0px 3px 5px #000;
+    }
+    
+    main .seleccion .boton ion-icon
+    {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    
+    main .seleccion .boton:hover ion-icon
+    {
+        color: #ffffff;
+    }
+}
+
+@media (min-width: 1201px){
+    body
+    {
+        background: #cdcdcd;
+        width: 100%;
+        height: auto;
+        /* overflow: hidden; */
+    }
+    .rectangulo {
+        width: 400px;
+        height: 50px;
+        background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
+        color: white;
+        border-radius: 10px;
+        padding: 10px ;
+        text-align: center;
+      }
+      .create{
+        background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
+        color: white;
+        border-radius: 10px;
+        padding: 10px ;
+        text-align: center;
+        transition:  0.3s ease; /* Agrega una transición de 0.3 segundos */
+    }
+    
+    .create:hover {
+      background-color: rgb(17, 14, 14); /* Cambia el color de fondo en el hover */
+      color: rgb(202, 201, 201);
+    }
+    .crear_item{
+        width: 400px;
+    }
+    header
+    {
+        background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
+        width: 100%;
+        height: 80px;
+        
+        position: relative;
+        align-items: center;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    header .logos
+    {
+        width: 15%;
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    header .logos img 
+    {
+        width: auto;
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    header .menu-bar
+    {
+        margin-left: 60px;
+        margin-right: 60px;
+        width: 60%;
+        height: auto;
+        display: flex;
+        justify-content: end;
+    }
+
+    header .menu-bar .options
+    {
+        width: 100px;
+        height: 100px;
+        list-style: none;
+        position: relative;
+    }
+
+    header .menu-bar .options a 
+    {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    header .menu-bar .options a span
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .menu-bar .options a .icons
+    {
+        width: 60px;
+        height: 60px;
+    }
+
+    header .menu-bar .options a .icons ion-icon
+    {
+        width: 50px;
+        height: 50px;
+        color: #504e4e;
+        transition: .5s;
+    }
+
+    header .menu-bar .options .box-icon-left
+    {
+        background: #ffffff20;
+        border-radius: 10px 0px 0px 10px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+        transition: .8s;
+    }
+
+    header .menu-bar .options .box-icon-center
+    {
+        background: #ffffff20;
+        border-radius: 0px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+        transition: .8s;
+    }
+
+    header .menu-bar .options .box-icon-right
+    {
+        background: #ffffff20;
+        border-radius: 0px 10px 10px 0px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+        transition: .8s;
+    }
+
+    header .menu-bar .options a .text
+    {
+        font-size: 15px;
+        font-weight: 700;
+        color: #000;
+        text-align: center;
+        transition: .5s;
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    header .menu-bar .options.active a .text
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    header .menu-bar .options a:hover .text
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    header .menu-bar .options.active a .icons ion-icon
+    {
+        width: 60px;
+        height: 60px;
+        color: #000;
+    }
+
+    header .menu-bar .options a:hover .icons ion-icon
+    {
+        width: 60px;
+        height: 60px;
+        color: #000;
+    }
+
+    header .menu-bar .options.active a
+    {
+        background: #ffffff50;
+        border-radius: 50%;
+        transition: .5s;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    header .menu-bar .options a:hover
+    {
+        background: #ffffff50;
+        border-radius: 50%;
+        transition: .5s;
+    }
+
+    header .user-menu-bar
+    {
+        width: 30%;
+        height: auto;
+        display: flex;
+    }
+
+    header .user-menu-bar .user-icon
+    {
+        width: 80%;
+        height: auto;
+        display: flex;
+        text-decoration: none;
+    }
+
+    header .user-menu-bar .user-icon label
+    {
+        width: 75%;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 300;
+        font-style: italic;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    header .user-menu-bar .user-icon span
+    {
+        width: 25%;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+    }
+
+    header .user-menu-bar .user-icon span ion-icon
+    {
+        width: 80px;
+        height: 80px;
+        transition: .5s;
+    }
+
+    header .user-menu-bar .user-icon span ion-icon:hover
+    {
+        width: 85px;
+        height: 85px;
+        color: #000;
+    }
+
+    header .user-menu-bar .menu
+    {
+        width: 20%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    header .user-menu-bar .menu span
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .5s;
+    }
+
+    header .user-menu-bar .menu span ion-icon
+    {
+        width: 50px;
+        height: 50px;
+        color: #ffffffb9;
+    }
+
+    header .user-menu-bar .menu span:hover
+    {
+        width: 80px;
+        height: 80px;
+        background: #ffffff50;
+        border-radius: 50%;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    header .user-menu-bar .menu span ion-icon:hover
+    {
+        color: #ffffff;
+    }
+
+    .sidebar
+    { 
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: end;
+        overflow: hidden;
+    }
+
+    .sidebar .list
+    {
+        width: 250px;
+        height: auto;
+        background: rgba(0, 105, 105, 0.70);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+        transition: .8s;
+        transform: translateX(240px);
+        opacity: 0;
+    }
+
+    .list.active
+    {
+        transform: translateX(0);
+        opacity: 1;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .sidebar .list li
+    {
+        width: 100%;
+        list-style: none;
+    }
+
+    .sidebar .list li a
+    {
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        transition: .5s;
+    }
+
+    .sidebar .list li a span
+    {
+        color: #fff;
+    }
+
+    .sidebar .list li a .icon
+    {
+        width: 30%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar .list li a .icon ion-icon
+    {
+        width: 30px;
+        height: 30px;
+    }
+
+    .sidebar .list li a .text
+    {
+        width: 70%;
+        height: 70px;
+        font-size: 20px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+    }
+
+    .sidebar .list li a:hover
+    {
+        background: rgba(0, 105, 105, 1);
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
+        transition: .8s;
+    }
+
+    .sidebar .list li a:hover span
+    {
+        color: #75cc23;
+    }
+
+    main
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        display: flex;
+        position: absolute;
+    }
+
+    main .carrusel
+    {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    main .carrusel .slide
+    {
+        flex: 0 0 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    main .carrusel h3
+    {
+        color: #fff;
+        margin-top: 20px;
+        font-weight: 300;
+    }
+
+    main .carrusel .slide .historial
+    {
+        width: 600px;
+        height: 400px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 3px 15px #000;
+    }
+
+    main .carrusel .slide .novedades
+    {
+        width: 1000px;
+        height: 400px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 3px 15px #000;
+    }
+
+    main .carrusel .slide .foro
+    {
+        width: 600px;
+        height: 400px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 3px 15px #000;
+    }
+
+    main .seleccion
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 100px;
+    }
+
+    main .seleccion .box .line
+    {
+        content: '';
+        width: 4px;
+        height: 35px;
+        background: rgba(0, 0, 0, 0.65);
+        border-radius: 2px;
+    }
+
+    main .seleccion .box
+    {
+        width: 200px;
+        height: 50px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background: #a8a8a8;
+        border-radius: 20px;
+        box-shadow: 0px 3px 5px #000;
+    }
+
+    main .seleccion .boton ion-icon
+    {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    main .seleccion .boton:hover ion-icon
+    {
+        color: #ffffff;
+    }
+}

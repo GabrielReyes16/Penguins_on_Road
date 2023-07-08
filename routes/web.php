@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ReservaController;  //Meter en carpeta correspondiente en controllers
 use App\Http\Controllers\BoletaViajeController;  //Meter en carpeta correspondiente en controllers
 use App\Http\Controllers\Admin\ChoferController;
+use App\Http\Controllers\Admin\BoletasViajeController;
 use App\Http\Controllers\Admin\BusController;
 use App\Http\Controllers\Admin\RutaController;
 use App\Http\Controllers\DashboardController;
@@ -81,6 +82,7 @@ Route::POST('/admin/users/{user}/storeChofer', [UserController::class, 'storeCho
 Route::resource('buses', BusController::class)->names('admin.buses');
 Route::resource('choferes', ChoferController::class)->names('admin.choferes');
 Route::resource('rutas', RutaController::class)->names('admin.rutas');
+Route::resource('boletasviaje', BoletasViajeController::class)->names('admin.boletasviaje');
 
 // Ruta de acciones directas en perfil
 Route::middleware('auth')->group(function () {

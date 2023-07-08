@@ -543,118 +543,118 @@ class holaMundo extends Seeder
             'password' => bcrypt('marcelosanabria'),
         ])->assignRole('Pasajero');
 
-        // Crear choferes
-        $choferes = [
-            [
-                'id_usuario' => 1,
-                'id_bus' => 1,
-                'id_empresa' => 1,
-                'licencia_conducir' => '123456',
-            ],
-            [
-                'id_usuario' => 2,
-                'id_bus' => 2,
-                'id_empresa' => 2,
-                'licencia_conducir' => '654321',
-            ],
-        ];
+        // // Crear choferes
+        // $choferes = [
+        //     [
+        //         'id_usuario' => 1,
+        //         'id_bus' => 1,
+        //         'id_empresa' => 1,
+        //         'licencia_conducir' => '123456',
+        //     ],
+        //     [
+        //         'id_usuario' => 2,
+        //         'id_bus' => 2,
+        //         'id_empresa' => 2,
+        //         'licencia_conducir' => '654321',
+        //     ],
+        // ];
 
-        foreach ($choferes as $choferData) {
-            Chofer::create($choferData);
-        }
+        // foreach ($choferes as $choferData) {
+        //     Chofer::create($choferData);
+        // }
 
         // Crear viajes
-        $viajes = [
-            [
-                'id_ruta' => 1,
-                'id_bus' => 1,
-                'id_chofer' => 2,
-                'fecha_viaje' => '2023-01-01',
-                'hora_inicio' => '08:00:00',
-                'hora_final' => '10:00:00',
-                'estado' => 'Activo',
-                'aforo_actual' => 30,
-            ],
-            [
-                'id_ruta' => 2,
-                'id_bus' => 2,
-                'id_chofer' => 2,
-                'fecha_viaje' => '2023-01-02',
-                'hora_inicio' => '14:00:00',
-                'hora_final' => '16:00:00',
-                'estado' => 'Activo',
-                'aforo_actual' => 20,
-            ],
-        ];
+        // $viajes = [
+        //     [
+        //         'id_ruta' => 1,
+        //         'id_bus' => 1,
+        //         'id_chofer' => 2,
+        //         'fecha_viaje' => '2023-01-01',
+        //         'hora_inicio' => '08:00:00',
+        //         'hora_final' => '10:00:00',
+        //         'estado' => 'Activo',
+        //         'aforo_actual' => 30,
+        //     ],
+        //     [
+        //         'id_ruta' => 2,
+        //         'id_bus' => 2,
+        //         'id_chofer' => 2,
+        //         'fecha_viaje' => '2023-01-02',
+        //         'hora_inicio' => '14:00:00',
+        //         'hora_final' => '16:00:00',
+        //         'estado' => 'Activo',
+        //         'aforo_actual' => 20,
+        //     ],
+        // ];
 
-        foreach ($viajes as $viajeData) {
-            Viaje::create($viajeData);
-        }
+        // foreach ($viajes as $viajeData) {
+        //     Viaje::create($viajeData);
+        // }
 
         // Crear viajes_gps
-        $viajesGPS = [
-            [
-                'id_viaje' => 1,
-                'posicion_x' => '12.345',
-                'posicion_y' => '67.890',
-                'hora_posicion' => '08:30:00',
-            ],
-            [
-                'id_viaje' => 2,
-                'posicion_x' => '98.765',
-                'posicion_y' => '43.210',
-                'hora_posicion' => '15:30:00',
-            ],
-        ];
+        // $viajesGPS = [
+        //     [
+        //         'id_viaje' => 1,
+        //         'posicion_x' => '12.345',
+        //         'posicion_y' => '67.890',
+        //         'hora_posicion' => '08:30:00',
+        //     ],
+        //     [
+        //         'id_viaje' => 2,
+        //         'posicion_x' => '98.765',
+        //         'posicion_y' => '43.210',
+        //         'hora_posicion' => '15:30:00',
+        //     ],
+        // ];
 
-        foreach ($viajesGPS as $viajeGPSData) {
-            ViajeGPS::create($viajeGPSData);
-        }
+        // foreach ($viajesGPS as $viajeGPSData) {
+        //     ViajeGPS::create($viajeGPSData);
+        // }
 
-        $reservas = [
-            [
-                'id_usuario' => 1,
-                'id_viaje' => 1,
-                'fecha_reserva' => '2023-07-03',
-                'codigoDeAcceso' => 'ABCDE12345',
-                'codigo_qr' => 'ABC123',
-            ],
-            [
-                'id_usuario' => 2,
-                'id_viaje' => 2,
-                'fecha_reserva' => '2023-07-03',
-                'codigoDeAcceso' => 'ABCDE54321',
-                'codigo_qr' => 'XYZ987',
-            ],
-        ];
+        // $reservas = [
+        //     [
+        //         'id_usuario' => 1,
+        //         'id_viaje' => 1,
+        //         'fecha_reserva' => '2023-07-03',
+        //         'codigoDeAcceso' => 'ABCDE12345',
+        //         'codigo_qr' => 'ABC123',
+        //     ],
+        //     [
+        //         'id_usuario' => 2,
+        //         'id_viaje' => 2,
+        //         'fecha_reserva' => '2023-07-03',
+        //         'codigoDeAcceso' => 'ABCDE54321',
+        //         'codigo_qr' => 'XYZ987',
+        //     ],
+        // ];
 
-        foreach ($reservas as $reservaData) {
-            Reserva::create($reservaData);
-        }
+        // foreach ($reservas as $reservaData) {
+        //     Reserva::create($reservaData);
+        // }
 
-        // Crear boletas_viaje
-        $boletasViaje = [
-            [
-                'id_usuario_pasajero' => 1,
-                'id_viaje' => 1,
-                'id_reserva' => 1,
-                'fecha_viaje' => '2023-01-01',
-                'hora_abordaje' => '07:30:00',
-                'aforo_viaje' => 1,
-            ],
-            [
-                'id_usuario_pasajero' => 2,
-                'id_viaje' => 2,
-                'id_reserva' => 2,
-                'fecha_viaje' => '2023-01-02',
-                'hora_abordaje' => '13:30:00',
-                'aforo_viaje' => 1,
-            ],
-        ];
+        // // Crear boletas_viaje
+        // $boletasViaje = [
+        //     [
+        //         'id_usuario_pasajero' => 1,
+        //         'id_viaje' => 1,
+        //         'id_reserva' => 1,
+        //         'fecha_viaje' => '2023-01-01',
+        //         'hora_abordaje' => '07:30:00',
+        //         'aforo_viaje' => 1,
+        //     ],
+        //     [
+        //         'id_usuario_pasajero' => 2,
+        //         'id_viaje' => 2,
+        //         'id_reserva' => 2,
+        //         'fecha_viaje' => '2023-01-02',
+        //         'hora_abordaje' => '13:30:00',
+        //         'aforo_viaje' => 1,
+        //     ],
+        // ];
 
-        foreach ($boletasViaje as $boletaViajeData) {
-            BoletaViaje::create($boletaViajeData);
-        }
+        // foreach ($boletasViaje as $boletaViajeData) {
+        //     BoletaViaje::create($boletaViajeData);
+        // }
 
         // Crear reservas
 
