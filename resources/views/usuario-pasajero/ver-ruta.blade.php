@@ -32,62 +32,39 @@
 @stop
 
 @section('contenido')
-    <div class="container mx-auto">
-        <h2 class="text-2xl font-bold text-center mt-8">{{'Turno '}}{{ $ruta->turno->nombre }} | {{ $ruta->turno->hora_inicio }}</h2>
-        <p class="text-4xl font-bold text-black text-center py-2">{{ $ruta->punto_inicial }} ➡️ {{ $ruta->punto_final }}</p>
-        <div class="flex flex-col items-center">
-            <!-- Mapa -->
-            <div class="w-full md:w-2/3 mb-4">
-                <div id="map"></div>
-            </div>
-
-            <!-- Información de la ruta -->
-            <div class="w-full md:w-2/3 px-4 py-8 md:px-8 md:py-0">
-                <h2 class="text-2xl font-bold mb-4">Información de la ruta</h2>
-                
-                <!-- Chofer actual -->
-                <div class="mb-4">
-                    <h4 class="font-bold">Chofer actual</h4>
-                    <p>{{ $ruta->chofer ? $ruta->chofer->user->name : 'Chofer en camino' }}</p>
-                </div>
-                <!-- Punto de partida -->
-                <div class="mb-4">
-                    <h4 class="font-bold">Punto de partida</h4>
-                    <p>{{ $ruta->punto_inicial }}</p>
-                </div>
-                
-                <!-- Hora de partida -->
-                <div class="mb-4">
-                    <h4 class="font-bold">Hora de partida</h4>
-                    <p>{{$horaInicio->format('h:i A') }}</p>
-                </div>
-                
-                <!-- Paraderos -->
-                <div class="mb-4">
-                    <h4 class="font-bold">Paraderos</h4>
-                    <ul>
-                        @foreach ($paraderos as $paradero)
-                            <li>{{ $paradero->nombre }}</li>
-                            <li>{{ $paradero->ubicacion }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                
-                <!-- Hora estimada de fin -->
-                <div class="mb-4">
-                    <h4 class="font-bold">Hora estimada de fin</h4>
-                    <p>{{ $horaFinEstimada->format('h:i A') }}</p>
-                </div>
-                
-                <!-- Punto de fin -->
-                <div>
-                    <h4 class="font-bold">Punto de fin</h4>
-                    <p>{{ $ruta->punto_final }}</p>
-                </div>
-            </div>
+    <main>
+    <div class="info">
+        <div class="title-box2">
+            <a href="/turnos/{{$ruta->turno->id_turno}}}"><ion-icon name="arrow-back-circle"></ion-icon></a>
+            <h3>{{ $ruta->punto_inicial }} ➡️ {{ $ruta->punto_final }} || {{ $ruta->turno->hora_inicio }}</h3>
+        </div>
+        <!-- Mapa -->
+        <div class="w-full md:w-2/3 mb-4">
+            <div id="map"></div>
+        </div>
+        <div class="info-text">
+            <h3>INFORMACIÓN DE LA RUTA</h3>
+            <ul class="info-detalle">
+                <li>Chofer actual</li>
+                <p>{{ $ruta->chofer ? $ruta->chofer->user->name : 'Chofer en camino' }}</p>
+                <li>Punto de partida</li>
+                <p>{{ $ruta->punto_inicial }}</p>
+                <li>Punto de llegada</li>
+                <p>{{ $ruta->punto_final }}</p>
+                <li>Hora de partida</li>
+                <p>{{$horaInicio->format('h:i A') }}</p>
+                <li>Hora de destino aproximado</li>
+                <p>{{ $horaFinEstimada->format('h:i A') }}</p>
+                <li>Paraderos permitidos</li>
+                <ul class="paraderos">
+                    @foreach ($paraderos as $paradero)
+                        <li>{{ $paradero->nombre }}</li>
+                    @endforeach
+                </ul>
+            </ul>
         </div>
     </div>
-
+    </main>
     <script>
         // Inicializar mapa
         var map = L.map('map').setView([-12.04434, -76.95324], 11);
