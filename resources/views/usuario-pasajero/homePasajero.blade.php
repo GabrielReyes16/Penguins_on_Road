@@ -20,12 +20,6 @@
                     <h3>NOVEDADES</h3>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="foro">
-                    <h3>FORO</h3>
-                </div>
-            </div>
         </div>
 
         <div class="seleccion">
