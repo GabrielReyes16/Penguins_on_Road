@@ -2,10 +2,9 @@
     <br>
     <div class="rectangulo"> {{ __('Usuarios') }}</div>
     <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 ">
-
+    <div>
+        <div>
+            <div >
                 <form id="search-form" class="buscador" style=" text-align: center;">
                     <input id="search-input" type="text" placeholder="Buscar por nombre o email" class="mr-4 text-gray w-2/3">
                     <button id="clear-button" type="button"
