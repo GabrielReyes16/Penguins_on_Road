@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5c042b5a28cb6a1b0cf9389e81cd2785
+class ComposerStaticInite43b59f0f313c8d6ac37287502446711
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -629,6 +629,7 @@ class ComposerStaticInit5c042b5a28cb6a1b0cf9389e81cd2785
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\BoletasViajeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BoletasViajeController.php',
         'App\\Http\\Controllers\\Admin\\BusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BusController.php',
         'App\\Http\\Controllers\\Admin\\ChoferController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ChoferController.php',
         'App\\Http\\Controllers\\Admin\\RutaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RutaController.php',
@@ -7248,9 +7249,9 @@ class ComposerStaticInit5c042b5a28cb6a1b0cf9389e81cd2785
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5c042b5a28cb6a1b0cf9389e81cd2785::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5c042b5a28cb6a1b0cf9389e81cd2785::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit5c042b5a28cb6a1b0cf9389e81cd2785::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInite43b59f0f313c8d6ac37287502446711::$classMap;
 
         }, null, ClassLoader::class);
     }
