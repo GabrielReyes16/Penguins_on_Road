@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\Admin\\BoletasViajeController' => $baseDir . '/app/Http/Controllers/Admin/BoletasViajeController.php',
     'App\\Http\\Controllers\\Admin\\BusController' => $baseDir . '/app/Http/Controllers/Admin/BusController.php',
     'App\\Http\\Controllers\\Admin\\ChoferController' => $baseDir . '/app/Http/Controllers/Admin/ChoferController.php',
     'App\\Http\\Controllers\\Admin\\RutaController' => $baseDir . '/app/Http/Controllers/Admin/RutaController.php',
@@ -26,7 +27,6 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\DashboardController' => $baseDir . '/app/Http/Controllers/DashboardController.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
-    'App\\Http\\Controllers\\QRCodeController' => $baseDir . '/app/Http/Controllers/QRCodeController.php',
     'App\\Http\\Controllers\\ReservaController' => $baseDir . '/app/Http/Controllers/ReservaController.php',
     'App\\Http\\Controllers\\RutasController' => $baseDir . '/app/Http/Controllers/RutasController.php',
     'App\\Http\\Controllers\\ViajeController' => $baseDir . '/app/Http/Controllers/ViajeController.php',

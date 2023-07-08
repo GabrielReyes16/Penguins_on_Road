@@ -4,9 +4,7 @@
 
 namespace Composer\Autoload;
 
-
 class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
-
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -631,6 +629,7 @@ class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\BoletasViajeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BoletasViajeController.php',
         'App\\Http\\Controllers\\Admin\\BusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BusController.php',
         'App\\Http\\Controllers\\Admin\\ChoferController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ChoferController.php',
         'App\\Http\\Controllers\\Admin\\RutaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RutaController.php',
@@ -649,7 +648,6 @@ class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
-        'App\\Http\\Controllers\\QRCodeController' => __DIR__ . '/../..' . '/app/Http/Controllers/QRCodeController.php',
         'App\\Http\\Controllers\\ReservaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReservaController.php',
         'App\\Http\\Controllers\\RutasController' => __DIR__ . '/../..' . '/app/Http/Controllers/RutasController.php',
         'App\\Http\\Controllers\\ViajeController' => __DIR__ . '/../..' . '/app/Http/Controllers/ViajeController.php',
@@ -7250,13 +7248,9 @@ class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-
-
             $loader->prefixLengthsPsr4 = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3::$classMap;
-
-
 
         }, null, ClassLoader::class);
     }
