@@ -26,7 +26,7 @@
 
     header .logos
     {
-        width: 50%;
+        width: 25%;
         height: auto;
         display: flex;
         justify-content: space-between;
@@ -36,7 +36,7 @@
     header .logos img 
     {
         width: auto;
-        height: 60px;
+        height: 30px;
     }
 
     header .menu-bar

@@ -1,46 +1,41 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
-            Informacion de {{ $user->name }}
-        </h2>
-    </x-slot>
-
-    <section class="content container-fluid" style="text-align: center">
+    <br>
+    <div class="rectangulo">  Informacion de {{ $user->name }}</div>
+    <br>
+    <div class="flex justify-center">
+        <div class="crear_item">
+          <form method="POST" action="{{ route('admin.users.store') }}">
+            @csrf
+      
+            <div class="bg-gray-200 rounded-md p-4">
+              <div class="space-y-4">
+                <div>
+                  <label for="name" class="text-lg font-medium text-gray-700">Nombre</label>
+                  <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value=" $user->name" disabled autofocus autocomplete="name" />
+                  <x-input-error-create :messages="$errors->get('name')" class="mt-2" />
+                </div>
+                <div>
+                  <label for="email" class="text-lg font-medium text-gray-700">Email</label>
+                  <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$user->email" disabled autocomplete="email" />
+                  <x-input-error-create :messages="$errors->get('email')" class="mt-2" />
+                </div>
+                <div>
+                  <label for="roles" class="text-lg font-medium text-gray-700">Rol</label>
+                  <x-text-input id="rol" class="block mt-1 w-full" type="text" name="rol" :value="$user->roles()->first()->name " disabled autocomplete="rol" />
+                    <x-input-error-create :messages="$errors->get('rol')" class="mt-2" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> <br>
+    
         <div class="row">
-
             <div class="card" style="color: white;">
-                <div class="card-header">
-                    <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded"
-                        style="color: white;  background-color: blue;">
-                        <a href="{{ route('admin.users.index') }}"> {{ __('Volver') }}</a>
+                    <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded">
+                    <button class="create "><a href="{{ route('admin.users.index') }}"> Volver</a></button>
+                        
                     </div>
                 </div>
-                <br><br><br>
-                <div class="flex justify-center">
-                    <table id="users-table" class="min-w-full border border-gray-200 text-center">
-                        <tbody>
-                            <tr>
-                                <td class="px-4 py-2 border-b font-bold">ID</td>
-                                <td class="px-4 py-2 border-b">{{ $user->id_usuario }}</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2 border-b font-bold">Nombre</td>
-                                <td class="px-4 py-2 border-b">{{ $user->name }}</td>
-                            </tr>
-                            <tr>
-                            <tr>
-                                <td class="px-4 py-2 border-b font-bold">Email</td>
-                                <td class="px-4 py-2 border-b">{{ $user->email }}</td>
-                            </tr>
-                            <tr>
-                                <td class="px-4 py-2 border-b font-bold">Rol</td>
-                                <td class="px-4 py-2 border-b">{{$user->roles()->first()->name }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+              
 </x-app-layout>

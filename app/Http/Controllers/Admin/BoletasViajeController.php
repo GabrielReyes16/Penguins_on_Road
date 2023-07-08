@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\BoletaViaje;
 use Illuminate\Http\Request;
 
@@ -18,91 +19,48 @@ class BoletasViajeController extends Controller
      */
     public function index()
     {
-        $boletasViajes = BoletaViaje::paginate();
-
-        return view('boletas-viaje.index', compact('boletasViajes'))
-            ->with('i', (request()->input('page', 1) - 1) * $boletasViajes->perPage());
+        $boletas = BoletaViaje::paginate();
+        return view('admin.boletas-viaje.index', compact('boletas'))
+            ->with('i', (request()->input('page', 1) - 1) * $boletas->perPage());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     */
     public function create()
     {
-        $boletasViaje = new BoletaViaje();
-        return view('boletas-viaje.create', compact('boletasViaje'));
+        $boleta = new BoletaViaje();
+        return view('admin.ruta.create', compact('boleta'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-    //  * @param  \Illuminate\Http\Request $request
-    //  * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        request()->validate(BoletaViaje::$rules);
+        $boleta = BoletaViaje::create($request->all());
 
-        $boletasViaje = BoletaViaje::create($request->all());
-
-        return redirect()->route('boletas-viajes.index')
-            ->with('success', 'BoletasViaje created successfully.');
+        return redirect()->route('admin.boletas-viaje.indexx')
+            ->with('success', 'Registro de Boleta creado exitosamente.');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        $boletasViaje = BoletaViaje::find($id);
+        $boleta = BoletaViaje::find($id);
 
-        return view('boletas-viaje.show', compact('boletasViaje'));
+        return view('admin.boletas-viaje.show', compact('boleta'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        $boletasViaje = BoletaViaje::find($id);
+        $boleta = BoletaViaje::find($id);
 
-        return view('boletas-viaje.edit', compact('boletasViaje'));
+        return view('admin.boletas-viaje.edit', compact('boleta'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  BoletasViaje $boletasViaje
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, BoletaViaje $boletasViaje)
+    public function update(Request $request, BoletaViaje $boleta)
     {
-        request()->validate(BoletaViaje::$rules);
+        $boleta->update($request->all());
 
-        $boletasViaje->update($request->all());
-
-        return redirect()->route('boletas-viajes.index')
-            ->with('success', 'BoletasViaje updated successfully');
+        return redirect()->route('admin.boletas-viaje.index')
+            ->with('success', 'Informacion de la boleta fue actualizada correctamente');
     }
-
-    /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
-     */
     public function destroy($id)
     {
-        $boletasViaje = BoletaViaje::find($id)->delete();
+        $ruta = BoletaViaje::find($id)->delete();
 
-        return redirect()->route('boletas-viajes.index')
-            ->with('success', 'BoletasViaje deleted successfully');
+        return redirect()->route('admin.boletas-viaje.index')
+            ->with('success', 'La ruta fue eliminada correctamente');
     }
 }
