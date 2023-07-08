@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="active">
+    <header>
         <div class="logos">
             <img src="{{ asset('img/logo-proyecto-blanco.png') }}">
             <img src="{{ asset('img/logotipo-TECSUP-blanco.png') }}">
