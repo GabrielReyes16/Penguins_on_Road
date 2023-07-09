@@ -13,9 +13,9 @@
     <!--contenido carrusel-->
     <main>
     <div class="bg-white p-6">
-        <div class="flex flex-row">
+        <div class="flex flex-col ">
             <div class="w-full p-6">
-                <div id="reader" class="w-full h-96"></div>
+                <div id="reader" class="w-full  h-1/2"></div>
             </div>
 
             <audio id="myAudio1">
@@ -26,7 +26,7 @@
                 <source src="{{ asset('audios/failes.mp3') }}" type="audio/mpeg">
             </audio>
 
-            <div class="w-full p-6">
+            <div class="w-full p-10 h-1/2">
                 <h4 class="text-lg font-semibold">Resultado del escáner:</h4>
                 <form id="reserva-form" method="POST" action="{{ route('utilizar-reserva') }}">
                     @csrf

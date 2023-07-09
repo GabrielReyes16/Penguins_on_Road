@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\BoletaViaje;
 use Illuminate\Support\Facades\Auth;
@@ -9,17 +10,26 @@ use Illuminate\Support\Facades\Auth;
 class BoletaViajeController extends Controller
 {
     public function mostrarBoletas()
-{
-    // Obtener el ID del usuario pasajero autenticado
-    $idUsuarioPasajero = Auth::id();
+    {
+        // Obtener el ID del usuario pasajero autenticado
+        $idUsuarioPasajero = Auth::id();
+    
+        // Obtener todos los boletos del usuario pasajero
+        $boletas = BoletaViaje::where('id_usuario_pasajero', $idUsuarioPasajero)->get();
+    
+        // Establecer el idioma en español
+        Carbon::setLocale('es');
 
-    // Obtener todos los boletos del usuario pasajero
-    $boletas = BoletaViaje::where('id_usuario_pasajero', $idUsuarioPasajero)->get();
-
-    // Retornar la vista con los datos de los boletos
-    return view('usuario-pasajero.mostrar_boletas', compact('boletas'));
-}
-
+        // Formatear la fecha de cada boleto antes de pasarlos a la vista
+        $boletas->transform(function ($boleto) {
+            $boleto->fecha_formateada = Carbon::createFromFormat('Y-m-d', $boleto->fecha_viaje)->format('D d/m');
+            return $boleto;
+        });
+    
+        // Retornar la vista con los datos de los boletos
+        return view('usuario-pasajero.mostrar_boletas', compact('boletas'));
+    }
+    
 public function verBoleta($idBoleta)
     {
         // Obtener la boleta de viaje por su ID
@@ -31,6 +41,6 @@ public function verBoleta($idBoleta)
         }
 
         // Retornar la vista con los datos de la boleta
-        return view('ver_boleta', compact('boleta'));
+        return view('usuario-pasajero.ver_boleta', compact('boleta'));
     }
 }

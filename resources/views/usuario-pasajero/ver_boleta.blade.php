@@ -1,4 +1,4 @@
-@extends ('usuario-pasajero.navbar-home')
+@extends ('usuario-pasajero.navbar-boletas')
 
 @section ('css-personalizado')
     <link rel="stylesheet" href="{{ asset ('css/Passenger/style-ticket.css') }}">
@@ -10,7 +10,7 @@
 @stop
 
 @section ('contenido')
-<div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
+<div class="max-w-md mx-auto bg-white shadow-md rounded-lg mt-10 p-6">
     <h1 class="text-2xl font-bold mb-4">Detalles de la boleta de viaje</h1>
 
     <p class="mb-2"><span class="font-bold">ID de boleta:</span> {{ $boleta->id_boleta }}</p>
