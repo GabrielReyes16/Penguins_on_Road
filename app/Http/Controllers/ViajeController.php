@@ -11,11 +11,6 @@ use Illuminate\Http\Request;
  */
 class ViajeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $viajes = Viaje::paginate();
@@ -23,28 +18,21 @@ class ViajeController extends Controller
         return view('viaje.index', compact('viajes'))
             ->with('i', (request()->input('page', 1) - 1) * $viajes->perPage());
     }
-
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
         $viaje = new Viaje();
         return view('viaje.create', compact('viaje'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        request()->validate(Viaje::$rules);
-
         $viaje = Viaje::create($request->all());
 
         return redirect()->route('viajes.index')
@@ -54,8 +42,6 @@ class ViajeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
@@ -66,28 +52,19 @@ class ViajeController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $viaje = Viaje::find($id);
-
         return view('viaje.edit', compact('viaje'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Viaje $viaje
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Viaje $viaje)
     {
-        request()->validate(Viaje::$rules);
-
         $viaje->update($request->all());
 
         return redirect()->route('viajes.index')
