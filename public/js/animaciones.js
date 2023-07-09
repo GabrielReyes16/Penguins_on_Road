@@ -19,9 +19,3 @@ siguiente.addEventListener('click', () => {
   slideIndex = Math.min(slideIndex + 1, slides.length - 1);
   carrusel.style.transform = `translateX(-${slideIndex * 100}%)`;
 });
-
-const flecha = document.querySelectorAll('.flecha');
-const header = document.querySelector('header');
-flecha.onclick = function () {
-  header.classList.toggle ('active');
-};
