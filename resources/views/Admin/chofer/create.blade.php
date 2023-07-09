@@ -1,4 +1,3 @@
-
 <x-app-layout>
     <br>
     <div class="rectangulo"> {{ __('Asígnale datos al chofer') }}</div>
@@ -10,12 +9,9 @@
 
                 <div class="bg-gray-200 rounded-md p-4">
                     <div class="space-y-4">
-                        <div class="max-w-xl">
-                            <x-input-label for="id_usuario" :value="__('ID Usuario')" />
-                            <x-text-input id="id_usuario" name="id_usuario" type="text" class="mt-1 block w-full"
-                                :value="old('id_usuario', $id_usuario)" required  autofocus autocomplete="id_usuario" />
-                            <x-input-error class="mt-2" :messages="$errors->get('id_usuario')" />
-                        </div>
+                        {{-- ID del usuario oculto --}}
+                        <x-text-input id="id_usuario" name="id_usuario" type="text" class="mt-1 block w-full"
+                            :value="old('id_usuario', $id_usuario)" required hidden autofocus autocomplete="id_usuario" />
                         {{-- Nombre --}}
                         <div class="max-w-xl">
                             <x-input-label for="$chofer->user->name" :value="__('Nombres')" />
@@ -28,7 +24,7 @@
                         <div class="max-w-xl">
                             <x-input-label for="id_bus" :value="__('Bus asignado')" />
                             <select name="id_bus" id="id_bus" class="form-control">
-                                <option value="">Selecciona una opción</option>
+                                <option value="">Sin bus</option>
                                 @foreach ($buses as $bus)
                                     <option value="{{ $bus->id_bus }}">
                                         {{ $bus->placa }}

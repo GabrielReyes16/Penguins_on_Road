@@ -60,6 +60,7 @@ class ChoferController extends Controller
         $chofer->id_bus = $request->input('id_bus');
         $chofer->id_empresa = $request->input('id_empresa');
         $chofer->licencia_conducir = $request->input('licencia_conducir');
+        $chofer->estado = $request->input('estado');
          $chofer->save();
          return redirect()->route('admin.choferes.index')->with('success', 'La información fue actualizada correctamente');
      }

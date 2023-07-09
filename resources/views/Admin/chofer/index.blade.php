@@ -26,7 +26,7 @@
                 </thead>
                 <tbody>
                     @foreach ($choferes as $chofer)
-                        <tr>
+                    <tr onclick="window.location='{{ route('admin.choferes.show', $chofer->id_chofer) }}';" style="cursor: pointer;">
                             <td>{{ $chofer->id_chofer }}</td>
                             <td>{{ $chofer->user->name }}</td>
                             <td>{{ optional($chofer->bus)->placa ?? 'Sin bus' }}</td>
@@ -34,16 +34,9 @@
                             <td>{{ $chofer->licencia_conducir }}</td>
                             <td>{{ $chofer->estado }}</td>
                         <td>
-                            <form action="{{ route('admin.choferes.destroy', $chofer->id_chofer) }}" method="POST">
-                                <a class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
-                                    href="{{ route('admin.choferes.edit', $chofer->id_chofer) }}"><i class="fa fa-fw fa-edit"></i></a>
-                                    <a class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
-                                    href="{{ route('admin.choferes.show', $chofer->id_chofer) }}"><i class="fa fa-fw fa-eye"></i></a>
-                                @csrf
-                                @method('DELETE')
-                                <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </button>
+                            <form action="{{ route('admin.choferes.edit', $chofer->id_chofer) }}" method="GET">
+                                <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+                                    href="{{ route('admin.choferes.edit', $chofer->id_chofer) }}"><i class="fa fa-fw fa-edit"></i></button> 
                             </form>
                         </td>
                     </tr>
