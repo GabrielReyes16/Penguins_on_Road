@@ -22,7 +22,7 @@
 
     header .logos
     {
-        width: 25%;
+        width: 100%;
         height: auto;
         display: flex;
         justify-content: space-between;
@@ -913,10 +913,6 @@
         color: #ffffff;
     }
 }
-
-
-
-
 
 @media (min-width: 1201px){
     body
