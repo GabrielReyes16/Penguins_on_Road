@@ -10,6 +10,7 @@ class CreateBusesTable extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->increments('id_bus');
+            $table->unsignedInteger('id_ruta');
             $table->string('placa', 15)->unique();
             $table->integer('aforo');
             $table->unsignedInteger('id_empresa');
@@ -17,6 +18,7 @@ class CreateBusesTable extends Migration
 
             
             $table->foreign('id_empresa')->references('id_empresa')->on('empresas')->onDelete('cascade');
+            $table->foreign('id_ruta')->references('id_ruta')->on('rutas');
 
         });
     }

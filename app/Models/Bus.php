@@ -11,6 +11,7 @@ class Bus extends Model
     protected $table = 'buses';
     protected $primaryKey = 'id_bus';
     protected $fillable = [
+        'id_ruta',
         'placa',
         'aforo',
         'id_empresa',
@@ -20,7 +21,10 @@ class Bus extends Model
     {
         return $this->belongsTo(Empresa::class, 'id_empresa', 'id_empresa');
     }
-
+    public function ruta()
+    {
+        return $this->belongsTo(Empresa::class, 'id_ruta', 'id_ruta');
+    }
     public function chofer()
     {
         return $this->hasOne(Chofer::class, 'id_bus', 'id_bus');
