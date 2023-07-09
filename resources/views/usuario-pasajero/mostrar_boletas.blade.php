@@ -24,22 +24,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Lunes 16/04</td>
-                            <td>Mañana</td>
-                            <td>Av. Aviación - Campus</td>
-                            <td>
-                                <a href=""><ion-icon name="eye"></ion-icon></a>
-                            </td>
-                        </tr>
                         
                         @foreach ($boletas as $boleta)
                         <tr>
-                            <td>{{ $boleta->fecha_viaje }}</td>
-                            <td>{{ $boleta->viaje->turno }}</td>
-                            <td>{{ $boleta->viaje->ruta->nombre }}</td>
+                            <td>{{ $boleta->fecha_formateada }}</td>
+                            <td>{{ $boleta->viaje->ruta->turno->nombre }}</td>
+                            <td>{{ $boleta->viaje->ruta->punto_inicial }}➡️{{ $boleta->viaje->ruta->punto_final }}</td>
                             <td>
-                                <a href="{{ route('ver_boleta', ['idBoleta' => $boleta->id_boleta]) }}">
+                                <a href="{{ route('usuario-pasajero.ver_boleta', ['idBoleta' => $boleta->id_boleta]) }}">
                                     <ion-icon name="eye"></ion-icon>
                                 </a>
                             </td>

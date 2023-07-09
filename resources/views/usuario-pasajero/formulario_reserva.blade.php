@@ -14,8 +14,7 @@
                         @csrf
 
                         <div class="mb-4">
-                            <label for="id_usuario" class="block text-sm font-medium text-gray-700">ID de Usuario:</label>
-                            <input type="text" name="id_usuario" id="id_usuario" value="{{$id_usuario}}" class="border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border rounded-md" readonly>
+                            <input type="hidden" name="id_usuario" id="id_usuario" value="{{$id_usuario}}" class="border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border rounded-md" readonly>
                         </div>
 
                         <div class="mb-4">
