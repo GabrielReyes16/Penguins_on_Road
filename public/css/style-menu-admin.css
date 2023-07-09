@@ -1,10 +1,20 @@
 * {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif}
 .rectangulo {
+    font-size:large;
+    width: 500px;
     background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
     color: white;
     border-radius: 10px;
     padding: 10px ;
     text-align: center;
+  }
+  .data{
+    background-color: #e5e3e3;
+    padding: 20px;
+    margin: 10px;
+    width: 400px;
+    border: #504e4e;
+    border-radius: 10px;
   }
   .create{
     background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
@@ -20,7 +30,7 @@
   color: rgb(202, 201, 201);
 }
 .crear_item{
-    width: 400px;
+    width: 500px;
 }
 @media (max-width: 600px){
     body
@@ -29,7 +39,18 @@
         width: 100%;
         height: 100%;
     }
-
+    .crear_item{
+        width: 300px;
+    }
+    .rectangulo {
+        
+        width: 390px;
+        background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
+        color: white;
+        border-radius: 10px;
+        padding: 10px ;
+        text-align: center;
+      }
     header
     {
         background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
@@ -530,7 +551,9 @@
         height: auto;
         /* overflow: hidden; */
     }
-    
+    .crear_item{
+        width: 400px;
+    }
     header
     {
         background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);

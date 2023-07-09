@@ -3,7 +3,7 @@
     <div class="rectangulo"> Informacion de {{ $user->name }}</div>
     <br>
     <div class="flex justify-center">
-        <div class="bg-gray-200 rounded-md p-4">
+        <div class="data">
             <div class="space-y-4">
                 <div>
                     <label for="name" class="text-lg font-medium text-gray-700">Nombre</label>
@@ -31,7 +31,7 @@
 
     <div>
         <div style="color: white;">
-            <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded">
+            <div>
                 <button class="create "><a href="{{ route('admin.users.index') }}"> Volver</a></button>
 
             </div>

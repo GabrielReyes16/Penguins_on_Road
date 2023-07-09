@@ -25,7 +25,7 @@
                             </tr>
                             <tr >
                               <td class="px-4 py-2 border-b font-bold">Nombre</td>
-                              <td class="px-4 py-2 border-b">{{ $user->name }}</td>
+                              <td class="px-4 py-2 border-b">{{ $chofer->user->name }}</td>
                             </tr>
                             <tr >
                               <td class="px-4 py-2 border-b font-bold">Bus actual</td>
