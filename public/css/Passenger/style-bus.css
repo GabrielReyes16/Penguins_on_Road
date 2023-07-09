@@ -520,3 +520,550 @@ main .info .info-text .info-detalle .paraderos li
     
     
 }
+
+
+
+
+
+@media (max-width: 1200px) {
+
+    main .turnos
+    {   
+        width: 70%;
+        height: auto;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main .turnos .title-box1
+    {
+       width: 108%;
+       height: 80px;
+       background: rgba(0, 0, 0, 0.80);
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       border-radius: 5px;
+    }
+    
+    main .turnos .title-box1 h3
+    {
+        color: #fff;
+        font-size: 23px;
+        font-weight: 500;
+        text-align: center;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    
+    main .turnos .btn-turno
+    {
+        width: 180px;
+        height: 50px;
+        margin-top: 40px;
+        background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+    
+    main .turnos .btn-turno a
+    {
+        font-weight: 800;
+        font-size: 20px;
+        color: #181818;
+        text-decoration: none;
+    }
+    
+    main .turnos .btn-turno:hover
+    {
+        border-right: 5px solid rgba(0, 0, 0, 0.60);
+        border-bottom: 5px solid rgba(0, 0, 0, 0.60);
+    }
+    
+    main .turnos .btn-turno:hover a
+    {
+        color: #fff;
+    }
+    
+    main .turnos .btn-ruta
+    {
+        width: 114%;
+        height: 65px;
+        margin-top: 40px;
+        background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+    
+    main .turnos .btn-ruta:hover
+    {
+        border-right: 5px solid rgba(0, 0, 0, 0.60);
+        border-bottom: 5px solid rgba(0, 0, 0, 0.60);
+    }
+    
+    main .turnos .btn-ruta:hover a
+    {
+        color: #fff;
+    }
+    
+    main .turnos .btn-ruta a
+    {
+        font-weight: 500;
+        font-size: 18px;
+        color: #181818;
+        text-decoration: none;
+        text-align: center;
+        width: 90%;
+    }
+    
+    main .turnos .title-box2 a ion-icon
+    {
+        width: 40px;
+        height: 40px;
+        color: #fff;
+    }
+    
+    main .turnos .title-box2 a ion-icon:hover
+    {
+        color: #408ffe;
+    }
+    
+    main .turnos .title-box2
+    {
+        width: 130%;
+        height: 70px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 15px;
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+    
+    main .turnos .title-box2 h3
+    {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        width: 85%;
+        text-align: center;
+    }
+    
+    main .info
+    {
+        width: 85%;
+        max-height: 550px;
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow: auto;
+    }
+    
+    main .info::-webkit-scrollbar
+    {
+        width: 10px;
+    }
+    
+    main .info::-webkit-scrollbar-track
+    {
+        background-color: rgb(138, 143, 141);
+        border-radius: 10px;
+        border: none;
+    }
+    
+    main .info::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(73, 123, 193);
+        border-radius: 10px;
+    }
+    
+    main .info::-webkit-scrollbar-thumb:hover
+    {
+        background-color: rgb(26, 95, 192);
+    }
+    
+    main .info .title-box2
+    {
+        width: 92%;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        padding: 10px 15px 10px 5px;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    main .info .title-box2 a ion-icon
+    {
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        margin-top: 5px;
+    }
+    
+    main .info .title-box2 a ion-icon:hover
+    {
+        color: #408ffe;
+    }
+    
+    main .info .title-box2 h3
+    {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        width: 85%;
+        text-align: center;
+    }
+    
+    main .info img
+    {
+        width: 90%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0px 0px 20px #000;
+    }
+    
+    main .info .info-text
+    {
+        width: 90%;
+        height: auto;
+        background: rgb(15, 153, 132);
+        border-radius: 10px;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    
+    main .info .info-text h3
+    {
+        text-align: center;
+        color: #fff;
+        font-weight: 650;
+    }
+    
+    main .info .info-text .info-detalle
+    {
+        width: 100%;
+        height: auto;
+        color: #fff
+    }
+    
+    main .info .info-text .info-detalle li
+    {
+        list-style: circle;
+        margin-left: 20px;
+        margin-top: 20px;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 30px;
+    }
+    
+    main .info .info-text .info-detalle p
+    {
+        margin-left: 30px;
+        font-size: 15px;
+        font-weight: 300;
+    }
+    
+    main .info .info-text .info-detalle .paraderos
+    {
+        margin-top: -10px;
+        margin-left: 30px;
+    }
+    
+    main .info .info-text .info-detalle .paraderos li
+    {
+        list-style: disc;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 18px;
+    }
+    
+    
+}
+
+
+
+
+@media (max-width: 1900px) {
+
+    main .turnos
+    {   
+        width: 70%;
+        height: auto;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main .turnos .title-box1
+    {
+       width: 108%;
+       height: 80px;
+       background: rgba(0, 0, 0, 0.80);
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       border-radius: 5px;
+    }
+    
+    main .turnos .title-box1 h3
+    {
+        color: #fff;
+        font-size: 23px;
+        font-weight: 500;
+        text-align: center;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    
+    main .turnos .btn-turno
+    {
+        width: 180px;
+        height: 50px;
+        margin-top: 40px;
+        background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+    
+    main .turnos .btn-turno a
+    {
+        font-weight: 800;
+        font-size: 20px;
+        color: #181818;
+        text-decoration: none;
+    }
+    
+    main .turnos .btn-turno:hover
+    {
+        border-right: 5px solid rgba(0, 0, 0, 0.60);
+        border-bottom: 5px solid rgba(0, 0, 0, 0.60);
+    }
+    
+    main .turnos .btn-turno:hover a
+    {
+        color: #fff;
+    }
+    
+    main .turnos .btn-ruta
+    {
+        width: 114%;
+        height: 65px;
+        margin-top: 40px;
+        background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+    
+    main .turnos .btn-ruta:hover
+    {
+        border-right: 5px solid rgba(0, 0, 0, 0.60);
+        border-bottom: 5px solid rgba(0, 0, 0, 0.60);
+    }
+    
+    main .turnos .btn-ruta:hover a
+    {
+        color: #fff;
+    }
+    
+    main .turnos .btn-ruta a
+    {
+        font-weight: 500;
+        font-size: 18px;
+        color: #181818;
+        text-decoration: none;
+        text-align: center;
+        width: 90%;
+    }
+    
+    main .turnos .title-box2 a ion-icon
+    {
+        width: 40px;
+        height: 40px;
+        color: #fff;
+    }
+    
+    main .turnos .title-box2 a ion-icon:hover
+    {
+        color: #408ffe;
+    }
+    
+    main .turnos .title-box2
+    {
+        width: 130%;
+        height: 70px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 15px;
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+    
+    main .turnos .title-box2 h3
+    {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        width: 85%;
+        text-align: center;
+    }
+    
+    main .info
+    {
+        width: 85%;
+        max-height: 550px;
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        overflow: auto;
+    }
+    
+    main .info::-webkit-scrollbar
+    {
+        width: 10px;
+    }
+    
+    main .info::-webkit-scrollbar-track
+    {
+        background-color: rgb(138, 143, 141);
+        border-radius: 10px;
+        border: none;
+    }
+    
+    main .info::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(73, 123, 193);
+        border-radius: 10px;
+    }
+    
+    main .info::-webkit-scrollbar-thumb:hover
+    {
+        background-color: rgb(26, 95, 192);
+    }
+    
+    main .info .title-box2
+    {
+        width: 92%;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.80);
+        border-radius: 5px;
+        padding: 10px 15px 10px 5px;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    main .info .title-box2 a ion-icon
+    {
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        margin-top: 5px;
+    }
+    
+    main .info .title-box2 a ion-icon:hover
+    {
+        color: #408ffe;
+    }
+    
+    main .info .title-box2 h3
+    {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        width: 85%;
+        text-align: center;
+    }
+    
+    main .info img
+    {
+        width: 90%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0px 0px 20px #000;
+    }
+    
+    main .info .info-text
+    {
+        width: 90%;
+        height: auto;
+        background: rgb(15, 153, 132);
+        border-radius: 10px;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    
+    main .info .info-text h3
+    {
+        text-align: center;
+        color: #fff;
+        font-weight: 650;
+    }
+    
+    main .info .info-text .info-detalle
+    {
+        width: 100%;
+        height: auto;
+        color: #fff
+    }
+    
+    main .info .info-text .info-detalle li
+    {
+        list-style: circle;
+        margin-left: 20px;
+        margin-top: 20px;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 30px;
+    }
+    
+    main .info .info-text .info-detalle p
+    {
+        margin-left: 30px;
+        font-size: 15px;
+        font-weight: 300;
+    }
+    
+    main .info .info-text .info-detalle .paraderos
+    {
+        margin-top: -10px;
+        margin-left: 30px;
+    }
+    
+    main .info .info-text .info-detalle .paraderos li
+    {
+        list-style: disc;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 18px;
+    }
+    
+    
+}
