@@ -24,6 +24,123 @@ class holaMundo extends Seeder
      */
     public function run()
     {
+// Crear perfiles
+        $perfiles = [
+            [
+                'biografia' => null,
+                'especialidad' => null,
+                'enlaces' => null,
+                'foto_perfil' => null,
+            ],
+            [
+                'biografia' => null,
+                'especialidad' => null,
+                'enlaces' => null,
+                'foto_perfil' => null,
+            ],
+            [
+                'biografia' => null,
+                'especialidad' => null,
+                'enlaces' => null,
+                'foto_perfil' => null,
+            ],
+            [
+                'biografia' => null,
+                'especialidad' => null,
+                'enlaces' => null,
+                'foto_perfil' => null,
+            ],
+            [
+                'biografia' => null,
+                'especialidad' => null,
+                'enlaces' => null,
+                'foto_perfil' => null,
+            ],
+            [
+                'biografia' => null,
+                'especialidad' => null,
+                'enlaces' => null,
+                'foto_perfil' => null,
+            ],
+        ];
+
+        foreach ($perfiles as $perfilesData) {
+            Perfil::create($perfilesData);
+        }
+
+
+        // Crear usuarios
+        //Admins
+        User::Create([
+            'name' => 'Gabriel Reyes',
+            'id_perfil' => 1,
+            'email' => 'gabriel@example.com',
+            'password' => bcrypt('gabrielreyes'),
+        ])->assignRole('Administrador');
+        User::Create([
+            'name' => 'Harold Medrano',
+            'id_perfil' => 2,
+            'email' => 'harold@example.com',
+            'password' => bcrypt('haroldmedrano'),
+        ])->assignRole('Administrador');
+
+        //Choferes
+        User::Create([
+            'name' => 'Adriana Hervias',
+            'id_perfil' => 3,
+            'email' => 'adri@example.com',
+            'password' => bcrypt('adrihervias'),
+        ])->assignRole('Chofer');
+        User::Create([
+            'name' => 'Adriana Palomino',
+            'id_perfil' => 4,
+            'email' => 'adriana@example.com',
+            'password' => bcrypt('adripalomino'),
+        ])->assignRole('Chofer');
+        User::Create([
+            'name' => 'Pedro Castillo',
+            'email' => 'pedro@example.com',
+            'password' => bcrypt('pedrocastillo'),
+        ])->assignRole('Chofer');
+        User::Create([
+            'name' => 'Alan García',
+            'email' => 'alan@example.com',
+            'password' => bcrypt('alangarcia'),
+        ])->assignRole('Chofer');
+        User::Create([
+            'name' => 'Paolo Guerrero',
+            'email' => 'paolo@example.com',
+            'password' => bcrypt('pguerrero'),
+        ])->assignRole('Chofer');
+        User::Create([
+            'name' => 'Alejandro Toledo',
+            'email' => 'alejandro@example.com',
+            'password' => bcrypt('aletoledo'),
+        ])->assignRole('Chofer');
+        User::Create([
+            'name' => 'Nicolas Maduro',
+            'email' => 'nicolas@example.com',
+            'password' => bcrypt('nicolasmaduro'),
+        ])->assignRole('Chofer');
+        User::Create([
+            'name' => 'Dina Boluarte',
+            'email' => 'dina@example.com',
+            'password' => bcrypt('dinaboluarte'),
+        ])->assignRole('Chofer');
+
+        //Pasajeros
+        User::Create([
+            'name' => 'Rael Rivero',
+            'id_perfil' => 5,
+            'email' => 'rael@example.com',
+            'password' => bcrypt('raelrivero'),
+        ])->assignRole('Pasajero');
+        User::Create([
+            'name' => 'Marcelo Sanabria',
+            'id_perfil' => 6,
+            'email' => 'marcelo@example.com',
+            'password' => bcrypt('marcelosanabria'),
+        ])->assignRole('Pasajero');
         // Crear empresas
         $empresas = [
             [
@@ -440,158 +557,167 @@ class holaMundo extends Seeder
         }
 
         // Crear buses
-        $buses = [
+            // Generar 8 registros de buses
+        for ($i = 1; $i <= 8; $i++) {
+        $bus = [
+            'placa' => 'BUS' . $i,
+            'aforo' => rand(50, 60),
+            'id_empresa' => 1,
+        ];
+
+        $buses[] = $bus;
+        }
+
+        // Insertar los registros en la base de datos
+        foreach ($buses as $bus) {
+        Bus::create($bus);
+        }
+
+        
+
+        // Crear choferes
+        $choferes = [
             [
-                'placa' => 'ABC123',
-                'aforo' => 50,
+                'id_usuario' => 3,
+                'id_bus' => 1,
                 'id_empresa' => 1,
+                'licencia_conducir' => '1234561',
             ],
             [
-                'placa' => 'XYZ987',
-                'aforo' => 40,
-                'id_empresa' => 2,
+                'id_usuario' => 4,
+                'id_bus' => 2,
+                'id_empresa' => 1,
+                'licencia_conducir' => '6543219',
+            ],
+            [
+                'id_usuario' => 5,
+                'id_bus' => 3,
+                'id_empresa' => 1,
+                'licencia_conducir' => '1238456',
+            ],
+            [
+                'id_usuario' => 6,
+                'id_bus' => 4,
+                'id_empresa' => 1,
+                'licencia_conducir' => '6543621',
+            ],[
+                'id_usuario' => 7,
+                'id_bus' => 5,
+                'id_empresa' => 1,
+                'licencia_conducir' => '1234556',
+            ],
+            [
+                'id_usuario' => 8,
+                'id_bus' => 6,
+                'id_empresa' => 1,
+                'licencia_conducir' => '6543214',
+            ],[
+                'id_usuario' => 9,
+                'id_bus' => 7,
+                'id_empresa' => 1,
+                'licencia_conducir' => '1234563',
+            ],
+            [
+                'id_usuario' => 10,
+                'id_bus' => 8,
+                'id_empresa' => 1,
+                'licencia_conducir' => '6543212',
             ],
         ];
 
-        foreach ($buses as $busData) {
-            Bus::create($busData);
+        foreach ($choferes as $choferData) {
+            Chofer::create($choferData);
         }
-        // Crear perfiles
-        $perfiles = [
-            [
-                'biografia' => null,
-                'especialidad' => null,
-                'enlaces' => null,
-                'foto_perfil' => null,
-            ],
-            [
-                'biografia' => null,
-                'especialidad' => null,
-                'enlaces' => null,
-                'foto_perfil' => null,
-            ],
-            [
-                'biografia' => null,
-                'especialidad' => null,
-                'enlaces' => null,
-                'foto_perfil' => null,
-            ],
-            [
-                'biografia' => null,
-                'especialidad' => null,
-                'enlaces' => null,
-                'foto_perfil' => null,
-            ],
-            [
-                'biografia' => null,
-                'especialidad' => null,
-                'enlaces' => null,
-                'foto_perfil' => null,
-            ],
-            [
-                'biografia' => null,
-                'especialidad' => null,
-                'enlaces' => null,
-                'foto_perfil' => null,
-            ],
-        ];
-
-        foreach ($perfiles as $perfilesData) {
-            Perfil::create($perfilesData);
-        }
-
-        // Crear usuarios
-        //Admins
-        User::Create([
-            'name' => 'Gabriel Reyes',
-            'id_perfil' => 1,
-            'email' => 'gabriel@example.com',
-            'password' => bcrypt('gabrielreyes'),
-        ])->assignRole('Administrador');
-        User::Create([
-            'name' => 'Harold Medrano',
-            'id_perfil' => 2,
-            'email' => 'harold@example.com',
-            'password' => bcrypt('haroldmedrano'),
-        ])->assignRole('Administrador');
-
-        //Choferes
-        User::Create([
-            'name' => 'Adriana Hervias',
-            'id_perfil' => 3,
-            'email' => 'adri@example.com',
-            'password' => bcrypt('adrihervias'),
-        ])->assignRole('Chofer');
-        User::Create([
-            'name' => 'Adriana Palomino',
-            'id_perfil' => 4,
-            'email' => 'adriana@example.com',
-            'password' => bcrypt('adripalomino'),
-        ])->assignRole('Chofer');
-
-        //Pasajeros
-        User::Create([
-            'name' => 'Rael Rivero',
-            'id_perfil' => 5,
-            'email' => 'rael@example.com',
-            'password' => bcrypt('raelrivero'),
-        ])->assignRole('Pasajero');
-        User::Create([
-            'name' => 'Marcelo Sanabria',
-            'id_perfil' => 6,
-            'email' => 'marcelo@example.com',
-            'password' => bcrypt('marcelosanabria'),
-        ])->assignRole('Pasajero');
-
-        // // Crear choferes
-        // $choferes = [
-        //     [
-        //         'id_usuario' => 1,
-        //         'id_bus' => 1,
-        //         'id_empresa' => 1,
-        //         'licencia_conducir' => '123456',
-        //     ],
-        //     [
-        //         'id_usuario' => 2,
-        //         'id_bus' => 2,
-        //         'id_empresa' => 2,
-        //         'licencia_conducir' => '654321',
-        //     ],
-        // ];
-
-        // foreach ($choferes as $choferData) {
-        //     Chofer::create($choferData);
-        // }
 
         // Crear viajes
-        // $viajes = [
-        //     [
-        //         'id_ruta' => 1,
-        //         'id_bus' => 1,
-        //         'id_chofer' => 2,
-        //         'fecha_viaje' => '2023-01-01',
-        //         'hora_inicio' => '08:00:00',
-        //         'hora_final' => '10:00:00',
-        //         'estado' => 'Activo',
-        //         'aforo_actual' => 30,
-        //     ],
-        //     [
-        //         'id_ruta' => 2,
-        //         'id_bus' => 2,
-        //         'id_chofer' => 2,
-        //         'fecha_viaje' => '2023-01-02',
-        //         'hora_inicio' => '14:00:00',
-        //         'hora_final' => '16:00:00',
-        //         'estado' => 'Activo',
-        //         'aforo_actual' => 20,
-        //     ],
-        // ];
+        $viajes = [
+            [
+                'id_ruta' => 1,
+                'id_bus' => 1,
+                'id_chofer' => 1,
+                'fecha_viaje' => '2023-01-01',
+                'hora_inicio' => '08:00:00',
+                'hora_final' => '10:00:00',
+                'estado' => 'Activo',
+                'aforo_actual' => 30,
+            ],
+            [
+                'id_ruta' => 2,
+                'id_bus' => 2,
+                'id_chofer' => 2,
+                'fecha_viaje' => '2023-01-02',
+                'hora_inicio' => '14:00:00',
+                'hora_final' => '16:00:00',
+                'estado' => 'Activo',
+                'aforo_actual' => 20,
+            ],
+            [
+                'id_ruta' => 3,
+                'id_bus' => 3,
+                'id_chofer' => 3,
+                'fecha_viaje' => '2023-01-01',
+                'hora_inicio' => '08:00:00',
+                'hora_final' => '10:00:00',
+                'estado' => 'Activo',
+                'aforo_actual' => 30,
+            ],
+            [
+                'id_ruta' => 4,
+                'id_bus' => 4,
+                'id_chofer' => 4,
+                'fecha_viaje' => '2023-01-02',
+                'hora_inicio' => '14:00:00',
+                'hora_final' => '16:00:00',
+                'estado' => 'Activo',
+                'aforo_actual' => 20,
+            ],
+            [
+                'id_ruta' => 5,
+                'id_bus' => 5,
+                'id_chofer' => 5,
+                'fecha_viaje' => '2023-01-01',
+                'hora_inicio' => '08:00:00',
+                'hora_final' => '10:00:00',
+                'estado' => 'Activo',
+                'aforo_actual' => 30,
+            ],
+            [
+                'id_ruta' => 6,
+                'id_bus' => 6,
+                'id_chofer' => 6,
+                'fecha_viaje' => '2023-01-02',
+                'hora_inicio' => '14:00:00',
+                'hora_final' => '16:00:00',
+                'estado' => 'Activo',
+                'aforo_actual' => 20,
+            ],
+            [
+                'id_ruta' => 7,
+                'id_bus' => 7,
+                'id_chofer' => 7,
+                'fecha_viaje' => '2023-01-01',
+                'hora_inicio' => '08:00:00',
+                'hora_final' => '10:00:00',
+                'estado' => 'Activo',
+                'aforo_actual' => 30,
+            ],
+            [
+                'id_ruta' => 8,
+                'id_bus' => 8,
+                'id_chofer' => 8,
+                'fecha_viaje' => '2023-01-02',
+                'hora_inicio' => '14:00:00',
+                'hora_final' => '16:00:00',
+                'estado' => 'Activo',
+                'aforo_actual' => 20,
+            ],
+        ];
 
-        // foreach ($viajes as $viajeData) {
-        //     Viaje::create($viajeData);
-        // }
+        foreach ($viajes as $viajeData) {
+            Viaje::create($viajeData);
+        }
 
-        // Crear viajes_gps
+        // // Crear viajes_gps
         // $viajesGPS = [
         //     [
         //         'id_viaje' => 1,
@@ -611,52 +737,52 @@ class holaMundo extends Seeder
         //     ViajeGPS::create($viajeGPSData);
         // }
 
-        // $reservas = [
-        //     [
-        //         'id_usuario' => 1,
-        //         'id_viaje' => 1,
-        //         'fecha_reserva' => '2023-07-03',
-        //         'codigoDeAcceso' => 'ABCDE12345',
-        //         'codigo_qr' => 'ABC123',
-        //     ],
-        //     [
-        //         'id_usuario' => 2,
-        //         'id_viaje' => 2,
-        //         'fecha_reserva' => '2023-07-03',
-        //         'codigoDeAcceso' => 'ABCDE54321',
-        //         'codigo_qr' => 'XYZ987',
-        //     ],
-        // ];
+        //Crear reservas
+        $reservas = [
+            [
+                'id_usuario' => 6,
+                'id_viaje' => 1,
+                'fecha_reserva' => '2023-07-03',
+                'codigoDeAcceso' => 'ABCDE12345',
+                'codigo_qr' => 'ABC123',
+            ],
+            [
+                'id_usuario' => 7,
+                'id_viaje' => 2,
+                'fecha_reserva' => '2023-07-03',
+                'codigoDeAcceso' => 'ABCDE54321',
+                'codigo_qr' => 'XYZ987',
+            ],
+        ];
 
-        // foreach ($reservas as $reservaData) {
-        //     Reserva::create($reservaData);
-        // }
+        foreach ($reservas as $reservaData) {
+            Reserva::create($reservaData);
+        }
 
-        // // Crear boletas_viaje
-        // $boletasViaje = [
-        //     [
-        //         'id_usuario_pasajero' => 1,
-        //         'id_viaje' => 1,
-        //         'id_reserva' => 1,
-        //         'fecha_viaje' => '2023-01-01',
-        //         'hora_abordaje' => '07:30:00',
-        //         'aforo_viaje' => 1,
-        //     ],
-        //     [
-        //         'id_usuario_pasajero' => 2,
-        //         'id_viaje' => 2,
-        //         'id_reserva' => 2,
-        //         'fecha_viaje' => '2023-01-02',
-        //         'hora_abordaje' => '13:30:00',
-        //         'aforo_viaje' => 1,
-        //     ],
-        // ];
+        // Crear boletas_viaje
+        $boletasViaje = [
+            [
+                'id_usuario_pasajero' => 6,
+                'id_viaje' => 1,
+                'id_reserva' => 1,
+                'fecha_viaje' => '2023-01-01',
+                'hora_abordaje' => '07:30:00',
+                'aforo_viaje' => 1,
+            ],
+            [
+                'id_usuario_pasajero' => 5,
+                'id_viaje' => 2,
+                'id_reserva' => 2,
+                'fecha_viaje' => '2023-01-02',
+                'hora_abordaje' => '13:30:00',
+                'aforo_viaje' => 1,
+            ],
+        ];
 
-        // foreach ($boletasViaje as $boletaViajeData) {
-        //     BoletaViaje::create($boletaViajeData);
-        // }
-
-        // Crear reservas
+        foreach ($boletasViaje as $boletaViajeData) {
+            BoletaViaje::create($boletaViajeData);
+        }
+  
 
     }
 }
