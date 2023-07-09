@@ -251,6 +251,7 @@ main .info .info-text .info-detalle .paraderos li
 
 
 
+
 @media (max-width: 650px) {
 
     main .turnos
@@ -263,6 +264,8 @@ main .info .info-text .info-detalle .paraderos li
         align-items: center;
         justify-content: center;
     }
+
+
     
     main .turnos .title-box1
     {
@@ -386,7 +389,7 @@ main .info .info-text .info-detalle .paraderos li
     
     main .info
     {
-        width: 85%;
+        width: 92%;
         max-height: 550px;
         margin-top: 35px;
         display: flex;
@@ -395,6 +398,12 @@ main .info .info-text .info-detalle .paraderos li
         overflow: auto;
     }
     
+    #map
+    {
+        width: 80%;
+        margin-left: 10%;
+    }
+
     main .info::-webkit-scrollbar
     {
         width: 10px;
@@ -663,7 +672,7 @@ main .info .info-text .info-detalle .paraderos li
     
     main .info
     {
-        width: 85%;
+        width: 90%;
         max-height: 550px;
         margin-top: 35px;
         display: flex;
@@ -671,6 +680,7 @@ main .info .info-text .info-detalle .paraderos li
         flex-direction: column;
         overflow: auto;
     }
+
     
     main .info::-webkit-scrollbar
     {

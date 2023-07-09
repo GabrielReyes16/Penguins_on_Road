@@ -14,12 +14,16 @@
     <style>
         /* Estilos personalizados */
         #map {
-            height: 300px;
+            height: 500px;
+            width: 80%;
+            margin-left: 10%;
         }
 
         @media (min-width: 768px) {
             #map {
-                height: 500px;
+                height: 550px;
+                width: 120%;
+                margin-left: -10%;
             }
         }
 
