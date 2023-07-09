@@ -4,6 +4,10 @@
     {{ 'Editar Reserva' }}
 @stop
 
+@section('css-personalizado')
+    <script src="https://cdn.tailwindcss.com"></script>
+@stop
+
 @section('contenido')
 <main>
     <div class="py-12">
@@ -11,16 +15,17 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
                     <h3 class="text-lg text-center font-semibold mb-4">{{ __('Editar Reserva') }}</h3>
-                    <form action="{{ route('actualizar_reserva', ['idReserva' => $reserva->id_reserva]) }}" method="POST">
+                    <form action="{{ route('usuario-pasajero.actualizar_reserva', ['codigo' => $reserva->codigoDeAcceso]) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
                             <label for="id_viaje" class="block font-medium text-sm text-gray-700">Seleccionar nueva ruta:</label>
                             <select name="id_viaje" id="id_viaje" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
                                 @foreach($viajes as $viaje)
-                                    <option value="{{ $viaje->id_viaje }}" @if($viaje->id_viaje === $reserva->id_viaje) selected @endif>{{ $reserva->viaje->ruta->punto_inicial }} ➡️ {{ $reserva->viaje->ruta->punto_final }}</option>
+                                    <option value="{{ $viaje->id_viaje }}">{{ $viaje->ruta->punto_inicial }} ➡️ {{ $viaje->ruta->punto_final }}</option>
                                 @endforeach
                             </select>
+                            
                             @error('id_viaje')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                             @enderror

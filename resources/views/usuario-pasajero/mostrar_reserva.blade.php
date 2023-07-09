@@ -17,7 +17,7 @@
                         <p class="text-center">{{ __('Ruta seleccionada:') }} {{ $reserva->viaje->ruta->punto_inicial }} ➡️ {{ $reserva->viaje->ruta->punto_final }}</p>
                     </div>
                     <div class="flex justify-center mt-4">
-                        <a href="{{ route('editar_reserva', ['idReserva' => $reserva->id_reserva]) }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">{{ __('Editar Reserva') }}</a>
+                        <a href="{{ route('usuario-pasajero.editar_reserva', ['codigo' => $reserva->codigoDeAcceso]) }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">{{ __('Editar Reserva') }}</a>
                     </div>
                 </div>
             </div>

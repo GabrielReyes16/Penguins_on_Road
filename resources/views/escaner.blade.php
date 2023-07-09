@@ -1,4 +1,4 @@
-@extends ('usuario-chofer.navbar-abordaje')
+@extends ('usuario-chofer.navbar-home')
 
 @section ('titulo')
     {{ 'Menu || Scaner' }}

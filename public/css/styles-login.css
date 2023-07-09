@@ -218,3 +218,246 @@ footer .logo-tecsup
 {
     color: #ffffff;
 }
+
+
+
+
+@media (max-width: 650px) {
+
+    * {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif}
+
+    body 
+    {
+        width: 100%;
+        height: auto;
+        background: linear-gradient(85.02deg, #00894F 0%, #2EA8EC 50.31%, #0053B5 100%);
+        overflow: hidden;
+    }
+    
+    .fondo-imagen header
+    {
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.5) 100%);
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    footer 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 120px;
+        background: linear-gradient(85.02deg, #00894F 0%, #2EA8EC 50.31%, #0053B5 100%);
+    }
+    
+    .fondo-imagen 
+    {
+        background: url(../img/tecsup-lima.jpg);
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        bottom: 0;
+    }
+    
+    .fondo-imagen header div h1 
+    {
+        color: #fff;
+        font-size: 2em;
+        font-weight: 700;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+    
+    .fondo-imagen header a .logo-proyecto 
+    {
+        width: 150px;
+        height: auto;
+        padding-left: 10%;
+    }
+    
+    footer .logo-tecsup
+    {
+        width: auto;
+        height: 120px;
+        bottom: 0;
+    }
+    
+    .fondo-imagen .cuerpo 
+    {
+        position: relative;
+        justify-content: center;
+        display: flex;
+        padding-top: 20px;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox
+    {
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        background: linear-gradient(180deg, rgba(2, 58, 255, 0.95) 0%, rgba(39, 74, 197, 0) 100%);
+        border-radius: 10px;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox .fondo-titulo  
+    {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        background: linear-gradient(90deg, rgba(217, 217, 217, 0) -1.53%, rgba(255, 255, 255, 0.24) 101.22%);
+        border-radius: 5px
+    }
+    
+    .fondo-imagen .cuerpo .loginBox .fondo-titulo .titulo
+    {
+        padding: 8px;
+        font-size: 2em;
+        font-weight: 600;
+        color: #fff;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox .instrucciones 
+    {
+        width: 90%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 300;
+        margin-top: 10px;
+        margin-left: 30px;
+        color: #fff;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form
+    {
+        width: 320px;
+        height: auto;
+        display: flex;
+        margin-top: 25px;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox  
+    {
+        width: 100%;
+        height: 250px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 5px;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox .inputLine1
+    {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-left: 5px;
+        line-height: 40px;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox .inputLine2
+    {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        margin-top: 25px;
+        margin-left: 5px;
+        margin-bottom: 20px;
+        line-height: 40px;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox div .textInput
+    {
+        color: #D9D9D9;
+        width: 20%;
+        font-size: 15px;
+        font-weight: 950;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox div .input
+    {
+        width: 200px;
+        height: 30px;
+        border: none;
+        border-radius: 15px;
+        font-size: 14px;
+        padding-left: 13px;
+        margin-left: 50px;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox .btn 
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        text-decoration: none;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox .btn a .btn-in
+    {
+        width: 110px;
+        height: 35px;
+        border: none;
+        border-radius: 20px;
+        color: #cacaca;
+        background: rgba(38, 85, 255, 1);
+        font-size: 17px;
+        font-weight: 700;
+        transition: .1s;
+        cursor: pointer;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox .btn a .btn-in:hover
+    {
+        background: #1E3FB5;
+        border: 2px solid #FFFFFF;
+        color: #fff;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox .forgot
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox .forgot a
+    {
+        text-decoration: none;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox .forgot a .text-forgot
+    {
+        cursor: pointer;
+        color: #cacaca;
+        font-size: 15px;
+        font-weight: 700;
+    }
+    
+    .fondo-imagen .cuerpo .loginBox form .shadowBox .forgot a .text-forgot:hover
+    {
+        color: #ffffff;
+    }
+    
+    
+
+}
