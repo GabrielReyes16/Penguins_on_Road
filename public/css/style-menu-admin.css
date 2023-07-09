@@ -1,5 +1,27 @@
 * {padding: 0; margin: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif}
+.rectangulo {
+    background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 10px ;
+    text-align: center;
+  }
+  .create{
+    background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 10px ;
+    text-align: center;
+    transition:  0.3s ease; /* Agrega una transición de 0.3 segundos */
+}
 
+.create:hover {
+  background-color: rgb(17, 14, 14); /* Cambia el color de fondo en el hover */
+  color: rgb(202, 201, 201);
+}
+.crear_item{
+    width: 400px;
+}
 @media (max-width: 600px){
     body
     {
@@ -958,31 +980,6 @@
         width: 100%;
         height: auto;
         /* overflow: hidden; */
-    }
-    .rectangulo {
-        width: 400px;
-        height: 50px;
-        background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
-        color: white;
-        border-radius: 10px;
-        padding: 10px ;
-        text-align: center;
-      }
-      .create{
-        background: linear-gradient(45deg, rgba(0, 137, 79, 0.95) 0%, rgba(46, 168, 236, 0.95) 51.35%, rgba(0, 83, 181, 0.95) 100%);
-        color: white;
-        border-radius: 10px;
-        padding: 10px ;
-        text-align: center;
-        transition:  0.3s ease; /* Agrega una transición de 0.3 segundos */
-    }
-    
-    .create:hover {
-      background-color: rgb(17, 14, 14); /* Cambia el color de fondo en el hover */
-      color: rgb(202, 201, 201);
-    }
-    .crear_item{
-        width: 400px;
     }
     header
     {

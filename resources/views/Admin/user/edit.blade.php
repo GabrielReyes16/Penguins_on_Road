@@ -9,12 +9,12 @@
             </div>
             <div class="p-4 sm:p-8 bg-gray-200 rounded-md sm">
                 <div class="max-w-xl">
-                    <h2 class="text-lg font-medium text-gray-600">
+                    <h2 class="text-lg font-medium text-gray-800">
                         {{ __('Nombre del usuario') }}
                     </h2>
 
-                    <p class="mt-1 text-sm text-gray-400">
-                        {{ __('Asegurate de escribir correctamente del usuario. De lo contrario, podrías generar problemas.') }}
+                    <p class="mt-1 text-sm text-gray-600">
+                        {{ __('Asegurate de escribir correctamente el nombre del usuario.') }}
                     </p>
                     {{-- Nombre del usuario --}}
                     <form method="post" action="{{ route('admin.users.update', $user->id_usuario) }}"
@@ -29,7 +29,7 @@
                         </div>
                 </div>
                 <br>
-                <div class="flex items-center gap-4">
+                <div class="flex items-center justify-end mt-4">
                     <x-primary-button class="create">{{ __('Listo') }}</x-primary-button>
 
                     @if (session('status') === 'profile-updated')
@@ -47,10 +47,10 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                 <div class="p-4 sm:p-8 bg-gray-200 rounded-md sm">
                     <div class="max-w-xl">
-                        <h2 class="text-lg font-medium text-gray-600">
+                        <h2 class="text-lg font-medium text-gray-800">
                         {{ __('Gestionar rol del usuario') }}
                     </h2>
-                    <p class="mt-1 text-sm text-gray-400">
+                    <p class="mt-1 text-sm text-gray-600">
                         {{ __('Este es el rol del usuario. De acuerdo a ese rol, el usuario tiene ciertos permisos y denegaciones.') }}
                     </p>
                     <x-input-label for="name" :value="__('Roles')" />
@@ -62,9 +62,11 @@
                         ]) !!}
                     </div>
                     <br>
+                    <div class="flex items-center justify-end mt-2">
                     <x-primary-button class="create">{{ __('Asignar rol') }}</x-primary-button>
                     {!! Form::close() !!}
                 </div>
+            </div>
             </div>
             </div> <br>
 
@@ -72,11 +74,11 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                 <div class="p-4 sm:p-8 bg-gray-200 rounded-md sm">
                     <div class="max-w-xl">
-                        <h2 class="text-lg font-medium text-gray-600">
+                        <h2 class="text-lg font-medium text-gray-800">
                         {{ __('Actualizar contraseña') }}
                     </h2>
 
-                    <p class="mt-1 text-sm text-gray-400">
+                    <p class="mt-1 text-sm text-gray-600">
                         {{ __('Asignale al usuario una nueva contraseña.') }}
                     </p>
                     <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
@@ -103,7 +105,7 @@
                             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
                         </div>
 
-                        <div class="flex items-center gap-4">
+                        <div class="flex items-center justify-end mt-4">
                             <x-primary-button class="create">{{ __('Guardar') }}</x-primary-button>
 
                             @if (session('status') === 'password-updated')
