@@ -23,7 +23,7 @@ class Bus extends Model
     }
     public function ruta()
     {
-        return $this->belongsTo(Empresa::class, 'id_ruta', 'id_ruta');
+        return $this->belongsTo(Ruta::class, 'id_ruta', 'id_ruta');
     }
     public function chofer()
     {
