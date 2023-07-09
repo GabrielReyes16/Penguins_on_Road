@@ -10,6 +10,7 @@ main .contenido-ticket
     align-items: center;
     flex-direction: column;
     box-shadow: 0px 5px 10px #000;
+    text-align: center;
 }
 
 .contenido-ticket h3

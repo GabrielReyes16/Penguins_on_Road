@@ -1,7 +1,7 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-            {{ __('Profile Information') }}
+            {{ __('Información del perfil') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -13,29 +13,24 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
-        @csrf
-        @method('patch')
+    <div class="mt-4">
+        <label for="name" class="text-lg font-medium text-gray-700">Nombre</label>
+        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="$user->name"
+            disabled autofocus autocomplete="name" />
+        <x-input-error-create :messages="$errors->get('name')" class="mt-2" />
+    </div>
+    <div class="mt-4">
+        <label for="email" class="text-lg font-medium text-gray-700">Email</label>
+        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+            :value="$user->email" disabled autocomplete="email" />
+        <x-input-error-create :messages="$errors->get('email')" class="mt-2" />
+    </div>
+    <div class="mt-4">
+        <label for="roles" class="text-lg font-medium text-gray-700">Rol</label>
+        <x-text-input id="rol" class="block mt-1 w-full" type="text" name="rol"
+            :value="$user->roles()->first()->name" disabled autocomplete="rol" />
+        <x-input-error-create :messages="$errors->get('rol')" class="mt-2" />
+    </div>
 
         <div>
-            <x-input-label for="name" :value="__('Nombres')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
-        </div>
-
-        <div>
-        <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Listo') }}</x-primary-button>
-
-            @if (session('status') === 'profile-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Cambios guardados.') }}</p>
-            @endif
-        </div>
-    </form>
 </section>
