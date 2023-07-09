@@ -34,9 +34,6 @@
                     <button type="submit">{{ __('Verificar') }}</button>
                 </form>
                 <p class="mt-4"  id="mensaje"></p>
-                <div>
-                    <button class="bg-green-700 rounded-full">{{ __('Comenzar viaje') }}</button>
-                </div>
             </div>
         </div>
     </div>

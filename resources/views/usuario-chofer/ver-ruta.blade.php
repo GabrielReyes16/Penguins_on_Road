@@ -13,16 +13,16 @@
 
     <style>
         /* Estilos personalizados */
-        #map {
-            height: 300px;
+        #mapas {
+            height: 300px !important;
         }
 
         @media (min-width: 768px) {
-            #map {
-                height: 500px;
+            #mapas {
+                height: 500px !important;
             }
         }
-
+        
         /* Otros estilos personalizados... */
     </style>
 @stop
@@ -40,7 +40,7 @@
         </div>
         <!-- Mapa -->
         <div class="w-full md:w-2/3 mb-4">
-            <div id="map"></div>
+            <div id="mapas"></div>
         </div>
         <div class="info-text">
             <h3>INFORMACIÓN DE LA RUTA</h3>
@@ -67,7 +67,7 @@
     </main>
     <script>
         // Inicializar mapa
-        var map = L.map('map').setView([-12.04434, -76.95324], 11);
+        var map = L.map('mapas').setView([-12.04434, -76.95324], 11);
         map.setMinZoom(11);
         map.setMaxZoom(18);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -90,7 +90,7 @@
         @elseif ($ruta->turno->nombre === 'Noche')
             startPointMarker.setIcon(L.icon({
                 iconUrl: '{{ asset('img/marker.png') }}',
-                iconSize: [38, 95],
+                iconSize: [50, 50],
                 iconAnchor: [22, 94],
                 popupAnchor: [-3, -76]
             }));

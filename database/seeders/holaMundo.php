@@ -565,7 +565,8 @@ class holaMundo extends Seeder
             // Generar 8 registros de buses
         for ($i = 1; $i <= 8; $i++) {
         $bus = [
-            'placa' => 'BUS' . $i,
+            'id_ruta' => $i,
+            'placa' => 'BUS' .$i ,
             'aforo' => rand(50, 60),
             'id_empresa' => rand(1,3),
         ];

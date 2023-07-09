@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chofer;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Viaje;
 use Illuminate\Support\Facades\Auth;
@@ -26,30 +27,33 @@ class ViajeController extends Controller{
     // Obtener todos los viajes del chofer
     $viajes = Viaje::where('id_chofer', $chofer->id_chofer)->get();
 
+    // Formatear la fecha de cada viaje antes de pasarlos a la vista
+    $viajes->transform(function ($viaje) {
+        $viaje->fecha_viaje = Carbon::createFromFormat('Y-m-d', $viaje->fecha_viaje)->format('d/m/Y');
+        return $viaje;
+    });
+
     // Retornar la vista con los datos de los viajes
     return view('usuario-chofer.mostrar-viajes', compact('viajes'));
 }
-public function actualizarEstado(Request $request, $idViaje)
+public function crearViaje(Request $request)
 {
-    // Obtener el viaje
-    $viaje = Viaje::findOrFail($idViaje);
+    // Validar los datos recibidos del formulario, si es necesario
 
-    // Validar el estado proporcionado en la solicitud
-    $request->validate([
-        'estado' => 'required|in:activo,no-activo',
-    ]);
+    // Crear un nuevo objeto Viaje con los datos del formulario
+    $viaje = new Viaje();
+    $viaje->id_ruta = $request->input('id_ruta');
+    $viaje->id_bus = $request->input('id_bus');
+    $viaje->id_chofer = $request->input('id_chofer');
+    $viaje->fecha_viaje = $request->input('fecha_viaje');
+    $viaje->hora_inicio = $request->input('hora_inicio');
+    $viaje->hora_final = $request->input('hora_final');
+    $viaje->estado = 'activo'; // Ejemplo de valor por defecto para el estado
+    $viaje->aforo_actual = 0; // Ejemplo de valor por defecto para el aforo actual
+    $viaje->save();
 
-    // Actualizar el estado del viaje en la base de datos
-    DB::table('viajes')->where('id_viaje', $idViaje)->update(['estado' => $request->estado]);
-
-    // Devolver una respuesta con el estado actualizado
-    return response()->json(['message' => 'Estado del viaje actualizado con éxito.']);
-}
-public function crearViaje()
-{
-    // Lógica para crear un nuevo viaje
-
-    return view('usuario-chofer.crear-viaje'); // Retornar la vista de creación de viaje
+    // Redirigir a una página de éxito o mostrar un mensaje de éxito, según sea necesario
+    return redirect()->route('usuario-chofer.crear-viaje')->with('success', 'Viaje creado exitosamente');
 }
 
 }
