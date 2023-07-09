@@ -724,7 +724,7 @@ main .info .info-text .info-detalle .paraderos li
     main .info .title-box2 h3
     {
         color: #fff;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 500;
         width: 85%;
         text-align: center;
@@ -769,7 +769,7 @@ main .info .info-text .info-detalle .paraderos li
         list-style: circle;
         margin-left: 20px;
         margin-top: 20px;
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 600;
         text-transform: uppercase;
         line-height: 30px;
@@ -778,7 +778,7 @@ main .info .info-text .info-detalle .paraderos li
     main .info .info-text .info-detalle p
     {
         margin-left: 30px;
-        font-size: 15px;
+        font-size: 17px;
         font-weight: 300;
     }
     
@@ -791,9 +791,9 @@ main .info .info-text .info-detalle .paraderos li
     main .info .info-text .info-detalle .paraderos li
     {
         list-style: disc;
-        font-size: 12px;
+        font-size: 15px;
         font-weight: 300;
-        line-height: 18px;
+        line-height: 20px;
     }
     
     
@@ -804,7 +804,7 @@ main .info .info-text .info-detalle .paraderos li
 
 
 
-@media (max-width: 1900px) {
+@media (min-width: 1200px) {
 
     main .turnos
     {   
@@ -1000,10 +1000,11 @@ main .info .info-text .info-detalle .paraderos li
     main .info .title-box2 h3
     {
         color: #fff;
-        font-size: 18px;
+        font-size: 23px;
         font-weight: 500;
         width: 85%;
         text-align: center;
+        margin-top: 5px;
     }
     
     main .info img
@@ -1030,6 +1031,7 @@ main .info .info-text .info-detalle .paraderos li
         text-align: center;
         color: #fff;
         font-weight: 650;
+        font-size: 30px;
     }
     
     main .info .info-text .info-detalle
@@ -1044,8 +1046,8 @@ main .info .info-text .info-detalle .paraderos li
         list-style: circle;
         margin-left: 20px;
         margin-top: 20px;
-        font-size: 15px;
-        font-weight: 600;
+        font-size: 23px;
+        font-weight: 500;
         text-transform: uppercase;
         line-height: 30px;
     }
@@ -1053,20 +1055,20 @@ main .info .info-text .info-detalle .paraderos li
     main .info .info-text .info-detalle p
     {
         margin-left: 30px;
-        font-size: 15px;
-        font-weight: 300;
+        font-size: 18px;
+        font-weight: 370;
     }
     
     main .info .info-text .info-detalle .paraderos
     {
-        margin-top: -10px;
+        margin-top: -5px;
         margin-left: 30px;
     }
     
     main .info .info-text .info-detalle .paraderos li
     {
         list-style: disc;
-        font-size: 12px;
+        font-size: 17px;
         font-weight: 300;
         line-height: 18px;
     }
