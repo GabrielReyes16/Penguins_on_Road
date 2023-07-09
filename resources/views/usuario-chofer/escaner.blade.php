@@ -12,7 +12,7 @@
 @section ('contenido')
     <!--contenido carrusel-->
     <main>
-    <div class="bg-white p-6">
+    <div class="bg-white p-6" style="margin-top: 35px;">
         <div class="flex flex-col ">
             <div class="w-full p-6">
                 <div id="reader" class="w-full  h-1/2"></div>
