@@ -1,31 +1,30 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
-            {{ __('Usuarios') }}
-        </h2>
-    </x-slot>
+    <br>
+    <div class="rectangulo"> {{ __('Usuarios') }}</div>
+    <br>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 ">
-                <form id="search-form" class="mb-4" style=" text-align: center;">
-                    <input id="search-input" type="text" placeholder="Buscar por nombre o email" class="mr-2 text-gray">
-                    <button id="clear-button" type="button"
-                        class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">Limpiar</button>
-                </form>
-                <div class="card" style="color: white;">
 
+                <form id="search-form" class="buscador" style=" text-align: center;">
+                    <input id="search-input" type="text" placeholder="Buscar por nombre o email" class="mr-4 text-gray w-2/3">
+                    <button id="clear-button" type="button"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Limpiar</button>
+                </form>
+                <div>
+                    <br>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
 
                         <div class="d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded"
-                            style="color: white;  ;">
+                            >
                             <a href="{{ route('admin.users.create') }}"
-                                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                class="create">
                                 <i class="fa-sharp fa-light fa-plus"></i>   {{ __('Crear un usuario') }}
                             </a>
-                        </div>
+                        </div> <br>
                     </div>
                     @if ($message = Session::get('success'))
-                        <div class="w-2/3 mx-auto">
+                        <div class="w-2/3 mx-auto mt-4">
                             <div class="bg-white text-black text-sm py-2 px-4 rounded">
                                 <p>{{ $message }}</p>
                             </div>
@@ -33,32 +32,32 @@
                     @endif
 
 
-                    <div class="flex justify-center" style="color: white;">
+                    <div class="flex justify-center" >
                         <div class="p-4">
-                            <table id="users-table" class="min-w-full border border-gray-200">
+                            <table id="users-table" class="min-w-full border border-gray-600">
                                 <thead class="thead">
                                     <tr>
-                                        <th class="py-2 px-4 border-b">ID</th>
-                                        <th class="py-2 px-4 border-b">Nombre</th>
-                                        <th class="py-2 px-4 border-b">Email</th>
-                                        <th class="py-2 px-4 border-b">Rol</th>
-                                        <th class="py-2 px-4 border-b">Operaciones</th>
+                                        <th class="py-2 px-4 border border-gray-600">ID</th>
+                                        <th class="py-2 px-4 border border-gray-600">Nombre</th>
+                                        <th class="py-2 px-4 border border-gray-600">Email</th>
+                                        <th class="py-2 px-4 border border-gray-600">Rol</th>
+                                        <th class="py-2 px-4 border border-gray-600">Operaciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($users as $user)
                                         <tr>
-                                            <td class="py-2 px-4 border-b">{{ $user->id_usuario }}</td>
-                                            <td class="py-2 px-4 border-b user-name">{{ $user->name }}</td>
-                                            <td class="py-2 px-4 border-b user-email">{{ $user->email }}</td>
-                                            <td class="py-2 px-4 border-b user-email">
+                                            <td class="py-2 px-4 border border-gray-600">{{ $user->id_usuario }}</td>
+                                            <td class="py-2 px-4 border border-gray-600 user-name">{{ $user->name }}</td>
+                                            <td class="py-2 px-4 border border-gray-600 user-email">{{ $user->email }}</td>
+                                            <td class="py-2 px-4 border border-gray-600 user-email">
                                                 {{ $user->roles()->first()->name }}</td>
-                                            <td class="py-2 px-4 border-b">
+                                            <td class="py-2 px-4 border border-gray-600">
                                                 <form action="{{ route('admin.users.destroy', $user->id_usuario) }}"
                                                     method="POST">
                                                     <a class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-3 rounded"
                                                         href="{{ route('admin.users.show', $user->id_usuario) }}"><i
-                                                            class="fa fa-fw fa-eye"></i> </a>
+                                                            class="fa fa-fw fa-eye"></i></a>
                                                     <a class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
                                                         href="{{ route('admin.users.edit', $user->id_usuario) }}"><i
                                                             class="fa fa-fw fa-edit"></i></a>

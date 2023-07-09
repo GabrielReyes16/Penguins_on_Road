@@ -1,35 +1,28 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
-            Editar información de {{ $user->name }}
-        </h2>
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __("\n Edita la informacion de este usuario.") }}
-        </p>
-    </x-slot>
-
+    <br>
+    <div class="rectangulo"> Editando a: {{ $user->name }}</div>
+    <br>
     <div class="py-12">
+
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded"
-                    style="color: white;  background-color: blue;">
-                    <a href="{{ route('admin.users.index') }}"> {{ __('Volver') }}</a>
-                </div>
+            <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded"
+            style="color: white;  background-color: blue; text'align: center">
+            <a href="{{ route('admin.users.index') }}"> {{ __('Volver') }}</a>
+        </div>
+            <div class="p-4 sm:p-8 bg-gray-200 rounded-md sm">
                 <div class="max-w-xl">
-                    <h2 class="text-lg font-medium text-gray-200">
-                        {{ __('Datos de acceso') }}
+                    <h2 class="text-lg font-medium text-gray-600">
+                        {{ __('Nombre del usuario') }}
                     </h2>
 
                     <p class="mt-1 text-sm text-gray-400">
-                        {{ __('Ensure your account is using a long, random password to stay secure.') }}
+                        {{ __('Asegurate de escribir correctamente del usuario. De lo contrario, podrías generar problemas.') }}
                     </p>
                     {{-- Nombre del usuario --}}
-
                     <form method="post" action="{{ route('admin.users.update', $user->id_usuario) }}"
                         class="mt-6 space-y-6">
                         @csrf
                         @method('patch')
-
                         <div>
                             <x-input-label for="name" :value="__('Nombres')" />
                             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full"
@@ -39,7 +32,7 @@
                 </div>
                 <br>
                 <div class="flex items-center gap-4">
-                    <x-primary-button>{{ __('Listo') }}</x-primary-button>
+                    <x-primary-button class="create">{{ __('Listo') }}</x-primary-button>
 
                     @if (session('status') === 'profile-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
@@ -48,34 +41,40 @@
                 </div>
                 </form>
             </div>
+        </div> <br>
+
+
 
             {{-- Rol del usuario --}}
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    <h2 class="text-lg font-medium text-gray-200">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+                <div class="p-4 sm:p-8 bg-gray-200 rounded-md sm">
+                    <div class="max-w-xl">
+                        <h2 class="text-lg font-medium text-gray-600">
                         {{ __('Gestionar rol del usuario') }}
                     </h2>
                     <p class="mt-1 text-sm text-gray-400">
                         {{ __('Este es el rol del usuario. De acuerdo a ese rol, el usuario tiene ciertos permisos y denegaciones.') }}
                     </p>
-                    <h3 class="text-lg font-medium text-gray-200" for="rol" :value="__('Roles')" >Roles</h3>
+                    <x-input-label for="name" :value="__('Roles')" />
                     {!! Form::model($user, ['route' => ['admin.users.updateRole', $user], 'method' => 'put']) !!}
-                    <div>
+                    <div >
 
                         {!! Form::select('roles[]', $roles->pluck('name', 'id'), $user->roles->pluck('id')->toArray(), [
-                            'class' => 'form-control',
+                            'class' => 'form-control block mt-1 w-full',
                         ]) !!}
                     </div>
                     <br>
-                    <x-primary-button>{{ __('Asignar rol') }}</x-primary-button>
+                    <x-primary-button class="create">{{ __('Asignar rol') }}</x-primary-button>
                     {!! Form::close() !!}
                 </div>
             </div>
+            </div> <br>
 
             {{-- Password del usuario --}}
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    <h2 class="text-lg font-medium text-gray-200">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+                <div class="p-4 sm:p-8 bg-gray-200 rounded-md sm">
+                    <div class="max-w-xl">
+                        <h2 class="text-lg font-medium text-gray-600">
                         {{ __('Actualizar contraseña') }}
                     </h2>
 
@@ -85,30 +84,29 @@
                     <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
                         @csrf
                         @method('put')
-
                         <div>
-                            <h3 class="text-lg font-medium text-gray-200" for="name" :value="__('Contraseña actual')" >Contraseña actual</h3>
+                            <x-input-label for="name" :value="__('Contraseña actual')" />
                             <x-text-input id="current_password" name="current_password" type="password"
                                 class="mt-1 block w-full" autocomplete="current-password" />
                             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
                         </div>
 
                         <div>
-                            <h3 class="text-lg font-medium text-gray-200" for="name" :value="__('Nueva contraseña')" >Nueva contraseña</h3>
+                            <x-input-label for="name" :value="__('Nueva contraseña')" />
                             <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"
                                 autocomplete="new-password" />
                             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
                         </div>
 
                         <div>
-                            <h3 class="text-lg font-medium text-gray-200" for="name" :value="__('Confirmar contraseña')" >Confirmar contraseña</h3>
+                            <x-input-label for="name" :value="__('Confirmar contraseña')" />
                             <x-text-input id="password_confirmation" name="password_confirmation" type="password"
                                 class="mt-1 block w-full" autocomplete="new-password" />
                             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <x-primary-button>{{ __('Save') }}</x-primary-button>
+                            <x-primary-button class="create">{{ __('Guardar') }}</x-primary-button>
 
                             @if (session('status') === 'password-updated')
                                 <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
@@ -118,5 +116,6 @@
                     </form>
                 </div>
             </div>
-        </div >
-    </x-app-layout>
+        </div>
+            </div>
+</x-app-layout>
