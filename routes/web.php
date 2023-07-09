@@ -55,7 +55,7 @@ Route::get('/home', function () {
 Route::get('/turnos', [RutasController::class, 'mostrarTurnos'])->name('usuario-pasajero.turnos');
 Route::get('/turnos/{id}', [RutasController::class, 'mostrarRutas'])->name('usuario-pasajero.seleccion-turno');
 Route::get('/turnos/{id_turno}/ruta/{id_ruta}', [RutasController::class, 'verRuta'])->name('usuario-pasajero.ver-ruta');
-
+Route::resource('viajes', ViajeController::class)->names('viajes');
 
 // Usuario Chofer
 Route::get('/view-turnos', [RutasController::class, 'mostrarTurnoschofer'])->name('usuario-chofer.turnos');
