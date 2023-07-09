@@ -14,12 +14,18 @@
     <style>
         /* Estilos personalizados */
         #mapas {
-            height: 300px !important;
+            height: 500px;
+            width: 80%;
+            margin-left: 10%;
+            z-index: 0;
         }
 
         @media (min-width: 768px) {
             #mapas {
-                height: 500px !important;
+                height: 550px;
+                width: 120%;
+                margin-left: -10%;
+                z-index: 0;
             }
         }
         
