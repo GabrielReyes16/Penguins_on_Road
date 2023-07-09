@@ -13,7 +13,7 @@
         <div class="turnos">
             <div class="title-box2">
                 <a href="/turnos"><ion-icon name="arrow-back-circle"></ion-icon></a>
-                <h3>Turno {{ $turno->nombre }} de Lunes a Viernes del campus camino a:</h3>
+                <h3>Turno {{ $turno->nombre }} de Lunes a Viernes</h3>
             </div>
             @foreach ($rutas as $ruta) 
             <div class="btn-ruta">

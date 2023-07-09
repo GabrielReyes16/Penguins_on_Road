@@ -31,7 +31,7 @@
 
     <div>
         <div style="color: white;">
-            <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded">
+            <div>
                 <button class="create "><a href="{{ route('admin.users.index') }}"> Volver</a></button>
 
             </div>
