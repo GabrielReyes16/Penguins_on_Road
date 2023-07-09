@@ -77,15 +77,15 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');
 // Rutas de admin
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::resource('users', UserController::class)->names('admin.users');
-Route::POST('/admin/users/{user}/storeChofer', [UserController::class, 'storeChofer'])
+Route::resource('users', UserController::class)->middleware('can:admin.users.index')->names('admin.users');
+Route::POST('/admin/users/{user}/storeChofer', [UserController::class, 'storeChofer'])->middleware('can:admin.users.index')
     ->name('admin.users.storeChofer');
-    Route::get('/admin/users/{user}/createChofer', [UserController::class, 'createChofer'])
+Route::get('/admin/users/{user}/createChofer', [UserController::class, 'createChofer'])->middleware('can:admin.choferes.index')
     ->name('admin.users.createChofer');
-Route::resource('buses', BusController::class)->names('admin.buses');
-Route::resource('choferes', ChoferController::class)->names('admin.choferes');
-Route::resource('rutas', RutaController::class)->names('admin.rutas');
-Route::resource('boletasviaje', BoletasViajeController::class)->names('admin.boletasviaje');
+Route::resource('buses', BusController::class)->middleware('can:admin.buses.index')->names('admin.buses');
+Route::resource('choferes', ChoferController::class)->middleware('can:admin.choferes.index')->names('admin.choferes');
+Route::resource('rutas', RutaController::class)->middleware('can:admin.rutas.index')->names('admin.rutas');
+Route::resource('boletasviaje', BoletasViajeController::class)->middleware('can:admin.viajes.index')->names('admin.boletasviaje');
 
 // Ruta de acciones directas en perfil
 Route::middleware('auth')->group(function () {

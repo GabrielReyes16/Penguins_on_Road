@@ -2,82 +2,108 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chofer;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 use App\Models\Viaje;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
+/**
+ * Class ViajeController
+ * @package App\Http\Controllers
+ */
 class ViajeController extends Controller
 {
-    public function mostrarViajes()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        // Obtener el ID del usuario del chofer autenticado
-        $idUsuario = Auth::id();
+        $viajes = Viaje::paginate();
 
-        // Obtener el chofer basado en el ID del usuario
-        $chofer = Chofer::where('id_usuario', $idUsuario)->first();
-
-        if (!$chofer) {
-            // Si no se encuentra el chofer, redirigir o mostrar un mensaje de error
-            return redirect()->back()->with('error', 'No se encontró el chofer.');
-        }
-
-        // Obtener todos los viajes del chofer
-        $viajes = Viaje::where('id_chofer', $chofer->id_chofer)
-            ->orderByDesc('id_viaje')
-            ->get();
-
-        // Calcular la duración de cada viaje
-        $viajes->transform(function ($viaje) {
-            $duracion = Carbon::parse($viaje->hora_final)->diff(Carbon::parse($viaje->hora_inicio));
-            $viaje->duracion = $duracion->format('%H:%I:%S');
-            $viaje->fecha_viaje = Carbon::createFromFormat('Y-m-d', $viaje->fecha_viaje)->format('d/m/Y');
-            return $viaje;
-        });
-
-        // Retornar la vista con los datos de los viajes
-        return view('usuario-chofer.mostrar-viajes', compact('viajes'));
+        return view('viaje.index', compact('viajes'))
+            ->with('i', (request()->input('page', 1) - 1) * $viajes->perPage());
     }
 
-    public function crearViaje(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        // Obtener el ID del chofer autenticado
-        $idUsuario = $request->input('id_usuario');
-        
-        // Obtener el chofer basado en el ID del usuario
-        $chofer = Chofer::where('id_usuario', $idUsuario)->first();
-
-        if (!$chofer) {
-            // Si no se encuentra el chofer, redirigir o mostrar un mensaje de error
-            return redirect()->back()->with('error', 'No se encontró el chofer.');
-        }
-
-        // Obtener el bus actual del chofer
-        $bus = $chofer->bus;
-
-        if (!$bus) {
-            // Si no se encuentra el bus, redirigir o mostrar un mensaje de error
-            return redirect()->back()->with('error', 'No se encontró el bus del chofer.');
-        }
-
-        // Obtener la ruta actual del bus
-        $ruta = $bus->ruta;
-
-        if (!$ruta) {
-            // Si no se encuentra la ruta, redirigir o mostrar un mensaje de error
-            return redirect()->back()->with('error', 'No se encontró la ruta actual del bus.');
-        }
-
-        // Crear el viaje con los datos proporcionados
         $viaje = new Viaje();
-        $viaje->id_chofer = $chofer->id_chofer;
-        $viaje->id_bus = $bus->id_bus;
-        $viaje->id_ruta = $ruta->id_ruta;
-        $viaje->fecha_viaje = Carbon::now()->format('Y-m-d');
-        $viaje->save();
+        return view('viaje.create', compact('viaje'));
+    }
 
-        // Redireccionar a la página deseada o mostrar un mensaje de éxito
-        return redirect()->back()->with('success', 'El viaje se ha creado correctamente.');
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        request()->validate(Viaje::$rules);
+
+        $viaje = Viaje::create($request->all());
+
+        return redirect()->route('viajes.index')
+            ->with('success', 'Viaje created successfully.');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $viaje = Viaje::find($id);
+
+        return view('viaje.show', compact('viaje'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $viaje = Viaje::find($id);
+
+        return view('viaje.edit', compact('viaje'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  Viaje $viaje
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Viaje $viaje)
+    {
+        request()->validate(Viaje::$rules);
+
+        $viaje->update($request->all());
+
+        return redirect()->route('viajes.index')
+            ->with('success', 'Viaje updated successfully');
+    }
+
+    /**
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
+    public function destroy($id)
+    {
+        $viaje = Viaje::find($id)->delete();
+
+        return redirect()->route('viajes.index')
+            ->with('success', 'Viaje deleted successfully');
     }
 }
