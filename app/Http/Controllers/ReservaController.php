@@ -171,11 +171,10 @@ private function generarBoleta(Reserva $reserva)
         // Crear una nueva boleta de viaje
         $boleta = new BoletaViaje();
         $boleta->id_usuario_pasajero = $pasajero->id_usuario;
-        $boleta->id_usuario_chofer = Auth::id(); // ID del chofer autenticado
         $boleta->id_viaje = $viaje->id_viaje;
         $boleta->id_reserva = $reserva->id_reserva;
         $boleta->fecha_viaje = $reserva->fecha_reserva;
-        $boleta->hora_abordaje = Carbon::now()->toTimeString(); // Utiliza la hora de inicio del viaje
+        $boleta->hora_abordaje = Carbon::now()->timezone('America/Lima')->toTimeString(); // Utiliza la hora de inicio del viaje
         $boleta->aforo_viaje = $viaje->aforo_viaje; // Utiliza el aforo actual del viaje
         $boleta->save();
     }

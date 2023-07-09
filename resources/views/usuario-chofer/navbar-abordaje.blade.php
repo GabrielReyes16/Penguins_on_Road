@@ -24,7 +24,7 @@
         </div>
         <div class="menu-bar">
             <li class="options">
-                <a href="/welcome" class="box-icon-left">
+                <a href="/dashboard" class="box-icon-left">
                     <span class="icons">
                         <ion-icon name="home"></ion-icon>
                     </span>
@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="options">
-                <a href="/view_turnos" class="box-icon-center">
+                <a href="/view-turnos" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="trail-sign"></ion-icon>
                     </span>
@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li class="options">
-                <a href="/view_boletas" class="box-icon-center">
+                <a href="/viajes" class="box-icon-center">
                     <span class="icons">
                         <ion-icon name="receipt"></ion-icon>
                     </span>

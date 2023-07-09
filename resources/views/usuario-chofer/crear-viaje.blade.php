@@ -1,6 +1,17 @@
-@extends('layouts.app')
+@extends ('usuario-chofer.navbar-boletas')
 
-@section('content')
+@section ('titulo')
+    {{ 'Menu || Scaner' }}
+@stop
+
+@section ('css-personalizado')
+    <link rel="stylesheet" href="{{ asset ('css/Passenger/style-bus.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/de3d576e9f.js" crossorigin="anonymous"></script>
+@stop
+
+@section ('contenido')
+
 <div class="bg-white p-6">
     <h2 class="text-2xl font-bold mb-4">Crear Viaje</h2>
 
@@ -40,4 +51,19 @@
         </div>
     </form>
 </div>
-@endsection
+<script>
+    function actualizarEstadoViaje(idViaje, estado) {
+        // Realizar una solicitud AJAX para actualizar el estado del viaje
+        axios.put('/viajes/' + idViaje + '/estado', { estado: estado })
+            .then(response => {
+                // Manejar la respuesta exitosa del servidor
+                console.log(response.data);
+            })
+            .catch(error => {
+                // Manejar el error de la solicitud AJAX
+                console.log(error);
+            });
+    }
+</script>
+
+@stop

@@ -3,7 +3,7 @@ var x2 = document.getElementById("myAudio2");
 
 function onScanSuccess(qrCodeMessage) {
   document.getElementById("result").value = qrCodeMessage;
-  playAudio();
+  x.play();
 }
 
 

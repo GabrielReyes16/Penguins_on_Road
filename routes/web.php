@@ -3,7 +3,6 @@
 
 use App\Http\Controllers\ViajeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QRCodeController;  
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController; 
 use App\Http\Controllers\ReservaController;  //Meter en carpeta correspondiente en controllers
@@ -28,15 +27,16 @@ use App\Http\Controllers\RutasController;
 Route::get('/', function () {return view('index');});
 
 // Rutas de usuario pasajero
-Route::get('/usuario-pasajero/home', function () {return view('usuario-pasajero.homePasajero');});
-Route::get('/home', function () {return view('usuario-pasajero.homePasajero');});
-Route::get('/turnos', function () {return view('usuario-pasajero.turnos');});
-Route::get('/mañana', function () {return view('usuario-pasajero.turno-mañana');});
-Route::get('/tarde', function () {return view('usuario-pasajero.turno-tarde');});
-Route::get('/noche', function () {return view('usuario-pasajero.turno-noche');});
-Route::get('/tm-op1', function () {return view('usuario-pasajero.turno-mañana-op1');});
-Route::get('/tm-op2', function () {return view('usuario-pasajero.turno-mañana-op2');});
-Route::get('/tt-op1', function () {return view('usuario-pasajero.turno-tarde-op1');});
+// Route::get('/usuario-pasajero/home', function () {return view('usuario-pasajero.homePasajero');});
+// Route::get('/home', function () {return view('usuario-pasajero.homePasajero');});
+// Route::get('/turnos', function () {return view('usuario-pasajero.turnos');});
+// Route::get('/mañana', function () {return view('usuario-pasajero.turno-mañana');});
+// Route::get('/tarde', function () {return view('usuario-pasajero.turno-tarde');});
+// Route::get('/noche', function () {return view('usuario-pasajero.turno-noche');});
+// Route::get('/tm-op1', function () {return view('usuario-pasajero.turno-mañana-op1');});
+// Route::get('/tm-op2', function () {return view('usuario-pasajero.turno-mañana-op2');});
+// Route::get('/tt-op1', function () {return view('usuario-pasajero.turno-tarde-op1');});
+
 Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'])->name('usuario-pasajero.formulario_reserva');
 Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
 Route::get('/reserva/{codigo}', [ReservaController::class, 'mostrarReserva'])->name('usuario-pasajero.mostrar_reserva');
@@ -51,22 +51,22 @@ Route::get('/home', function () {
     return view('usuario-pasajero.homePasajero');
 });
 
+// Usuario Pasajero
 Route::get('/turnos', [RutasController::class, 'mostrarTurnos'])->name('usuario-pasajero.turnos');
 Route::get('/turnos/{id}', [RutasController::class, 'mostrarRutas'])->name('usuario-pasajero.seleccion-turno');
 Route::get('/turnos/{id_turno}/ruta/{id_ruta}', [RutasController::class, 'verRuta'])->name('usuario-pasajero.ver-ruta');
 
 
+// Usuario Chofer
+Route::get('/view-turnos', [RutasController::class, 'mostrarTurnoschofer'])->name('usuario-chofer.turnos');
+Route::get('/view-turnos/{id}', [RutasController::class, 'mostrarRutaschofer'])->name('usuario-chofer.seleccion-turno');
+Route::get('/view-turnos/{id_turno}/ruta/{id_ruta}', [RutasController::class, 'verRutachofer'])->name('usuario-chofer.ver-ruta');
+Route::get('/escaner', function () {return view('usuario-chofer.escaner');});//->name('usuario-chofer.escaner');
+Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
+Route::get('/viajes', [ViajeController::class, 'mostrarViajes'])->name('usuario-chofer.mostrar-viajes');
+Route::get('/viajes/crear', [ViajeController::class, 'crearViaje'])->name('usuario-chofer.crear-viaje');
 
-// Chofer
-Route::get('/welcome', function () {
-    return view('usuario-chofer.homeChofer');
-});
-Route::get('/view_turnos', function () {
-    return view('usuario-chofer.Rutas');
-});
-Route::get('/view_boletas', function () {
-    return view('usuario-chofer.mostrarBoletas');
-});
+
 
 
 
@@ -93,13 +93,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');});
      
 // Rutas de abordaje
-Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
-Route::get('/escaner', function () {return view('escaner');});
+// Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
+
 // Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
 
 // Rutas para crud de viajes , chofer
-Route::get('/viajes', [ViajeController::class, 'mostrarViajes'])->name('mostrar_viajes');
-Route::get('/viajes/crear', [ViajeController::class, 'crearViaje'])->name('crear_viaje');
+
 
 // Ruta para cambiar rol de usuario
 
