@@ -477,6 +477,7 @@ main .info .info-text .info-detalle .paraderos li
         text-align: center;
         color: #fff;
         font-weight: 650;
+        font-size: 19px;
     }
     
     main .info .info-text .info-detalle
@@ -525,7 +526,9 @@ main .info .info-text .info-detalle .paraderos li
 
 
 
-@media (max-width: 1200px) {
+
+
+@media (min-width: 650px) and (max-width: 1200px) {
 
     main .turnos
     {   
@@ -751,6 +754,7 @@ main .info .info-text .info-detalle .paraderos li
         text-align: center;
         color: #fff;
         font-weight: 650;
+        font-size: 25px;
     }
     
     main .info .info-text .info-detalle
@@ -794,6 +798,8 @@ main .info .info-text .info-detalle .paraderos li
     
     
 }
+
+
 
 
 
