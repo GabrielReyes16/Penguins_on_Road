@@ -65,7 +65,10 @@ Route::get('/escaner', function () {return view('usuario-chofer.escaner');});//-
 Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
 Route::get('/viajes', [ViajeController::class, 'mostrarViajes'])->name('usuario-chofer.mostrar-viajes');
 Route::post('viajes/crear', [ViajeController::class, 'crearViaje'])->name('usuario-chofer.crear-viaje');
-// Route::get('/viajes/crear/guardar', [ViajeController::class, 'crearViaje'])->name('usuario-chofer.guardar-viaje');
+Route::post('viajes/comenzar/{idViaje}', [ViajeController::class, 'comenzarViaje'])->name('usuario-chofer.comenzar-viaje');
+Route::post('viajes/terminar/{idViaje}', [ViajeController::class, 'terminarViaje'])->name('usuario-chofer.terminar-viaje');
+Route::post('viajes/actualizar-estado', [ViajeController::class, 'actualizarEstadoViaje'])->name('usuario-chofer.actualizar-estado-viaje');
+
 
 
 
