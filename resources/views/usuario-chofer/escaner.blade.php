@@ -1,7 +1,12 @@
-@extends ('usuario-chofer.navbar-home')
+@extends ('usuario-chofer.navbar-abordaje')
 
 @section ('titulo')
     {{ 'Menu || Scaner' }}
+@stop
+
+@section ('css-personalizado')
+    <link rel="stylesheet" href="{{ asset ('css/Passenger/style-bus.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
 @stop
 
 @section ('contenido')
