@@ -17,6 +17,7 @@
             height: 500px;
             width: 80%;
             margin-left: 10%;
+            z-index: 0;
         }
 
         @media (min-width: 768px) {
@@ -24,6 +25,7 @@
                 height: 550px;
                 width: 120%;
                 margin-left: -10%;
+                z-index: 0;
             }
         }
 
