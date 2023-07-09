@@ -17,18 +17,26 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="mb-4">
-                        <a href="{{ route('usuario-chofer.crear-viaje') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Crear Viaje
-                        </a>
-                    </div>
-
+                    <div class="mb-4 flex flex-row items-center">
+                        <form action="{{ route('usuario-chofer.crear-viaje') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id_usuario" value="{{ Auth::id() }}">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Crear Viaje
+                            </button>
+                        </form>
+                        @if(session('success'))
+                        <div class="bg-green-200 text-green-800 p-4 ml-4 rounded-lg">
+                            {{ session('success') }}
+                        </div>
+                        @endif
+                    </div>                    
                     <h4 class="text-lg text-gray-800 font-semibold mb-4">Lista de Viajes:</h4>
                     <li class="bg-slate-700 p-4 rounded-lg mb-4 flex items-center justify-between">
                         <span class="w-1/6 text-white">Fecha del viaje</span>
                         <span class="w-1/6 text-white">Punto inicial</span>
                         <span class="w-1/6 text-white">Punto final</span>
-                        <span class="w-1/6 text-white">Escaner</span>
+                        <span class="w-1/6 text-white">Duración del viaje</span>
                         <span class="w-1/6 text-white">Estado</span>                              
                         <span class="w-1/6 text-white">Opciones</span> 
                     </li>
@@ -38,10 +46,7 @@
                                 <span class="w-1/6">{{ $viaje->fecha_viaje }}</span>
                                 <span class="w-1/6">{{ $viaje->ruta->punto_inicial }}</span>
                                 <span class="w-1/6">{{ $viaje->ruta->punto_final }}</span>
-                                <a href="#" class="w-1/6  text-blue-500 hover:text-blue-700">
-                                    <i class="fas fa-qrcode mr-2"></i>
-                                    Escaner
-                                </a>
+                                <span class="w-1/6 ">{{$viaje->duracion}}</span>
                                 <span class="w-1/6">{{ $viaje->estado }}</span>                              
                                 <div class="w-1/6 flex items-center  space-x-2">
                                     <a href="#" class="text-blue-500 hover:text-blue-700">
