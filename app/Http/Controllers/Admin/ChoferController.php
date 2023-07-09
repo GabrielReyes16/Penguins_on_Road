@@ -18,7 +18,7 @@ class ChoferController extends Controller
      */
     public function index()
     {
-        $choferes = Chofer::paginate(5);
+        $choferes = Chofer::paginate();
     
         return view('admin.chofer.index', compact('choferes'))
             ->with('i', (request()->input('page', 1) - 1) * $choferes->perPage());

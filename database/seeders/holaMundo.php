@@ -145,12 +145,17 @@ class holaMundo extends Seeder
         $empresas = [
             [
                 'RUC' => '1234567890',
-                'nombre' => 'Empresa 1',
+                'nombre' => 'Paradox',
                 'ubicacion' => 'Lima, Perú',
             ],
             [
                 'RUC' => '0987654321',
-                'nombre' => 'Empresa 2',
+                'nombre' => 'SafeTravel',
+                'ubicacion' => 'Callao, Perú',
+            ],
+            [
+                'RUC' => '1092387456',
+                'nombre' => 'TuChofideconFianza',
                 'ubicacion' => 'Arequipa, Perú',
             ],
         ];
@@ -562,7 +567,7 @@ class holaMundo extends Seeder
         $bus = [
             'placa' => 'BUS' . $i,
             'aforo' => rand(50, 60),
-            'id_empresa' => 1,
+            'id_empresa' => rand(1,3),
         ];
 
         $buses[] = $bus;
@@ -582,24 +587,28 @@ class holaMundo extends Seeder
                 'id_bus' => 1,
                 'id_empresa' => 1,
                 'licencia_conducir' => '1234561',
+                'estado' => 'Activo',
             ],
             [
                 'id_usuario' => 4,
                 'id_bus' => 2,
                 'id_empresa' => 1,
                 'licencia_conducir' => '6543219',
+                'estado' => 'Inactivo',
             ],
             [
                 'id_usuario' => 5,
                 'id_bus' => 3,
                 'id_empresa' => 1,
                 'licencia_conducir' => '1238456',
+                'estado' => 'Activo',
             ],
             [
                 'id_usuario' => 6,
                 'id_bus' => 4,
                 'id_empresa' => 1,
                 'licencia_conducir' => '6543621',
+                'estado' => 'Activo',
             ],[
                 'id_usuario' => 7,
                 'id_bus' => 5,
@@ -611,17 +620,20 @@ class holaMundo extends Seeder
                 'id_bus' => 6,
                 'id_empresa' => 1,
                 'licencia_conducir' => '6543214',
+                'estado' => 'Inactivo',
             ],[
                 'id_usuario' => 9,
                 'id_bus' => 7,
                 'id_empresa' => 1,
                 'licencia_conducir' => '1234563',
+                'estado' => 'Activo',
             ],
             [
                 'id_usuario' => 10,
                 'id_bus' => 8,
                 'id_empresa' => 1,
                 'licencia_conducir' => '6543212',
+                'estado' => 'Inactivo',
             ],
         ];
 
