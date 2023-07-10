@@ -353,9 +353,12 @@
         position: absolute;
     }
 
-    main .py-12
+    .py-12
     {
-        width: 92%;
+        width: 100%;
+        max-height: 700px;
+        overflow: hidden;
+        position: absolute;
     }
 
     main .carrusel
@@ -798,6 +801,14 @@
         color: #75cc23;
     }
     
+    .py-12
+    {
+        width: 100%;
+        max-height: 700px;
+        overflow: hidden;
+        position: absolute;
+    }
+
     main
     {
         width: 100%;
@@ -920,7 +931,7 @@
         background: #cdcdcd;
         width: 100%;
         height: auto;
-        /*overflow: hidden;*/
+        overflow: hidden;
     }
 
     header
