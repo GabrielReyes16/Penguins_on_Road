@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li class="options">
-                <a href="/boletas" class="box-icon-center">
+                <a href="/boletas" class="box-icon-right">
                     <span class="icons">
                         <ion-icon name="receipt"></ion-icon>
                     </span>
