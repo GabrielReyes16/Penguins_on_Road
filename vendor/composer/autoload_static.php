@@ -633,6 +633,7 @@ class ComposerStaticInite43b59f0f313c8d6ac37287502446711
         'App\\Http\\Controllers\\Admin\\BusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BusController.php',
         'App\\Http\\Controllers\\Admin\\ChoferController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ChoferController.php',
         'App\\Http\\Controllers\\Admin\\RutaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RutaController.php',
+        'App\\Http\\Controllers\\Admin\\RutasAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RutasAdminController.php',
         'App\\Http\\Controllers\\Admin\\TurnoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TurnoController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Admin\\ViajeAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ViajeAdminController.php',

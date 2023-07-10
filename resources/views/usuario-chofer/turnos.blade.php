@@ -17,8 +17,8 @@
             </div>
             
                 @foreach ($turnos as $turno)
-                <div> 
-                    <a href="{{ route('usuario-chofer.seleccion-turno', ['id' => $turno->id_turno]) }}" class="btn-turno">{{'Turno'}} {{ $turno->nombre }}</a>
+                <div class="btn-turno"> 
+                    <a href="{{ route('usuario-chofer.seleccion-turno', ['id' => $turno->id_turno]) }}">{{'Turno'}} {{ $turno->nombre }}</a>
                 </div>
                 @endforeach
 
