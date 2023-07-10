@@ -1,4 +1,4 @@
-@extends ('usuario-chofer.navbar-rutas')
+@extends ('usuario-pasajero.navbar-rutas')
 
 @section ('css-personalizado')
     <link rel="stylesheet" href="{{ asset ('css/Passenger/style-bus.css') }}">
@@ -18,7 +18,7 @@
             
                 @foreach ($turnos as $turno)
                 <div class="btn-turno"> 
-                    <a href="{{ route('usuario-chofer.seleccion-turno', ['id' => $turno->id_turno]) }}">{{'Turno'}} {{ $turno->nombre }}</a>
+                    <a href="{{ route('usuario-pasajero.seleccion-turno', ['id' => $turno->id_turno]) }}">{{'Turno'}} {{ $turno->nombre }}</a>
                 </div>
                 @endforeach
 

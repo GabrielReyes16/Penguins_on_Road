@@ -11,7 +11,7 @@ use App\Http\Controllers\BoletaViajeController;  //Meter en carpeta correspondie
 use App\Http\Controllers\Admin\ChoferController;
 use App\Http\Controllers\Admin\BoletasViajeController;
 use App\Http\Controllers\Admin\BusController;
-use App\Http\Controllers\Admin\RutaController;
+use App\Http\Controllers\Admin\RutasAdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RutasController;
 /*
@@ -87,7 +87,7 @@ Route::get('/admin/users/{user}/createChofer', [UserController::class, 'createCh
     ->name('admin.users.createChofer');
 Route::resource('buses', BusController::class)->middleware('can:admin.buses.index')->names('admin.buses');
 Route::resource('choferes', ChoferController::class)->middleware('can:admin.choferes.index')->names('admin.choferes');
-Route::resource('rutas', RutaController::class)->middleware('can:admin.rutas.index')->names('admin.rutas');
+Route::resource('rutas', RutasAdminController::class)->names('admin.rutas');
 Route::resource('boletasviaje', BoletasViajeController::class)->middleware('can:admin.viajes.index')->names('admin.boletasviaje');
 Route::resource('viajes-admin', ViajeAdminController::class)->names('admin.viajes-admin');
 
