@@ -400,8 +400,8 @@
 
     main .carrusel .slide .historial
     {
-        width: 250px;
-        height: 200px;
+        width: 450px;
+        height: 400px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
         display: flex;
@@ -411,8 +411,8 @@
 
     main .carrusel .slide .novedades
     {
-        width: 250px;
-        height: 200px;
+        width: 450px;
+        height: 400px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
         display: flex;
@@ -870,8 +870,8 @@
     
     main .carrusel .slide .historial
     {
-        width: 400px;
-        height: 300px;
+        width: 500px;
+        height: 400px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
         display: flex;
@@ -881,8 +881,8 @@
     
     main .carrusel .slide .novedades
     {
-        width: 590px;
-        height: 300px;
+        width: 700px;
+        height: 400px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
         display: flex;
