@@ -45,11 +45,7 @@ Route::put('/reserva/{codigo}', [ReservaController::class, 'actualizarReserva'])
 Route::get('/boletas', [BoletaViajeController::class, 'mostrarBoletas'])->name('usuario-pasajero.mostrar_boletas');
 Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->name('usuario-pasajero.ver_boleta');
 
-// Rutas de chofer
 
-Route::get('/home', function () {
-    return view('usuario-pasajero.homePasajero');
-});
 
 // Usuario Pasajero
 Route::get('/turnos', [RutasController::class, 'mostrarTurnos'])->name('usuario-pasajero.turnos');
@@ -58,6 +54,11 @@ Route::get('/turnos/{id_turno}/ruta/{id_ruta}', [RutasController::class, 'verRut
 Route::resource('viajes', ViajeController::class)->names('viajes');
 
 // Usuario Chofer
+// Rutas de chofer
+
+Route::get('/home', function () {
+    return view('usuario-pasajero.homePasajero');
+});
 Route::get('/view-turnos', [RutasController::class, 'mostrarTurnoschofer'])->name('usuario-chofer.turnos');
 Route::get('/view-turnos/{id}', [RutasController::class, 'mostrarRutaschofer'])->name('usuario-chofer.seleccion-turno');
 Route::get('/view-turnos/{id_turno}/ruta/{id_ruta}', [RutasController::class, 'verRutachofer'])->name('usuario-chofer.ver-ruta');
@@ -65,7 +66,10 @@ Route::get('/escaner', function () {return view('usuario-chofer.escaner');});//-
 Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
 Route::get('/viajes', [ViajeController::class, 'mostrarViajes'])->name('usuario-chofer.mostrar-viajes');
 Route::post('viajes/crear', [ViajeController::class, 'crearViaje'])->name('usuario-chofer.crear-viaje');
-// Route::get('/viajes/crear/guardar', [ViajeController::class, 'crearViaje'])->name('usuario-chofer.guardar-viaje');
+Route::post('viajes/comenzar/{idViaje}', [ViajeController::class, 'comenzarViaje'])->name('usuario-chofer.comenzar-viaje');
+Route::post('viajes/terminar/{idViaje}', [ViajeController::class, 'terminarViaje'])->name('usuario-chofer.terminar-viaje');
+Route::post('viajes/actualizar-estado', [ViajeController::class, 'actualizarEstadoViaje'])->name('usuario-chofer.actualizar-estado-viaje');
+
 
 
 
@@ -75,6 +79,7 @@ Route::post('viajes/crear', [ViajeController::class, 'crearViaje'])->name('usuar
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
 // Rutas de admin
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::resource('users', UserController::class)->middleware('can:admin.users.index')->names('admin.users');
@@ -92,19 +97,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');});
-     
-// Rutas de abordaje
-// Route::get('/qrcode', [QRCodeController::class, 'showQRCode']);
-
-// Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
-
-// Rutas para crud de viajes , chofer
-
 
 // Ruta para cambiar rol de usuario
-
-
-
 
 //Ruta de edicion de roles de usuario
 Route::put('/admin/users/{user}/updateRole', [UserController::class, 'updateRole'])->name('admin.users.updateRole');
