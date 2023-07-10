@@ -89,7 +89,7 @@ Route::resource('buses', BusController::class)->middleware('can:admin.buses.inde
 Route::resource('choferes', ChoferController::class)->middleware('can:admin.choferes.index')->names('admin.choferes');
 Route::resource('rutas', RutaController::class)->middleware('can:admin.rutas.index')->names('admin.rutas');
 Route::resource('boletasviaje', BoletasViajeController::class)->middleware('can:admin.viajes.index')->names('admin.boletasviaje');
-Route::resource('viajes', ViajeAdminController::class)->names('admin.viajes');
+Route::resource('viajes-admin', ViajeAdminController::class)->names('admin.viajes-admin');
 
 
 // Ruta de acciones directas en perfil

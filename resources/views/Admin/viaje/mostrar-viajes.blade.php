@@ -1,30 +1,14 @@
+<x-app-layout>
+    <br>
+    <div class="rectangulo"> {{ __('Viajes') }}</div>
 
-@extends ('usuario-chofer.navbar-boletas')
-
-@section ('titulo')
-    {{ 'Menu || Scaner' }}
-@stop
-
-@section ('css-personalizado')
-    <link rel="stylesheet" href="{{ asset ('css/Passenger/style-bus.css') }}">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/de3d576e9f.js" crossorigin="anonymous"></script>
-@stop
-
-@section ('contenido')
-
+    <div class="container">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="mb-4 flex flex-row items-center">
-                        <form action="{{ route('usuario-chofer.crear-viaje') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="id_usuario" value="{{ Auth::id() }}">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Crear Viaje
-                            </button>
-                        </form>
+
                         @if(session('success'))
                         <div class="bg-green-200 text-green-800 p-4 ml-4 rounded-lg">
                             {{ session('success') }}
@@ -44,8 +28,8 @@
                         @foreach ($viajes as $viaje)
                         <li class="bg-slate-200 p-4 rounded-lg mb-4 flex items-center justify-between">
                             <span class="w-1/6">{{ $viaje->fecha_viaje }}</span>
-                            <span class="w-1/6">{{ $viaje->ruta->punto_inicial }}</span>
-                            <span class="w-1/6">{{ $viaje->ruta->punto_final }}</span>
+                            <span class="w-1/6 search">{{ $viaje->ruta->punto_inicial }}</span>
+                            <span class="w-1/6 search">{{ $viaje->ruta->punto_final }}</span>
                             <span class="w-1/6">{{ $viaje->aforo_actual }}/{{$viaje->bus->aforo}}</span>
                             <div class="w-1/6">
                                 <form action="{{ route('usuario-chofer.actualizar-estado-viaje') }}" method="POST">
@@ -93,4 +77,5 @@
             </div>
         </div>
     </div>
-@stop
+    </div>
+</x-app-layout>
