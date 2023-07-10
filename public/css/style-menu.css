@@ -792,14 +792,6 @@
     {
         color: #75cc23;
     }
-    
-    .py-12
-    {
-        width: 100%;
-        max-height: 700px;
-        overflow: hidden;
-        position: absolute;
-    }
 
     main
     {
@@ -1267,14 +1259,6 @@
     .sidebar .list li a.desactive:hover span
     {
         color: #cacaca;
-    }
-
-    .py-12
-    {
-        width: 100%;
-        max-height: 700px;
-        overflow: hidden;
-        position: absolute;
     }
 
     main
