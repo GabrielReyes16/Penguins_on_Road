@@ -36,7 +36,7 @@
                         <x-input-error :messages="$errors->get('password')" />
                         <!-- Email Address -->
                         <div class="inputLine1">
-                            <x-input-label for="email" :value="__('Usuario')" class="textInput" />
+                            <x-input-label for="email" :value="__('Email')" class="textInput" />
                             <x-text-input class="input" id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                         </div>
                                 <!-- Password -->
