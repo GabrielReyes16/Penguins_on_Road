@@ -273,7 +273,7 @@
         margin-bottom: 30px;
         flex-direction: column;
         transition: .8s;
-        transform: translateX(100px);
+        transform: translateX(150px);
         opacity: 0;
     }
 
@@ -348,7 +348,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        /* overflow: hidden; */
+        overflow: hidden;
         display: flex;
         position: absolute;
     }
@@ -920,7 +920,7 @@
         background: #cdcdcd;
         width: 100%;
         height: auto;
-        /* overflow: hidden; */
+        /*overflow: hidden;*/
     }
 
     header
