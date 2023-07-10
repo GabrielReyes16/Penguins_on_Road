@@ -94,10 +94,15 @@ public function actualizarReserva(Request $request, $codigo)
 {
     $reserva = Reserva::where('codigoDeAcceso', $codigo)->first();
     
-    $codigoQR = $reserva->codigo_qr;
-    return view('usuario-pasajero.mostrar_reserva', ['reserva' => $reserva, 'codigoQR' => $codigoQR]);
-    
+    if ($reserva) {
+        $codigoQR = $reserva->codigo_qr;
+        return view('usuario-pasajero.mostrar_reserva', ['reserva' => $reserva, 'codigoQR' => $codigoQR]);
+    } else {
+
+        return redirect()->route('pagina_de_error');
+    }
 }
+
 
 
     private function generarCodigoQR($codigo)
