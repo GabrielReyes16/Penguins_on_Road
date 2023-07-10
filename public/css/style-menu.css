@@ -353,9 +353,12 @@
         position: absolute;
     }
 
-    main .py-12
+    .py-12
     {
-        width: 92%;
+        width: 100%;
+        max-height: 700px;
+        overflow: hidden;
+        position: absolute;
     }
 
     main .carrusel
@@ -798,6 +801,14 @@
         color: #75cc23;
     }
     
+    .py-12
+    {
+        width: 100%;
+        max-height: 700px;
+        overflow: hidden;
+        position: absolute;
+    }
+
     main
     {
         width: 100%;
@@ -920,7 +931,7 @@
         background: #cdcdcd;
         width: 100%;
         height: auto;
-        /*overflow: hidden;*/
+        overflow: hidden;
     }
 
     header
@@ -1198,7 +1209,7 @@
         list-style: none;
     }
 
-    .sidebar .list li .seccion
+    .sidebar .list li a
     {
         width: 100%;
         text-decoration: none;
@@ -1206,12 +1217,17 @@
         transition: .5s;
     }
 
-    .sidebar .list li .seccion span
+    .sidebar .list li a.desactive span
+    {
+        color: #cacaca;
+    }
+
+    .sidebar .list li a span
     {
         color: #fff;
     }
 
-    .sidebar .list li .seccion .icon
+    .sidebar .list li a .icon
     {
         width: 30%;
         height: 70px;
@@ -1220,13 +1236,13 @@
         align-items: center;
     }
 
-    .sidebar .list li .seccion .icon ion-icon
+    .sidebar .list li a .icon ion-icon
     {
         width: 30px;
         height: 30px;
     }
 
-    .sidebar .list li .seccion .text
+    .sidebar .list li a .text
     {
         width: 70%;
         height: 70px;
@@ -1236,16 +1252,37 @@
         align-items: center;
     }
 
-    .sidebar .list li .seccion:hover
+    .sidebar .list li a:hover
     {
         background: rgba(0, 105, 105, 1);
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
         transition: .8s;
     }
 
-    .sidebar .list li .seccion:hover span
+    .sidebar .list li a.desactive:hover
+    {
+        background: #8a8a8a;
+        cursor: no-drop;
+        box-shadow: none;
+        transition: .5s;
+    }
+
+    .sidebar .list li a:hover span
     {
         color: #75cc23;
+    }
+
+    .sidebar .list li a.desactive:hover span
+    {
+        color: #cacaca;
+    }
+
+    .py-12
+    {
+        width: 100%;
+        max-height: 700px;
+        overflow: hidden;
+        position: absolute;
     }
 
     main
