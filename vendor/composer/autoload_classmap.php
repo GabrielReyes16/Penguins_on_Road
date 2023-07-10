@@ -12,6 +12,7 @@ return array(
     'App\\Http\\Controllers\\Admin\\BusController' => $baseDir . '/app/Http/Controllers/Admin/BusController.php',
     'App\\Http\\Controllers\\Admin\\ChoferController' => $baseDir . '/app/Http/Controllers/Admin/ChoferController.php',
     'App\\Http\\Controllers\\Admin\\RutaController' => $baseDir . '/app/Http/Controllers/Admin/RutaController.php',
+    'App\\Http\\Controllers\\Admin\\RutasAdminController' => $baseDir . '/app/Http/Controllers/Admin/RutasAdminController.php',
     'App\\Http\\Controllers\\Admin\\TurnoController' => $baseDir . '/app/Http/Controllers/Admin/TurnoController.php',
     'App\\Http\\Controllers\\Admin\\UserController' => $baseDir . '/app/Http/Controllers/Admin/UserController.php',
     'App\\Http\\Controllers\\Admin\\ViajeAdminController' => $baseDir . '/app/Http/Controllers/Admin/ViajeAdminController.php',

@@ -7,6 +7,8 @@
         <script src="https://kit.fontawesome.com/de3d576e9f.js" crossorigin="anonymous"></script>
         <title>{{ config('app.name', 'Penguins on Road') }}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.css">
+
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="{{ asset ('css/style-ticket-admin.css') }}">
         {{-- Bootstrap --}}
@@ -22,6 +24,47 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <style>
+    
+
+    .container-dash {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #admin-name,
+        #current-time {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        #weather-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #chart-container {
+            margin-top: 40px;
+        }
+
+        @media screen and (max-width: 768px) {
+            #chart-container {
+                margin-top: 20px;
+            }
+        }
+
+        #chart {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto;
+        }
+    </style>
     </head>
     <body >
         <div >
