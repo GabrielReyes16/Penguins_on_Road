@@ -63,10 +63,10 @@ Route::get('/view-turnos/{id_turno}/ruta/{id_ruta}', [RutasController::class, 'v
 Route::get('/escaner', function () {return view('usuario-chofer.escaner');});//->name('usuario-chofer.escaner');
 Route::post('/utilizar-reserva', [ReservaController::class, 'utilizarReserva'])->name('utilizar-reserva');
 Route::get('/viajes', [ViajeController::class, 'mostrarViajes'])->name('usuario-chofer.mostrar-viajes');
-Route::post('viajes/crear', [ViajeController::class, 'crearViaje'])->name('usuario-chofer.crear-viaje');
-Route::post('viajes/comenzar/{idViaje}', [ViajeController::class, 'comenzarViaje'])->name('usuario-chofer.comenzar-viaje');
-Route::post('viajes/terminar/{idViaje}', [ViajeController::class, 'terminarViaje'])->name('usuario-chofer.terminar-viaje');
-Route::post('viajes/actualizar-estado', [ViajeController::class, 'actualizarEstadoViaje'])->name('usuario-chofer.actualizar-estado-viaje');
+Route::post('/viajes/crear', [ViajeController::class, 'crearViaje'])->name('usuario-chofer.crear-viaje');
+Route::post('/viajes/comenzar/{idViaje}', [ViajeController::class, 'comenzarViaje'])->name('usuario-chofer.comenzar-viaje');
+Route::post('/viajes/terminar/{idViaje}', [ViajeController::class, 'terminarViaje'])->name('usuario-chofer.terminar-viaje');
+Route::post('/viajes/actualizar-estado', [ViajeController::class, 'actualizarEstadoViaje'])->name('usuario-chofer.actualizar-estado-viaje');
 
 
 
@@ -90,6 +90,7 @@ Route::resource('choferes', ChoferController::class)->middleware('can:admin.chof
 Route::resource('rutas', RutasAdminController::class)->names('admin.rutas');
 Route::resource('boletasviaje', BoletasViajeController::class)->middleware('can:admin.viajes.index')->names('admin.boletasviaje');
 Route::resource('viajes-admin', ViajeAdminController::class)->names('admin.viajes-admin');
+
 
 
 // Ruta de acciones directas en perfil

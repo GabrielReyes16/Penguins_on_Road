@@ -12,24 +12,28 @@
     crossorigin=""></script>
 
     <style>
-        /* Estilos personalizados */
-        #map {
-            height: 500px;
-            width: 80%;
-            margin-left: 10%;
-            z-index: 0;
-        }
-
-        @media (min-width: 768px) {
+        @media (max-width: 650px) {
             #map {
                 height: 550px;
-                width: 120%;
-                margin-left: -10%;
-                z-index: 0;
+                width: 90%;
+                margin-left: 5%
             }
         }
 
-        /* Otros estilos personalizados... */
+        @media (min-width: 651px) and (max-width: 1200px) {
+            #map {
+                height: 550px;
+                width: 100%;
+                margin-left: 5%
+            }
+        }
+
+        @media (min-width: 1201px) {
+            #map {
+                height: 500px;
+                width: 100%;
+            }
+        }
     </style>
 @stop
 
@@ -51,8 +55,6 @@
         <div class="info-text">
             <h3>INFORMACIÓN DE LA RUTA</h3>
             <ul class="info-detalle">
-                <li>Chofer actual</li>
-                <p>{{ $ruta->chofer ? $ruta->chofer->user->name : 'Chofer en camino' }}</p>
                 <li>Punto de partida</li>
                 <p>{{ $ruta->punto_inicial }}</p>
                 <li>Punto de llegada</li>
