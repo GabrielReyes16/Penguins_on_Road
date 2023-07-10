@@ -11,13 +11,15 @@
             
             <div class="slide">
                 <div class="historial">
-                    <h3>HISTORIAL DE BOLES</h3>
+                    <h3>HISTORIAL DE VIAJES</h3>
+                    
                 </div>
             </div>
 
             <div class="slide">
                 <div class="novedades">
                     <h3>NOVEDADES</h3>
+                    
                 </div>
             </div>
 

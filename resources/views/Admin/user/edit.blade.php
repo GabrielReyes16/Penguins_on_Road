@@ -4,10 +4,12 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-             <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
-                <a  href="{{ route('admin.users.index') }}"> {{ __('Volver') }}</a>
+            <div style="color: white; text-align: center"  >
+                    <button class="create "><a href="{{ route('admin.users.index') }}"> Volver</a></button>
             </div>
             <div class="p-4 sm:p-8 bg-gray-200 rounded-md sm">
+                
+    
                 <div class="max-w-xl">
                     <h2 class="text-lg font-medium text-gray-800">
                         {{ __('Nombre del usuario') }}
