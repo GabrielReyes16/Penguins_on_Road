@@ -49,8 +49,10 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.rutas.edit'])->syncRoles($rol_admin);
         Permission::create(['name' => 'admin.rutas.destroy'])->syncRoles($rol_admin);
 
+        Permission::create(['name' => 'admin.viajes.index'])->syncRoles($rol_admin);
+
         // Rol de Chofer
-        Permission::create(['' => ''])->syncRoles();
+     
 
 
         // Rol de Pasajero

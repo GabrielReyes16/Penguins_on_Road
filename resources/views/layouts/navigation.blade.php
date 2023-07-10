@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('admin.boletasviaje.index')" :active="request()->routeIs('admin.boletas_viaje.index')">
+                        <x-nav-link :href="route('admin.viajes.mostrarViajes')" :active="request()->routeIs('admin.viajes.mostrarViajes')">
                             {{ __('Viajes') }}
                         </x-nav-link>
                     </div>

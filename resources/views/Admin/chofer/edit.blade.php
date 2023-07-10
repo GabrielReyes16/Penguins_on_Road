@@ -1,19 +1,14 @@
 <x-app-layout>
     <br>
     <div class="rectangulo"> Editar al chofer {{ $chofer->user->name }}</div>
-    <br>
-    <div class=" d-grid gap-2 col-4 mx-auto">
-        <button class="btn btn-warning btn-lg"><a href="{{ route('admin.choferes.index') }}">
-                {{ __('Volver') }}</a></button>
-    </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    <h2 class="text-lg font-medium text-gray-200">
+                <div class="lg">
+                    <h2 class="text-lg font-medium text-gray-800">
                         {{ __('Información del chofer') }}
                     </h2>
-                    <p class="mt-1 text-sm text-gray-400">
+                    <p class="mt-1 text-sm text-gray-800">
                         {{ __('Estos son los datos del chofer. Se cauteloso con los cambios a realizar.') }}
                     </p>
                     <form method="post" action="{{ route('admin.choferes.update', $chofer->id_chofer) }}"
@@ -74,9 +69,12 @@
                             </select>
                             <x-input-error class="mt-2" :messages="$errors->get('estado')" />
                         </div>
-                        <div class="flex items-center gap-4">
-                            <x-primary-button>{{ __('Listo') }}</x-primary-button>
-                        </div>
+                        <div class="flex items-center justify-end mt-4">
+                            <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mr-4"><a
+                                    href="{{ route('admin.buses.index') }}"> Volver</a></button>
+                            <x-primary-button class="create">
+                                {{ __('Listo') }}
+                            </x-primary-button>
                     </form>
                 </div>
             </div>
