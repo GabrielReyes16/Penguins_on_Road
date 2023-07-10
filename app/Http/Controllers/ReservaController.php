@@ -147,7 +147,8 @@ private function generarBoleta(Reserva $reserva)
         $viaje = $reserva->viaje;
         $pasajero = $reserva->user;
 
-        $viaje->aforo_viaje++;
+        $viaje->aforo_actual++;
+        $viaje->save();
 
         $boleta = new BoletaViaje();
         $boleta->id_usuario_pasajero = $pasajero->id_usuario;
@@ -155,7 +156,7 @@ private function generarBoleta(Reserva $reserva)
         $boleta->id_reserva = $reserva->id_reserva;
         $boleta->fecha_viaje = $reserva->fecha_reserva;
         $boleta->hora_abordaje = Carbon::now()->timezone('America/Lima')->toTimeString(); 
-        $boleta->aforo_viaje = $viaje->aforo_viaje; 
+        $boleta->aforo_viaje = $viaje->aforo_actual; 
         $boleta->save();
     }
     
