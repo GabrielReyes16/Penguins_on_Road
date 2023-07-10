@@ -55,8 +55,6 @@
         <div class="info-text">
             <h3>INFORMACIÓN DE LA RUTA</h3>
             <ul class="info-detalle">
-                <li>Chofer actual</li>
-                <p>{{ $ruta->chofer ? $ruta->chofer->user->name : 'Chofer en camino' }}</p>
                 <li>Punto de partida</li>
                 <p>{{ $ruta->punto_inicial }}</p>
                 <li>Punto de llegada</li>
