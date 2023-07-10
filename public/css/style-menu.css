@@ -353,14 +353,6 @@
         position: absolute;
     }
 
-    .py-12
-    {
-        width: 100%;
-        max-height: 700px;
-        overflow: hidden;
-        position: absolute;
-    }
-
     main .carrusel
     {
         width: 100%;
@@ -1277,7 +1269,7 @@
         color: #cacaca;
     }
 
-    .contenido
+    .py-12
     {
         width: 100%;
         max-height: 700px;
