@@ -304,6 +304,24 @@
         color: #fff;
     }
 
+    .sidebar .list li a.desactive span
+    {
+        color: #cacaca;
+    }
+
+    .sidebar .list li a.desactive:hover
+    {
+        background: #8a8a8a;
+        cursor: no-drop;
+        box-shadow: none;
+        transition: .5s;
+    }
+
+    .sidebar .list li a.desactive:hover span
+    {
+        color: #cacaca;
+    }
+
     .sidebar .list li a .icon
     {
         width: 30%;
@@ -382,8 +400,8 @@
 
     main .carrusel .slide .historial
     {
-        width: 250px;
-        height: 200px;
+        width: 450px;
+        height: 400px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
         display: flex;
@@ -393,8 +411,8 @@
 
     main .carrusel .slide .novedades
     {
-        width: 250px;
-        height: 200px;
+        width: 450px;
+        height: 400px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
         display: flex;
@@ -756,6 +774,24 @@
     {
         color: #fff;
     }
+
+    .sidebar .list li a.desactive span
+    {
+        color: #cacaca;
+    }
+
+    .sidebar .list li a.desactive:hover
+    {
+        background: #8a8a8a;
+        cursor: no-drop;
+        box-shadow: none;
+        transition: .5s;
+    }
+
+    .sidebar .list li a.desactive:hover span
+    {
+        color: #cacaca;
+    }
     
     .sidebar .list li a .icon
     {
@@ -834,8 +870,8 @@
     
     main .carrusel .slide .historial
     {
-        width: 400px;
-        height: 300px;
+        width: 500px;
+        height: 400px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
         display: flex;
@@ -845,8 +881,8 @@
     
     main .carrusel .slide .novedades
     {
-        width: 590px;
-        height: 300px;
+        width: 700px;
+        height: 400px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
         display: flex;
@@ -1207,6 +1243,19 @@
         color: #cacaca;
     }
 
+    .sidebar .list li a.desactive:hover
+    {
+        background: #8a8a8a;
+        cursor: no-drop;
+        box-shadow: none;
+        transition: .5s;
+    }
+
+    .sidebar .list li a.desactive:hover span
+    {
+        color: #cacaca;
+    }
+
     .sidebar .list li a span
     {
         color: #fff;
@@ -1244,23 +1293,12 @@
         transition: .8s;
     }
 
-    .sidebar .list li a.desactive:hover
-    {
-        background: #8a8a8a;
-        cursor: no-drop;
-        box-shadow: none;
-        transition: .5s;
-    }
-
     .sidebar .list li a:hover span
     {
         color: #75cc23;
     }
 
-    .sidebar .list li a.desactive:hover span
-    {
-        color: #cacaca;
-    }
+    
 
     main
     {

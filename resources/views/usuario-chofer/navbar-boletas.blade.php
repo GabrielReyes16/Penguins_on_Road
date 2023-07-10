@@ -47,7 +47,7 @@
                 </a>
             </li>
             <li class="options active">
-                <a href="/viajes" class="box-icon-center">
+                <a href="/viajes" class="box-icon-right">
                     <span class="icons">
                         <ion-icon name="receipt"></ion-icon>
                     </span>

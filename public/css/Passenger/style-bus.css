@@ -143,11 +143,6 @@
         flex-direction: column;
         overflow: auto;
     }
-    
-    #map
-    {
-        width: 100%;
-    }
 
     main .info::-webkit-scrollbar
     {
@@ -273,7 +268,78 @@
         line-height: 18px;
     }
     
+    .contenido
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        position: absolute;
+        margin-top: 20px;
+        padding-bottom: 50px;
+    }
     
+    .contenido .py-12 
+    {
+        width: 90%;
+        max-height: 500px;
+        overflow: auto;
+    }
+
+    .contenido .py-12::-webkit-scrollbar
+    {
+        width: 10px;
+    }
+        
+    .contenido .py-12::-webkit-scrollbar-track
+    {
+        background-color: rgb(138, 143, 141);
+        border-radius: 10px;
+        border: none;
+    }
+        
+    .contenido .py-12::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(73, 123, 193);
+        border-radius: 10px;
+    }
+        
+    .contenido .py-12::-webkit-scrollbar-thumb:hover
+    {
+        background-color: rgb(26, 95, 192);
+    } 
+
+    main .contenido-scan
+    {
+        width: 90%;
+        max-height: 550px;
+        overflow: auto;
+        border-radius: 10px;
+    }
+
+    main .contenido-scan::-webkit-scrollbar
+    {
+        width: 10px;
+    }
+        
+    main .contenido-scan::-webkit-scrollbar-track
+    {
+        background-color: rgb(138, 143, 141);
+        border-radius: 10px;
+        border: none;
+    }
+        
+    main .contenido-scan::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(73, 123, 193);
+        border-radius: 10px;
+    }
+        
+    main .contenido-scan::-webkit-scrollbar-thumb:hover
+    {
+        background-color: rgb(26, 95, 192);
+    }
 }
 
 @media (min-width: 650px) and (max-width: 1200px) {
@@ -546,7 +612,78 @@
         line-height: 20px;
     }
     
-    
+    .contenido
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        position: absolute;
+        margin-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    .contenido .py-12 
+    {
+        width: 80%;
+        max-height: 550px;
+        overflow: auto;
+    }
+
+    .contenido .py-12::-webkit-scrollbar
+    {
+        width: 10px;
+    }
+        
+    .contenido .py-12::-webkit-scrollbar-track
+    {
+        background-color: rgb(138, 143, 141);
+        border-radius: 10px;
+        border: none;
+    }
+        
+    .contenido .py-12::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(73, 123, 193);
+        border-radius: 10px;
+    }
+        
+    .contenido .py-12::-webkit-scrollbar-thumb:hover
+    {
+        background-color: rgb(26, 95, 192);
+    }
+
+    main .contenido-scan
+    {
+        width: 90%;
+        max-height: 550px;
+        overflow: auto;
+        border-radius: 10px;
+    }
+
+    main .contenido-scan::-webkit-scrollbar
+    {
+        width: 10px;
+    }
+        
+    main .contenido-scan::-webkit-scrollbar-track
+    {
+        background-color: rgb(138, 143, 141);
+        border-radius: 10px;
+        border: none;
+    }
+        
+    main .contenido-scan::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(73, 123, 193);
+        border-radius: 10px;
+    }
+        
+    main .contenido-scan::-webkit-scrollbar-thumb:hover
+    {
+        background-color: rgb(26, 95, 192);
+    }
 }
 
 @media (min-width: 1200px) {
@@ -825,38 +962,70 @@
         height: auto;
         display: flex;
         justify-content: center;
-        align-items: center;
-        flex-direction: column;
         overflow: hidden;
         position: absolute;
-        background: #000;
+        margin-top: 20px;
+        padding-bottom: 50px;
     }
 
-    .contenido .py-12
+    .contenido .py-12 
     {
         width: 80%;
+        max-height: 500px;
+        overflow: auto;
     }
 
-    .contenido::-webkit-scrollbar
+    .contenido .py-12::-webkit-scrollbar
     {
         width: 10px;
     }
         
-    .contenido::-webkit-scrollbar-track
+    .contenido .py-12::-webkit-scrollbar-track
     {
         background-color: rgb(138, 143, 141);
         border-radius: 10px;
         border: none;
     }
         
-    .contenido::-webkit-scrollbar-thumb
+    .contenido .py-12::-webkit-scrollbar-thumb
     {
         background-color: rgb(73, 123, 193);
         border-radius: 10px;
     }
         
-    .contenido::-webkit-scrollbar-thumb:hover
+    .contenido .py-12::-webkit-scrollbar-thumb:hover
     {
         background-color: rgb(26, 95, 192);
     } 
+
+    main .contenido-scan
+    {
+        width: 50%;
+        max-height: 550px;
+        overflow: auto;
+        border-radius: 10px;
+    }
+
+    main .contenido-scan::-webkit-scrollbar
+    {
+        width: 10px;
+    }
+        
+    main .contenido-scan::-webkit-scrollbar-track
+    {
+        background-color: rgb(138, 143, 141);
+        border-radius: 10px;
+        border: none;
+    }
+        
+    main .contenido-scan::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(73, 123, 193);
+        border-radius: 10px;
+    }
+        
+    main .contenido-scan::-webkit-scrollbar-thumb:hover
+    {
+        background-color: rgb(26, 95, 192);
+    }
 }
