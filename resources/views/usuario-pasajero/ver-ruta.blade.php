@@ -80,10 +80,8 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-                // Crear el marcador y el popup para el punto de partida
         var startPointMarker = L.marker([-12.04434, -76.95324]).addTo(map);
 
-        // Configurar el estilo del marcador según el turno seleccionado
         @if ($ruta->turno->nombre === 'Tarde')
             startPointMarker.setIcon(L.icon({
                 iconUrl: '{{ asset('img/marker.png') }}',
@@ -91,7 +89,6 @@
                 iconAnchor: [22, 94],
                 popupAnchor: [-3, -76]
             }));
-            // Agregar el popup para el punto de partida
             startPointMarker.bindPopup('CAMPUS TECSUP').openPopup();
         @elseif ($ruta->turno->nombre === 'Noche')
             startPointMarker.setIcon(L.icon({
@@ -100,13 +97,9 @@
                 iconAnchor: [22, 94],
                 popupAnchor: [-3, -76]
             }));
-            // Agregar el popup para el punto de partida
             startPointMarker.bindPopup('CAMPUS TECSUP').openPopup();
         @endif
 
-        
-
-        // Agregar marcadores para cada paradero en el mapa
         @foreach ($paraderos as $paradero)
             L.marker([{{ $paradero->latitud }}, {{ $paradero->longitud }}]).addTo(map)
                 .bindPopup('{{ $paradero->nombre }}')
