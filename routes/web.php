@@ -38,6 +38,7 @@ Route::get('/', function () {return view('index');});
 // Route::get('/tm-op2', function () {return view('usuario-pasajero.turno-mañana-op2');});
 // Route::get('/tt-op1', function () {return view('usuario-pasajero.turno-tarde-op1');});
 
+// Usuario Pasajero
 Route::get('/formulario-reserva', [ReservaController::class, 'mostrarFormulario'])->name('usuario-pasajero.formulario_reserva');
 Route::post('/guardar-reserva', [ReservaController::class, 'guardarReserva'])->name('guardar_reserva');
 Route::get('/reserva/{codigo}', [ReservaController::class, 'mostrarReserva'])->name('usuario-pasajero.mostrar_reserva');
@@ -45,10 +46,6 @@ Route::get('/reserva/{codigo}/editar', [ReservaController::class, 'editarReserva
 Route::put('/reserva/{codigo}', [ReservaController::class, 'actualizarReserva'])->name('usuario-pasajero.actualizar_reserva');
 Route::get('/boletas', [BoletaViajeController::class, 'mostrarBoletas'])->name('usuario-pasajero.mostrar_boletas');
 Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->name('usuario-pasajero.ver_boleta');
-
-
-
-// Usuario Pasajero
 Route::get('/turnos', [RutasController::class, 'mostrarTurnos'])->name('usuario-pasajero.turnos');
 Route::get('/turnos/{id}', [RutasController::class, 'mostrarRutas'])->name('usuario-pasajero.seleccion-turno');
 Route::get('/turnos/{id_turno}/ruta/{id_ruta}', [RutasController::class, 'verRuta'])->name('usuario-pasajero.ver-ruta');

@@ -1,247 +1,3 @@
-main .turnos
-{   
-    width: 70%;
-    height: auto;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-main .turnos .title-box1
-{
-   width: 490px;
-   height: 60px;
-   background: rgba(0, 0, 0, 0.80);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border-radius: 5px;
-}
-
-main .turnos .title-box1 h3
-{
-    color: #fff;
-    font-size: 25px;
-    font-weight: 500;
-}
-
-main .turnos .btn-turno
-{
-    width: 250px;
-    height: 60px;
-    margin-top: 50px;
-    background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-}
-
-main .turnos .btn-turno a
-{
-    font-weight: 700;
-    font-size: 20px;
-    color: #181818;
-    text-decoration: none;
-}
-
-main .turnos .btn-turno:hover
-{
-    border-right: 5px solid rgba(0, 0, 0, 0.60);
-    border-bottom: 5px solid rgba(0, 0, 0, 0.60);
-}
-
-main .turnos .btn-turno:hover a
-{
-    color: #fff;
-}
-
-main .turnos .btn-ruta
-{
-    width: 520px;
-    height: 60px;
-    margin-top: 50px;
-    background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-}
-
-main .turnos .btn-ruta:hover
-{
-    border-right: 5px solid rgba(0, 0, 0, 0.60);
-    border-bottom: 5px solid rgba(0, 0, 0, 0.60);
-}
-
-main .turnos .btn-ruta:hover a
-{
-    color: #fff;
-}
-
-main .turnos .btn-ruta a
-{
-    font-weight: 500;
-    font-size: 20px;
-    color: #181818;
-    text-decoration: none;
-}
-
-main .turnos .title-box2 a ion-icon
-{
-    width: 40px;
-    height: 40px;
-    color: #fff;
-}
-
-main .turnos .title-box2 a ion-icon:hover
-{
-    color: #408ffe;
-}
-
-main .turnos .title-box2
-{
-    width: 590px;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.80);
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-main .turnos .title-box2 h3
-{
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
-}
-
-main .info
-{
-    width: 80%;
-    max-height: 400px;
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow: auto;
-}
-
-main .info::-webkit-scrollbar
-{
-    width: 10px;
-}
-
-main .info::-webkit-scrollbar-track
-{
-    background-color: rgb(138, 143, 141);
-    border-radius: 10px;
-    border: none;
-}
-
-main .info::-webkit-scrollbar-thumb
-{
-    background-color: rgb(73, 123, 193);
-    border-radius: 10px;
-}
-
-main .info::-webkit-scrollbar-thumb:hover
-{
-    background-color: rgb(26, 95, 192);
-}
-
-main .info .title-box2
-{
-    width: 490px;
-    height: 80px;
-    background: rgba(0, 0, 0, 0.80);
-    border-radius: 5px;
-    padding: 5px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-main .info .title-box2 a ion-icon
-{
-    width: 40px;
-    height: 40px;
-    color: #fff;
-}
-
-main .info .title-box2 a ion-icon:hover
-{
-    color: #408ffe;
-}
-
-main .info .title-box2 h3
-{
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-main .info .info-text
-{
-    width: 90%;
-    height: auto;
-    background: rgb(15, 153, 132);
-    border-radius: 10px;
-    margin-top: 20px;
-    padding: 20px;
-}
-
-main .info .info-text h3
-{
-    text-align: center;
-    color: #fff;
-}
-
-main .info .info-text .info-detalle
-{
-    width: 100%;
-    height: auto;
-    color: #fff
-}
-
-main .info .info-text .info-detalle li
-{
-    list-style: circle;
-    margin-left: 20px;
-    margin-top: 20px;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 30px;
-}
-
-main .info .info-text .info-detalle p
-{
-    margin-left: 20px;
-    font-size: 15px;
-    font-weight: 300;
-}
-
-main .info .info-text .info-detalle .paraderos
-{
-    margin-top: -10px;
-    margin-left: 30px;
-}
-
-main .info .info-text .info-detalle .paraderos li
-{
-    list-style: disc;
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 18px;
-}
-
-
-
-
 
 @media (max-width: 650px) {
 
@@ -807,7 +563,7 @@ main .info .info-text .info-detalle .paraderos li
 
 @media (min-width: 1200px) {
 
-    /*main .turnos
+    main .turnos
     {   
         width: 70%;
         height: auto;
@@ -1074,5 +830,44 @@ main .info .info-text .info-detalle .paraderos li
         line-height: 18px;
     }
     
-    
+    .contenido
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        position: absolute;
+        background: #000;
+    }
+
+    .contenido .py-12
+    {
+        width: 80%;
+    }
+
+    .contenido::-webkit-scrollbar
+    {
+        width: 10px;
+    }
+        
+    .contenido::-webkit-scrollbar-track
+    {
+        background-color: rgb(138, 143, 141);
+        border-radius: 10px;
+        border: none;
+    }
+        
+    .contenido::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(73, 123, 193);
+        border-radius: 10px;
+    }
+        
+    .contenido::-webkit-scrollbar-thumb:hover
+    {
+        background-color: rgb(26, 95, 192);
+    } 
 }
