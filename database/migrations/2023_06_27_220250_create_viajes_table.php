@@ -16,7 +16,7 @@ class CreateViajesTable extends Migration
             $table->date('fecha_viaje');
             $table->time('hora_inicio')->nullable();
             $table->time('hora_final')->nullable();
-            $table->string('estado', 20)->default('Activo');
+            $table->string('estado', 20)->default('Inactivo');
             $table->integer('aforo_actual')->default(0);
             $table->timestamps();
         
