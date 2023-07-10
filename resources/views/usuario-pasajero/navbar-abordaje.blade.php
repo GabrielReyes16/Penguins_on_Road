@@ -85,7 +85,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="desactive" href="#">
                     <span class="icon">
                         <ion-icon name="color-palette"></ion-icon>
                     </span>
@@ -93,7 +93,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="desactive" href="#">
                     <span class="icon">
                         <ion-icon name="language"></ion-icon>
                     </span>
@@ -101,7 +101,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="desactive" href="#">
                     <span class="icon">
                         <ion-icon name="newspaper"></ion-icon>
                     </span>
@@ -109,7 +109,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="desactive" href="#">
                     <span class="icon">
                         <ion-icon name="shield"></ion-icon>
                     </span>
@@ -117,7 +117,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="desactive" href="#">
                     <span class="icon">
                         <ion-icon name="settings"></ion-icon>
                     </span>

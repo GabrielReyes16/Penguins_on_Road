@@ -1206,6 +1206,11 @@
         transition: .5s;
     }
 
+    .sidebar .list li a.desactive span
+    {
+        color: #cacaca;
+    }
+
     .sidebar .list li a span
     {
         color: #fff;
@@ -1243,9 +1248,22 @@
         transition: .8s;
     }
 
+    .sidebar .list li a.desactive:hover
+    {
+        background: #8a8a8a;
+        cursor: no-drop;
+        box-shadow: none;
+        transition: .5s;
+    }
+
     .sidebar .list li a:hover span
     {
         color: #75cc23;
+    }
+
+    .sidebar .list li a.desactive:hover span
+    {
+        color: #cacaca;
     }
 
     main
