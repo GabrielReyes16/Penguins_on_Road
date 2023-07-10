@@ -1,51 +1,53 @@
-
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-200  leading-tight">
-            Informacion de {{ $chofer->user->name }}
-        </h2>
-    </x-slot>
-
-    <section class="content container-fluid" style="text-align: center">
-        <div class="row">
-
-                <div class="card" style="color: white;">
-                    <div class="card-header">
-                        <div class=" d-grid gap-2 col-6 mx-auto text-white font-bold py-2 px-4 rounded" style="color: white;  background-color: blue;">
-                            <a  href="{{ route('admin.choferes.index') }}"> {{ __('Back') }}</a>
-                        </div>
-                    </div>
-                    <br><br><br>
-                    <div class="flex justify-center">
-                        <table id="users-table" class="min-w-full border border-gray-200 text-center">
-                          <tbody>
-                            <tr >
-                              <td class="px-4 py-2 border-b font-bold">ID</td>
-                              <td class="px-4 py-2 border-b">{{ $chofer->id_chofer }}</td>
-                            </tr>
-                            <tr >
-                              <td class="px-4 py-2 border-b font-bold">Nombre</td>
-                              <td class="px-4 py-2 border-b">{{ $chofer->user->name }}</td>
-                            </tr>
-                            <tr >
-                              <td class="px-4 py-2 border-b font-bold">Bus actual</td>
-                              <td class="px-4 py-2 border-b">{{ $chofer->bus->placa }}</td>
-                            </tr>
-                            <td class="px-4 py-2 border-b font-bold">Empresa</td>
-                            <td class="px-4 py-2 border-b">{{ $chofer->empresa->nombre }}</td>
-                          </tr>
-                            <tr >
-                              <td class="px-4 py-2 border-b font-bold">Licencia de conducir</td>
-                              <td class="px-4 py-2 border-b">{{ $chofer->licencia_conducir }}</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      
-                      
+    <br>
+    <div class="rectangulo"> Informacion de {{ $chofer->user->name }}</div>
+    <br>
+    <div class="flex justify-center">
+        <div class="data">
+            <div class="space-y-4">
+                <div>
+                    <label for="name" class="text-lg font-medium text-gray-700">Nombre</label>
+                    <x-text-input id="name" class="block mt-1 w-full text-gray-700" type="text" name="name" :value="$chofer->user->name"
+                        disabled autofocus autocomplete="name" />
+                    <x-input-error-create :messages="$errors->get('name')" class="mt-2" />
                 </div>
+                <div>
+                    <label for="id_bus" class="text-lg font-medium text-gray-700">Bus actual</label>
+                    <x-text-input id="email" class="block mt-1 w-full" type="text" name="id_bus"
+                        :value="$chofer->bus->placa" disabled autocomplete="id_bus" />
+                    <x-input-error-create :messages="$errors->get('id_bus')" class="mt-2" />
+                </div>
+                <div>
+                    <label for="empresa" class="text-lg font-medium text-gray-700">Empresa</label>
+                    <x-text-input id="empresa" class="block mt-1 w-full text-gray-700" type="text" name="empresa"
+                        :value="$chofer->empresa->nombre" disabled autocomplete="empresa" />
+                    <x-input-error-create :messages="$errors->get('empresa')" class="mt-2" />
+                </div>
+                <div>
+                    <label for="licencia_conducir" class="text-lg font-medium text-gray-700">Licencia de
+                        Conducir</label>
+                    <x-text-input id="licencia_conducir" class="block mt-1 w-full text-gray-700" type="text"
+                        name="licencia_conducir" :value="$chofer->licencia_conducir" disabled autocomplete="licencia_conducir" />
+                    <x-input-error-create :messages="$errors->get('licencia_conducir')" class="mt-2" />
+                </div>
+                <div>
+                    <label for="estado" class="text-lg font-medium text-gray-700">Estado</label>
+                    <x-text-input id="rol" class="block mt-1 w-full text-gray-700" type="text" name="estado"
+                        :value="$chofer->estado" disabled autocomplete="estado" />
+                    <x-input-error-create :messages="$errors->get('estado')" class="mt-2" />
                 </div>
             </div>
+        </div>
+        </form>
+    </div>
+    </div> <br>
+    <div>
+        <div style="color: white;">
+            <div>
+                <button class="create "><a href="{{ route('admin.choferes.index') }}"> Volver</a></button>
 
-    </section>
+            </div>
+        </div>
+    </div>
+
 </x-app-layout>

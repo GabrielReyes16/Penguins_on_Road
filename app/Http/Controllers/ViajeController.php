@@ -74,12 +74,10 @@ public function actualizarEstadoViaje(Request $request)
     $viajeId = $request->input('id_viaje');
     $estado = $request->input('estado_viaje');
 
-    // Obtén el viaje y actualiza el estado
     $viaje = Viaje::findOrFail($viajeId);
     $viaje->estado = $estado;
     $viaje->save();
 
-    // Redirecciona a la página deseada o muestra un mensaje de éxito
     return redirect()->back()->with('success', 'El estado del viaje se ha actualizado correctamente.');
 }
 

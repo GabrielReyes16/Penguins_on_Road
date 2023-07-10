@@ -59,11 +59,18 @@
                             </x-nav-link>
                         </div>
 
+<<<<<<< HEAD
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-nav-link :href="route('admin.rutas.index')" :active="request()->routeIs('admin.rutas.index')">
                                 {{ __('Rutas') }}
                             </x-nav-link>
                         </div>
+=======
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('admin.viajes.mostrarViajes')" :active="request()->routeIs('admin.viajes.mostrarViajes')">
+                            {{ __('Viajes') }}
+                        </x-nav-link>
+>>>>>>> eba0ad727a2f5b8744ee2c652b6eb6842b3f578b
                     </div>
                 
                 <!-- Settings Dropdown -->

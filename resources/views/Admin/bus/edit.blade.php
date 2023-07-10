@@ -5,6 +5,13 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-gray-200 rounded-md sm">
                 <div class="max-w-xl">
+                    <div class="lg">
+                        <h2 class="text-lg font-medium text-gray-800">
+                            {{ __('Información del bus') }}
+                        </h2>
+                        <p class="mt-1 text-sm text-gray-800">
+                            {{ __('Estos son los datos del bus. Se cauteloso con los cambios a realizar.') }}
+                        </p>
                     <form method="post" action="{{ route('admin.buses.update', $bus->id_bus) }}" class="mt-6 space-y-6">
                         @csrf
                         @method('patch')
