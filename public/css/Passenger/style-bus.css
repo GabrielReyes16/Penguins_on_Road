@@ -313,6 +313,7 @@
         width: 90%;
         max-height: 550px;
         overflow: auto;
+        border-radius: 10px;
     }
 
     main .contenido-scan::-webkit-scrollbar
@@ -654,6 +655,7 @@
         width: 90%;
         max-height: 550px;
         overflow: auto;
+        border-radius: 10px;
     }
 
     main .contenido-scan::-webkit-scrollbar
@@ -995,6 +997,7 @@
         width: 50%;
         max-height: 550px;
         overflow: auto;
+        border-radius: 10px;
     }
 
     main .contenido-scan::-webkit-scrollbar
