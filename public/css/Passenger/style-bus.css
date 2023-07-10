@@ -14,8 +14,8 @@
 
     main .turnos .title-box1
     {
-       width: 108%;
-       height: 80px;
+       width: 70%;
+       height: 60px;
        background: rgba(0, 0, 0, 0.80);
        display: flex;
        justify-content: center;
@@ -26,7 +26,7 @@
     main .turnos .title-box1 h3
     {
         color: #fff;
-        font-size: 23px;
+        font-size: 20px;
         font-weight: 500;
         text-align: center;
         padding-left: 8px;
@@ -35,7 +35,7 @@
     
     main .turnos .btn-turno
     {
-        width: 180px;
+        width: 170px;
         height: 50px;
         margin-top: 40px;
         background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
@@ -48,7 +48,7 @@
     main .turnos .btn-turno a
     {
         font-weight: 800;
-        font-size: 20px;
+        font-size: 18px;
         color: #181818;
         text-decoration: none;
     }
@@ -66,8 +66,8 @@
     
     main .turnos .btn-ruta
     {
-        width: 114%;
-        height: 65px;
+        width: 85%;
+        height: 60px;
         margin-top: 40px;
         background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
         display: flex;
@@ -90,7 +90,7 @@
     main .turnos .btn-ruta a
     {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 15px;
         color: #181818;
         text-decoration: none;
         text-align: center;
@@ -111,7 +111,7 @@
     
     main .turnos .title-box2
     {
-        width: 130%;
+        width: 95%;
         height: 70px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
@@ -134,9 +134,10 @@
     
     main .info
     {
-        width: 92%;
+        width: 95%;
         max-height: 550px;
-        margin-top: 35px;
+        margin-top: 20px;
+        padding-bottom: 50px;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -145,8 +146,7 @@
     
     #map
     {
-        width: 80%;
-        margin-left: 10%;
+        width: 100%;
     }
 
     main .info::-webkit-scrollbar
@@ -278,7 +278,7 @@
 
 @media (min-width: 650px) and (max-width: 1200px) {
 
-    /*main .turnos
+    main .turnos
     {   
         width: 70%;
         height: auto;
@@ -291,8 +291,8 @@
     
     main .turnos .title-box1
     {
-       width: 108%;
-       height: 80px;
+       width: 50%;
+       height: 60px;
        background: rgba(0, 0, 0, 0.80);
        display: flex;
        justify-content: center;
@@ -343,7 +343,7 @@
     
     main .turnos .btn-ruta
     {
-        width: 114%;
+        width: 70%;
         height: 65px;
         margin-top: 40px;
         background: linear-gradient(90deg, #00894F 0%, #2EA8EC 52.40%, #0053B5 100%);
@@ -388,7 +388,7 @@
     
     main .turnos .title-box2
     {
-        width: 130%;
+        width: 80%;
         height: 70px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
@@ -407,13 +407,14 @@
         font-weight: 500;
         width: 85%;
         text-align: center;
-    }*/
+    }
     
     main .info
     {
-        width: 90%;
+        width: 70%;
         max-height: 550px;
-        margin-top: 35px;
+        margin-top: 20px;
+        padding-bottom: 50px;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -446,8 +447,8 @@
     
     main .info .title-box2
     {
-        width: 92%;
-        height: 80px;
+        width: 90%;
+        height: 60px;
         background: rgba(0, 0, 0, 0.80);
         border-radius: 5px;
         padding: 10px 15px 10px 5px;
@@ -549,13 +550,6 @@
 }
 
 @media (min-width: 1200px) {
-
-    main .py-12
-    {
-        width: 70%;
-        max-height: 500px;
-        overflow: auto;
-    }
     
     main .turnos
     {   
