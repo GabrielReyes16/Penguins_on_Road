@@ -276,12 +276,14 @@
         justify-content: center;
         overflow: hidden;
         position: absolute;
+        margin-top: 20px;
+        padding-bottom: 50px;
     }
     
     .contenido .py-12 
     {
         width: 90%;
-        max-height: 700px;
+        max-height: 500px;
         overflow: auto;
     }
 
@@ -618,12 +620,14 @@
         justify-content: center;
         overflow: hidden;
         position: absolute;
+        margin-top: 20px;
+        padding-bottom: 50px;
     }
 
     .contenido .py-12 
     {
         width: 80%;
-        max-height: 700px;
+        max-height: 550px;
         overflow: auto;
     }
 
@@ -960,12 +964,14 @@
         justify-content: center;
         overflow: hidden;
         position: absolute;
+        margin-top: 20px;
+        padding-bottom: 50px;
     }
 
     .contenido .py-12 
     {
         width: 80%;
-        max-height: 700px;
+        max-height: 500px;
         overflow: auto;
     }
 
