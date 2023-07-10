@@ -14,6 +14,7 @@ return array(
     'App\\Http\\Controllers\\Admin\\RutaController' => $baseDir . '/app/Http/Controllers/Admin/RutaController.php',
     'App\\Http\\Controllers\\Admin\\TurnoController' => $baseDir . '/app/Http/Controllers/Admin/TurnoController.php',
     'App\\Http\\Controllers\\Admin\\UserController' => $baseDir . '/app/Http/Controllers/Admin/UserController.php',
+    'App\\Http\\Controllers\\Admin\\ViajeAdminController' => $baseDir . '/app/Http/Controllers/Admin/ViajeAdminController.php',
     'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => $baseDir . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
     'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => $baseDir . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',
