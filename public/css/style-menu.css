@@ -1198,7 +1198,7 @@
         list-style: none;
     }
 
-    .sidebar .list li a
+    .sidebar .list li .seccion
     {
         width: 100%;
         text-decoration: none;
@@ -1206,12 +1206,12 @@
         transition: .5s;
     }
 
-    .sidebar .list li a span
+    .sidebar .list li .seccion span
     {
         color: #fff;
     }
 
-    .sidebar .list li a .icon
+    .sidebar .list li .seccion .icon
     {
         width: 30%;
         height: 70px;
@@ -1220,13 +1220,13 @@
         align-items: center;
     }
 
-    .sidebar .list li a .icon ion-icon
+    .sidebar .list li .seccion .icon ion-icon
     {
         width: 30px;
         height: 30px;
     }
 
-    .sidebar .list li a .text
+    .sidebar .list li .seccion .text
     {
         width: 70%;
         height: 70px;
@@ -1236,14 +1236,14 @@
         align-items: center;
     }
 
-    .sidebar .list li a:hover
+    .sidebar .list li .seccion:hover
     {
         background: rgba(0, 105, 105, 1);
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
         transition: .8s;
     }
 
-    .sidebar .list li a:hover span
+    .sidebar .list li .seccion:hover span
     {
         color: #75cc23;
     }

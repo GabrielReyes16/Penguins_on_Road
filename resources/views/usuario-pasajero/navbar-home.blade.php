@@ -76,7 +76,7 @@
     <div class="sidebar">
         <div class="list" id="list">
             <li>
-                <a href="#">
+                <a class="seccion" href="#">
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
                     </span>
@@ -84,7 +84,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="seccion" href="#">
                     <span class="icon">
                         <ion-icon name="color-palette"></ion-icon>
                     </span>
@@ -92,7 +92,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="seccion" href="#">
                     <span class="icon">
                         <ion-icon name="language"></ion-icon>
                     </span>
@@ -100,7 +100,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="seccion" href="#">
                     <span class="icon">
                         <ion-icon name="newspaper"></ion-icon>
                     </span>
@@ -108,7 +108,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="seccion" href="#">
                     <span class="icon">
                         <ion-icon name="shield"></ion-icon>
                     </span>
@@ -116,7 +116,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="seccion" href="#">
                     <span class="icon">
                         <ion-icon name="settings"></ion-icon>
                     </span>
