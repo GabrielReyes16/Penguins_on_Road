@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header x-data="{ open: false }" class="menu-bar">
+    <header x-data="{ open: false }">
         <!-- Primary Navigation Menu -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
@@ -29,45 +29,43 @@
 
                     <!-- Navigation Links -->
                     <div class="menu-bar">
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            <span class="icons">
-                                <ion-icon name="home"></ion-icon>
-                            </span>
-                            {{ __('Home') }}
-                        </x-nav-link>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                                {{ __('Home') }}
+                            </x-nav-link>
+                        </div>
                     
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index','admin.users.create', 'admin.users.edit')">
+                                {{ __('Usuarios') }}
+                            </x-nav-link>
+                        </div>
 
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index','admin.users.create', 'admin.users.edit')">
-                            {{ __('Usuarios') }}<ion-icon name="home"></ion-icon>
-                        </x-nav-link>
-                    </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('admin.buses.index')" :active="request()->routeIs('admin.buses.index')">
+                                {{ __('Buses') }}
+                            </x-nav-link>
+                        </div>
 
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('admin.buses.index')" :active="request()->routeIs('admin.buses.index')">
-                            {{ __('Buses') }}
-                        </x-nav-link>
-                    </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('admin.choferes.index')" :active="request()->routeIs('admin.choferes.index')">
+                                {{ __('Choferes') }}
+                            </x-nav-link>
+                        </div>
 
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('admin.choferes.index')" :active="request()->routeIs('admin.choferes.index')">
-                            {{ __('Choferes') }}
-                        </x-nav-link>
-                    </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('admin.boletasviaje.index')" :active="request()->routeIs('admin.boletas_viaje.index')">
+                                {{ __('Viajes') }}
+                            </x-nav-link>
+                        </div>
 
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('admin.viajes.mostrarViajes')" :active="request()->routeIs('admin.viajes.mostrarViajes')">
-                            {{ __('Viajes') }}
-                        </x-nav-link>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('admin.rutas.index')" :active="request()->routeIs('admin.rutas.index')">
+                                {{ __('Rutas') }}
+                            </x-nav-link>
+                        </div>
                     </div>
-
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('admin.rutas.index')" :active="request()->routeIs('admin.rutas.index')">
-                            {{ __('Rutas') }}
-                        </x-nav-link>
-                    </div>
-                </div>
-                <div></div>
+                
                 <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
                     <x-dropdown  width="48">
@@ -142,8 +140,8 @@
                 </x-responsive-nav-link>
             </div>
             <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('admin.boletasviaje.index')" :active="request()->routeIs('admin.boletasviaje.index')">
-                    {{ __('Boletas de Viaje') }}
+                <x-responsive-nav-link :href="route('admin.viajes.index')" :active="request()->routeIs('admin.viajes.index')">
+                    {{ __('Viajes') }}
                 </x-responsive-nav-link>
             </div>
             <div class="pt-2 pb-3 space-y-1">

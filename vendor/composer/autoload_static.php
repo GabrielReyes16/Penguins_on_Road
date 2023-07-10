@@ -635,6 +635,7 @@ class ComposerStaticInit84b5cb89c19043c2d97b61544e0993f3
         'App\\Http\\Controllers\\Admin\\RutaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RutaController.php',
         'App\\Http\\Controllers\\Admin\\TurnoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TurnoController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
+        'App\\Http\\Controllers\\Admin\\ViajeAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ViajeAdminController.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
         'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',

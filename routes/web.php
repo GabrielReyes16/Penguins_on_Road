@@ -2,13 +2,14 @@
 
 
 use App\Http\Controllers\ViajeController;
+use App\Http\Controllers\Admin\ViajeAdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController; 
 use App\Http\Controllers\ReservaController;  //Meter en carpeta correspondiente en controllers
 use App\Http\Controllers\BoletaViajeController;  //Meter en carpeta correspondiente en controllers
 use App\Http\Controllers\Admin\ChoferController;
-use App\Http\Controllers\Admin\ViajeAdminController;
+use App\Http\Controllers\Admin\BoletasViajeController;
 use App\Http\Controllers\Admin\BusController;
 use App\Http\Controllers\Admin\RutaController;
 use App\Http\Controllers\DashboardController;
@@ -48,7 +49,7 @@ Route::get('/boleta/{idBoleta}', [BoletaViajeController::class, 'verBoleta'])->n
 Route::get('/turnos', [RutasController::class, 'mostrarTurnos'])->name('usuario-pasajero.turnos');
 Route::get('/turnos/{id}', [RutasController::class, 'mostrarRutas'])->name('usuario-pasajero.seleccion-turno');
 Route::get('/turnos/{id_turno}/ruta/{id_ruta}', [RutasController::class, 'verRuta'])->name('usuario-pasajero.ver-ruta');
-
+Route::resource('viajes', ViajeController::class)->names('viajes');
 
 // Usuario Chofer
 // Rutas de chofer
@@ -87,7 +88,9 @@ Route::get('/admin/users/{user}/createChofer', [UserController::class, 'createCh
 Route::resource('buses', BusController::class)->middleware('can:admin.buses.index')->names('admin.buses');
 Route::resource('choferes', ChoferController::class)->middleware('can:admin.choferes.index')->names('admin.choferes');
 Route::resource('rutas', RutaController::class)->middleware('can:admin.rutas.index')->names('admin.rutas');
+Route::resource('boletasviaje', BoletasViajeController::class)->middleware('can:admin.viajes.index')->names('admin.boletasviaje');
 Route::resource('viajes', ViajeAdminController::class)->names('admin.viajes');
+
 
 // Ruta de acciones directas en perfil
 Route::middleware('auth')->group(function () {

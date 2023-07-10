@@ -10,6 +10,9 @@ use App\Models\Empresa;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Models\Viaje;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 
 /**
@@ -143,5 +146,29 @@ class UserController extends Controller
           return redirect()->route('admin.users.index')
               ->with('success', 'El usuario fue eliminado con éxito');
       }
+      public function mostrarViajes()
+    {
+        $idUsuario = Auth::id();
+
+        $chofer = Chofer::where('id_usuario', $idUsuario)->first();
+
+        if (!$chofer) {
+            return redirect()->back()->with('error', 'No se encontró el chofer.');
+        }
+
+        $viajes = Viaje::all();
+
+        $viajes->transform(function ($viaje) {
+            $duracion = Carbon::parse($viaje->hora_final)->diff(Carbon::parse($viaje->hora_inicio));
+            $viaje->duracion = $duracion->format('%H:%I:%S');
+            $viaje->fecha_viaje = Carbon::createFromFormat('Y-m-d', $viaje->fecha_viaje)->format('d/m/Y');
+            return $viaje;
+        });
+
+        return view('admin.viaje.mostrar-viajes', compact('viajes'));
+    }
+
+      
  }
+ 
  
